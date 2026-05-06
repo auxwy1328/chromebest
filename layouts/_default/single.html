@@ -5,7 +5,7 @@
     <nav class="breadcrumb">
       <a href="/">首页</a>
       <span class="breadcrumb-sep">›</span>
-      <a href="/{{ .Section }}">{{ if eq .Section "tips" }}使用技巧{{ else if eq .Section "plugins" }}插件推荐{{ else if eq .Section "compare" }}浏览器对比{{ else if eq .Section "download" }}下载安装{{ else }}{{ .Section }}{{ end }}</a>
+      <a href="/{{ .Section }}">{{ .Section }}</a>
       <span class="breadcrumb-sep">›</span>
       <span class="breadcrumb-current">{{ .Title }}</span>
     </nav>
