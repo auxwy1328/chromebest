@@ -53,6 +53,8 @@ keywords: "Chrome翻译插件,沉浸式翻译,DeepL翻译,Google翻译,划词翻
 
 ## 准确率：沉浸式翻译和 DeepL 并列第一
 
+![#准确率：沉浸式翻译和 DeepL 并列](/images/plugins/chrome-translation-extension-comparison/body3.jpg)
+
 | 插件 | 总分（满分150） | 准确率 | 新闻 | 技术 | 学术 | 日常 |
 |------|---------------|--------|------|------|------|------|
 | 沉浸式翻译 | 131 | 87.3% | 90% | 86% | 84% | 89% |
@@ -112,6 +114,8 @@ keywords: "Chrome翻译插件,沉浸式翻译,DeepL翻译,Google翻译,划词翻
 
 ## 内存占用：Google 翻译最省，沉浸式翻译最占内存
 
+![#内存占用：Google 翻译最省，沉浸](/images/plugins/chrome-translation-extension-comparison/body2.jpg)
+
 对于同时开很多标签页的用户，插件的内存占用也值得关注。
 
 | 插件 | 空闲时 | 翻译中 | 翻译后 |
@@ -147,6 +151,8 @@ keywords: "Chrome翻译插件,沉浸式翻译,DeepL翻译,Google翻译,划词翻
 **沉浸式翻译的核心优势是"自定义翻译引擎"**——你可以在设置中切换 OpenAI、DeepL、Google、Gemini 等 20+ 种翻译引擎。也就是说，你用沉浸式翻译也可以调用 DeepL 的翻译质量，同时还享受沉浸式翻译的双语对照、悬停翻译等功能。这是其他四个插件做不到的。
 
 ## 各插件的优缺点
+
+![#各插件的优缺点](/images/plugins/chrome-translation-extension-comparison/body1.jpg)
 
 **沉浸式翻译：** 功能最全、准确率高、支持自定义引擎。缺点是内存占用大，安装后 Chrome 首次启动会慢约 0.5 秒。适合：需要频繁阅读外文内容的用户。
 

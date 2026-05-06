@@ -39,6 +39,10 @@ keywords: "Chrome插件推荐,Chrome扩展,Chrome必装,Chrome广告拦截,Chrom
 
 ## 翻译类
 
+![#翻译类](/images/plugins/chrome-essential-extensions/body3.jpg)
+
+![#翻译类](/images/plugins/chrome-essential-extensions/body3.jpg)
+
 ### 2. 沉浸式翻译
 
 **用途：** 网页双语翻译、PDF 翻译、视频字幕翻译
@@ -68,6 +72,10 @@ keywords: "Chrome插件推荐,Chrome扩展,Chrome必装,Chrome广告拦截,Chrom
 **替代方案：** 如果你愿意付费，1Password 的界面更美观、家庭共享功能更好。
 
 ## 标签页管理类
+
+![#标签页管理类](/images/plugins/chrome-essential-extensions/body2.jpg)
+
+![#标签页管理类](/images/plugins/chrome-essential-extensions/body2.jpg)
 
 ### 4. OneTab
 
@@ -100,6 +108,10 @@ keywords: "Chrome插件推荐,Chrome扩展,Chrome必装,Chrome广告拦截,Chrom
 **注意：** 不做前端开发的人不需要装这些，它们会增加内存占用。如果你同时使用 Vue 和 React，两个 devtools 可以一起安装，它们不会互相冲突。
 
 ## 效率工具类
+
+![#效率工具类](/images/plugins/chrome-essential-extensions/body1.jpg)
+
+![#效率工具类](/images/plugins/chrome-essential-extensions/body1.jpg)
 
 ### 7. Tampermonkey
 

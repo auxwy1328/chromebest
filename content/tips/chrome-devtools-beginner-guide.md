@@ -34,6 +34,8 @@ keywords: "Chrome开发者工具,Chrome DevTools,Chrome调试,Chrome Elements,Ch
 
 ## 面板一：Elements（元素面板）——查看和修改页面结构
 
+![#面板一：Elements（元素面板）—](/images/tips/chrome-devtools-beginner-guide/body3.jpg)
+
 **用途：** 查看网页的 HTML 结构和 CSS 样式。
 
 ### 非程序员的实用场景
@@ -101,6 +103,8 @@ let total = 0; document.querySelectorAll('img').forEach(img => { if(img.naturalW
 
 ## 面板三：Network（网络面板）——分析页面加载性能
 
+![#面板三：Network（网络面板）——](/images/tips/chrome-devtools-beginner-guide/body2.jpg)
+
 **用途：** 查看页面加载了哪些资源、每个资源的加载时间、加载顺序。
 
 ### 非程序员的实用场景
@@ -145,6 +149,8 @@ let total = 0; document.querySelectorAll('img').forEach(img => { if(img.naturalW
 Application 面板中可以查看 Local Storage、Session Storage、IndexedDB、Cache Storage 等存储空间的使用情况。如果你发现 Chrome 占用了大量磁盘空间（有时候会达到几个 GB），很可能是因为某些网站在本地存储了大量缓存数据。在 Application 面板中可以按网站查看各站点的存储占用，精准定位并清理。
 
 ## 面板五：Lighthouse（灯塔面板）——页面性能和 SEO 评分
+
+![#面板五：Lighthouse（灯塔面板](/images/tips/chrome-devtools-beginner-guide/body1.jpg)
 
 **用途：** 自动分析页面的性能、可访问性、SEO、最佳实践等指标，给出评分和改进建议。
 

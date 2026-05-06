@@ -54,6 +54,8 @@ Chrome 131 的无痕模式默认不允许扩展运行（你可以手动在 chrom
 
 ## 无痕模式不能做的事（重点）
 
+![#无痕模式不能做的事（重点）](/images/tips/chrome-incognito-mode-guide/body2.jpg)
+
 ### 1. 不能隐藏你的 IP 地址
 
 **实测：** 在无痕模式和普通模式下分别访问 https://whatismyipaddress.com/，显示的 IP 地址完全相同。
@@ -110,6 +112,8 @@ Chrome 131 的无痕模式默认不允许扩展运行（你可以手动在 chrom
 
 ## 真正的隐私保护方案
 
+![#真正的隐私保护方案](/images/tips/chrome-incognito-mode-guide/body1.jpg)
+
 如果你需要比无痕模式更强的隐私保护，需要以下组合：
 
 ### 基础方案（免费）
@@ -126,6 +130,8 @@ Chrome 131 的无痕模式默认不允许扩展运行（你可以手动在 chrom
 - **代理 + VPS**：自建代理服务器，完全控制网络流量
 - **虚拟机 + Tails OS**：在虚拟机中运行 Tails 系统，关机后所有数据自动清除
 
+
+![配图](/images/tips/chrome-incognito-mode-guide/body3.jpg)
 ## 常见问题
 
 ### 无痕模式下下载的文件去哪了？

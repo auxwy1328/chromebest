@@ -50,6 +50,8 @@ Windows 系统自带截图工具（Win + Shift + S），可以截取任意区域
 
 ## 5 款截图插件实测
 
+![#5 款截图插件实测](/images/plugins/chrome-screenshot-extensions/body2.jpg)
+
 ### 1. GoFullPage
 
 **用途：** 一键全页截图
@@ -161,12 +163,16 @@ Windows 系统自带截图工具（Win + Shift + S），可以截取任意区域
 
 ## 推荐选择
 
+![#推荐选择](/images/plugins/chrome-screenshot-extensions/body1.jpg)
+
 - **只需全页截图：GoFullPage**——最轻量、最简单
 - **需要编辑标注：FireShot**——编辑器最强大
 - **需要截图+录屏：Nimbus**——二合一最方便
 - **需要截图后分享：Awesome Screenshot**——分享链接最方便
 - **系统级截图需求：Snipaste 桌面版**——贴图功能独特
 
+
+![配图](/images/plugins/chrome-screenshot-extensions/body3.jpg)
 ## 常见问题
 
 ### 全页截图的图片太大怎么办？

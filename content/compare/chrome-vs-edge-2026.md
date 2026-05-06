@@ -55,6 +55,10 @@ Edge 的内存占用比 Chrome 低约 10%。这是因为 Edge 做了更积极的
 
 ## 功能对比
 
+![#功能对比](/images/compare/chrome-vs-edge-2026/body3.jpg)
+
+![#功能对比](/images/compare/chrome-vs-edge-2026/body3.jpg)
+
 | 功能 | Chrome | Edge |
 |------|--------|------|
 | 插件生态 | ✅ Chrome Web Store（最大） | ✅ 兼容 Chrome 插件 + Edge 附加组件 |
@@ -89,6 +93,10 @@ Edge 的内存占用比 Chrome 低约 10%。这是因为 Edge 做了更积极的
 
 ## 国内使用体验
 
+![#国内使用体验](/images/compare/chrome-vs-edge-2026/body2.jpg)
+
+![#国内使用体验](/images/compare/chrome-vs-edge-2026/body2.jpg)
+
 | 指标 | Chrome | Edge |
 |------|--------|------|
 | 同步功能 | ❌ 依赖 Google（国内不可用） | ✅ 依赖微软（国内完全可用） |
@@ -117,6 +125,10 @@ Edge 的内存占用比 Chrome 低约 10%。这是因为 Edge 做了更积极的
 **折中方案：** 两个都装。Chrome 用于日常浏览和工作（依赖插件生态），Edge 用于国内网站的浏览和需要同步的场景。两个浏览器共享 Chromium 内核，同时安装不会有额外资源浪费。
 
 ## 常见问题
+
+![#常见问题](/images/compare/chrome-vs-edge-2026/body1.jpg)
+
+![#常见问题](/images/compare/chrome-vs-edge-2026/body1.jpg)
 
 ### Edge 能装 Chrome 插件吗？
 
