@@ -15,7 +15,7 @@ excerpt: "Chrome 不只有默认外观。深色模式、主题壁纸、自定义
 card_icon: "🎨"
 card_label: "外观定制"
 card_gradient: "#2a1a28,#0d1117"
-images: ["/images/chrome-appearance/cover.jpg"]
+images: ["/images/tips/chrome-appearance/cover.jpg"]
 keywords: "Chrome主题,Chrome深色模式,Chrome壁纸,Chrome自定义,Chrome外观设置"
 ---
 

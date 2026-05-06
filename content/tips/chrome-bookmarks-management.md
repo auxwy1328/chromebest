@@ -15,7 +15,7 @@ excerpt: "Chrome 书签从基础操作到高级技巧。导入导出、跨浏览
 card_icon: "📑"
 card_label: "书签管理"
 card_gradient: "#1a2a2a,#0d1117"
-images: ["/images/chrome-bookmarks/cover.jpg"]
+images: ["/images/tips/chrome-bookmarks/cover.jpg"]
 keywords: "Chrome书签,Chrome书签管理,Chrome导入导出,Chrome跨浏览器,Chrome书签同步"
 ---
 

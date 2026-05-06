@@ -15,7 +15,7 @@ excerpt: "Chrome 总是被改成其他浏览器？这篇教你正确设置默认
 card_icon: "🌐"
 card_label: "默认浏览器"
 card_gradient: "#1a2a1a,#0d1117"
-images: ["/images/chrome-set-default-browser-guide/cover.jpg"]
+images: ["/images/tips/chrome-set-default-browser-guide/cover.jpg"]
 keywords: "Chrome默认浏览器,Chrome设为默认,默认浏览器被篡改,Win11默认浏览器,浏览器劫持修复"
 ---
 

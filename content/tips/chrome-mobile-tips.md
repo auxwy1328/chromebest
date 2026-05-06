@@ -15,7 +15,7 @@ excerpt: "Chrome 手机版有很多隐藏技巧。手势操作、桌面模式、
 card_icon: "📱"
 card_label: "手机版指南"
 card_gradient: "#1a2a1a,#0d1117"
-images: ["/images/chrome-mobile/cover.jpg"]
+images: ["/images/tips/chrome-mobile/cover.jpg"]
 keywords: "Chrome手机版,Chrome安卓,Chrome iOS,Chrome移动端,Chrome手机技巧"
 ---
 

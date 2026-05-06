@@ -15,7 +15,7 @@ excerpt: "Chrome 更新一直失败？别急着重装。按错误码对号入座
 card_icon: "🔄"
 card_label: "更新修复"
 card_gradient: "#2a2218,#0d1117"
-images: ["/images/chrome-update-failed-fix/cover.jpg"]
+images: ["/images/tips/chrome-update-failed-fix/cover.jpg"]
 keywords: "Chrome更新失败,Chrome更新错误,Chrome手动更新,Chrome版本过低,Chrome错误7,Chrome错误12"
 ---
 

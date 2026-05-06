@@ -16,7 +16,7 @@ excerpt: "Chrome 三个平台版本的功能差异比你想象的大。插件不
 card_icon: "💻"
 card_label: "跨平台对比"
 card_gradient: "#1a2028,#0d1117"
-images: ["/images/chrome-cross-platform/cover.jpg"]
+images: ["/images/compare/chrome-cross-platform/cover.jpg"]
 keywords: "Chrome电脑版,Chrome安卓版,Chrome iOS版,Chrome跨平台,Chrome移动端"
 ---
 

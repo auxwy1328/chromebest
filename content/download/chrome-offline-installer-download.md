@@ -15,7 +15,7 @@ excerpt: "Chrome 离线安装包官方完整版下载地址。在线包和离线
 card_icon: "📥"
 card_label: "Chrome下载"
 card_gradient: "#2a2210,#0d1117"
-images: ["/images/chrome-offline-download/cover.jpg"]
+images: ["/images/download/chrome-offline-download/cover.jpg"]
 keywords: "Chrome下载,Chrome离线安装包,Chrome完整版,Chrome安装教程,Chrome官方下载"
 ---
 

@@ -15,7 +15,7 @@ excerpt: "Chrome 突然崩溃闪退？不要急着重装。这 8 个原因和修
 card_icon: "💥"
 card_label: "崩溃修复"
 card_gradient: "#2e1a1a,#0d1117"
-images: ["/images/chrome-crash-fix/cover.jpg"]
+images: ["/images/tips/chrome-crash-fix/cover.jpg"]
 keywords: "Chrome崩溃,Chrome闪退,Chrome打不开,Chrome白屏,Chrome修复,Chrome无法启动"
 ---
 

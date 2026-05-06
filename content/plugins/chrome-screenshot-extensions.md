@@ -16,7 +16,7 @@ excerpt: "Chrome 自带截图功能不够用？这 5 款截图插件各有特长
 card_icon: "📸"
 card_label: "截图插件对比"
 card_gradient: "#2e1a2a,#0d1117"
-images: ["/images/chrome-screenshot/cover.jpg"]
+images: ["/images/plugins/chrome-screenshot/cover.jpg"]
 keywords: "Chrome截图插件,Chrome全页截图,Chrome网页截图,GoFullPage,FireShot"
 ---
 

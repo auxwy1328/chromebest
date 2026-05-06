@@ -16,7 +16,7 @@ excerpt: "Chrome 和 Edge 都是基于 Chromium 的浏览器，但体验差距�
 card_icon: "⚔️"
 card_label: "Chrome vs Edge"
 card_gradient: "#2a2218,#0d1117"
-images: ["/images/chrome-vs-edge/cover.jpg"]
+images: ["/images/compare/chrome-vs-edge/cover.jpg"]
 keywords: "Chrome vs Edge,Chrome对比Edge,Edge浏览器,浏览器选择,Edge评测"
 ---
 
