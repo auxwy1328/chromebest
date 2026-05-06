@@ -51,10 +51,16 @@
         <div class="card-grid">
           {{ range $related }}
           <a href="{{ .Permalink }}" class="card">
+            {{ if .Params.images }}
+            <div class="card-img">
+              <img src="{{ index .Params.images 0 }}" alt="{{ .Title }}" loading="lazy">
+            </div>
+            {{ else }}
             <div class="card-img" style="background:linear-gradient(135deg,{{ .Params.card_gradient | default "#1a2332,#0d1117" }});height:160px">
               <div class="card-img-icon">{{ .Params.card_icon | default "📄" }}</div>
               <div class="card-img-ver">{{ .Params.card_label | default "Chrome" }}</div>
             </div>
+            {{ end }}
             <div class="card-body">
               <span class="art-row-tag feat-tag {{ .Params.tag_color | default "blue" }}">{{ .Params.tag_label | default "教程" }}</span>
               <h3>{{ .Title }}</h3>
