@@ -2,6 +2,13 @@
 <div class="layout">
   <!-- ARTICLE -->
   <article class="art-page">
+    <nav class="breadcrumb">
+      <a href="/">首页</a>
+      <span class="breadcrumb-sep">›</span>
+      <a href="/{{ .Section }}">{{ if eq .Section "tips" }}使用技巧{{ else if eq .Section "plugins" }}插件推荐{{ else if eq .Section "compare" }}浏览器对比{{ else if eq .Section "download" }}下载安装{{ else }}{{ .Section }}{{ end }}</a>
+      <span class="breadcrumb-sep">›</span>
+      <span class="breadcrumb-current">{{ .Title }}</span>
+    </nav>
     <span class="art-tag feat-tag {{ .Params.tag_color | default "blue" }}">{{ .Params.tag_icon | default "📌" }} {{ .Params.tag_label | default "教程" }}</span>
     <h1>{{ .Title }}</h1>
     <div class="meta">
