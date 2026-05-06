@@ -41,7 +41,6 @@ keywords: "Chrome下载,Chrome离线安装包,Chrome完整版,Chrome安装教程
 
 ![#Windows 版官方离线安装包下载地](/images/download/chrome-offline-installer-download/body3.jpg)
 
-![#Windows 版官方离线安装包下载地](/images/download/chrome-offline-installer-download/body3.jpg)
 
 以下链接均为 Google 官方服务器地址，直接点击即可下载。
 
@@ -93,7 +92,6 @@ brew install --cask google-chrome
 
 ![#安装前的系统要求](/images/download/chrome-offline-installer-download/body2.jpg)
 
-![#安装前的系统要求](/images/download/chrome-offline-installer-download/body2.jpg)
 
 在下载之前，先确认你的电脑满足 Chrome 的最低运行要求：
 
@@ -164,7 +162,6 @@ Chrome 首次启动后，建议做以下基础配置：
 
 ![#企业批量安装（IT 管理员参考）](/images/download/chrome-offline-installer-download/body1.jpg)
 
-![#企业批量安装（IT 管理员参考）](/images/download/chrome-offline-installer-download/body1.jpg)
 
 如果你是 IT 管理员，需要在多台电脑上批量安装 Chrome，可以使用以下方法：
 

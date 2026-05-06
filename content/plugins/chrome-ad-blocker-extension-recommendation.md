@@ -44,7 +44,6 @@ Chrome 的广告拦截插件是最受欢迎的扩展类别之一，Chrome 网上
 
 ![#测试环境](/images/plugins/chrome-ad-blocker-extension-recommendation/body3.jpg)
 
-![#测试环境](/images/plugins/chrome-ad-blocker-extension-recommendation/body3.jpg)
 
 - **Chrome 131.0.6778.86**（Windows 11）
 - **测试网站（20 个）：** 淘宝、京东、知乎、B站、微博、百度、CSDN、豆瓣、搜狐、新浪、网易、腾讯新闻、今日头条、优酷、爱奇艺、抖音网页版、起点中文网、飞卢小说、什么值得买、少数派
@@ -72,7 +71,6 @@ Chrome 的广告拦截插件是最受欢迎的扩展类别之一，Chrome 网上
 
 ![#各插件详细评价](/images/plugins/chrome-ad-blocker-extension-recommendation/body2.jpg)
 
-![#各插件详细评价](/images/plugins/chrome-ad-blocker-extension-recommendation/body2.jpg)
 
 ### uBlock Origin：老牌王者
 
@@ -166,7 +164,6 @@ Brave 的广告拦截器是 Brave 浏览器内置的。Chrome 版只是一个简
 
 ![#移动端怎么办？](/images/plugins/chrome-ad-blocker-extension-recommendation/body1.jpg)
 
-![#移动端怎么办？](/images/plugins/chrome-ad-blocker-extension-recommendation/body1.jpg)
 
 Chrome 安卓版不支持广告拦截插件。替代方案：
 

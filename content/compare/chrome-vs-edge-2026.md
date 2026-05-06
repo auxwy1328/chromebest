@@ -57,7 +57,6 @@ Edge 的内存占用比 Chrome 低约 10%。这是因为 Edge 做了更积极的
 
 ![#功能对比](/images/compare/chrome-vs-edge-2026/body3.jpg)
 
-![#功能对比](/images/compare/chrome-vs-edge-2026/body3.jpg)
 
 | 功能 | Chrome | Edge |
 |------|--------|------|
@@ -95,7 +94,6 @@ Edge 的内存占用比 Chrome 低约 10%。这是因为 Edge 做了更积极的
 
 ![#国内使用体验](/images/compare/chrome-vs-edge-2026/body2.jpg)
 
-![#国内使用体验](/images/compare/chrome-vs-edge-2026/body2.jpg)
 
 | 指标 | Chrome | Edge |
 |------|--------|------|
@@ -128,7 +126,6 @@ Edge 的内存占用比 Chrome 低约 10%。这是因为 Edge 做了更积极的
 
 ![#常见问题](/images/compare/chrome-vs-edge-2026/body1.jpg)
 
-![#常见问题](/images/compare/chrome-vs-edge-2026/body1.jpg)
 
 ### Edge 能装 Chrome 插件吗？
 

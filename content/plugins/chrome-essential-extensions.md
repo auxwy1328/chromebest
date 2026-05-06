@@ -41,7 +41,6 @@ keywords: "Chrome插件推荐,Chrome扩展,Chrome必装,Chrome广告拦截,Chrom
 
 ![#翻译类](/images/plugins/chrome-essential-extensions/body3.jpg)
 
-![#翻译类](/images/plugins/chrome-essential-extensions/body3.jpg)
 
 ### 2. 沉浸式翻译
 
@@ -75,7 +74,6 @@ keywords: "Chrome插件推荐,Chrome扩展,Chrome必装,Chrome广告拦截,Chrom
 
 ![#标签页管理类](/images/plugins/chrome-essential-extensions/body2.jpg)
 
-![#标签页管理类](/images/plugins/chrome-essential-extensions/body2.jpg)
 
 ### 4. OneTab
 
@@ -111,7 +109,6 @@ keywords: "Chrome插件推荐,Chrome扩展,Chrome必装,Chrome广告拦截,Chrom
 
 ![#效率工具类](/images/plugins/chrome-essential-extensions/body1.jpg)
 
-![#效率工具类](/images/plugins/chrome-essential-extensions/body1.jpg)
 
 ### 7. Tampermonkey
 
