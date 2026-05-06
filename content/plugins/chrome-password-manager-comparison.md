@@ -17,6 +17,7 @@ card_icon: "🔐"
 card_label: "密码管理对比"
 card_gradient: "#2a2510,#0d1117"
 images: ["/images/plugins/chrome-password-manager-comparison/cover.jpg"]
+og_image: "/images/plugins/chrome-password-manager-comparison/og.jpg"
 keywords: "Chrome密码管理器,Bitwarden,LastPass,1Password,密码管理器对比,Chrome密码"
 ---
 

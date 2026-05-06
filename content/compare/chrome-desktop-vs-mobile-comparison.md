@@ -17,6 +17,7 @@ card_icon: "💻"
 card_label: "跨平台对比"
 card_gradient: "#1a2028,#0d1117"
 images: ["/images/compare/chrome-desktop-vs-mobile-comparison/cover.jpg"]
+og_image: "/images/compare/chrome-desktop-vs-mobile-comparison/og.jpg"
 keywords: "Chrome电脑版,Chrome安卓版,Chrome iOS版,Chrome跨平台,Chrome移动端"
 ---
 

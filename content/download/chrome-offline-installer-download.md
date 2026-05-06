@@ -16,6 +16,7 @@ card_icon: "📥"
 card_label: "Chrome下载"
 card_gradient: "#2a2210,#0d1117"
 images: ["/images/download/chrome-offline-installer-download/cover.jpg"]
+og_image: "/images/download/chrome-offline-installer-download/og.jpg"
 keywords: "Chrome下载,Chrome离线安装包,Chrome完整版,Chrome安装教程,Chrome官方下载"
 ---
 

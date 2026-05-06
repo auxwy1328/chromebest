@@ -17,6 +17,7 @@ card_icon: "🛡️"
 card_label: "广告拦截对比"
 card_gradient: "#2e1a1a,#0d1117"
 images: ["/images/plugins/chrome-ad-blocker-comparison/cover.jpg"]
+og_image: "/images/plugins/chrome-ad-blocker-comparison/og.jpg"
 keywords: "Chrome广告拦截,uBlock Origin,AdGuard,Chrome去广告,广告拦截插件对比"
 ---
 

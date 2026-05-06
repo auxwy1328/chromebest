@@ -16,6 +16,7 @@ card_icon: "🎨"
 card_label: "外观定制"
 card_gradient: "#2a1a28,#0d1117"
 images: ["/images/tips/chrome-appearance-customization/cover.jpg"]
+og_image: "/images/tips/chrome-appearance-customization/og.jpg"
 keywords: "Chrome主题,Chrome深色模式,Chrome壁纸,Chrome自定义,Chrome外观设置"
 ---
 

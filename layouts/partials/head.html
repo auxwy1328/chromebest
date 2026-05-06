@@ -15,7 +15,7 @@
 <meta property="og:description" content="{{ if .IsHome }}{{ site.Params.description }}{{ else }}{{ .Summary | truncate 160 }}{{ end }}">
 <meta property="og:url" content="{{ .Permalink }}">
 <meta property="og:site_name" content="{{ site.Title }}">
-{{ if .Params.images }}<meta property="og:image" content="{{ index .Params.images 0 | absURL }}">{{ else }}<meta property="og:image" content="{{ site.Params.ogimage | absURL }}">{{ end }}
+{{ if .Params.og_image }}<meta property="og:image" content="{{ .Params.og_image | absURL }}">{{ else }}{{ if .Params.images }}<meta property="og:image" content="{{ index .Params.images 0 | absURL }}">{{ else }}<meta property="og:image" content="{{ site.Params.ogimage | absURL }}">{{ end }}{{ end }}
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="/favicon.ico" sizes="32x32">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">

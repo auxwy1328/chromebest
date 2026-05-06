@@ -17,6 +17,7 @@ card_icon: "📊"
 card_label: "浏览器对比"
 card_gradient: "#1a2332,#0d1117"
 images: ["/images/compare/chrome-vs-edge-vs-firefox-2026/cover.jpg"]
+og_image: "/images/compare/chrome-vs-edge-vs-firefox-2026/og.jpg"
 keywords: "Chrome vs Edge vs Firefox,浏览器对比评测,Chrome内存占用,浏览器速度测试,Chrome插件"
 ---
 

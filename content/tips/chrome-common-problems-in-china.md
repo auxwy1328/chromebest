@@ -16,6 +16,7 @@ card_icon: "💡"
 card_label: "Chrome使用问题"
 card_gradient: "#2a2a1a,#0d1117"
 images: ["/images/tips/chrome-common-problems-in-china/cover.jpg"]
+og_image: "/images/tips/chrome-common-problems-in-china/og.jpg"
 keywords: "Chrome国内使用,Chrome同步失败,Chrome扩展安装,Chrome页面慢,Chrome常见问题"
 ---
 

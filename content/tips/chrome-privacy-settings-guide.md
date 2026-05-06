@@ -16,6 +16,7 @@ card_icon: "🔒"
 card_label: "隐私安全指南"
 card_gradient: "#1a1a2e,#0d1117"
 images: ["/images/tips/chrome-privacy-settings-guide/cover.jpg"]
+og_image: "/images/tips/chrome-privacy-settings-guide/og.jpg"
 keywords: "Chrome隐私设置,Chrome安全设置,Chrome无痕模式,Chrome Cookie设置,Chrome追踪保护"
 ---
 

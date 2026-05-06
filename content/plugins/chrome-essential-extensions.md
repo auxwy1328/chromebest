@@ -16,6 +16,7 @@ card_icon: "🔧"
 card_label: "必装插件"
 card_gradient: "#221a2e,#0d1117"
 images: ["/images/plugins/chrome-essential-extensions/cover.jpg"]
+og_image: "/images/plugins/chrome-essential-extensions/og.jpg"
 keywords: "Chrome插件推荐,Chrome扩展,Chrome必装,Chrome广告拦截,Chrome效率插件,uBlock Origin"
 ---
 

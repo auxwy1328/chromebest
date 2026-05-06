@@ -17,6 +17,7 @@ card_icon: "⚡"
 card_label: "内存优化"
 card_gradient: "#2a1a22,#0d1117"
 images: ["/images/tips/chrome-memory-optimization/cover.jpg"]
+og_image: "/images/tips/chrome-memory-optimization/og.jpg"
 keywords: "Chrome内存优化,Chrome占内存高,Chrome性能优化,Chrome标签页管理,Chrome省内存技巧"
 ---
 

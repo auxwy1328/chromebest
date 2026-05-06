@@ -17,6 +17,7 @@ card_icon: "⚔️"
 card_label: "Chrome vs Edge"
 card_gradient: "#2a2218,#0d1117"
 images: ["/images/compare/chrome-vs-edge-2026/cover.jpg"]
+og_image: "/images/compare/chrome-vs-edge-2026/og.jpg"
 keywords: "Chrome vs Edge,Chrome对比Edge,Edge浏览器,浏览器选择,Edge评测"
 ---
 

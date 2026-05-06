@@ -17,6 +17,7 @@ card_icon: "📸"
 card_label: "截图插件对比"
 card_gradient: "#2e1a2a,#0d1117"
 images: ["/images/plugins/chrome-screenshot-extensions/cover.jpg"]
+og_image: "/images/plugins/chrome-screenshot-extensions/og.jpg"
 keywords: "Chrome截图插件,Chrome全页截图,Chrome网页截图,GoFullPage,FireShot"
 ---
 

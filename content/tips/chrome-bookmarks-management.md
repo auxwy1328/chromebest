@@ -16,6 +16,7 @@ card_icon: "📑"
 card_label: "书签管理"
 card_gradient: "#1a2a2a,#0d1117"
 images: ["/images/tips/chrome-bookmarks-management/cover.jpg"]
+og_image: "/images/tips/chrome-bookmarks-management/og.jpg"
 keywords: "Chrome书签,Chrome书签管理,Chrome导入导出,Chrome跨浏览器,Chrome书签同步"
 ---
 

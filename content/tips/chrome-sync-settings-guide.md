@@ -16,6 +16,7 @@ card_icon: "☁️"
 card_label: "同步指南"
 card_gradient: "#1a2233,#0d1117"
 images: ["/images/tips/chrome-sync-settings-guide/cover.jpg"]
+og_image: "/images/tips/chrome-sync-settings-guide/og.jpg"
 keywords: "Chrome同步,Chrome账号,Chrome多设备同步,Chrome书签同步,Chrome密码同步,Chrome同步失败"
 ---
 

@@ -16,6 +16,7 @@ card_icon: "🛠️"
 card_label: "DevTools"
 card_gradient: "#1a1a2e,#0d1117"
 images: ["/images/tips/chrome-devtools-beginner-guide/cover.jpg"]
+og_image: "/images/tips/chrome-devtools-beginner-guide/og.jpg"
 keywords: "Chrome开发者工具,Chrome DevTools,Chrome调试,Chrome Elements,Chrome Network,Chrome SEO"
 ---
 

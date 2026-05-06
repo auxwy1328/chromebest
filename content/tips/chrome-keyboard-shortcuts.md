@@ -16,6 +16,7 @@ card_icon: "⌨️"
 card_label: "快捷键大全"
 card_gradient: "#1a2e2e,#0d1117"
 images: ["/images/tips/chrome-keyboard-shortcuts/cover.jpg"]
+og_image: "/images/tips/chrome-keyboard-shortcuts/og.jpg"
 keywords: "Chrome快捷键,Chrome键盘快捷键,Chrome标签页快捷键,Chrome效率,Chrome操作技巧"
 ---
 

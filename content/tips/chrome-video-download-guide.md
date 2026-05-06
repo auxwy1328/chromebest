@@ -17,6 +17,7 @@ card_icon: "🎬"
 card_label: "视频下载"
 card_gradient: "#2a1a2e,#0d1117"
 images: ["/images/tips/chrome-video-download-guide/cover.jpg"]
+og_image: "/images/tips/chrome-video-download-guide/og.jpg"
 keywords: "Chrome下载视频,Chrome视频下载,YouTube下载,B站下载,视频下载插件,视频下载方法"
 ---
 

@@ -16,6 +16,7 @@ card_icon: "🔄"
 card_label: "更新修复"
 card_gradient: "#2a2218,#0d1117"
 images: ["/images/tips/chrome-update-failed-fix/cover.jpg"]
+og_image: "/images/tips/chrome-update-failed-fix/og.jpg"
 keywords: "Chrome更新失败,Chrome更新错误,Chrome手动更新,Chrome版本过低,Chrome错误7,Chrome错误12"
 ---
 

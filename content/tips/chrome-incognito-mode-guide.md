@@ -17,6 +17,7 @@ card_icon: "🕵️"
 card_label: "无痕模式"
 card_gradient: "#1a1a1a,#0d1117"
 images: ["/images/tips/chrome-incognito-mode-guide/cover.jpg"]
+og_image: "/images/tips/chrome-incognito-mode-guide/og.jpg"
 keywords: "Chrome无痕模式,Chrome隐身模式,Chrome隐私,无痕模式能做什么,Chrome安全"
 ---
 

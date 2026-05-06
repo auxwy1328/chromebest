@@ -16,6 +16,7 @@ card_icon: "🔒"
 card_label: "安全DNS"
 card_gradient: "#1a1a2e,#0d1117"
 images: ["/images/tips/chrome-secure-dns-setup/cover.jpg"]
+og_image: "/images/tips/chrome-secure-dns-setup/og.jpg"
 keywords: "Chrome安全DNS,Chrome DNS设置,DNS over HTTPS,Chrome DoH,加密DNS"
 ---
 

@@ -16,6 +16,7 @@ card_icon: "🌐"
 card_label: "默认浏览器"
 card_gradient: "#1a2a1a,#0d1117"
 images: ["/images/tips/chrome-set-default-browser-guide/cover.jpg"]
+og_image: "/images/tips/chrome-set-default-browser-guide/og.jpg"
 keywords: "Chrome默认浏览器,Chrome设为默认,默认浏览器被篡改,Win11默认浏览器,浏览器劫持修复"
 ---
 

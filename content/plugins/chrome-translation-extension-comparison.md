@@ -17,6 +17,7 @@ card_icon: "🧪"
 card_label: "翻译插件对比"
 card_gradient: "#1a2e22,#0d1117"
 images: ["/images/plugins/chrome-translation-extension-comparison/cover.jpg"]
+og_image: "/images/plugins/chrome-translation-extension-comparison/og.jpg"
 keywords: "Chrome翻译插件,沉浸式翻译,DeepL翻译,Google翻译,划词翻译,翻译插件对比"
 ---
 
