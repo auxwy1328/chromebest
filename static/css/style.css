@@ -100,7 +100,7 @@ img{max-width:100%;display:block}
 
 /* SIDEBAR LAYOUT */
 .layout{max-width:var(--maxw);margin:0 auto;padding:32px 24px;display:grid;grid-template-columns:1fr 300px;gap:28px}
-.sidebar{display:flex;flex-direction:column;gap:20px;align-self:start;position:sticky;top:72px;padding-top:200px}
+.sidebar{display:flex;flex-direction:column;gap:20px;align-self:start;position:sticky;top:72px}
 .sb-search{position:relative}
 .sb-search-icon{position:absolute;left:14px;top:50%;transform:translateY(-50%);width:16px;height:16px;color:var(--txt3);pointer-events:none}
 .sb-search-input{width:100%;padding:11px 40px 11px 38px;background:var(--bg3);border:1px solid var(--border);border-radius:var(--r);color:var(--txt);font-size:14px;font-family:var(--font);outline:none;transition:border-color .2s,box-shadow .2s}
