@@ -15,7 +15,7 @@ excerpt: "5 款 Chrome 广告拦截插件的实测对比数据。拦截率、内
 card_icon: "🛡️"
 card_label: "广告拦截对比"
 card_gradient: "#1a2233,#0d1117"
-images: ["/images/plugins/chrome-ad-blocker/cover.jpg"]
+images: ["/images/plugins/chrome-ad-blocker-extension-recommendation/cover.jpg"]
 keywords: "Chrome广告拦截,Chrome去广告插件,uBlock Origin,AdGuard,广告过滤插件"
 ---
 

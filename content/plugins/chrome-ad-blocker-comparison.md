@@ -16,7 +16,7 @@ excerpt: "国内 5 个主流网站实测拦截率对比。uBlock Origin、AdGuar
 card_icon: "🛡️"
 card_label: "广告拦截对比"
 card_gradient: "#2e1a1a,#0d1117"
-images: ["/images/plugins/chrome-ad-blocker/cover.jpg"]
+images: ["/images/plugins/chrome-ad-blocker-comparison/cover.jpg"]
 keywords: "Chrome广告拦截,uBlock Origin,AdGuard,Chrome去广告,广告拦截插件对比"
 ---
 
