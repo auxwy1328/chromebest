@@ -1,0 +1,42 @@
+baseURL = 'https://chromebest.com/'
+languageCode = 'zh-CN'
+defaultContentLanguage = 'zh'
+title = 'ChromeBest'
+[pagination]
+pagerSize = 20
+
+[params]
+  title = 'ChromeBest'
+  description = '提供谷歌浏览器官方最新版免费下载，纯净Chrome安装包、电脑版/完整版安装教程，含浏览器优化、常用插件推荐，一键快速安装Chrome。'
+  ogimage = '/images/og-default.jpg'
+  keywords = ['谷歌浏览器','Chrome浏览器','Chrome下载','Chrome安装包','Chrome教程','Chrome插件','Chrome优化']
+  download_url = 'https://www.google.com/chrome/'
+
+[taxonomies]
+  category = 'categories'
+  tag = 'tags'
+
+[permalinks]
+  posts = '/:slug/'
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+  [markup.highlight]
+    style = 'monokai'
+
+[outputs]
+  home = ['HTML']
+  section = ['HTML']
+  page = ['HTML']
+  term = ['HTML']
+  taxonomy = ['HTML']
+
+[minify]
+  minifyHTML = false
+
+[sitemap]
+  changefreq = 'weekly'
+  priority = 0.8
+  filename = 'sitemap.xml'
