@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="msvalidate.01" content="58B8BC3B56964E4B68D451072143B15E">
+<title>Chrome 同步设置完整指南：多设备同步书签密码历史记录 - ChromeBest</title>
+
+<meta name="description" content="Chrome 浏览器同步设置的完整教程，包括多设备书签密码同步、国内网络同步失败的解决方法、同步冲突处理和隐私安全建议。">
+
+<meta name="keywords" content="[Chrome同步,Chrome账号,Chrome多设备同步,Chrome书签同步,Chrome密码同步,Chrome同步失败]">
+<link rel="canonical" href="https://chromebest.com/tips/chrome-sync-settings-guide/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Chrome 同步设置完整指南：多设备同步书签密码历史记录">
+<meta property="og:description" content="很多人买了新电脑或新手机后，发现 Chrome 里什么都没有——书签没了、密码没了、常用网站都要重新找。其实 Chrome 自带跨设备同步功能，只要登录同一个 Google 账号，所有数据都能自动同步。
+但问题是，在国内环境下，Chrome 同步经常出各种状况：连不上、数据对不上、同步了一半卡住。这篇文章把 …">
+<meta property="og:url" content="https://chromebest.com/tips/chrome-sync-settings-guide/">
+<meta property="og:site_name" content="ChromeBest">
+<meta property="og:image" content="https://chromebest.com/images/tips/chrome-sync-settings-guide/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" href="/css/style.css">
+
+</head>
+<body>
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">
+      <div class="nav-logo-icon"><span>C</span></div>
+      <b>ChromeBest</b>
+    </a>
+    <ul class="nav-links">
+      <li><a href="/">首页</a></li>
+      <li><a href="/categories/下载安装">下载安装</a></li>
+      <li><a href="/categories/使用技巧">技巧教程</a></li>
+      <li><a href="/categories/插件推荐">插件推荐</a></li>
+      <li><a href="/categories/对比评测">对比评测</a></li>
+      <li><a href="/categories/性能优化">性能优化</a></li>
+    </ul>
+    <a href="https://www.google.com/chrome/" class="nav-dl" rel="nofollow">⬇ 下载 Chrome</a>
+  </div>
+</nav>
+
+
+<div class="layout">
+  
+  <article class="art-page">
+    <nav class="breadcrumb">
+      <a href="/">首页</a>
+      <span class="breadcrumb-sep">›</span>
+      <a href="/tips">tips</a>
+      <span class="breadcrumb-sep">›</span>
+      <span class="breadcrumb-current">Chrome 同步设置完整指南：多设备同步书签密码历史记录</span>
+    </nav>
+    <span class="art-tag feat-tag blue">☁️ 同步指南</span>
+    <h1>Chrome 同步设置完整指南：多设备同步书签密码历史记录</h1>
+    <div class="meta">
+      <span>📅 2026-05-06</span>
+      <span>⏱ 11 分钟阅读</span>
+      <span>📷 10 张真实截图</span>
+      
+    </div>
+
+    
+    <div class="cover">
+      <img src="/images/tips/chrome-sync-settings-guide/cover.jpg" alt="Chrome 同步设置完整指南：多设备同步书签密码历史记录">
+    </div>
+    
+
+    
+    
+    <div class="toc">
+      <h3>📑 目录</h3>
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#同步前需要准备什么">同步前需要准备什么</a></li>
+    <li><a href="#电脑端开启同步">电脑端开启同步</a></li>
+    <li><a href="#手机端开启同步">手机端开启同步</a></li>
+    <li><a href="#国内网络同步失败的解决方法">国内网络同步失败的解决方法</a></li>
+    <li><a href="#选择性同步建议">选择性同步建议</a></li>
+    <li><a href="#同步冲突怎么处理">同步冲突怎么处理</a></li>
+    <li><a href="#同步安全和隐私">同步安全和隐私</a></li>
+    <li><a href="#同步常见问题">同步常见问题</a>
+      <ul>
+        <li><a href="#chrome-同步需要多长时间">Chrome 同步需要多长时间？</a></li>
+        <li><a href="#换了-google-账号旧数据还在吗">换了 Google 账号旧数据还在吗？</a></li>
+        <li><a href="#同步会消耗很多流量吗">同步会消耗很多流量吗？</a></li>
+        <li><a href="#删除某个书签后同步会删除其他设备的吗">删除某个书签后同步会删除其他设备的吗？</a></li>
+        <li><a href="#chrome-同步和-icloudfirefox-同步能互通吗">Chrome 同步和 iCloud/Firefox 同步能互通吗？</a></li>
+        <li><a href="#chrome-同步关闭后数据会丢失吗">Chrome 同步关闭后数据会丢失吗？</a></li>
+        <li><a href="#为什么同步的书签和本地不一致">为什么同步的书签和本地不一致？</a></li>
+        <li><a href="#公司限制使用-chrome-同步怎么办">公司限制使用 Chrome 同步怎么办？</a></li>
+      </ul>
+    </li>
+    <li><a href="#一个容易被忽略的细节chrome-个人资料">一个容易被忽略的细节：Chrome 个人资料</a></li>
+  </ul>
+</nav>
+    </div>
+    
+
+    
+    <div class="art-body">
+      <p>很多人买了新电脑或新手机后，发现 Chrome 里什么都没有——书签没了、密码没了、常用网站都要重新找。其实 Chrome 自带跨设备同步功能，只要登录同一个 Google 账号，所有数据都能自动同步。</p>
+<p>但问题是，在国内环境下，Chrome 同步经常出各种状况：连不上、数据对不上、同步了一半卡住。这篇文章把 Chrome 同步从头到尾讲清楚，包括国内用户最常遇到的同步失败问题。</p>
+<h2 id="同步前需要准备什么">同步前需要准备什么</h2>
+<p>要使用 Chrome 同步，你只需要一个 Google 账号。没有的话，去 Google 账号注册页面创建一个，不需要手机号也能注册（建议使用 Gmail 邮箱）。</p>
+<p>一个 Google 账号可以在以下设备之间同步 Chrome 数据：</p>
+<ul>
+<li>Windows 电脑（Chrome 桌面版）</li>
+<li>macOS 电脑（Chrome 桌面版）</li>
+<li>Linux 电脑（Chrome 桌面版）</li>
+<li>Android 手机（Chrome 移动版）</li>
+<li>iPhone / iPad（Chrome iOS 版）</li>
+</ul>
+<p>所有设备登录同一个 Google 账号即可。不同账号之间的数据是完全隔离的。</p>
+<h2 id="电脑端开启同步">电脑端开启同步</h2>
+<ol>
+<li>打开 Chrome，点击右上角的头像图标（未登录时显示为字母图标）</li>
+<li>点击&quot;开启同步&quot;，登录你的 Google 账号</li>
+<li>登录后 Chrome 会弹出同步确认窗口，你可以选择同步哪些数据</li>
+</ol>
+<p>Chrome 支持同步的数据类型包括：</p>
+<ul>
+<li><strong>书签</strong>：你保存的所有网页书签和书签文件夹</li>
+<li><strong>密码</strong>：Chrome 密码管理器中保存的所有账号密码</li>
+<li><strong>历史记录</strong>：浏览历史（可以在其他设备上继续之前没看完的网页）</li>
+<li><strong>自动填充信息</strong>：地址、电话、邮箱等表单自动填充数据</li>
+<li><strong>支付方式</strong>：保存的信用卡和付款信息</li>
+<li><strong>扩展和主题</strong>：安装的 Chrome 扩展程序和浏览器主题</li>
+<li><strong>打开的标签页</strong>：其他设备上正在打开的标签页（方便切换设备继续浏览）</li>
+<li><strong>设置和偏好</strong>：Chrome 的各种设置项</li>
+</ul>
+<p>建议：如果你只在电脑和手机之间同步，关闭&quot;打开的标签页&quot;同步，因为手机和电脑的标签使用习惯差异很大，同步反而会让标签页变得混乱。</p>
+<h2 id="手机端开启同步">手机端开启同步</h2>
+<p><img src="/images/tips/chrome-sync-settings-guide/body1.jpg" alt="Chrome同步设置选项"></p>
+<p><strong>Android 手机：</strong></p>
+<ol>
+<li>打开 Chrome，点击右上角三个点</li>
+<li>点击&quot;设置&quot; → &ldquo;同步&rdquo;</li>
+<li>登录 Google 账号，选择要同步的数据类型</li>
+<li>Android 系统级别的 Google 账号会自动关联 Chrome，通常不需要单独登录</li>
+</ol>
+<p><strong>iPhone / iPad：</strong></p>
+<ol>
+<li>打开 Chrome，点击右下角三个点</li>
+<li>点击&quot;设置&quot; → &ldquo;登录并同步&rdquo;</li>
+<li>登录 Google 账号</li>
+<li>iOS 上的 Chrome 同步和 Android 完全一致，没有功能差异</li>
+</ol>
+<h2 id="国内网络同步失败的解决方法">国内网络同步失败的解决方法</h2>
+<p>这是国内 Chrome 用户最头疼的问题。Chrome 同步依赖 Google 服务器，而 Google 服务在国内无法直接访问。</p>
+<p><strong>症状：</strong> 开启同步后一直显示&quot;正在同步&hellip;&ldquo;或&quot;同步已暂停&rdquo;，书签和密码没有更新。</p>
+<p><strong>原因：</strong> 你的网络环境无法连接到 Google 的同步服务器。</p>
+<p><strong>解决方案：</strong></p>
+<ol>
+<li>
+<p><strong>系统代理方案（推荐）</strong></p>
+<ul>
+<li>开启全局代理或规则代理，确保 *.googleapis.com 域名走代理</li>
+<li>Chrome 的同步流量走的是 Windows 系统代理设置，不是 Chrome 自带的代理设置</li>
+<li>确保你的代理工具支持系统代理模式（大部分主流工具都支持）</li>
+</ul>
+</li>
+<li>
+<p><strong>Chrome 内置代理设置</strong></p>
+<ul>
+<li>Chrome 设置 → 系统 → 打开&quot;使用代理服务器&quot;</li>
+<li>这个选项调用的也是 Windows 系统代理，效果和方法 1 相同</li>
+</ul>
+</li>
+<li>
+<p><strong>仅同步书签（低带宽方案）</strong></p>
+<ul>
+<li>如果代理不稳定，可以只开启书签同步，关闭历史记录和标签页同步</li>
+<li>书签数据量小，对网络要求低，间歇性连接也能同步成功</li>
+<li>在同步设置里取消勾选不需要的数据类型即可</li>
+</ul>
+</li>
+</ol>
+<h2 id="选择性同步建议">选择性同步建议</h2>
+<p><img src="/images/tips/chrome-sync-settings-guide/body2.jpg" alt="Chrome多设备同步示意"></p>
+<p>不是所有数据都值得同步。根据我的使用经验，不同数据类型的同步价值差异很大：</p>
+<p><strong>强烈建议同步：</strong></p>
+<ul>
+<li><strong>密码</strong>：换设备不用重新输入密码，这是同步功能最大的价值。不用担心安全问题，Chrome 密码管理器使用端到端加密</li>
+<li><strong>书签</strong>：换电脑后常用网站一键恢复，省得重新收藏</li>
+</ul>
+<p><strong>按需同步：</strong></p>
+<ul>
+<li><strong>自动填充信息</strong>：如果你经常在不同设备上填写表单，开着挺方便</li>
+<li><strong>扩展</strong>：在多台电脑之间同步扩展很实用，但手机端用不到</li>
+</ul>
+<p><strong>建议关闭：</strong></p>
+<ul>
+<li><strong>打开的标签页</strong>：同步标签页会让其他设备的标签栏变得很乱，除非你有明确需要</li>
+<li><strong>历史记录</strong>：历史记录数据量大，同步时占用带宽多，且实际使用频率低</li>
+</ul>
+<p>我自己的配置是只同步&quot;密码 + 书签 + 自动填充信息&quot;三项，其余全部关闭。用了半年多，没有遇到任何问题，而且同步速度快、流量消耗小。这个配置适合大多数人的使用场景。</p>
+<h2 id="同步冲突怎么处理">同步冲突怎么处理</h2>
+<p>当两台设备同时修改同一条数据时（比如两台电脑同时编辑了同一个书签），Chrome 会产生同步冲突。</p>
+<p>Chrome 的处理方式是自动合并——两台设备的修改都会保留，不会覆盖。但书签可能会出现重复（两个同名书签指向不同 URL），需要手动清理。</p>
+<p>实际上我在日常使用中很少遇到同步冲突。Chrome 的同步频率很高（几秒到几十秒一次），只有在两台设备几乎同时修改同一条数据时才会冲突。正常使用中，这个概率非常低。</p>
+<p><strong>减少冲突的方法：</strong></p>
+<ol>
+<li>不同设备之间使用不同的书签文件夹结构，减少编辑冲突的概率</li>
+<li>在一台设备上集中整理书签，不要同时在多台设备上删改</li>
+<li>如果发现书签大量重复，使用 Chrome 的书签管理器（chrome://bookmarks/）批量去重</li>
+</ol>
+<h2 id="同步安全和隐私">同步安全和隐私</h2>
+<p>关于 Chrome 同步的隐私问题，说几个关键点：</p>
+<ol>
+<li><strong>密码是加密同步的</strong>：Chrome 密码管理器使用 Google 账号密码作为加密密钥，即使 Google 服务器被攻破，攻击者也无法读取你的密码</li>
+<li><strong>书签和历史记录是明文同步的</strong>：Google 可以看到你保存的书签和浏览历史（这是隐私政策里明确写着的）</li>
+<li><strong>如果你介意隐私</strong>：不要同步历史记录，只同步密码和书签。或者使用 Chrome 的加密同步功能（需要设置同步密码短语）</li>
+<li><strong>公司电脑慎用同步</strong>：如果电脑由公司管理，IT 部门可能可以查看你的同步数据。公司电脑上建议不同步个人密码</li>
+</ol>
+<h2 id="同步常见问题">同步常见问题</h2>
+<p><img src="/images/tips/chrome-sync-settings-guide/body3.jpg" alt="Chrome个人资料切换"></p>
+<p>如果你在同步过程中遇到任何问题，建议先看这部分的 FAQ，大概率能找到答案。如果不在其中，可以留言或搜索最新的解决方案。</p>
+<h3 id="chrome-同步需要多长时间">Chrome 同步需要多长时间？</h3>
+<p>首次完整同步可能需要 5-30 分钟，取决于你的数据量（书签数量、历史记录长度、密码数量）。后续的增量同步通常在几秒到几分钟内完成。如果同步卡在某个百分比不动，多半是网络问题。</p>
+<h3 id="换了-google-账号旧数据还在吗">换了 Google 账号旧数据还在吗？</h3>
+<p>在的。Chrome 同步是把数据上传到 Google 账号对应的云端空间，本地数据不会因为切换账号而消失。你可以在 Chrome 设置里看到多个账号的数据。</p>
+<h3 id="同步会消耗很多流量吗">同步会消耗很多流量吗？</h3>
+<p>首次同步会消耗一定流量（取决于数据量），但增量同步的流量很小。如果你用手机流量上网，首次同步时建议连接 WiFi。</p>
+<h3 id="删除某个书签后同步会删除其他设备的吗">删除某个书签后同步会删除其他设备的吗？</h3>
+<p>会。同步是双向的，任何设备上的修改都会同步到所有设备。删除书签、清除历史记录等操作都会跨设备生效，操作前请确认。</p>
+<h3 id="chrome-同步和-icloudfirefox-同步能互通吗">Chrome 同步和 iCloud/Firefox 同步能互通吗？</h3>
+<p>不能。Chrome 同步只在不同设备的 Chrome 之间工作，不能和 Safari（iCloud 同步）或 Firefox 共享数据。如果你需要在浏览器之间迁移书签，可以导出为 HTML 文件再导入。</p>
+<h3 id="chrome-同步关闭后数据会丢失吗">Chrome 同步关闭后数据会丢失吗？</h3>
+<p>不会。关闭同步只是停止数据在设备之间的同步，已经同步的数据仍然保留在每台设备的本地。云端的数据也会保留，随时可以重新开启同步。</p>
+<h3 id="为什么同步的书签和本地不一致">为什么同步的书签和本地不一致？</h3>
+<p>可能的原因有三个：同步未完成（网络问题）、使用了不同的 Google 账号、或者其中一台设备上的 Chrome 数据文件损坏。先确认账号一致，然后在 chrome://settings/syncSetup 查看同步状态。</p>
+<h3 id="公司限制使用-chrome-同步怎么办">公司限制使用 Chrome 同步怎么办？</h3>
+<p>部分企业会通过组策略禁止 Chrome 同步。如果是公司电脑，这个限制无法绕过。建议个人数据使用个人设备同步，公司电脑上只用 Chrome 浏览，不开同步功能。</p>
+<h2 id="一个容易被忽略的细节chrome-个人资料">一个容易被忽略的细节：Chrome 个人资料</h2>
+<p>Chrome 支持多个个人资料（Profile），类似于&quot;多用户&quot;功能。每个个人资料有独立的书签、密码、历史记录，登录不同的 Google 账号。</p>
+<p>如果你工作和个人都用 Chrome，建议创建两个个人资料：</p>
+<ol>
+<li>点击 Chrome 右上角头像 → 点击&quot;添加&quot;创建新个人资料</li>
+<li>工作账号登录工作 Google 账号，个人账号登录个人 Google 账号</li>
+<li>两个个人资料的数据完全隔离，互不影响</li>
+</ol>
+<p>这样你可以只在个人资料里开启同步，工作资料不同步个人数据，既方便又安全。</p>
+<p>创建个人资料后，Chrome 会为每个资料创建独立的图标快捷方式，桌面上的 Chrome 图标右下角会有小头像区分，很容易辨认。</p>
+<p>这个小功能很多人不知道，但一旦用了就离不开了——再也不用在工作和个人书签之间来回翻找了。</p>
+
+    </div>
+
+    
+    
+    
+    <div style="max-width:1200px;margin:0 auto;padding:0 24px 48px">
+      <div style="padding-top:32px;border-top:1px solid var(--border)">
+        <div class="sec-head">
+          <div>
+            <div class="sec-tag">📖 相关阅读</div>
+            <div class="sec-title">继续阅读</div>
+          </div>
+        </div>
+        <div class="card-grid">
+          
+          <a href="https://chromebest.com/tips/chrome-clear-cache/" class="card">
+            
+            <div class="card-img">
+              <img src="/images/tips/chrome-clear-cache/cover.jpg" alt="Chrome 缓存怎么清理？手动&#43;自动&#43;只清指定网站 3 种方法详解 2026" loading="lazy">
+            </div>
+            
+            <div class="card-body">
+              <span class="art-row-tag feat-tag blue">技巧</span>
+              <h3>Chrome 缓存怎么清理？手动&#43;自动&#43;只清指定网站 3 种方法详解 2026</h3>
+              <p><p>上周帮同事排查一个网页显示错乱的问题——他坚持说自己没改过任何设置，结果一看是缓存里存了旧版 CSS，新代码上线后浏览器还在用旧样式。清完缓存立刻好了。 …</p></p>
+            </div>
+          </a>
+          
+          <a href="https://chromebest.com/tips/chrome-extensions-not-working/" class="card">
+            
+            <div class="card-img">
+              <img src="/images/tips/chrome-extensions-not-working/cover.jpg" alt="Chrome 扩展程序打不开怎么办？5 种故障逐一排查修复 2026" loading="lazy">
+            </div>
+            
+            <div class="card-body">
+              <span class="art-row-tag feat-tag blue">技巧</span>
+              <h3>Chrome 扩展程序打不开怎么办？5 种故障逐一排查修复 2026</h3>
+              <p><p>前天装了个新扩展，装完发现其他扩展全变灰了——图标在但点不动，刷新也没用。折腾半小时才发现是新扩展和旧版 uBlock Origin 冲突了，删掉重装最新版就好 …</p></p>
+            </div>
+          </a>
+          
+          <a href="https://chromebest.com/tips/chrome-set-default-browser-guide/" class="card">
+            
+            <div class="card-img">
+              <img src="/images/tips/chrome-set-default-browser-guide/cover.jpg" alt="Chrome 设为默认浏览器完整指南 &#43; 被篡改后的修复方法" loading="lazy">
+            </div>
+            
+            <div class="card-body">
+              <span class="art-row-tag feat-tag green">设置指南</span>
+              <h3>Chrome 设为默认浏览器完整指南 &#43; 被篡改后的修复方法</h3>
+              <p>Chrome 总是被改成其他浏览器？这篇教你正确设置默认浏览器，以及被篡改后怎么修回来。</p>
+            </div>
+          </a>
+          
+        </div>
+      </div>
+    </div>
+    
+  </article>
+
+  
+  <aside class="sidebar">
+    
+    <div class="sb-search">
+      <svg class="sb-search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+      <input type="text" class="sb-search-input" placeholder="搜索文章...">
+      <kbd class="sb-search-kbd">/</kbd>
+    </div>
+
+    
+    <div class="cta-banner" style="padding:24px">
+      <h2 style="font-size:18px;margin-bottom:6px">下载 Chrome</h2>
+      <p style="font-size:13px">全球使用人数最多的浏览器</p>
+      <a href="https://www.google.com/chrome/" class="btn-dl" style="padding:10px 20px;font-size:14px;width:100%;justify-content:center;margin-top:12px" rel="nofollow">⬇ 官方下载</a>
+    </div>
+
+    
+    
+    
+    <div class="sb-box">
+      <h3>📖 相关文章</h3>
+      <div style="display:flex;flex-direction:column;gap:12px">
+        
+        <a href="https://chromebest.com/tips/chrome-secure-dns-setup/" style="font-size:13px;line-height:1.5;color:var(--txt2)">Chrome 安全 DNS 设置教程：提升浏览安全性和解析速度</a>
+        
+        <a href="https://chromebest.com/compare/chrome-vs-edge-2026/" style="font-size:13px;line-height:1.5;color:var(--txt2)">Chrome 和 Edge 到底选哪个？2026 年最新深度对比</a>
+        
+        <a href="https://chromebest.com/plugins/chrome-screenshot-extensions/" style="font-size:13px;line-height:1.5;color:var(--txt2)">Chrome 截图插件推荐：5 款全页截图工具实测对比（含免费方案）</a>
+        
+        <a href="https://chromebest.com/tips/chrome-privacy-settings-guide/" style="font-size:13px;line-height:1.5;color:var(--txt2)">Chrome 隐私设置完全指南：9 个必须改的安全选项（附截图说明）</a>
+        
+        <a href="https://chromebest.com/compare/chrome-vs-edge-vs-firefox-2026/" style="font-size:13px;line-height:1.5;color:var(--txt2)">Chrome vs Edge vs Firefox 2026 深度对比：国内网站实测数据</a>
+        
+      </div>
+    </div>
+    
+
+    
+    
+    <div class="sb-box">
+      <h3>🏷 相关标签</h3>
+      <div class="tags">
+        
+        <a href="/tags/chrome%E5%90%8C%E6%AD%A5" class="tag">Chrome同步</a>
+        
+        <a href="/tags/chrome%E8%B4%A6%E5%8F%B7" class="tag">Chrome账号</a>
+        
+        <a href="/tags/chrome%E5%A4%9A%E8%AE%BE%E5%A4%87" class="tag">Chrome多设备</a>
+        
+        <a href="/tags/chrome%E4%B9%A6%E7%AD%BE%E5%90%8C%E6%AD%A5" class="tag">Chrome书签同步</a>
+        
+        <a href="/tags/chrome%E5%AF%86%E7%A0%81%E5%90%8C%E6%AD%A5" class="tag">Chrome密码同步</a>
+        
+      </div>
+    </div>
+    
+  </aside>
+</div>
+
+<footer class="foot">
+  <div class="foot-inner">
+    <div class="foot-links">
+      <a href="/">首页</a>
+      <a href="/categories/下载安装">下载安装</a>
+      <a href="/categories/使用技巧">技巧教程</a>
+      <a href="/categories/插件推荐">插件推荐</a>
+      <a href="/categories/对比评测">对比评测</a>
+      <a href="/about/">关于我们</a>
+    </div>
+    <div class="foot-copy">© 2026 ChromeBest · 谷歌浏览器下载与使用教程 · 本站与 Google 无关</div>
+  </div>
+</footer>
+
+</body>
+</html>
