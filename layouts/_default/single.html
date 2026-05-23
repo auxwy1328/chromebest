@@ -70,7 +70,7 @@
             <div class="card-body">
               <span class="art-row-tag feat-tag {{ .Params.tag_color | default "blue" }}">{{ .Params.tag_label | default "教程" }}</span>
               <h3>{{ .Title }}</h3>
-              <p>{{ .Params.excerpt | default (.Summary | truncate 80) }}</p>
+              <p>{{ .Params.excerpt | plainify | default (.Summary | plainify | truncate 80) }}</p>
             </div>
           </a>
           {{ end }}
