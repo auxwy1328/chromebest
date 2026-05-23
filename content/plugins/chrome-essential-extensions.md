@@ -18,6 +18,18 @@ card_gradient: "#221a2e,#0d1117"
 images: ["/images/plugins/chrome-essential-extensions/cover.jpg"]
 og_image: "/images/plugins/chrome-essential-extensions/og.jpg"
 keywords: "Chrome插件推荐,Chrome扩展,Chrome必装,Chrome广告拦截,Chrome效率插件,uBlock Origin"
+faq:
+  - q: "Chrome 必装插件推荐 2026：10 款提高效率的扩展实测（按场景分类）需要付费吗？"
+    a: "基础功能免费使用，部分高级功能可能需要付费。具体差异请参考本文的功能对比部分。"
+  - q: "新手适合用这个吗？"
+    a: "适合，操作界面设计直观。建议先从基础功能入手，熟悉后再探索进阶功能。"
+  - q: "使用Chrome安全吗？"
+    a: "正规渠道获取的软件是安全的。建议始终从官方下载，避免第三方修改版，并定期更新到最新版本。"
+  - q: "支持哪些操作系统？"
+    a: "通常支持 Windows 10/11，部分也支持 macOS 和 Linux。具体系统要求请查看本文的安装说明部分。"
+  - q: "如何保持软件最新版本？"
+    a: "大多数软件支持自动更新检查。也可以定期访问官网下载最新版本，或开启软件内的自动更新选项。"
+
 ---
 
 网上"Chrome 插件推荐"的文章，动不动就列 30-50 个。问题是你看完之后依然不知道该装哪个——选择太多等于没有选择。

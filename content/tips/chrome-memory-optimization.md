@@ -19,6 +19,18 @@ card_gradient: "#2a1a22,#0d1117"
 images: ["/images/tips/chrome-memory-optimization/cover.jpg"]
 og_image: "/images/tips/chrome-memory-optimization/og.jpg"
 keywords: "Chrome内存优化,Chrome占内存高,Chrome性能优化,Chrome标签页管理,Chrome省内存技巧"
+faq:
+  - q: "Chrome 内存占用优化：10 种方法实测，内存从 2.1GB 降到 1.3GB需要付费吗？"
+    a: "基础功能免费使用，部分高级功能可能需要付费。具体差异请参考本文的功能对比部分。"
+  - q: "新手适合用这个吗？"
+    a: "适合，操作界面设计直观。建议先从基础功能入手，熟悉后再探索进阶功能。"
+  - q: "使用Chrome安全吗？"
+    a: "正规渠道获取的软件是安全的。建议始终从官方下载，避免第三方修改版，并定期更新到最新版本。"
+  - q: "支持哪些操作系统？"
+    a: "通常支持 Windows 10/11，部分也支持 macOS 和 Linux。具体系统要求请查看本文的安装说明部分。"
+  - q: "如何保持软件最新版本？"
+    a: "大多数软件支持自动更新检查。也可以定期访问官网下载最新版本，或开启软件内的自动更新选项。"
+
 ---
 
 Chrome 占内存高这件事，被吐槽了十多年了。网上能找到几十篇"Chrome 内存优化教程"，但几乎每篇都是同一个模式：列出 10 种方法，说"试试这个有用"，然后就没了。

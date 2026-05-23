@@ -18,6 +18,18 @@ card_gradient: "#1a2a1a,#0d1117"
 images: ["/images/tips/chrome-mobile-tips/cover.jpg"]
 og_image: "/images/tips/chrome-mobile-tips/og.jpg"
 keywords: "Chrome手机版,Chrome安卓,Chrome iOS,Chrome移动端,Chrome手机技巧"
+faq:
+  - q: "新手也能跟着操作吗？"
+    a: "可以，本文每一步都有详细说明。遇到不确定的地方，建议先阅读完整步骤再动手操作。"
+  - q: "操作过程中出错怎么办？"
+    a: "先检查是否严格按照步骤操作，特别注意版本号和设置项。常见错误在文末的常见问题部分有解答。"
+  - q: "使用Chrome安全吗？"
+    a: "正规渠道获取的软件是安全的。建议始终从官方下载，避免第三方修改版，并定期更新到最新版本。"
+  - q: "支持哪些操作系统？"
+    a: "通常支持 Windows 10/11，部分也支持 macOS 和 Linux。具体系统要求请查看本文的安装说明部分。"
+  - q: "如何保持软件最新版本？"
+    a: "大多数软件支持自动更新检查。也可以定期访问官网下载最新版本，或开启软件内的自动更新选项。"
+
 ---
 
 Chrome 手机版的用户量超过桌面版——全球有超过 30 亿人用手机 Chrome 上网。但大部分手机用户只用 Chrome 做最基本的浏览操作，忽略了它很多实用功能。

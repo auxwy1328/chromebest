@@ -19,6 +19,18 @@ card_gradient: "#1a2e22,#0d1117"
 images: ["/images/plugins/chrome-translation-extension-comparison/cover.jpg"]
 og_image: "/images/plugins/chrome-translation-extension-comparison/og.jpg"
 keywords: "Chrome翻译插件,沉浸式翻译,DeepL翻译,Google翻译,划词翻译,翻译插件对比"
+faq:
+  - q: "哪个更适合普通用户？"
+    a: "普通用户建议选择操作简单、界面友好的方案。如果你需要具体推荐，本文对比部分有详细的适用场景分析。"
+  - q: "免费版和付费版差距大吗？"
+    a: "核心功能基本一致，付费版主要多了高级功能和优先技术支持。个人用途免费版完全够用。"
+  - q: "使用5款Chrome翻译插件实测对比：沉浸式翻译、DeepL、Google翻译谁准确率最高安全吗？"
+    a: "正规渠道获取的软件是安全的。建议始终从官方下载，避免第三方修改版，并定期更新到最新版本。"
+  - q: "支持哪些操作系统？"
+    a: "通常支持 Windows 10/11，部分也支持 macOS 和 Linux。具体系统要求请查看本文的安装说明部分。"
+  - q: "如何保持软件最新版本？"
+    a: "大多数软件支持自动更新检查。也可以定期访问官网下载最新版本，或开启软件内的自动更新选项。"
+
 ---
 
 网上搜"Chrome 翻译插件推荐"，能找到几十篇文章。但大部分要么是罗列一堆插件不给数据，要么给的数据一看就是编的（"准确率98%""100%正确"这种话谁信？）。

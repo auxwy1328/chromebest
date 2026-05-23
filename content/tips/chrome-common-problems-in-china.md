@@ -18,6 +18,18 @@ card_gradient: "#2a2a1a,#0d1117"
 images: ["/images/tips/chrome-common-problems-in-china/cover.jpg"]
 og_image: "/images/tips/chrome-common-problems-in-china/og.jpg"
 keywords: "Chrome国内使用,Chrome同步失败,Chrome扩展安装,Chrome页面慢,Chrome常见问题"
+faq:
+  - q: "按照步骤操作后问题仍然存在怎么办？"
+    a: "尝试重启设备后再次操作，确保软件为最新版本。如问题持续，建议卸载重装或联系官方技术支持。"
+  - q: "这个问题是什么原因导致的？"
+    a: "常见原因包括软件版本过旧、网络连接异常、系统兼容性问题等。本文详细分析了每种可能的原因和对应解决方案。"
+  - q: "使用Chrome安全吗？"
+    a: "正规渠道获取的软件是安全的。建议始终从官方下载，避免第三方修改版，并定期更新到最新版本。"
+  - q: "支持哪些操作系统？"
+    a: "通常支持 Windows 10/11，部分也支持 macOS 和 Linux。具体系统要求请查看本文的安装说明部分。"
+  - q: "如何保持软件最新版本？"
+    a: "大多数软件支持自动更新检查。也可以定期访问官网下载最新版本，或开启软件内的自动更新选项。"
+
 ---
 
 Chrome 在国内使用，遇到问题是迟早的事。不是 Chrome 不好用，而是 Google 的很多服务在国内无法直接访问，导致同步、扩展安装、默认搜索等功能都会受到影响。

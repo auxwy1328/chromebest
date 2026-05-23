@@ -18,6 +18,18 @@ card_gradient: "#2a2210,#0d1117"
 images: ["/images/download/chrome-offline-installer-download/cover.jpg"]
 og_image: "/images/download/chrome-offline-installer-download/og.jpg"
 keywords: "Chrome下载,Chrome离线安装包,Chrome完整版,Chrome安装教程,Chrome官方下载"
+faq:
+  - q: "Chrome 离线安装包下载教程：官方完整版地址 + 安装步骤详解安全吗？"
+    a: "从官方渠道下载最安全。本站提供的下载链接均指向官方或可信来源，安装前建议核对文件数字签名。"
+  - q: "下载后安装失败怎么办？"
+    a: "检查安装包是否完整下载，关闭杀毒软件后重试，确保系统版本符合最低要求。如仍失败，尝试以管理员身份运行安装程序。"
+  - q: "使用Chrome安全吗？"
+    a: "正规渠道获取的软件是安全的。建议始终从官方下载，避免第三方修改版，并定期更新到最新版本。"
+  - q: "支持哪些操作系统？"
+    a: "通常支持 Windows 10/11，部分也支持 macOS 和 Linux。具体系统要求请查看本文的安装说明部分。"
+  - q: "如何保持软件最新版本？"
+    a: "大多数软件支持自动更新检查。也可以定期访问官网下载最新版本，或开启软件内的自动更新选项。"
+
 ---
 
 你在网上搜"Chrome 下载"，找到的链接十有八九是"在线安装包"——一个不到 1MB 的小文件，双击后才开始真正下载 Chrome。问题是在国内网络环境下，这个在线下载经常中断、失败或超时。

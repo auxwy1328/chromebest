@@ -18,6 +18,18 @@ card_gradient: "#1a2233,#0d1117"
 images: ["/images/tips/chrome-sync-settings-guide/cover.jpg"]
 og_image: "/images/tips/chrome-sync-settings-guide/og.jpg"
 keywords: "Chrome同步,Chrome账号,Chrome多设备同步,Chrome书签同步,Chrome密码同步,Chrome同步失败"
+faq:
+  - q: "Chrome 同步设置完整指南：多设备同步书签密码历史记录需要付费吗？"
+    a: "基础功能免费使用，部分高级功能可能需要付费。具体差异请参考本文的功能对比部分。"
+  - q: "新手适合用这个吗？"
+    a: "适合，操作界面设计直观。建议先从基础功能入手，熟悉后再探索进阶功能。"
+  - q: "使用Chrome安全吗？"
+    a: "正规渠道获取的软件是安全的。建议始终从官方下载，避免第三方修改版，并定期更新到最新版本。"
+  - q: "支持哪些操作系统？"
+    a: "通常支持 Windows 10/11，部分也支持 macOS 和 Linux。具体系统要求请查看本文的安装说明部分。"
+  - q: "如何保持软件最新版本？"
+    a: "大多数软件支持自动更新检查。也可以定期访问官网下载最新版本，或开启软件内的自动更新选项。"
+
 ---
 
 很多人买了新电脑或新手机后，发现 Chrome 里什么都没有——书签没了、密码没了、常用网站都要重新找。其实 Chrome 自带跨设备同步功能，只要登录同一个 Google 账号，所有数据都能自动同步。

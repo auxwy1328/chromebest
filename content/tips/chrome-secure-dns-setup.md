@@ -18,6 +18,18 @@ card_gradient: "#1a1a2e,#0d1117"
 images: ["/images/tips/chrome-secure-dns-setup/cover.jpg"]
 og_image: "/images/tips/chrome-secure-dns-setup/og.jpg"
 keywords: "Chrome安全DNS,Chrome DNS设置,DNS over HTTPS,Chrome DoH,加密DNS"
+faq:
+  - q: "新手也能跟着操作吗？"
+    a: "可以，本文每一步都有详细说明。遇到不确定的地方，建议先阅读完整步骤再动手操作。"
+  - q: "操作过程中出错怎么办？"
+    a: "先检查是否严格按照步骤操作，特别注意版本号和设置项。常见错误在文末的常见问题部分有解答。"
+  - q: "使用Chrome安全吗？"
+    a: "正规渠道获取的软件是安全的。建议始终从官方下载，避免第三方修改版，并定期更新到最新版本。"
+  - q: "支持哪些操作系统？"
+    a: "通常支持 Windows 10/11，部分也支持 macOS 和 Linux。具体系统要求请查看本文的安装说明部分。"
+  - q: "如何保持软件最新版本？"
+    a: "大多数软件支持自动更新检查。也可以定期访问官网下载最新版本，或开启软件内的自动更新选项。"
+
 ---
 
 Chrome 从版本 78 开始支持"安全 DNS"功能（也叫 DNS over HTTPS，简称 DoH）。这个功能推出后在隐私保护领域引起了很大讨论——支持者认为它增强了对 ISP 监控的防御，反对者认为它把 DNS 查询权从 ISP 转移到了少数几家大型科技公司手中。这个功能听起来很好——加密 DNS 查询防止被窃听——但对国内用户来说，开启它反而可能导致网页加载变慢。
