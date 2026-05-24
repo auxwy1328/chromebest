@@ -13,7 +13,7 @@
       <div class="art-row-left">
         <span class="art-row-tag feat-tag {{ .Params.tag_color | default "blue" }}">{{ .Params.tag_label | default .Section }}</span>
         <h4>{{ .Title }}</h4>
-        <div class="art-row-hint">{{ .Params.excerpt | default (.Summary | truncate 80) }}</div>
+        <div class="art-row-hint">{{ .Params.excerpt | default (.Summary | plainify | truncate 80) }}</div>
       </div>
       <div class="art-row-right"><span class="art-row-date">{{ .Date.Format "2006-01-02" }}</span></div>
     </a>

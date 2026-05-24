@@ -46,7 +46,7 @@
     <a href="{{ .Permalink }}" class="feat-card">
       <span class="feat-tag {{ .Params.tag_color | default "blue" }}">{{ .Params.tag_icon | default "📌" }} {{ .Params.tag_label | default "教程" }}</span>
       <h3>{{ .Title }}</h3>
-      <p>{{ .Params.excerpt | default (.Summary | truncate 120) }}</p>
+      <p>{{ .Params.excerpt | default (.Summary | plainify | truncate 120) }}</p>
       <div class="feat-meta">
         {{ if .Params.screenshots }}<span>📷 {{ .Params.screenshots }} 张截图</span>{{ end }}
         {{ if .Params.readtime }}<span>⏱ {{ .Params.readtime }} 分钟阅读</span>{{ end }}
@@ -73,7 +73,7 @@
       <div class="art-row-left">
         <span class="art-row-tag feat-tag {{ .Params.tag_color | default "blue" }}">{{ .Params.tag_label | default .Section }}</span>
         <h4>{{ .Title }}</h4>
-        <div class="art-row-hint">{{ .Params.excerpt | default (.Summary | truncate 80) }}</div>
+        <div class="art-row-hint">{{ .Params.excerpt | default (.Summary | plainify | truncate 80) }}</div>
       </div>
       <div class="art-row-right"><span class="art-row-date">{{ .Date.Format "2006-01-02" }}</span></div>
     </a>
@@ -106,7 +106,7 @@
       <div class="card-body">
         <span class="art-row-tag feat-tag {{ .Params.tag_color | default "blue" }}">{{ .Params.tag_label | default $catName }}</span>
         <h3>{{ .Title }}</h3>
-        <p>{{ .Params.excerpt | default (.Summary | truncate 80) }}</p>
+        <p>{{ .Params.excerpt | default (.Summary | plainify | truncate 80) }}</p>
       </div>
     </a>
     {{ end }}
