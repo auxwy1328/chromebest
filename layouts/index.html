@@ -29,7 +29,7 @@
 </div>
 
 {{/* FEATURED: pinned articles (params.pinned = true) */}}
-{{ $allPages := where .Site.RegularPages "Section" "in" (slice "posts" "compare" "plugins" "tips" "download") }}
+{{ $allPages := where .Site.RegularPages "Section" "in" (slice "posts" "compare" "plugins" "tips" "download") }}{{ $allPages = sort $allPages "Date" "desc" }}
 {{ $featured := where $allPages ".Params.pinned" "eq" true | first 4 }}
 
 {{ if $featured }}
