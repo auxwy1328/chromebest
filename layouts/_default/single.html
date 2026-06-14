@@ -70,7 +70,7 @@
             <div class="card-body">
               <span class="art-row-tag feat-tag {{ .Params.tag_color | default "blue" }}">{{ .Params.tag_label | default "教程" }}</span>
               <h3>{{ .Title }}</h3>
-              <p>{{ .Params.excerpt | default (.Summary | truncate 80) }}</p>
+              <p>{{ .Params.excerpt | plainify | default (.Summary | plainify | truncate 80) }}</p>
             </div>
           </a>
           {{ end }}
@@ -94,6 +94,17 @@
       <h2 style="font-size:18px;margin-bottom:6px">下载 Chrome</h2>
       <p style="font-size:13px">全球使用人数最多的浏览器</p>
       <a href="{{ site.Params.download_url }}" class="btn-dl" style="padding:10px 20px;font-size:14px;width:100%;justify-content:center;margin-top:12px" rel="nofollow">⬇ 官方下载</a>
+    </div>
+
+    <!-- All Categories -->
+    <div class="sb-box">
+      <h3>📂 全部分类</h3>
+      <div class="tags">
+        {{ $allCats := slice "入门教程" "故障排查" "进阶技巧" "数据管理" "版本资讯" "对比评测" }}
+        {{ range $allCats }}
+        <a href="/categories/{{ . | urlize }}" class="tag">{{ . }}</a>
+        {{ end }}
+      </div>
     </div>
 
     <!-- Related Articles -->

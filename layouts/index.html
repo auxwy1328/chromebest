@@ -22,14 +22,14 @@
 <!-- CATEGORY TABS -->
 <div class="cats">
   <a href="/" class="cat-btn active">全部</a>
-  {{ $cats := slice "下载安装" "使用技巧" "插件推荐" "对比评测" "性能优化" "隐私安全" }}
+  {{ $cats := slice "入门教程" "故障排查" "进阶技巧" "数据管理" "版本资讯" "对比评测" }}
   {{ range $cats }}
   <a href="/categories/{{ . | urlize }}" class="cat-btn">{{ . }}</a>
   {{ end }}
 </div>
 
 {{/* FEATURED: pinned articles (params.pinned = true) */}}
-{{ $allPages := where .Site.RegularPages "Section" "in" (slice "posts" "compare" "plugins" "tips" "download") }}
+{{ $allPages := where .Site.RegularPages "Section" "in" (slice "posts" "compare" "plugins" "tips" "download") }}{{ $allPages = sort $allPages "Date" "desc" }}
 {{ $featured := where $allPages ".Params.pinned" "eq" true | first 4 }}
 
 {{ if $featured }}
@@ -46,7 +46,7 @@
     <a href="{{ .Permalink }}" class="feat-card">
       <span class="feat-tag {{ .Params.tag_color | default "blue" }}">{{ .Params.tag_icon | default "📌" }} {{ .Params.tag_label | default "教程" }}</span>
       <h3>{{ .Title }}</h3>
-      <p>{{ .Params.excerpt | default (.Summary | truncate 120) }}</p>
+      <p>{{ .Params.excerpt | default (.Summary | plainify | truncate 120) }}</p>
       <div class="feat-meta">
         {{ if .Params.screenshots }}<span>📷 {{ .Params.screenshots }} 张截图</span>{{ end }}
         {{ if .Params.readtime }}<span>⏱ {{ .Params.readtime }} 分钟阅读</span>{{ end }}
@@ -73,7 +73,7 @@
       <div class="art-row-left">
         <span class="art-row-tag feat-tag {{ .Params.tag_color | default "blue" }}">{{ .Params.tag_label | default .Section }}</span>
         <h4>{{ .Title }}</h4>
-        <div class="art-row-hint">{{ .Params.excerpt | default (.Summary | truncate 80) }}</div>
+        <div class="art-row-hint">{{ .Params.excerpt | default (.Summary | plainify | truncate 80) }}</div>
       </div>
       <div class="art-row-right"><span class="art-row-date">{{ .Date.Format "2006-01-02" }}</span></div>
     </a>
@@ -82,7 +82,7 @@
 </div>
 
 {{/* CATEGORY SECTIONS: show 3 cards per category */}}
-{{ range $catName := (slice "使用技巧" "插件推荐" "性能优化") }}
+{{ range $catName := (slice "入门教程" "进阶技巧" "对比评测") }}
 {{ $catPages := where $allPages "Params.categories" "intersect" (slice $catName) | first 3 }}
 {{ if $catPages }}
 <div class="sec">
@@ -106,7 +106,7 @@
       <div class="card-body">
         <span class="art-row-tag feat-tag {{ .Params.tag_color | default "blue" }}">{{ .Params.tag_label | default $catName }}</span>
         <h3>{{ .Title }}</h3>
-        <p>{{ .Params.excerpt | default (.Summary | truncate 80) }}</p>
+        <p>{{ .Params.excerpt | default (.Summary | plainify | truncate 80) }}</p>
       </div>
     </a>
     {{ end }}

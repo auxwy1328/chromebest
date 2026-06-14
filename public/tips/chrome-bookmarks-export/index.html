@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="msvalidate.01" content="58B8BC3B56964E4B68D451072143B15E">
+<title>Chrome 书签导出、导入与迁移完整教程：换浏览器、换电脑都能搞定 - ChromeBest</title>
+
+<meta name="description" content="Chrome 书签导出、导入、迁移的完整教程：HTML/JSON 格式、多浏览器互导、Google 同步、换电脑书签迁移、书签丢失恢复方法。">
+
+<meta name="keywords" content="[谷歌浏览器 Chrome浏览器 Chrome下载 Chrome安装包 Chrome教程 Chrome插件 Chrome优化]">
+<link rel="canonical" href="https://chromebest.com/tips/chrome-bookmarks-export/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Chrome 书签导出、导入与迁移完整教程：换浏览器、换电脑都能搞定">
+<meta property="og:description" content="换电脑的时候，最怕的不是重装系统，而是发现存了五年的书签全没了。换浏览器也一样，收藏了几百个网站的快捷入口，换过去一个都找不到。这种焦虑不是杞人忧天——我见过太多人因为没做书签备份，换设备后花了整整一周重新整理。
+这篇文章把 Chrome 浏览器 的书签导出、导入、迁移和恢复全讲透了。不是那种只教你怎么点三个按钮的浅层 …">
+<meta property="og:url" content="https://chromebest.com/tips/chrome-bookmarks-export/">
+<meta property="og:site_name" content="ChromeBest">
+<meta property="og:image" content="https://chromebest.com/images/tips/chrome-bookmarks-export/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" href="/css/style.css">
+
+</head>
+<body>
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">
+      <div class="nav-logo-icon"><span>C</span></div>
+      <b>ChromeBest</b>
+    </a>
+    <ul class="nav-links">
+      <li><a href="/">首页</a></li>
+      <li><a href="/categories/入门教程">入门教程</a></li>
+      <li><a href="/categories/故障排查">故障排查</a></li>
+      <li><a href="/categories/进阶技巧">进阶技巧</a></li>
+      <li><a href="/categories/数据管理">数据管理</a></li>
+      <li><a href="/categories/版本资讯">版本资讯</a></li>
+      <li><a href="/categories/对比评测">对比评测</a></li>
+    </ul>
+    <a href="https://www.google.com/chrome/" class="nav-dl" rel="nofollow">⬇ 下载 Chrome</a>
+  </div>
+</nav>
+
+
+<div class="layout">
+  
+  <article class="art-page">
+    <nav class="breadcrumb">
+      <a href="/">首页</a>
+      <span class="breadcrumb-sep">›</span>
+      <a href="/tips">tips</a>
+      <span class="breadcrumb-sep">›</span>
+      <span class="breadcrumb-current">Chrome 书签导出、导入与迁移完整教程：换浏览器、换电脑都能搞定</span>
+    </nav>
+    <span class="art-tag feat-tag teal">📑 书签管理</span>
+    <h1>Chrome 书签导出、导入与迁移完整教程：换浏览器、换电脑都能搞定</h1>
+    <div class="meta">
+      <span>📅 2026-05-30</span>
+      <span>⏱ 15 分钟阅读</span>
+      <span>📷 6 张真实截图</span>
+      
+    </div>
+
+    
+    <div class="cover">
+      <img src="/images/tips/chrome-bookmarks-export/cover.jpg" alt="Chrome 书签导出、导入与迁移完整教程：换浏览器、换电脑都能搞定">
+    </div>
+    
+
+    
+    
+    <div class="toc">
+      <h3>📑 目录</h3>
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#先搞清楚chrome-书签存在哪">先搞清楚：Chrome 书签存在哪</a></li>
+    <li><a href="#chrome-书签的两种文件格式">Chrome 书签的两种文件格式</a>
+      <ul>
+        <li><a href="#html-格式跨浏览器迁移的通用语言">HTML 格式：跨浏览器迁移的通用语言</a></li>
+        <li><a href="#json-格式chrome-的内部数据结构">JSON 格式：Chrome 的内部数据结构</a></li>
+        <li><a href="#什么时候用哪种">什么时候用哪种？</a></li>
+      </ul>
+    </li>
+    <li><a href="#chrome-书签导出操作详解">Chrome 书签导出操作详解</a>
+      <ul>
+        <li><a href="#方法一通过书签管理器导出-html">方法一：通过书签管理器导出 HTML</a></li>
+        <li><a href="#方法二直接复制-bookmarks-json-文件">方法二：直接复制 Bookmarks JSON 文件</a></li>
+        <li><a href="#方法三使用-google-网页版查看书签">方法三：使用 Google 网页版查看书签</a></li>
+      </ul>
+    </li>
+    <li><a href="#chrome-书签导入操作详解">Chrome 书签导入操作详解</a>
+      <ul>
+        <li><a href="#导入-html-书签文件">导入 HTML 书签文件</a></li>
+        <li><a href="#从其他浏览器自动导入">从其他浏览器自动导入</a></li>
+      </ul>
+    </li>
+    <li><a href="#多浏览器互导完全方案">多浏览器互导完全方案</a>
+      <ul>
+        <li><a href="#chrome-到-firefox">Chrome 到 Firefox</a></li>
+        <li><a href="#chrome-到-edge">Chrome 到 Edge</a></li>
+        <li><a href="#chrome-到-safarimacos">Chrome 到 Safari（macOS）</a></li>
+        <li><a href="#chrome-到其他浏览器bravevivaldiopera">Chrome 到其他浏览器（Brave、Vivaldi、Opera）</a></li>
+      </ul>
+    </li>
+    <li><a href="#google-同步方便但有限制">Google 同步：方便但有限制</a>
+      <ul>
+        <li><a href="#同步的工作原理">同步的工作原理</a></li>
+        <li><a href="#同步的优势">同步的优势</a></li>
+        <li><a href="#同步的风险和限制">同步的风险和限制</a></li>
+        <li><a href="#同步-vs-手动导出怎么选">同步 vs 手动导出：怎么选？</a></li>
+      </ul>
+    </li>
+    <li><a href="#换电脑时的完整迁移流程">换电脑时的完整迁移流程</a>
+      <ul>
+        <li><a href="#第一步旧电脑上导出所有数据">第一步：旧电脑上导出所有数据</a></li>
+        <li><a href="#第二步新电脑上安装-chrome">第二步：新电脑上安装 Chrome</a></li>
+        <li><a href="#第三步验证和整理">第三步：验证和整理</a></li>
+        <li><a href="#不只是书签完整浏览器数据迁移">不只是书签：完整浏览器数据迁移</a></li>
+      </ul>
+    </li>
+    <li><a href="#书签整理技巧">书签整理技巧</a>
+      <ul>
+        <li><a href="#书签栏-vs-其他书签">书签栏 vs 其他书签</a></li>
+        <li><a href="#文件夹管理策略">文件夹管理策略</a></li>
+        <li><a href="#批量编辑书签">批量编辑书签</a></li>
+      </ul>
+    </li>
+    <li><a href="#书签丢失后的恢复方法">书签丢失后的恢复方法</a>
+      <ul>
+        <li><a href="#情况一开启了-google-同步">情况一：开启了 Google 同步</a></li>
+        <li><a href="#情况二没有开启同步">情况二：没有开启同步</a></li>
+        <li><a href="#情况三同步和备份都没有">情况三：同步和备份都没有</a></li>
+      </ul>
+    </li>
+    <li><a href="#书签同步的常见问题排查">书签同步的常见问题排查</a>
+      <ul>
+        <li><a href="#同步后书签变少或变多">同步后书签变少或变多</a></li>
+        <li><a href="#书签同步后文件夹结构混乱">书签同步后文件夹结构混乱</a></li>
+        <li><a href="#国内用户同步失败">国内用户同步失败</a></li>
+      </ul>
+    </li>
+    <li><a href="#不同操作系统的特殊注意事项">不同操作系统的特殊注意事项</a>
+      <ul>
+        <li><a href="#windows">Windows</a></li>
+        <li><a href="#macos">macOS</a></li>
+        <li><a href="#linux">Linux</a></li>
+      </ul>
+    </li>
+    <li><a href="#书签备份的最佳实践">书签备份的最佳实践</a>
+      <ul>
+        <li><a href="#自动备份方案">自动备份方案</a></li>
+        <li><a href="#备份文件管理">备份文件管理</a></li>
+      </ul>
+    </li>
+    <li><a href="#总结">总结</a></li>
+  </ul>
+</nav>
+    </div>
+    
+
+    
+    <div class="art-body">
+      <p>换电脑的时候，最怕的不是重装系统，而是发现存了五年的书签全没了。换浏览器也一样，收藏了几百个网站的快捷入口，换过去一个都找不到。这种焦虑不是杞人忧天——我见过太多人因为没做书签备份，换设备后花了整整一周重新整理。</p>
+<p>这篇文章把 <a href="/">Chrome 浏览器</a> 的书签导出、导入、迁移和恢复全讲透了。不是那种只教你怎么点三个按钮的浅层教程，而是从文件格式到多浏览器互导、从同步机制到丢失恢复，所有环节都覆盖到的实操指南。</p>
+<p><img src="/images/tips/chrome-bookmarks-export/img1.jpg" alt="一台旧电脑和一台新电脑之间流动书签数据的示意图，突出迁移场景"></p>
+<h2 id="先搞清楚chrome-书签存在哪">先搞清楚：Chrome 书签存在哪</h2>
+<p>知道书签的物理位置，才能真正做到心里有数。无论你是日常使用 <a href="/">Chrome 浏览器</a> 还是准备做大规模数据迁移，这都值得了解。Chrome 的书签数据在两个地方：</p>
+<p><strong>第一，用户数据目录（本地）。</strong> Chrome 在本地用一个 JSON 文件存储所有书签。不同操作系统的路径不同：</p>
+<ul>
+<li>Windows：<code>C:\Users\用户名\AppData\Local\Google\Chrome\User Data\Default\Bookmarks</code></li>
+<li>macOS：<code>~/Library/Application Support/Google/Chrome/Default/Bookmarks</code></li>
+<li>Linux：<code>~/.config/google-chrome/Default/Bookmarks</code></li>
+</ul>
+<p>这个文件是 Chrome 的核心书签数据库。每次添加、删除、修改书签，Chrome 都会更新这个 JSON 文件。同时，Chrome 还会自动生成 <code>Bookmarks.bak</code> 备份文件，用于崩溃恢复。</p>
+<p><strong>第二，Google 账号（云端）。</strong> 如果你开启了 Chrome 同步，书签会通过 Google 账号同步到云端。登录同一个 Google 账号的任何设备都能获取这些书签。</p>
+<p>这两个位置各有用途，后面会详细展开。现在先记住：本地 JSON 文件是你最后的底线，Google 同步是方便但有条件的远程备份。</p>
+<h2 id="chrome-书签的两种文件格式">Chrome 书签的两种文件格式</h2>
+<p>在正式操作之前，必须搞清楚 Chrome 书签涉及的两种文件格式，否则后续操作容易踩坑。</p>
+<h3 id="html-格式跨浏览器迁移的通用语言">HTML 格式：跨浏览器迁移的通用语言</h3>
+<p>Chrome 书签管理器的导出功能生成的是 HTML 格式文件。这种格式从 Netscape Navigator 时代就有了，几乎所有浏览器都支持导入和导出。它本质上就是一个包含书签链接的网页文件，结构简单，用文本编辑器就能打开。</p>
+<p>HTML 书签文件长这样：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">DT</span>&gt;&lt;<span style="color:#f92672">H3</span> <span style="color:#a6e22e">ADD_DATE</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;1700000000&#34;</span> <span style="color:#a6e22e">LAST_MODIFIED</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;1700000100&#34;</span>&gt;工作相关&lt;/<span style="color:#f92672">H3</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">DL</span>&gt;&lt;<span style="color:#f92672">p</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">DT</span>&gt;&lt;<span style="color:#f92672">A</span> <span style="color:#a6e22e">HREF</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://example.com&#34;</span> <span style="color:#a6e22e">ADD_DATE</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;1700000000&#34;</span>&gt;示例网站&lt;/<span style="color:#f92672">A</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">DT</span>&gt;&lt;<span style="color:#f92672">A</span> <span style="color:#a6e22e">HREF</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://another-site.com&#34;</span> <span style="color:#a6e22e">ADD_DATE</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;1700000005&#34;</span>&gt;另一个网站&lt;/<span style="color:#f92672">A</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">DL</span>&gt;&lt;<span style="color:#f92672">p</span>&gt;
+</span></span></code></pre></div><p>可以看到，HTML 格式保留了文件夹结构和基本的添加时间戳。但更详细的信息（比如书签图标 URL、访问次数）会被丢弃。</p>
+<p><strong>HTML 格式适合的场景：</strong> 跨浏览器迁移（Chrome 到 Firefox、Edge、Safari 等）、手动备份、导入到书签管理工具。</p>
+<h3 id="json-格式chrome-的内部数据结构">JSON 格式：Chrome 的内部数据结构</h3>
+<p>Chrome 本地存储的 <code>Bookmarks</code> 文件是 JSON 格式。相比 HTML，JSON 包含了更丰富的元数据：</p>
+<ul>
+<li><code>date_added</code>：精确到微秒的添加时间</li>
+<li><code>date_last_used</code>：最后访问时间</li>
+<li><code>icon_url</code>：网站图标 URL</li>
+<li><code>meta_info</code>：页面的描述和标题缓存</li>
+</ul>
+<p>JSON 格式不适合直接用于跨浏览器迁移，因为其他浏览器不一定能解析 Chrome 的 JSON 结构。但它是精确恢复和脚本批量处理的最佳选择。</p>
+<p><strong>JSON 格式适合的场景：</strong> 精确恢复书签、批量编辑书签（用 Python/Node.js 脚本）、从备份文件恢复。</p>
+<h3 id="什么时候用哪种">什么时候用哪种？</h3>
+<table>
+  <thead>
+      <tr>
+          <th>场景</th>
+          <th>推荐格式</th>
+          <th>原因</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>换浏览器</td>
+          <td>HTML</td>
+          <td>通用兼容性</td>
+      </tr>
+      <tr>
+          <td>手动备份</td>
+          <td>HTML</td>
+          <td>简单直观</td>
+      </tr>
+      <tr>
+          <td>脚本批量处理</td>
+          <td>JSON</td>
+          <td>结构化数据</td>
+      </tr>
+      <tr>
+          <td>精确恢复</td>
+          <td>JSON</td>
+          <td>保留完整元数据</td>
+      </tr>
+      <tr>
+          <td>长期存档</td>
+          <td>两者都存</td>
+          <td>HTML 保通用，JSON 保完整</td>
+      </tr>
+  </tbody>
+</table>
+<h2 id="chrome-书签导出操作详解">Chrome 书签导出操作详解</h2>
+<h3 id="方法一通过书签管理器导出-html">方法一：通过书签管理器导出 HTML</h3>
+<p>这是最常用的导出方法，适合绝大多数场景。</p>
+<ol>
+<li>打开 Chrome，点击右上角三个点</li>
+<li>选择书签和列表 → 书签管理器（也可以直接按 <code>Ctrl+Shift+O</code>）</li>
+<li>在书签管理器中，点击右上角三个点（菜单按钮）</li>
+<li>选择导出书签</li>
+<li>选择保存位置，Chrome 会生成一个 <code>.html</code> 文件</li>
+</ol>
+<p><img src="/images/tips/chrome-bookmarks-export/img2.jpg" alt="Chrome 书签管理器界面，标注右上角菜单按钮和导出书签选项"></p>
+<p>这个导出文件包含了你所有的书签和文件夹结构。默认文件名是 <code>bookmarks_年_月_日_时_分_秒.html</code>，方便你区分不同时间的备份。</p>
+<p>注意几点：</p>
+<ul>
+<li>导出的是全部书签，不支持选择性导出某个文件夹。如果你只想导出部分书签，需要导出后手动编辑 HTML 文件</li>
+<li>导出的 HTML 文件不包含书签图标（favicon），只包含 URL 和名称</li>
+<li>不会导出书签的访问历史和最后访问时间</li>
+</ul>
+<h3 id="方法二直接复制-bookmarks-json-文件">方法二：直接复制 Bookmarks JSON 文件</h3>
+<p>如果你需要完整数据，直接去用户数据目录复制 <code>Bookmarks</code> 文件。</p>
+<ol>
+<li>关闭 Chrome（重要，否则文件可能被锁定或写入不一致）</li>
+<li>打开文件资源管理器，导航到 <code>C:\Users\你的用户名\AppData\Local\Google\Chrome\User Data\Default\</code></li>
+<li>复制 <code>Bookmarks</code> 文件到安全位置</li>
+<li>如果 <code>Bookmarks.bak</code> 也存在，一并复制</li>
+</ol>
+<p>这个方法的优势是数据完整，劣势是不能直接导入到其他浏览器。</p>
+<h3 id="方法三使用-google-网页版查看书签">方法三：使用 Google 网页版查看书签</h3>
+<p>如果你开启了 Chrome 同步，可以在任何设备的浏览器中访问 <code>https://www.google.com/bookmarks/</code> 查看你的书签。注意这个页面只能查看，不能导出。实际的书签管理在 Chrome 的同步设置中。</p>
+<h2 id="chrome-书签导入操作详解">Chrome 书签导入操作详解</h2>
+<h3 id="导入-html-书签文件">导入 HTML 书签文件</h3>
+<ol>
+<li>打开 Chrome 书签管理器（<code>Ctrl+Shift+O</code>）</li>
+<li>点击右上角三个点</li>
+<li>选择导入书签</li>
+<li>选择之前导出的 HTML 文件</li>
+</ol>
+<p><img src="/images/tips/chrome-bookmarks-export/img3.jpg" alt="Chrome 书签管理器的导入书签对话框"></p>
+<p>导入后，Chrome 会在书签栏下方创建一个以 HTML 文件命名的文件夹（比如 Imported from bookmarks_2026_05_30.html），所有导入的书签都在这个文件夹中。</p>
+<p>这意味着导入的书签不会自动融入你现有的书签结构。你需要手动将它们拖拽到合适的位置。</p>
+<h3 id="从其他浏览器自动导入">从其他浏览器自动导入</h3>
+<p>如果你刚安装 Chrome 或重新安装，首次启动时 Chrome 会提示是否从其他浏览器导入数据。这个导入功能比手动导入 HTML 更强大，因为可以同时导入：</p>
+<ul>
+<li>书签</li>
+<li>已保存的密码</li>
+<li>浏览历史记录</li>
+<li>浏览器扩展（部分支持）</li>
+<li>自动填充表单数据</li>
+<li>付款方式信息</li>
+</ul>
+<p>如果你想手动触发这个导入：</p>
+<ol>
+<li>打开 Chrome 设置（<code>chrome://settings/</code>）</li>
+<li>搜索导入或点击左侧的「您和 Google」</li>
+<li>找到「从其他浏览器导入」选项</li>
+</ol>
+<p>Chrome 能自动检测已安装的 Firefox、Edge、Safari、IE，并显示可导入的数据类型。这一点比 <a href="/compare/chrome-vs-firefox-2026/">Chrome 和 Firefox 的对比</a> 中提到的迁移功能更具体——Chrome 对自家 Chromium 内核的 Edge 支持尤其好，能迁移的数据类型最多。</p>
+<h2 id="多浏览器互导完全方案">多浏览器互导完全方案</h2>
+<p>实际使用中，书签迁移不只是 Chrome 到 Chrome，更多是跨浏览器。下面给出所有主流浏览器之间的互导方案。</p>
+<h3 id="chrome-到-firefox">Chrome 到 Firefox</h3>
+<p><strong>方案 A：Firefox 内置导入</strong></p>
+<ol>
+<li>打开 Firefox 设置 → 导入和备份 → 从另一个浏览器导入</li>
+<li>选择 Chrome，勾选书签</li>
+<li>完成导入</li>
+</ol>
+<p>Firefox 的导入工具会直接读取 Chrome 的本地数据文件，不需要你先在 Chrome 中导出 HTML。</p>
+<p><strong>方案 B：HTML 中转</strong></p>
+<ol>
+<li>在 Chrome 中导出书签为 HTML</li>
+<li>在 Firefox 中按 <code>Ctrl+Shift+O</code> 打开书签管理器</li>
+<li>点击导入和备份 → 从 HTML 导入书签</li>
+<li>选择 Chrome 导出的 HTML 文件</li>
+</ol>
+<h3 id="chrome-到-edge">Chrome 到 Edge</h3>
+<p>Edge 和 Chrome 都基于 Chromium 内核，迁移体验最顺畅。</p>
+<p><strong>方案 A：Edge 首次启动导入</strong></p>
+<ol>
+<li>安装 Edge 后首次启动，选择从 Chrome 导入</li>
+<li>勾选书签及其他数据</li>
+<li>完成</li>
+</ol>
+<p><strong>方案 B：Edge 设置导入</strong></p>
+<ol>
+<li>打开 Edge 设置（<code>edge://settings/</code>）</li>
+<li>侧边栏选择配置文件 → 导入浏览器数据</li>
+<li>选择 Chrome，勾选书签</li>
+</ol>
+<p><strong>方案 C：直接复制用户数据</strong>
+这是最快但最野的方法。Chrome 和 Edge 的书签文件格式几乎相同。如果你胆大，可以直接把 Chrome 的 <code>Bookmarks</code> JSON 文件复制到 Edge 的用户数据目录。但我不推荐这个方法，因为版本差异可能导致数据结构不兼容。详细对比可以参考 <a href="/compare/chrome-vs-edge-2026/">Chrome 和 Edge 的全面对比</a>。</p>
+<h3 id="chrome-到-safarimacos">Chrome 到 Safari（macOS）</h3>
+<p>Safari 导入 Chrome 书签的最佳方式是通过 HTML 文件中转：</p>
+<ol>
+<li>在 Chrome 中导出书签为 HTML</li>
+<li>打开 Safari → 文件 → 导入自 → 书签 HTML 文件</li>
+<li>选择 Chrome 导出的 HTML 文件</li>
+</ol>
+<p>Safari 导入后会创建一个名为 Imported Items 的文件夹。你可以手动整理到书签栏。</p>
+<h3 id="chrome-到其他浏览器bravevivaldiopera">Chrome 到其他浏览器（Brave、Vivaldi、Opera）</h3>
+<p>这些浏览器都基于 Chromium 内核，导入 Chrome 书签的方式和 Edge 类似——都在设置中提供从 Chrome 导入的选项。也都可以通过 HTML 文件导入。</p>
+<p><strong>关键结论：</strong> HTML 是书签迁移的万能中转格式。不管你想从哪个浏览器迁移到哪个浏览器，先导出 HTML 再导入，永远不会出问题。这比纠结选哪个浏览器更重要——毕竟 <a href="/">Chrome 浏览器</a> 能做的事，大多浏览器也能做。</p>
+<h2 id="google-同步方便但有限制">Google 同步：方便但有限制</h2>
+<p>很多人以为开了 Chrome 同步就万事大吉了，实际上同步有好几个需要注意的地方。</p>
+<h3 id="同步的工作原理">同步的工作原理</h3>
+<p>开启 Google 同步后，Chrome 会把你所有的书签加密上传到 Google 服务器。在其他设备上登录同一个 Google 账号，书签就会自动下载。同步频率大约是实时到几分钟不等，取决于网络状况。</p>
+<h3 id="同步的优势">同步的优势</h3>
+<ul>
+<li><strong>零操作迁移</strong>：新电脑上登录 Chrome 就能获取所有书签，不需要手动导出导入</li>
+<li><strong>多设备一致性</strong>：在公司电脑添加的书签，回家电脑上也能看到</li>
+<li><strong>丢失可恢复</strong>：即使电脑坏了，书签还在 Google 服务器上</li>
+</ul>
+<h3 id="同步的风险和限制">同步的风险和限制</h3>
+<p><strong>第一，网络依赖。</strong> 国内用户需要能访问 Google 服务才能同步。如果你的网络环境不稳定，同步可能失败甚至丢失数据。Chrome 在同步失败时通常不会给出明显的错误提示，你可能在不知不觉中丢失了最新添加的书签。</p>
+<p><strong>第二，合并冲突。</strong> 如果两台电脑上的书签不一致（比如各自独立添加了一些书签），Chrome 的合并算法有时会产生重复书签。这在长期不同步的设备上尤其常见。</p>
+<p><strong>第三，删除同步。</strong> 在一台设备上删除书签，同步后会在所有设备上删除。这不是撤销操作——如果你在另一台电脑上等着那个书签回来，不会发生的。</p>
+<p><strong>第四，数据量限制。</strong> Google 同步书签有数量上限（约几万个），超过后同步可能会失败。对于重度书签用户（收藏了几千个页面的），需要注意这个限制。</p>
+<h3 id="同步-vs-手动导出怎么选">同步 vs 手动导出：怎么选？</h3>
+<table>
+  <thead>
+      <tr>
+          <th>维度</th>
+          <th>Google 同步</th>
+          <th>手动导出</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>便利性</td>
+          <td>高，自动完成</td>
+          <td>低，需要手动操作</td>
+      </tr>
+      <tr>
+          <td>可靠性</td>
+          <td>中，依赖网络和 Google 服务</td>
+          <td>高，文件在你手上</td>
+      </tr>
+      <tr>
+          <td>数据完整性</td>
+          <td>高，包含所有元数据</td>
+          <td>HTML 导出丢失部分信息</td>
+      </tr>
+      <tr>
+          <td>安全性</td>
+          <td>中，数据在 Google 服务器</td>
+          <td>高，本地文件</td>
+      </tr>
+      <tr>
+          <td>适用场景</td>
+          <td>日常多设备使用</td>
+          <td>换电脑、备份、跨浏览器</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>我的建议是：两者都做。</strong> 日常使用靠同步保持多设备一致，定期（每月一次）手动导出 HTML 文件作为备份。这样即使 Google 账号出问题或者同步故障，你还有本地备份兜底。</p>
+<p><img src="/images/tips/chrome-bookmarks-export/img4.jpg" alt="一个对比表格展示 Google 同步和手动导出的优劣势，用图标区分"></p>
+<h2 id="换电脑时的完整迁移流程">换电脑时的完整迁移流程</h2>
+<p>换电脑是书签迁移需求最强烈的场景。不只是书签，你可能还想把密码、扩展、设置一起迁过去。下面是完整的换电脑流程。</p>
+<h3 id="第一步旧电脑上导出所有数据">第一步：旧电脑上导出所有数据</h3>
+<p>在旧电脑上做以下操作：</p>
+<ol>
+<li><strong>导出书签</strong>：按前面说的方式导出 HTML 书签文件，复制 <code>Bookmarks.bak</code> JSON 文件</li>
+<li><strong>导出密码</strong>：Chrome 设置 → 密码和自动填充 → Google 密码管理器 → 导出密码（导出为 CSV 文件）。如果你还不知道怎么管理 Chrome 密码，可以看看 <a href="/tips/chrome-password-view/">Chrome 查看保存的密码的方法</a></li>
+<li><strong>记录扩展列表</strong>：打开 <code>chrome://extensions/</code>，截图或手动记录已安装的扩展。Chrome 同步会同步扩展，但有些需要重新配置。关于哪些扩展值得装，参考 <a href="/plugins/chrome-essential-extensions/">Chrome 必备扩展推荐</a></li>
+<li><strong>导出其他数据</strong>（可选）：浏览历史记录、自动填充数据等</li>
+</ol>
+<p>把这些文件都保存到 U 盘或云盘。</p>
+<h3 id="第二步新电脑上安装-chrome">第二步：新电脑上安装 Chrome</h3>
+<p>先下载 Chrome 安装包。如果你在新电脑上网络不稳定，建议下载 <a href="/download/chrome-offline-installer/">Chrome 离线安装包</a>，避免在线安装失败。</p>
+<p>安装后，有两种迁移路径：</p>
+<p><strong>路径 A：Google 同步迁移（推荐）</strong></p>
+<ol>
+<li>启动 Chrome，登录旧电脑上使用的 Google 账号</li>
+<li>开启同步，等待书签、密码、扩展自动同步</li>
+<li>同步完成后，检查是否有遗漏或重复</li>
+</ol>
+<p><strong>路径 B：手动导入迁移（同步不可用时的备选）</strong></p>
+<ol>
+<li>启动 Chrome，先不登录或登录后关闭同步</li>
+<li>打开书签管理器，导入 HTML 书签文件</li>
+<li>打开密码设置，导入 CSV 密码文件</li>
+<li>重新安装需要的扩展</li>
+</ol>
+<h3 id="第三步验证和整理">第三步：验证和整理</h3>
+<p>迁移完成后，逐项检查：</p>
+<ul>
+<li>书签数量是否和旧电脑一致（在书签管理器中数文件夹和条目）</li>
+<li>书签栏的书签是否都在</li>
+<li>文件夹结构是否完整</li>
+<li>密码数量是否匹配</li>
+<li>扩展是否全部就位</li>
+</ul>
+<p>如果使用 Google 同步迁移，重点关注是否有重复书签。Chrome 的合并算法偶尔会产生重复，需要手动清理。</p>
+<h3 id="不只是书签完整浏览器数据迁移">不只是书签：完整浏览器数据迁移</h3>
+<p>如果你想把整个 Chrome 搬过去（包括所有设置、缓存、Cookie、扩展配置），可以复制整个 Chrome 用户数据目录：</p>
+<ul>
+<li>Windows：<code>C:\Users\用户名\AppData\Local\Google\Chrome\User Data\</code></li>
+<li>macOS：<code>~/Library/Application Support/Google/Chrome/</code></li>
+<li>Linux：<code>~/.config/google-chrome/</code></li>
+</ul>
+<p>把这个目录整个复制到新电脑的相同位置。注意需要关闭 Chrome 再复制，否则文件可能被锁定。这个方法虽然粗暴但最完整，相当于把旧电脑的 Chrome 原封不动搬过来了。</p>
+<h2 id="书签整理技巧">书签整理技巧</h2>
+<p>迁移书签的同时，也是整理书签的好时机。很多人积累了上千个书签却从来不整理，最后变成一个无法使用的垃圾堆。</p>
+<h3 id="书签栏-vs-其他书签">书签栏 vs 其他书签</h3>
+<p>Chrome 把书签分为三个区域：</p>
+<ul>
+<li><strong>书签栏</strong>：显示在地址栏下方的常用书签，适合放高频访问的网站</li>
+<li><strong>其他书签</strong>：不常访问的书签，折叠在书签菜单中</li>
+<li><strong>移动设备书签</strong>：专为手机设计的书签文件夹</li>
+</ul>
+<p>建议的使用方式：书签栏只放 10-15 个最高频的网站，超过这个数量会显得拥挤且不好找。其他书签按主题分文件夹管理。</p>
+<h3 id="文件夹管理策略">文件夹管理策略</h3>
+<p>不要创建超过三层的文件夹嵌套。超过三层后，找书签的时间比重新搜索还长。</p>
+<p>推荐的结构：</p>
+<pre tabindex="0"><code>书签栏
+├── 工作
+│   ├── 项目文档
+│   └── 协作工具
+├── 学习
+│   ├── 教程
+│   └── 文档参考
+└── 日常
+    ├── 社交媒体
+    └── 购物
+
+其他书签
+├── 待读文章
+├── 参考资料
+├── 工具网站
+└── 归档（按季度或年份）
+</code></pre><p>关键原则：<strong>定期清理比定期整理更重要。</strong> 每季度花 10 分钟删除不再需要的书签，比花两小时重新分类几百个书签效率高得多。</p>
+<h3 id="批量编辑书签">批量编辑书签</h3>
+<p>Chrome 自带的书签管理器只支持基本的搜索和删除，不支持批量编辑。如果你需要批量修改书签（比如批量修改 URL、重命名、移动到新文件夹），有几种方法：</p>
+<p><strong>方法一：编辑 HTML 书签文件。</strong> 用文本编辑器打开导出的 HTML 文件，用查找替换功能批量修改。这种方法适合简单的 URL 替换（比如域名变更）。</p>
+<p><strong>方法二：用脚本处理 JSON。</strong> 用 Python 读取 Chrome 的 <code>Bookmarks</code> JSON 文件，批量处理后写回。这种方法适合复杂的编辑操作。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> json
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 读取书签文件</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">with</span> open(<span style="color:#e6db74">&#39;Bookmarks&#39;</span>, <span style="color:#e6db74">&#39;r&#39;</span>, encoding<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;utf-8&#39;</span>) <span style="color:#66d9ef">as</span> f:
+</span></span><span style="display:flex;"><span>    data <span style="color:#f92672">=</span> json<span style="color:#f92672">.</span>load(f)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 递归遍历书签节点</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">process_node</span>(node):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> node<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;type&#39;</span>) <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;url&#39;</span>:
+</span></span><span style="display:flex;"><span>        url <span style="color:#f92672">=</span> node<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;url&#39;</span>, <span style="color:#e6db74">&#39;&#39;</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># 示例：将旧域名替换为新域名</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> <span style="color:#e6db74">&#39;old-site.com&#39;</span> <span style="color:#f92672">in</span> url:
+</span></span><span style="display:flex;"><span>            node[<span style="color:#e6db74">&#39;url&#39;</span>] <span style="color:#f92672">=</span> url<span style="color:#f92672">.</span>replace(<span style="color:#e6db74">&#39;old-site.com&#39;</span>, <span style="color:#e6db74">&#39;new-site.com&#39;</span>)
+</span></span><span style="display:flex;"><span>    children <span style="color:#f92672">=</span> node<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;children&#39;</span>, [])
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> child <span style="color:#f92672">in</span> children:
+</span></span><span style="display:flex;"><span>        process_node(child)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 处理所有根节点</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> key <span style="color:#f92672">in</span> [<span style="color:#e6db74">&#39;bookmark_bar&#39;</span>, <span style="color:#e6db74">&#39;other&#39;</span>, <span style="color:#e6db74">&#39;synced&#39;</span>]:
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> key <span style="color:#f92672">in</span> data[<span style="color:#e6db74">&#39;roots&#39;</span>]:
+</span></span><span style="display:flex;"><span>        process_node(data[<span style="color:#e6db74">&#39;roots&#39;</span>][key])
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 写回文件（先备份原文件！）</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">with</span> open(<span style="color:#e6db74">&#39;Bookmarks_new&#39;</span>, <span style="color:#e6db74">&#39;w&#39;</span>, encoding<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;utf-8&#39;</span>) <span style="color:#66d9ef">as</span> f:
+</span></span><span style="display:flex;"><span>    json<span style="color:#f92672">.</span>dump(data, f, ensure_ascii<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>, indent<span style="color:#f92672">=</span><span style="color:#ae81ff">3</span>)
+</span></span></code></pre></div><p><strong>方法二：第三方工具。</strong> Chrome 网上应用店中有一些书签管理扩展，支持批量编辑功能。比如 Bookmark Checker 可以批量检测死链，Transmute 可以在浏览器之间转换书签格式。</p>
+<p><img src="/images/tips/chrome-bookmarks-export/img5.jpg" alt="展示一个组织良好的 Chrome 书签栏，文件夹结构清晰、分类明确"></p>
+<h2 id="书签丢失后的恢复方法">书签丢失后的恢复方法</h2>
+<p>这是很多人最害怕的情况——打开 Chrome 发现书签全没了。别慌，按下面的步骤排查和恢复。</p>
+<h3 id="情况一开启了-google-同步">情况一：开启了 Google 同步</h3>
+<p>如果你的 Chrome 开启了同步，恢复相对简单：</p>
+<ol>
+<li>打开 Chrome，确认已登录 Google 账号</li>
+<li>检查同步状态（<code>chrome://sync-internals/</code>）</li>
+<li>如果同步正常，等待几分钟后书签应该自动恢复</li>
+<li>如果同步状态异常，尝试在设置中关闭再重新开启同步</li>
+<li>访问 <code>https://www.google.com/bookmarks/</code> 确认云端书签是否存在</li>
+</ol>
+<h3 id="情况二没有开启同步">情况二：没有开启同步</h3>
+<p>如果你没有开启同步，但本地还有备份文件，可以恢复：</p>
+<p><strong>恢复步骤：</strong></p>
+<ol>
+<li><strong>完全关闭 Chrome</strong>（任务管理器中确认没有 chrome.exe 进程）</li>
+<li>打开文件资源管理器，导航到用户数据目录</li>
+<li>找到 <code>Bookmarks.bak</code> 文件（这是 Chrome 自动创建的备份）</li>
+<li>将 <code>Bookmarks</code> 重命名为 <code>Bookmarks.corrupted</code>（保留作为备份）</li>
+<li>将 <code>Bookmarks.bak</code> 复制一份并重命名为 <code>Bookmarks</code></li>
+<li>重新启动 Chrome，检查书签是否恢复</li>
+</ol>
+<p>如果 <code>Bookmarks.bak</code> 也不存在或者也是空的，还可以尝试从系统备份恢复。Windows 的文件历史记录或第三方的备份软件可能保存了早期的 <code>Bookmarks</code> 文件。</p>
+<h3 id="情况三同步和备份都没有">情况三：同步和备份都没有</h3>
+<p>这是最糟糕的情况。如果既没有 Google 同步，本地备份文件也丢失了，恢复的可能性很小。但还有几个方法可以尝试：</p>
+<ul>
+<li>检查 Windows 的文件历史记录或系统还原点</li>
+<li>使用数据恢复软件扫描硬盘（Recuva 等），搜索 <code>.html</code> 或 <code>Bookmarks</code> 相关文件</li>
+<li>检查云盘或 U 盘中是否有之前手动导出的书签文件</li>
+<li>如果书签丢失是因为 Chrome 崩溃或更新，检查 <code>User Data\Default</code> 目录下是否有 <code>Bookmarks.202x-xx-xx</code> 格式的旧版本文件</li>
+</ul>
+<h2 id="书签同步的常见问题排查">书签同步的常见问题排查</h2>
+<h3 id="同步后书签变少或变多">同步后书签变少或变多</h3>
+<p>这种情况通常是同步合并冲突导致的。Chrome 在合并两份不一致的书签时，可能会产生重复条目，也可能覆盖掉一方的新增书签。</p>
+<p>解决方案：手动对比两份书签，删除重复项。使用书签管理器的搜索功能，按 URL 查找重复书签。</p>
+<h3 id="书签同步后文件夹结构混乱">书签同步后文件夹结构混乱</h3>
+<p>同步后的文件夹结构可能和预期不一致。这通常是因为不同设备上的书签经历了不同的修改，Chrome 的合并算法无法完美处理所有情况。</p>
+<p>解决方案：在书签管理器中手动重新组织文件夹。这很耗时，但比每次同步后都出问题要好。</p>
+<h3 id="国内用户同步失败">国内用户同步失败</h3>
+<p>Chrome 同步依赖 Google 服务，国内网络环境下经常失败。如果遇到同步问题：</p>
+<ul>
+<li>确认网络能访问 Google 服务</li>
+<li>检查代理设置是否正确配置</li>
+<li>查看 <code>chrome://sync-internals/</code> 中的同步状态和错误信息</li>
+<li>如果同步确实不可用，改为手动导出导入方式</li>
+</ul>
+<p>手动导出虽然麻烦一些，但不依赖网络环境，对于 <a href="/tips/chrome-notification-settings/">Chrome 通知设置</a> 这类个人偏好配置也建议手动记录。</p>
+<h2 id="不同操作系统的特殊注意事项">不同操作系统的特殊注意事项</h2>
+<h3 id="windows">Windows</h3>
+<p>Windows 上的 Chrome 书签路径已经提到过。额外注意几点：</p>
+<ul>
+<li><code>AppData</code> 是隐藏文件夹，需要在文件资源管理器中开启显示隐藏文件才能看到</li>
+<li>如果安装了多个 Chrome 配置文件（Profile），书签路径会变成 <code>User Data\Profile 1\</code>、<code>Profile 2\</code> 等</li>
+<li>企业版 Chrome（Chrome Enterprise）的用户数据目录可能不同</li>
+</ul>
+<h3 id="macos">macOS</h3>
+<p>macOS 上的书签路径是 <code>~/Library/Application Support/Google/Chrome/Default/Bookmarks</code>。<code>Library</code> 文件夹在 Finder 中默认隐藏。</p>
+<p>显示隐藏文件的方法：在 Finder 中按 <code>Cmd+Shift+.</code></p>
+<h3 id="linux">Linux</h3>
+<p>Linux 上的路径是 <code>~/.config/google-chrome/Default/Bookmarks</code>。如果你使用的是 Chromium 而不是 Chrome，路径是 <code>~/.config/chromium/Default/Bookmarks</code>。</p>
+<p>Chrome 用户数据目录在不同发行版上位置一致，因为都遵循 XDG 规范。</p>
+<h2 id="书签备份的最佳实践">书签备份的最佳实践</h2>
+<p>最后一部分，聊聊长期的书签备份策略。很多人迁移书签是一次性需求，但日常备份同样重要。</p>
+<h3 id="自动备份方案">自动备份方案</h3>
+<p><strong>方案一：定期手动导出 HTML</strong></p>
+<p>最简单但容易忘记。设置日历提醒，每月导出一次 HTML 文件到云盘。</p>
+<p><strong>方案二：脚本自动备份</strong></p>
+<p>写一个定时脚本，每月自动复制 <code>Bookmarks</code> 和 <code>Bookmarks.bak</code> 到备份目录：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#75715e"># bookmarks-backup.ps1</span>
+</span></span><span style="display:flex;"><span>$source = <span style="color:#e6db74">&#34;</span>$env:LOCALAPPDATA<span style="color:#e6db74">\Google\Chrome\User Data\Default\Bookmarks*&#34;</span>
+</span></span><span style="display:flex;"><span>$dest = <span style="color:#e6db74">&#34;D:\Backups\ChromeBookmarks\</span>$(Get-Date -Format <span style="color:#e6db74">&#39;yyyy-MM-dd&#39;</span>)<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>New-Item -ItemType Directory -Path $dest -Force | Out-Null
+</span></span><span style="display:flex;"><span>Copy-Item $source $dest -Force
+</span></span><span style="display:flex;"><span>Write-Output <span style="color:#e6db74">&#34;Backup completed at </span>$(Get-Date)<span style="color:#e6db74">&#34;</span>
+</span></span></code></pre></div><p>用 Windows 任务计划程序每月自动执行这个脚本。</p>
+<p><strong>方案三：Git 版本控制</strong></p>
+<p>如果你是技术用户，可以把书签文件纳入 Git 管理。每次修改书签后 commit 一次，这样不仅备份了数据，还能追踪修改历史。</p>
+<h3 id="备份文件管理">备份文件管理</h3>
+<p>备份文件也需要管理。建议：</p>
+<ul>
+<li>每次备份文件名包含日期，方便区分版本</li>
+<li>保留最近 6 个月的备份，更早的可以归档</li>
+<li>至少保留一份在非本地存储（云盘、NAS、外部硬盘）</li>
+</ul>
+<h2 id="总结">总结</h2>
+<p>Chrome 书签管理看起来简单，但涉及的细节比大多数人想象的多。核心要点回顾：</p>
+<ul>
+<li>书签导出分 HTML（通用）和 JSON（精确）两种格式，跨浏览器迁移用 HTML，脚本处理用 JSON</li>
+<li>多浏览器互导的最佳方案是 HTML 中转，几乎所有浏览器都支持</li>
+<li>Google 同步方便但有网络依赖和合并冲突风险，国内用户尤其需要注意</li>
+<li>换电脑时同步和手动导出都要做，互为补充</li>
+<li>书签丢失后优先从 <code>Bookmarks.bak</code> 恢复，其次检查 Google 同步和系统备份</li>
+<li>养成定期备份书签的习惯，手动导出或脚本自动备份都可以</li>
+</ul>
+<p>书签本质上是你个人互联网使用历史的索引。花点时间管理它，比你想象的有价值得多。如果你的 <a href="/tips/chrome-clear-cache/">Chrome 缓存占用过大</a> 或者正在考虑 <a href="/tips/chrome-default-browser/">把 Chrome 设为默认浏览器</a> 或者刚下载了 <a href="/download/chrome-offline-installer/">Chrome 离线安装包</a> 准备迁移，建议先把现有书签备份好再操作。准备工作做充分了，后续迁移才会顺利。</p>
+
+<div class="compliance-notice">
+<p>声明：本站为 Chrome 浏览器使用技巧分享平台，与 Google 公司无关。所有产品名称归原权利人所有。</p>
+</div>
+<div class="home-kw-links">
+<p>相关推荐：<a href="/">Chrome插件推荐</a> · <a href="/">Chrome技巧教程</a> · <a href="/">浏览器插件下载</a></p>
+</div>
+    </div>
+
+    
+    
+    
+    <div style="max-width:1200px;margin:0 auto;padding:0 24px 48px">
+      <div style="padding-top:32px;border-top:1px solid var(--border)">
+        <div class="sec-head">
+          <div>
+            <div class="sec-tag">📖 相关阅读</div>
+            <div class="sec-title">继续阅读</div>
+          </div>
+        </div>
+        <div class="card-grid">
+          
+          <a href="https://chromebest.com/tips/chrome-autofill/" class="card">
+            
+            <div class="card-img">
+              <img src="/images/tips/chrome-autofill/cover.jpg" alt="Chrome 自动填充功能详解：工作原理、安全风险与最佳配置" loading="lazy">
+            </div>
+            
+            <div class="card-body">
+              <span class="art-row-tag feat-tag blue">自动填充</span>
+              <h3>Chrome 自动填充功能详解：工作原理、安全风险与最佳配置</h3>
+              <p>Chrome 自动填充帮你省了无数次填表的麻烦，但你知道它背后可能泄露你的地址、手机号甚至信用卡信息吗？这篇文章帮你理解自动填充的工作原理和安全风险。</p>
+            </div>
+          </a>
+          
+          <a href="https://chromebest.com/tips/chrome-guest-mode/" class="card">
+            
+            <div class="card-img">
+              <img src="/images/tips/chrome-guest-mode/cover.jpg" alt="Chrome 访客模式、隐私模式、多用户模式有什么区别?哪个更适合你" loading="lazy">
+            </div>
+            
+            <div class="card-body">
+              <span class="art-row-tag feat-tag purple">模式对比</span>
+              <h3>Chrome 访客模式、隐私模式、多用户模式有什么区别?哪个更适合你</h3>
+              <p>Chrome 有隐私模式、访客模式、多用户模式三种隔离方式,很多人分不清。这篇文章用对比表帮你搞清楚,并根据你的场景推荐最适合的方案。</p>
+            </div>
+          </a>
+          
+          <a href="https://chromebest.com/tips/chrome-offline-installer/" class="card">
+            
+            <div class="card-img">
+              <img src="/images/tips/chrome-offline-installer/cover.jpg" alt="Chrome 离线安装包下载与完整安装指南（2026 最新版）" loading="lazy">
+            </div>
+            
+            <div class="card-body">
+              <span class="art-row-tag feat-tag green">离线安装</span>
+              <h3>Chrome 离线安装包下载与完整安装指南（2026 最新版）</h3>
+              <p>实测对比 Chrome 在线安装器与离线安装包在国内网络环境的下载速度差异，手把手教你获取完整安装包并完成全平台安装。</p>
+            </div>
+          </a>
+          
+        </div>
+      </div>
+    </div>
+    
+  </article>
+
+  
+  <aside class="sidebar">
+    
+    <div class="sb-search">
+      <svg class="sb-search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+      <input type="text" class="sb-search-input" placeholder="搜索文章...">
+      <kbd class="sb-search-kbd">/</kbd>
+    </div>
+
+    
+    <div class="cta-banner" style="padding:24px">
+      <h2 style="font-size:18px;margin-bottom:6px">下载 Chrome</h2>
+      <p style="font-size:13px">全球使用人数最多的浏览器</p>
+      <a href="https://www.google.com/chrome/" class="btn-dl" style="padding:10px 20px;font-size:14px;width:100%;justify-content:center;margin-top:12px" rel="nofollow">⬇ 官方下载</a>
+    </div>
+
+    
+    <div class="sb-box">
+      <h3>📂 全部分类</h3>
+      <div class="tags">
+        
+        
+        <a href="/categories/%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B" class="tag">入门教程</a>
+        
+        <a href="/categories/%E6%95%85%E9%9A%9C%E6%8E%92%E6%9F%A5" class="tag">故障排查</a>
+        
+        <a href="/categories/%E8%BF%9B%E9%98%B6%E6%8A%80%E5%B7%A7" class="tag">进阶技巧</a>
+        
+        <a href="/categories/%E6%95%B0%E6%8D%AE%E7%AE%A1%E7%90%86" class="tag">数据管理</a>
+        
+        <a href="/categories/%E7%89%88%E6%9C%AC%E8%B5%84%E8%AE%AF" class="tag">版本资讯</a>
+        
+        <a href="/categories/%E5%AF%B9%E6%AF%94%E8%AF%84%E6%B5%8B" class="tag">对比评测</a>
+        
+      </div>
+    </div>
+
+    
+    
+    
+    <div class="sb-box">
+      <h3>📖 相关文章</h3>
+      <div style="display:flex;flex-direction:column;gap:12px">
+        
+        <a href="https://chromebest.com/tips/chrome-keyboard-shortcuts/" style="font-size:13px;line-height:1.5;color:var(--txt2)">Chrome 快捷键大全：30 个真正提高效率的快捷键（按场景分类）</a>
+        
+        <a href="https://chromebest.com/tips/chrome-pdf-edit/" style="font-size:13px;line-height:1.5;color:var(--txt2)">Chrome 浏览器 PDF 编辑功能完整指南：标注、填写、合并全搞定</a>
+        
+        <a href="https://chromebest.com/tips/chrome-notification-settings/" style="font-size:13px;line-height:1.5;color:var(--txt2)">Chrome 怎么关闭网站通知弹窗？2026 年批量管理和精确管控全教程</a>
+        
+        <a href="https://chromebest.com/compare/chrome-vs-edge-vs-firefox-2026/" style="font-size:13px;line-height:1.5;color:var(--txt2)">Chrome vs Edge vs Firefox 2026 深度对比：国内网站实测数据</a>
+        
+        <a href="https://chromebest.com/tips/chrome-incognito-mode-guide/" style="font-size:13px;line-height:1.5;color:var(--txt2)">Chrome 无痕模式详解：能做什么不能做什么，90%的人都理解错了</a>
+        
+      </div>
+    </div>
+    
+
+    
+    
+    <div class="sb-box">
+      <h3>🏷 相关标签</h3>
+      <div class="tags">
+        
+        <a href="/tags/chrome%E4%B9%A6%E7%AD%BE%E5%AF%BC%E5%87%BA" class="tag">Chrome书签导出</a>
+        
+        <a href="/tags/chrome%E4%B9%A6%E7%AD%BE%E5%AF%BC%E5%85%A5" class="tag">Chrome书签导入</a>
+        
+        <a href="/tags/chrome%E4%B9%A6%E7%AD%BE%E8%BF%81%E7%A7%BB" class="tag">Chrome书签迁移</a>
+        
+        <a href="/tags/chrome%E6%8D%A2%E6%B5%8F%E8%A7%88%E5%99%A8" class="tag">Chrome换浏览器</a>
+        
+        <a href="/tags/chrome%E6%8D%A2%E7%94%B5%E8%84%91" class="tag">Chrome换电脑</a>
+        
+      </div>
+    </div>
+    
+  </aside>
+</div>
+
+<footer class="foot">
+  <div class="foot-inner">
+    <div class="foot-links">
+      <a href="/">首页</a>
+      <a href="/categories/入门教程">入门教程</a>
+      <a href="/categories/故障排查">故障排查</a>
+      <a href="/categories/进阶技巧">进阶技巧</a>
+      <a href="/categories/数据管理">数据管理</a>
+      <a href="/categories/版本资讯">版本资讯</a>
+      <a href="/categories/对比评测">对比评测</a>
+      <a href="/about/">关于我们</a>
+    </div>
+    <div class="foot-copy">© 2026 ChromeBest · 谷歌浏览器下载与使用教程 · 本站与 Google 无关</div>
+  </div>
+</footer>
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "首页",
+      "item": "https://chromebest.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Tips",
+      "item": "https:\/\/chromebest.com\/tips\/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Chrome 书签导出、导入与迁移完整教程：换浏览器、换电脑都能搞定"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Chrome 书签导出、导入与迁移完整教程：换浏览器、换电脑都能搞定",
+  "description": "Chrome 书签导出、导入、迁移的完整教程：HTML\/JSON 格式、多浏览器互导、Google 同步、换电脑书签迁移、书签丢失恢复方法。",
+  "datePublished": "2026-05-30",
+  "dateModified": "2026-05-30",
+  "author": {
+    "@type": "Organization",
+    "name": "ChromeBest"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "ChromeBest",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://chromebest.com/og-default.jpg"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https:\/\/chromebest.com\/tips\/chrome-bookmarks-export\/"
+  }
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "",
+      "acceptedAnswer": { "@type": "Answer", "text": "" }
+    },{
+      "@type": "Question",
+      "name": "",
+      "acceptedAnswer": { "@type": "Answer", "text": "" }
+    },{
+      "@type": "Question",
+      "name": "",
+      "acceptedAnswer": { "@type": "Answer", "text": "" }
+    },{
+      "@type": "Question",
+      "name": "",
+      "acceptedAnswer": { "@type": "Answer", "text": "" }
+    },{
+      "@type": "Question",
+      "name": "",
+      "acceptedAnswer": { "@type": "Answer", "text": "" }
+    }
+  ]
+}
+</script>
+
+
+
+
+
+</body>
+</html>

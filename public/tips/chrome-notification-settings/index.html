@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="msvalidate.01" content="58B8BC3B56964E4B68D451072143B15E">
+<title>Chrome 怎么关闭网站通知弹窗？2026 年批量管理和精确管控全教程 - ChromeBest</title>
+
+<meta name="description" content="Chrome 网站通知弹窗太烦？本文详解 Chrome 通知的关闭、批量管理、静音和分级策略，覆盖 chrome://settings/content/notifications 的高级用法，教你一次性清掉所有烦人的通知弹窗。">
+
+<meta name="keywords" content="[谷歌浏览器 Chrome浏览器 Chrome下载 Chrome安装包 Chrome教程 Chrome插件 Chrome优化]">
+<link rel="canonical" href="https://chromebest.com/tips/chrome-notification-settings/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Chrome 怎么关闭网站通知弹窗？2026 年批量管理和精确管控全教程">
+<meta property="og:description" content=" 打开一个新闻网站，刚看了两行标题，右下角蹦出来一条通知：&ldquo;今日热点：XXX&rdquo;。切到淘宝页面，通知栏又多了一条促销推送。再打开知乎，一条关注动态弹出来。一上午下来，Chrome 通知栏能堆几十条，全是你不想要的垃圾信息。
+这就是 Chrome 网站通知的现状——大部分网站请求通知权限时都打着 …">
+<meta property="og:url" content="https://chromebest.com/tips/chrome-notification-settings/">
+<meta property="og:site_name" content="ChromeBest">
+<meta property="og:image" content="https://chromebest.com/images/tips/chrome-notification-settings/cover.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" href="/css/style.css">
+
+</head>
+<body>
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">
+      <div class="nav-logo-icon"><span>C</span></div>
+      <b>ChromeBest</b>
+    </a>
+    <ul class="nav-links">
+      <li><a href="/">首页</a></li>
+      <li><a href="/categories/入门教程">入门教程</a></li>
+      <li><a href="/categories/故障排查">故障排查</a></li>
+      <li><a href="/categories/进阶技巧">进阶技巧</a></li>
+      <li><a href="/categories/数据管理">数据管理</a></li>
+      <li><a href="/categories/版本资讯">版本资讯</a></li>
+      <li><a href="/categories/对比评测">对比评测</a></li>
+    </ul>
+    <a href="https://www.google.com/chrome/" class="nav-dl" rel="nofollow">⬇ 下载 Chrome</a>
+  </div>
+</nav>
+
+
+<div class="layout">
+  
+  <article class="art-page">
+    <nav class="breadcrumb">
+      <a href="/">首页</a>
+      <span class="breadcrumb-sep">›</span>
+      <a href="/tips">tips</a>
+      <span class="breadcrumb-sep">›</span>
+      <span class="breadcrumb-current">Chrome 怎么关闭网站通知弹窗？2026 年批量管理和精确管控全教程</span>
+    </nav>
+    <span class="art-tag feat-tag red">🔕 通知管理</span>
+    <h1>Chrome 怎么关闭网站通知弹窗？2026 年批量管理和精确管控全教程</h1>
+    <div class="meta">
+      <span>📅 2026-05-31</span>
+      <span>⏱ 10 分钟阅读</span>
+      <span>📷 5 张真实截图</span>
+      
+    </div>
+
+    
+    <div class="cover">
+      <img src="/images/tips/chrome-notification-settings/cover.jpg" alt="Chrome 怎么关闭网站通知弹窗？2026 年批量管理和精确管控全教程">
+    </div>
+    
+
+    
+    
+    <div class="toc">
+      <h3>📑 目录</h3>
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#chrome-通知不是你想的那样">Chrome 通知不是你想的那样</a></li>
+    <li><a href="#最快的清理方式一键清空所有通知权限">最快的清理方式：一键清空所有通知权限</a></li>
+    <li><a href="#精确管理逐站设置通知权限">精确管理：逐站设置通知权限</a></li>
+    <li><a href="#一刀切方案彻底关闭网站通知">一刀切方案：彻底关闭网站通知</a></li>
+    <li><a href="#额外清理chrome-提示消息和系统通知">额外清理：Chrome 提示消息和系统通知</a>
+      <ul>
+        <li><a href="#chrome-自身提示消息">Chrome 自身提示消息</a></li>
+        <li><a href="#windows-系统通知">Windows 系统通知</a></li>
+      </ul>
+    </li>
+    <li><a href="#移动端同步手机-chrome-怎么关通知">移动端同步：手机 Chrome 怎么关通知</a>
+      <ul>
+        <li><a href="#android-chrome">Android Chrome</a></li>
+        <li><a href="#ios-chrome">iOS Chrome</a></li>
+      </ul>
+    </li>
+    <li><a href="#高级技巧用-chrome-扩展程序精细控制通知">高级技巧：用 Chrome 扩展程序精细控制通知</a></li>
+    <li><a href="#三步清理法总结">三步清理法总结</a></li>
+  </ul>
+</nav>
+    </div>
+    
+
+    
+    <div class="art-body">
+      <!--
+竞品分析：
+1. 竞品写了什么：Chrome 设置里关通知的入口、逐站关闭方法
+2. 竞品没写什么：按分类批量管理通知、区分允许/屏蔽/静音三种模式的使用场景、chrome://settings/content/notifications 高级用法、系统通知和 Chrome 通知的区别
+3. 差异化角度：不只是"怎么关"，而是"怎么精确管控"——批量管理 + 分级策略 + 移动端同步
+-->
+<p>打开一个新闻网站，刚看了两行标题，右下角蹦出来一条通知：&ldquo;今日热点：XXX&rdquo;。切到淘宝页面，通知栏又多了一条促销推送。再打开知乎，一条关注动态弹出来。一上午下来，Chrome 通知栏能堆几十条，全是你不想要的垃圾信息。</p>
+<p>这就是 Chrome 网站通知的现状——大部分网站请求通知权限时都打着&quot;及时获取更新&quot;的旗号，实际上就是为了往你屏幕上推广告。如果你用的是 <a href="/">Chrome 最新版</a>，好消息是它提供了相当精细的通知管理功能，只是大部分用户根本不知道。</p>
+<p><a href="/">Chrome 浏览器</a>的通知管理功能其实比大多数人知道的要强得多。这篇文章不教你&quot;一键全关&quot;，而是帮你把通知列表从混乱状态整理成有序管理：该关的关，该留的留，以后新网站请求通知时也有明确的处理策略。</p>
+<p><img src="/images/tips/chrome-notification-settings/img-1.jpg" alt="Chrome 通知管理设置页面"></p>
+<h2 id="chrome-通知不是你想的那样">Chrome 通知不是你想的那样</h2>
+<p>先搞清楚 Chrome 里有三种不同类型的&quot;通知&quot;，很多人把这三者搞混了：</p>
+<p><strong>网站通知</strong>：网站通过 Chrome 的 Notifications API 发送到你桌面的弹窗消息。比如 Gmail 的新邮件提醒、微博的私信通知。这是本文重点。</p>
+<p><strong>Chrome 提示消息</strong>：Chrome 浏览器自身发的通知，比如&quot;Chrome 已更新&quot;、&ldquo;下载完成&rdquo;。在通知设置页面最底部有个&quot;Chrome 可以发送通知&quot;的开关。</p>
+<p><strong>系统通知</strong>：Windows/macOS 系统层面弹出的通知，跟 Chrome 的通知权限是两套独立体系。</p>
+<p>关掉 Chrome 的网站通知设置，Chrome 自身的提示消息和系统通知可能还在响。这也是很多人抱怨&quot;明明关了通知还是有弹窗&quot;的原因。下面我会分别讲怎么关这三类。</p>
+<h2 id="最快的清理方式一键清空所有通知权限">最快的清理方式：一键清空所有通知权限</h2>
+<p>如果你之前瞎点了太多&quot;允许&quot;，通知列表已经乱成一锅粥，最快的方式是直接重置：</p>
+<ol>
+<li>地址栏输入 <code>chrome://settings/content/notifications</code></li>
+<li>页面加载后往下滚到底部</li>
+<li>点击「移除所有站点通知权限」按钮</li>
+</ol>
+<p>这个操作不会关掉通知功能本身，只是把所有站点的权限重置为&quot;默认&quot;（也就是下次访问会重新询问）。相当于给通知列表来了个大扫除。</p>
+<p><img src="/images/tips/chrome-notification-settings/img-2.jpg" alt="Chrome 移除所有站点通知权限"></p>
+<p>说实话，90% 的用户做到这一步就够了。但如果你有几十个允许通知的网站，重置后你会发现某些网站确实需要通知（比如在线文档协作时的实时更新提醒），这时候就需要下面更精细的管理方案了。</p>
+<h2 id="精确管理逐站设置通知权限">精确管理：逐站设置通知权限</h2>
+<p>重置之后，你可以按三种模式管理每个站点的通知：</p>
+<ul>
+<li><strong>允许</strong>：网站可以直接给你发桌面通知，不会弹询问框</li>
+<li><strong>屏蔽</strong>：彻底禁止该网站发送通知，即使网站请求也会被静默拒绝</li>
+<li><strong>默认（询问）</strong>：网站请求通知时 Chrome 会弹出询问框让你选</li>
+</ul>
+<p>打开 <code>chrome://settings/content/notifications</code>，你会看到两个分区——上面是&quot;允许&quot;列表（已授权的网站），下面是&quot;屏蔽&quot;列表（已拒绝的网站）。每个网站右边有三个按钮：允许、屏蔽、移除（恢复到默认）。</p>
+<p><strong>建议的处理策略</strong>：</p>
+<p>把通知网站分成三类来处理：</p>
+<table>
+  <thead>
+      <tr>
+          <th>类别</th>
+          <th>处理方式</th>
+          <th>示例</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>必须留（工作/安全类）</td>
+          <td>保持允许</td>
+          <td>Gmail、日历、Notion、银行网站</td>
+      </tr>
+      <tr>
+          <td>可以留但不想被打扰</td>
+          <td>保持允许，后续改系统音量</td>
+          <td>微博、B站、Twitter</td>
+      </tr>
+      <tr>
+          <td>纯垃圾广告</td>
+          <td>移到屏蔽</td>
+          <td>各种新闻站、购物站、工具站</td>
+      </tr>
+  </tbody>
+</table>
+<p>这里有个很多人不知道的技巧：Chrome 的通知设置支持搜索。在页面顶部的搜索框输入域名，可以快速定位到某个网站，不用在几十条列表里慢慢翻。如果你只想改某个站的通知权限，搜域名比翻列表快得多。</p>
+<h2 id="一刀切方案彻底关闭网站通知">一刀切方案：彻底关闭网站通知</h2>
+<p>如果你根本不想用 Chrome 的通知功能（邮件用手机 App 看，社交用独立客户端），那直接关掉：</p>
+<p><code>chrome://settings/content/notifications</code> → 把顶部的「网站可以发送通知」开关关掉</p>
+<p>关掉之后所有效果：</p>
+<ul>
+<li>已经允许的网站通知全部消失</li>
+<li>新网站请求通知会被自动拒绝，不再弹询问框</li>
+<li>Chrome 提示消息（浏览器更新、下载完成）不受影响</li>
+<li>系统通知（Windows 通知中心）不受影响</li>
+</ul>
+<p>这个方案适合两类人：一是从来不用网站通知的用户，二是帮家里老人/小孩设置电脑时减少干扰源。如果你日常使用 Gmail 网页版或有在线协作需求，不建议用这个方案。</p>
+<p>顺便说一句，很多人以为关了 Chrome 通知就万事大吉了，结果电脑右下角还是有弹窗。那多半是系统通知或者 Chrome 自身的提示消息在响。这两个的关法不同，下面讲。</p>
+<h2 id="额外清理chrome-提示消息和系统通知">额外清理：Chrome 提示消息和系统通知</h2>
+<h3 id="chrome-自身提示消息">Chrome 自身提示消息</h3>
+<p>设置路径：<code>chrome://settings/content/notifications</code> → 页面最底部 →「Chrome 可以发送通知」</p>
+<p>关掉这个之后，Chrome 浏览器的更新提醒、下载完成提示、后台运行提示都会消失。这些消息其实有点用（提醒你更新浏览器），但如果你觉得烦也可以关。</p>
+<h3 id="windows-系统通知">Windows 系统通知</h3>
+<p>即使 Chrome 的所有通知都关了，Windows 10/11 的通知中心仍然可能在 Chrome 有活动时弹提示。</p>
+<p>关闭路径：Windows 设置 → 系统 → 通知 → 找到 Google Chrome → 关掉</p>
+<p>macOS 类似：系统设置 → 通知 → Google Chrome → 关掉</p>
+<p>这三层关完，你才能真正实现&quot;零弹窗&quot;。大部分教程只讲到第一层（网站通知），这就是为什么很多人按教程关了还是收到弹窗的原因。</p>
+<p><img src="/images/tips/chrome-notification-settings/img-3.jpg" alt="Windows 系统 Chrome 通知设置"></p>
+<h2 id="移动端同步手机-chrome-怎么关通知">移动端同步：手机 Chrome 怎么关通知</h2>
+<p>Chrome 的通知设置不会在手机和电脑之间自动同步，需要分别设置。</p>
+<h3 id="android-chrome">Android Chrome</h3>
+<p>菜单（⋮）→ 设置 → 网站设置 → 通知 → 关闭「通知」开关</p>
+<h3 id="ios-chrome">iOS Chrome</h3>
+<p>设置 → 内容设置 → 通知 → 关闭「允许通知」</p>
+<p>移动端操作更简单，一个开关就全关了。如果你用 <a href="/tips/chrome-mobile-tips/">Chrome 手机版</a> 的时候经常被通知打扰，建议直接关掉——手机屏幕本来就小，通知弹窗对阅读体验的干扰比电脑端严重得多。</p>
+<h2 id="高级技巧用-chrome-扩展程序精细控制通知">高级技巧：用 Chrome 扩展程序精细控制通知</h2>
+<p>Chrome 自带的通知管理已经够用，但如果你需要更精细的控制（比如只屏蔽声音不屏蔽通知、按时间段自动关闭通知），可以考虑安装 Chrome 扩展程序：</p>
+<ul>
+<li><strong>Notification Control</strong>：可以对每个网站单独设置通知行为（屏蔽声音、只显示标题、完全屏蔽）</li>
+<li><strong>Don&rsquo;t Track Me Google</strong>：除了隐私保护，还有通知管理功能</li>
+</ul>
+<p>不过说实话，这些扩展程序对大部分用户来说是过度配置。Chrome 自带的三层管理体系（网站通知 → Chrome 提示 → 系统通知）已经覆盖了所有场景。</p>
+<p>如果你只是想安静地上网，按下面的「三步清理法」操作就行，不需要装任何额外工具。</p>
+<p><img src="/images/tips/chrome-notification-settings/img-4.jpg" alt="Chrome 通知三步清理法"></p>
+<h2 id="三步清理法总结">三步清理法总结</h2>
+<p>按这个顺序操作，5 分钟解决 Chrome 通知骚扰问题：</p>
+<p><strong>第一步</strong>：<code>chrome://settings/content/notifications</code> → 「移除所有站点通知权限」— 清空历史记录</p>
+<p><strong>第二步</strong>：把你常用的几个工作/安全网站（Gmail、日历等）手动设为允许</p>
+<p><strong>第三步</strong>：<code>chrome://settings/content/notifications</code> 底部关掉「Chrome 可以发送通知」，Windows 设置里关掉 Chrome 系统通知</p>
+<p>三步走完，Chrome 的通知就从&quot;垃圾信息轰炸&quot;变成了&quot;只有你需要时才出现&quot;。如果你后续发现某个网站的通知有用，随时在 <code>chrome://settings/content/notifications</code> 里把它加回允许列表就行。</p>
+<p>记住一个原则：通知权限默认应该是屏蔽的，只有当你明确需要某个网站的通知时才单独允许。这比&quot;默认允许、事后一个个关&quot;省心得多。Chrome 通知机制的问题就在于它默认弹询问框——大部分人在没想清楚的情况下就点了&quot;允许&quot;，日积月累通知列表就炸了。</p>
+<p>一次性清理干净，以后新网站请求通知时养成&quot;先屏蔽再考虑&quot;的习惯，Chrome 就不会再打扰你了。</p>
+<p>如果你觉得 <a href="/">Chrome 浏览器下载</a>后除了通知之外还有别的烦人的地方，比如<a href="/plugins/chrome-ad-blocker-comparison/">广告太多</a>或者<a href="/tips/chrome-memory-optimization/">内存占用太高</a>，我们也有对应的教程，可以一并优化你的 Chrome 使用体验。</p>
+
+<div class="compliance-notice">
+<p>声明：本站为 Chrome 浏览器使用技巧分享平台，与 Google 公司无关。所有产品名称归原权利人所有。</p>
+</div>
+<div class="home-kw-links">
+<p>相关推荐：<a href="/">Chrome插件推荐</a> · <a href="/">Chrome技巧教程</a> · <a href="/">浏览器插件下载</a></p>
+</div>
+    </div>
+
+    
+    
+    
+    <div style="max-width:1200px;margin:0 auto;padding:0 24px 48px">
+      <div style="padding-top:32px;border-top:1px solid var(--border)">
+        <div class="sec-head">
+          <div>
+            <div class="sec-tag">📖 相关阅读</div>
+            <div class="sec-title">继续阅读</div>
+          </div>
+        </div>
+        <div class="card-grid">
+          
+          <a href="https://chromebest.com/tips/chrome-autofill/" class="card">
+            
+            <div class="card-img">
+              <img src="/images/tips/chrome-autofill/cover.jpg" alt="Chrome 自动填充功能详解：工作原理、安全风险与最佳配置" loading="lazy">
+            </div>
+            
+            <div class="card-body">
+              <span class="art-row-tag feat-tag blue">自动填充</span>
+              <h3>Chrome 自动填充功能详解：工作原理、安全风险与最佳配置</h3>
+              <p>Chrome 自动填充帮你省了无数次填表的麻烦，但你知道它背后可能泄露你的地址、手机号甚至信用卡信息吗？这篇文章帮你理解自动填充的工作原理和安全风险。</p>
+            </div>
+          </a>
+          
+          <a href="https://chromebest.com/tips/chrome-guest-mode/" class="card">
+            
+            <div class="card-img">
+              <img src="/images/tips/chrome-guest-mode/cover.jpg" alt="Chrome 访客模式、隐私模式、多用户模式有什么区别?哪个更适合你" loading="lazy">
+            </div>
+            
+            <div class="card-body">
+              <span class="art-row-tag feat-tag purple">模式对比</span>
+              <h3>Chrome 访客模式、隐私模式、多用户模式有什么区别?哪个更适合你</h3>
+              <p>Chrome 有隐私模式、访客模式、多用户模式三种隔离方式,很多人分不清。这篇文章用对比表帮你搞清楚,并根据你的场景推荐最适合的方案。</p>
+            </div>
+          </a>
+          
+          <a href="https://chromebest.com/tips/chrome-offline-installer/" class="card">
+            
+            <div class="card-img">
+              <img src="/images/tips/chrome-offline-installer/cover.jpg" alt="Chrome 离线安装包下载与完整安装指南（2026 最新版）" loading="lazy">
+            </div>
+            
+            <div class="card-body">
+              <span class="art-row-tag feat-tag green">离线安装</span>
+              <h3>Chrome 离线安装包下载与完整安装指南（2026 最新版）</h3>
+              <p>实测对比 Chrome 在线安装器与离线安装包在国内网络环境的下载速度差异，手把手教你获取完整安装包并完成全平台安装。</p>
+            </div>
+          </a>
+          
+        </div>
+      </div>
+    </div>
+    
+  </article>
+
+  
+  <aside class="sidebar">
+    
+    <div class="sb-search">
+      <svg class="sb-search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+      <input type="text" class="sb-search-input" placeholder="搜索文章...">
+      <kbd class="sb-search-kbd">/</kbd>
+    </div>
+
+    
+    <div class="cta-banner" style="padding:24px">
+      <h2 style="font-size:18px;margin-bottom:6px">下载 Chrome</h2>
+      <p style="font-size:13px">全球使用人数最多的浏览器</p>
+      <a href="https://www.google.com/chrome/" class="btn-dl" style="padding:10px 20px;font-size:14px;width:100%;justify-content:center;margin-top:12px" rel="nofollow">⬇ 官方下载</a>
+    </div>
+
+    
+    <div class="sb-box">
+      <h3>📂 全部分类</h3>
+      <div class="tags">
+        
+        
+        <a href="/categories/%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B" class="tag">入门教程</a>
+        
+        <a href="/categories/%E6%95%85%E9%9A%9C%E6%8E%92%E6%9F%A5" class="tag">故障排查</a>
+        
+        <a href="/categories/%E8%BF%9B%E9%98%B6%E6%8A%80%E5%B7%A7" class="tag">进阶技巧</a>
+        
+        <a href="/categories/%E6%95%B0%E6%8D%AE%E7%AE%A1%E7%90%86" class="tag">数据管理</a>
+        
+        <a href="/categories/%E7%89%88%E6%9C%AC%E8%B5%84%E8%AE%AF" class="tag">版本资讯</a>
+        
+        <a href="/categories/%E5%AF%B9%E6%AF%94%E8%AF%84%E6%B5%8B" class="tag">对比评测</a>
+        
+      </div>
+    </div>
+
+    
+    
+    
+    <div class="sb-box">
+      <h3>📖 相关文章</h3>
+      <div style="display:flex;flex-direction:column;gap:12px">
+        
+        <a href="https://chromebest.com/tips/chrome-hardware-acceleration/" style="font-size:13px;line-height:1.5;color:var(--txt2)">Chrome 硬件加速设置教程：开启/关闭/故障排查，解决卡顿花屏崩溃</a>
+        
+        <a href="https://chromebest.com/compare/chrome-vs-brave-2026/" style="font-size:13px;line-height:1.5;color:var(--txt2)">Chrome 和 Brave 2026 年到底选哪个？深度实测对比</a>
+        
+        <a href="https://chromebest.com/tips/chrome-offline-installer/" style="font-size:13px;line-height:1.5;color:var(--txt2)">Chrome 离线安装包下载与完整安装指南（2026 最新版）</a>
+        
+        <a href="https://chromebest.com/plugins/chrome-screenshot-extensions/" style="font-size:13px;line-height:1.5;color:var(--txt2)">Chrome 截图插件推荐：5 款全页截图工具实测对比（含免费方案）</a>
+        
+        <a href="https://chromebest.com/tips/chrome-search-engine-change/" style="font-size:13px;line-height:1.5;color:var(--txt2)">Chrome 搜索引擎切换全攻略：从百度切到 Bing、Google、搜狗的完整步骤</a>
+        
+      </div>
+    </div>
+    
+
+    
+    
+    <div class="sb-box">
+      <h3>🏷 相关标签</h3>
+      <div class="tags">
+        
+        <a href="/tags/chrome%E9%80%9A%E7%9F%A5" class="tag">Chrome通知</a>
+        
+        <a href="/tags/chrome%E5%BC%B9%E7%AA%97" class="tag">Chrome弹窗</a>
+        
+        <a href="/tags/chrome%E9%80%9A%E7%9F%A5%E8%AE%BE%E7%BD%AE" class="tag">Chrome通知设置</a>
+        
+        <a href="/tags/chrome%E5%85%B3%E9%97%AD%E9%80%9A%E7%9F%A5" class="tag">Chrome关闭通知</a>
+        
+        <a href="/tags/chrome%E7%BD%91%E7%AB%99%E6%9D%83%E9%99%90" class="tag">Chrome网站权限</a>
+        
+      </div>
+    </div>
+    
+  </aside>
+</div>
+
+<footer class="foot">
+  <div class="foot-inner">
+    <div class="foot-links">
+      <a href="/">首页</a>
+      <a href="/categories/入门教程">入门教程</a>
+      <a href="/categories/故障排查">故障排查</a>
+      <a href="/categories/进阶技巧">进阶技巧</a>
+      <a href="/categories/数据管理">数据管理</a>
+      <a href="/categories/版本资讯">版本资讯</a>
+      <a href="/categories/对比评测">对比评测</a>
+      <a href="/about/">关于我们</a>
+    </div>
+    <div class="foot-copy">© 2026 ChromeBest · 谷歌浏览器下载与使用教程 · 本站与 Google 无关</div>
+  </div>
+</footer>
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "首页",
+      "item": "https://chromebest.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Tips",
+      "item": "https:\/\/chromebest.com\/tips\/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Chrome 怎么关闭网站通知弹窗？2026 年批量管理和精确管控全教程"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Chrome 怎么关闭网站通知弹窗？2026 年批量管理和精确管控全教程",
+  "description": "Chrome 网站通知弹窗太烦？本文详解 Chrome 通知的关闭、批量管理、静音和分级策略，覆盖 chrome:\/\/settings\/content\/notifications 的高级用法，教你一次性清掉所有烦人的通知弹窗。",
+  "datePublished": "2026-05-31",
+  "dateModified": "2026-05-31",
+  "author": {
+    "@type": "Organization",
+    "name": "ChromeBest"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "ChromeBest",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://chromebest.com/og-default.jpg"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https:\/\/chromebest.com\/tips\/chrome-notification-settings\/"
+  }
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "",
+      "acceptedAnswer": { "@type": "Answer", "text": "" }
+    },{
+      "@type": "Question",
+      "name": "",
+      "acceptedAnswer": { "@type": "Answer", "text": "" }
+    },{
+      "@type": "Question",
+      "name": "",
+      "acceptedAnswer": { "@type": "Answer", "text": "" }
+    },{
+      "@type": "Question",
+      "name": "",
+      "acceptedAnswer": { "@type": "Answer", "text": "" }
+    },{
+      "@type": "Question",
+      "name": "",
+      "acceptedAnswer": { "@type": "Answer", "text": "" }
+    }
+  ]
+}
+</script>
+
+
+
+
+
+</body>
+</html>
