@@ -96,6 +96,17 @@
       <a href="{{ site.Params.download_url }}" class="btn-dl" style="padding:10px 20px;font-size:14px;width:100%;justify-content:center;margin-top:12px" rel="nofollow">⬇ 官方下载</a>
     </div>
 
+    <!-- All Categories -->
+    <div class="sb-box">
+      <h3>📂 全部分类</h3>
+      <div class="tags">
+        {{ $allCats := slice "入门教程" "故障排查" "进阶技巧" "数据管理" "版本资讯" "对比评测" }}
+        {{ range $allCats }}
+        <a href="/categories/{{ . | urlize }}" class="tag">{{ . }}</a>
+        {{ end }}
+      </div>
+    </div>
+
     <!-- Related Articles -->
     {{ $sideRelated := where (where .Site.RegularPages ".Section" "in" (slice "posts" "compare" "plugins" "tips" "download")) ".Permalink" "!=" .Permalink | shuffle | first 5 }}
     {{ if $sideRelated }}

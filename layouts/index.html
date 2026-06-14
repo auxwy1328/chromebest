@@ -22,7 +22,7 @@
 <!-- CATEGORY TABS -->
 <div class="cats">
   <a href="/" class="cat-btn active">全部</a>
-  {{ $cats := slice "下载安装" "使用技巧" "插件推荐" "对比评测" "性能优化" "隐私安全" }}
+  {{ $cats := slice "入门教程" "故障排查" "进阶技巧" "数据管理" "版本资讯" "对比评测" }}
   {{ range $cats }}
   <a href="/categories/{{ . | urlize }}" class="cat-btn">{{ . }}</a>
   {{ end }}
@@ -82,7 +82,7 @@
 </div>
 
 {{/* CATEGORY SECTIONS: show 3 cards per category */}}
-{{ range $catName := (slice "使用技巧" "插件推荐" "性能优化") }}
+{{ range $catName := (slice "入门教程" "进阶技巧" "对比评测") }}
 {{ $catPages := where $allPages "Params.categories" "intersect" (slice $catName) | first 3 }}
 {{ if $catPages }}
 <div class="sec">
