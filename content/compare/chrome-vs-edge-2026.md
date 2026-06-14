@@ -103,6 +103,79 @@ Edge 的内存占用比 Chrome 低约 10%。这是因为 Edge 做了更积极的
 
 **如果你非常在意隐私：** 两个都不够好。建议用 Firefox（默认严格追踪保护、非营利基金会运营、更透明的隐私政策），或者在 Chrome/Edge 上安装 uBlock Origin + Privacy Badger。我们也对比过 <a href="/plugins/chrome-ad-blocker-comparison/">Chrome 广告拦截插件</a>，其中 uBlock Origin 的隐私保护能力最强。
 
+## 安全防护能力对比
+
+隐私侧重数据收集的控制，安全侧重抵御恶意攻击。两个浏览器的安全防护各有侧重。
+
+### 恶意网站与钓鱼防护
+
+| 安全功能 | Chrome | Edge |
+|---------|--------|------|
+| 安全浏览（Safe Browsing） | ✅ Google Safe Browsing | ✅ Microsoft Defender SmartScreen |
+| 恶意网站拦截率 | 极高（全球最大恶意 URL 数据库） | 高 |
+| 钓鱼网站识别 | 基于机器学习+用户举报 | 基于机器学习+微软威胁情报 |
+| 下载文件扫描 | ✅ | ✅ |
+| 密码泄露检测 | ✅（密码安全检查） | ✅（密码运行状况） |
+
+**实测差异：** 2025 年第三方安全测试机构 AV-Comparatives 的钓鱼防护测试中，Chrome 的拦截率为 96.1%，Edge 为 94.8%。差距很小，都在优秀范围内。Chrome 的优势在于 Google Safe Browsing 覆盖了更广的恶意 URL 数据（因为 Chrome 市场份额大，上报的恶意链接数据量也更大）。
+
+### 沙盒与进程隔离
+
+两个浏览器都使用 Chromium 的沙盒机制，但实现细节不同：
+
+| 隔离技术 | Chrome | Edge |
+|---------|--------|------|
+| 站点隔离（Site Isolation） | ✅ 默认启用 | ✅ 默认启用 |
+| 渲染进程沙盒 | ✅ | ✅ |
+| 网络进程沙盒 | ✅ | ✅ |
+| GPU 进程沙盒 | ✅ | ✅ |
+| 应用防护（App Guard） | ❌ | ✅（Windows 企业版） |
+
+**Edge 独有的应用防护功能：** Windows 企业版中，Edge 支持 Microsoft Defender Application Guard，将浏览器会话隔离在一个 Hyper-V 虚拟机中运行。这意味着即使浏览器被恶意代码攻破，攻击者也接触不到宿主操作系统。普通版 Edge 没有这个功能，但它代表 Edge 在企业安全方向的差异化优势。
+
+### 扩展安全审核
+
+| 扩展安全 | Chrome | Edge |
+|---------|--------|------|
+| 商店扩展审核 | 自动审核+人工抽查 | 自动审核+人工抽查 |
+| 恶意扩展检测 | ✅ | ✅ |
+| 扩展权限提示 | ✅ 详细 | ✅ 详细 |
+| 企业扩展白名单 | ✅（组策略） | ✅（组策略+Intune） |
+
+**结论：** 两个浏览器的安全防护能力高度接近，日常使用差异极小。企业用户选 Edge 可以获得更完整的端点安全集成（配合 Microsoft 365 Defender），个人用户两者旗鼓相当。
+
+## AI 功能深度对比：Copilot vs Gemini
+
+2025-2026 年浏览器竞争最大的变数是 AI 功能。Edge 内置了 Copilot，Chrome 正在逐步集成 Gemini。
+
+### 当前 AI 功能状态
+
+| AI 功能 | Chrome | Edge |
+|--------|--------|------|
+| 侧边栏 AI 助手 | ⚠️ 实验阶段（chrome://flags 启用） | ✅ 正式功能（Copilot） |
+| 网页摘要 | 需安装扩展 | ✅ 内置 |
+| AI 写作辅助 | 需安装扩展 | ✅ 内置（Compose） |
+| 图片生成 | ❌ | ✅（Bing Image Creator） |
+| AI 标签页管理 | ✅（标签页群组+智能建议） | ✅ |
+| 搜索引擎集成 AI | Google SGE（部分地区） | Bing Chat |
+
+**Edge 的 AI 体验目前更成熟。** Copilot 可以直接在侧边栏中工作，不需要离开当前页面就能提问、总结、翻译。这是 Edge 最大的差异化优势之一——如果你每天用 AI 辅助工作，Edge 能省去来回切换窗口的时间。
+
+### Copilot 的实际使用场景
+
+1. **网页摘要**：打开一篇长文章，侧边栏输入「总结这篇文章的要点」，30 秒内得到 5 条核心结论
+2. **对比分析**：打开两个产品页面，让 Copilot 对比两者的参数和价格
+3. **写作辅助**：在任何文本框中选择文字 → 右键 → 「使用 Copilot 重写」，自动优化措辞
+4. **代码解释**：GitHub 页面上的代码看不懂，选中代码段让 Copilot 解释
+
+### Chrome 的 AI 追赶策略
+
+Google 并没有坐以待毙。2026 年初推出的 Chrome 135 版本中，Google 在 `chrome://flags` 中集成了 Gemini 侧边栏（标记为 #gemini-sidebar）。不过目前这个功能仍在实验阶段，需要手动开启且功能不如 Copilot 完善。
+
+**关键问题：** Google 的 AI 服务在国内需要网络工具才能访问，即使 Chrome 正式推出内置 AI 助手，国内用户也无法直接使用。而 Edge 的 Copilot 在国内通过 Bing 国际版可以间接使用（功能有限但至少可用）。
+
+如果你的 AI 使用场景偏重度（编程辅助、长文写作），两个浏览器的内置 AI 都不够强，建议直接使用 ChatGPT 或 Claude 的网页版配合浏览器的侧边栏功能。
+
 ## 国内使用体验
 
 ![#国内使用体验](/images/compare/chrome-vs-edge-2026/body2.jpg)
