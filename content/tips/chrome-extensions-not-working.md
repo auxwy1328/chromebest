@@ -159,7 +159,7 @@ Edge 和 Chrome 共享 Chromium 内核，大部分 Chrome 扩展可以直接在 
 2. 开启「允许来自其他商店的扩展」
 3. 访问 Chrome Web Store 正常安装
 
-Edge 在国内可以正常访问扩展商店，这是最省事的替代方案。如果遇到其他 Edge 和 Chrome 的选择问题可以看[Chrome vs Edge 对比文章](/compare/chrome-vs-edge/)。
+Edge 在国内可以正常访问扩展商店，这是最省事的替代方案。如果遇到其他 Edge 和 Chrome 的选择问题可以看[Chrome vs Edge 2026 对比文章](/compare/chrome-vs-edge-2026/)。
 
 ## 预防扩展问题的日常习惯
 
@@ -169,4 +169,4 @@ Edge 在国内可以正常访问扩展商店，这是最省事的替代方案。
 4. **定期检查扩展权限**：`chrome://extensions` → 详情 → 查看权限，不需要的权限可以关掉
 5. **不用的扩展删掉**：不是禁用，是直接删除。禁用的扩展依然占用资源
 
-关于 Chrome 扩展推荐可以参考[Chrome 必装插件推荐](/plugins/chrome-must-have-extensions/)和[Chrome 内存优化教程](/tips/chrome-memory-optimization/)。
+关于 Chrome 扩展推荐可以参考[Chrome 必装插件推荐](/plugins/chrome-essential-extensions/)和[Chrome 内存优化教程](/tips/chrome-memory-optimization/)。如果扩展问题是因为缓存冲突导致的数据异常，也可以试试[Chrome 清除缓存的方法](/tips/chrome-clear-cache/)；如果是扩展导致浏览器崩溃闪退，[Chrome 崩溃修复指南](/tips/chrome-crash-fix/)中有针对扩展冲突的详细排查步骤。如果你需要排查两个广告拦截器的冲突，参考[Chrome 广告拦截插件对比](/plugins/chrome-ad-blocker-comparison/)选择只保留最合适的一款。

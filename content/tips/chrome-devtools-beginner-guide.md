@@ -60,7 +60,7 @@ faq:
 3. 找到 `<title>` 标签：这就是网页的标题
 4. 找到 `<meta name="description">` 标签：这就是网页的描述
 
-这比右键→"查看页面源代码"方便——源代码是压缩成一团的，Elements 面板是有层级缩进的，更容易阅读。
+这比右键→"查看页面源代码"方便——源代码是压缩成一团的，Elements 面板是有层级缩进的，更容易阅读。如果要查看完整的页面源代码，按 Ctrl + U 或参考 [Chrome 快捷键大全](/tips/chrome-keyboard-shortcuts/) 中的开发者快捷键部分。
 
 **场景二：找到页面上某个元素的颜色值（设计师用）**
 
@@ -130,7 +130,7 @@ let total = 0; document.querySelectorAll('img').forEach(img => { if(img.naturalW
 4. 按时间排序：点击 Time 列标题
 5. 找到加载时间最长的资源，通常就是拖慢页面的原因
 
-常见的原因包括：图片太大（超过 1MB 的图片）、JavaScript 文件太多或太大、第三方脚本（广告、统计、分享按钮）加载慢。根据 Google 的数据，超过 50% 的页面加载时间花在第三方资源上。
+常见的原因包括：图片太大（超过 1MB 的图片）、JavaScript 文件太多或太大、第三方脚本（广告、统计、分享按钮）加载慢。根据 Google 的数据，超过 50% 的页面加载时间花在第三方资源上。如果页面本身加载就慢，参考 [Chrome 网页打不开或加载慢排查指南](/tips/chrome-page-not-loading/)。
 
 **小技巧：** 在 Network 面板中勾选"Disable cache"复选框，然后刷新页面，可以看到在无缓存情况下每个资源的完整加载时间。这对评估新访客的体验更有参考价值。
 
@@ -155,7 +155,7 @@ let total = 0; document.querySelectorAll('img').forEach(img => { if(img.naturalW
 3. 可以看到所有 Cookie 的名称、值、过期时间
 4. 选中不需要的 Cookie，按 Delete 键删除
 
-比在 Chrome 设置中清除所有 Cookie 精准得多——你可以只删除某个网站的特定 Cookie，而不影响其他网站的登录状态。比如某个网站登录出问题了，你可以只删除该网站的 Cookie 然后重新登录，其他网站的登录状态不受影响。
+比在 Chrome 设置中清除所有 Cookie 精准得多——你可以只删除某个网站的特定 Cookie，而不影响其他网站的登录状态。比如某个网站登录出问题了，你可以只删除该网站的 Cookie 然后重新登录，其他网站的登录状态不受影响。如果只是常规清理缓存，参考 [Chrome 缓存清理教程](/tips/chrome-clear-cache/) 的手动+自动方法。
 
 **场景二：查看网站占用了多少本地存储**
 

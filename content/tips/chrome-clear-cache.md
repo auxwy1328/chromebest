@@ -162,11 +162,11 @@ C:\Users\你的用户名\AppData\Local\Google\Chrome\User Data\Default\Cache
 
 ### 清理后 Chrome 变卡
 
-极少数情况下清理大量缓存后 Chrome 会短暂变慢，因为内部索引在重建。关掉 Chrome 等 30 秒再重新打开就好了。关于更多 Chrome 卡顿问题可以参考[Chrome 内存占用优化教程](/tips/chrome-memory-optimization/)。
+极少数情况下清理大量缓存后 Chrome 会短暂变慢，因为内部索引在重建。关掉 Chrome 等 30 秒再重新打开就好了。关于更多 Chrome 卡顿问题可以参考[Chrome 内存占用优化教程](/tips/chrome-memory-optimization/)。如果清理缓存后遇到页面渲染异常（花屏、黑屏），也可能是[Chrome 硬件加速设置](/tips/chrome-hardware-acceleration/)的问题，二者有时会被混淆。
 
 ### 清理后视频网站播放异常
 
-清理缓存时如果同时清了 Cookie，视频网站的播放记录和偏好会丢失，但不会影响播放功能本身。如果出现视频无法播放，检查是否误清了 Flash 或媒体许可证数据。如果更新后也有问题，可以参考[Chrome 更新失败修复方法](/tips/chrome-update-failed/)。
+清理缓存时如果同时清了 Cookie，视频网站的播放记录和偏好会丢失，但不会影响播放功能本身。如果出现视频无法播放，检查是否误清了 Flash 或媒体许可证数据。如果更新后也有问题，可以参考[Chrome 更新失败修复方法](/tips/chrome-update-failed/)。此外，定期清理缓存有助于降低 Chrome 的磁盘占用，和[设为默认浏览器](/tips/chrome-default-browser/)一样属于基础维护操作，建议养成习惯。
 
 ## 手机版 Chrome 清理缓存
 
@@ -187,4 +187,4 @@ C:\Users\你的用户名\AppData\Local\Google\Chrome\User Data\Default\Cache
 
 手机版和电脑版的区别：手机版没有 F12 开发者工具，无法单独清除某个网站的缓存。如果只是某个网站有问题，只能全清或者卸载重装 Chrome App。
 
-关于手机版更多技巧可以看[Chrome 手机版使用指南](/tips/chrome-mobile-tips/)。
+关于手机版更多技巧可以看[Chrome 手机版使用指南](/tips/chrome-mobile-tips/)。如果清理缓存是为了解决扩展程序异常的问题，也可以先参考[Chrome 扩展不工作的排查方法](/tips/chrome-extensions-not-working/)，有时缓存只是症状而非根因。
