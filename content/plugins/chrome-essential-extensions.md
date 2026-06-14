@@ -44,7 +44,7 @@ faq:
 
 **内存占用：** ~45MB（闲置时 20MB）
 
-**为什么推荐它而不是广告拦截管家：** 国内最火的广告拦截插件是 AdGuard 和广告拦截管家。但 uBlock Origin 有三个优势：内存占用更低（比 AdGuard 少 30%）、规则订阅更灵活、完全免费开源。AdGuard 的免费版有部分功能限制，广告拦截管家则会收集用户数据。
+**为什么推荐它而不是广告拦截管家：** 国内最火的广告拦截插件是 AdGuard 和广告拦截管家。但 uBlock Origin 有三个优势：内存占用更低（比 AdGuard 少 30%）、规则订阅更灵活、完全免费开源。AdGuard 的免费版有部分功能限制，广告拦截管家则会收集用户数据。我们也做了更详细的 <a href="/plugins/chrome-ad-blocker-comparison/">Chrome 广告拦截插件对比</a>，包含国内 5 个网站逐站实测数据。
 
 **设置建议：** 安装后进入设置 → 过滤器列表 → 勾选"EasyList China"（国内广告规则）+ "EasyPrivacy"（隐私追踪规则）。如果想进一步减少追踪，可以再加 "Fanboy's Annoyance List"。
 
@@ -67,7 +67,7 @@ faq:
 
 **设置建议：** 翻译引擎选 Google（免费稳定），如果需要更好的翻译质量可以配置 DeepL 或 OpenAI API Key。开启"自动翻译"后，访问外文网页会自动翻译。
 
-**详见我们的翻译插件对比文章。**
+**详见我们的 <a href="/plugins/chrome-translation-extension-comparison/">Chrome 翻译插件对比文章</a>。**
 
 ## 密码管理类
 
@@ -77,7 +77,7 @@ faq:
 
 **内存占用：** ~25MB
 
-**为什么推荐 Bitwarden 而不是 LastPass 或 1Password：** Bitwarden 是唯一一个完全免费且开源的密码管理器。基础功能（密码存储、自动填充、密码生成器、跨设备同步）全部免费。LastPass 免费版只能在一个设备类型上使用；1Password 需要付费（月费约 3 美元）。
+**为什么推荐 Bitwarden 而不是 LastPass 或 1Password：** Bitwarden 是唯一一个完全免费且开源的密码管理器。基础功能（密码存储、自动填充、密码生成器、跨设备同步）全部免费。LastPass 免费版只能在一个设备类型上使用；1Password 需要付费（月费约 3 美元）。详细的四款密码管理器对比可以看 <a href="/plugins/chrome-password-manager-comparison/">Chrome 密码管理器对比</a>。
 
 **设置建议：** 注册账号后，导入 Chrome 内置密码管理器中已保存的密码（设置 → 导入数据），然后关闭 Chrome 的密码保存功能，完全交给 Bitwarden 管理。
 
@@ -94,7 +94,7 @@ faq:
 
 **内存占用：** ~15MB
 
-**使用场景：** 当你打开了几十个标签页但暂时不看时，点击 OneTab 图标，所有标签页被关闭并保存为一个列表。你需要时从列表中恢复即可。这是我们内存优化文章中效果最明显的方法。
+**使用场景：** 当你打开了几十个标签页但暂时不看时，点击 OneTab 图标，所有标签页被关闭并保存为一个列表。你需要时从列表中恢复即可。这是我们 <a href="/tips/chrome-memory-optimization/">Chrome 内存优化文章</a>中效果最明显的方法。
 
 **和同类插件的区别：** Toby、Workona 等标签页管理插件功能更丰富（标签页分组、工作空间等），但它们会增加内存占用。OneTab 的优势是极简——只有一个功能，内存占用最低。
 

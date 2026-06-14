@@ -35,7 +35,7 @@ faq:
 
 Chrome 和 Edge 都是基于 Chromium 内核的浏览器，网页渲染效果几乎一样。但内核一样不代表体验一样——两个浏览器在性能调优、功能侧重、隐私策略和国内适配上差距不小。
 
-我们之前做过 Chrome、Edge、Firefox 的三方对比。这篇文章专门聚焦 Chrome vs Edge，在更细的维度上进行深度比较。
+我们之前做过 <a href="/compare/chrome-vs-edge-vs-firefox-2026/">Chrome、Edge、Firefox 的三方对比</a>。这篇文章专门聚焦 Chrome vs Edge，在更细的维度上进行深度比较。
 
 ## 性能对比
 
@@ -50,7 +50,7 @@ Chrome 和 Edge 都是基于 Chromium 内核的浏览器，网页渲染效果几
 | 活跃标签页内存 | 180MB/个 | 165MB/个 |
 | 启动速度 | 1.2s | 1.0s |
 
-Edge 的内存占用比 Chrome 低约 10%。这是因为 Edge 做了更积极的"睡眠标签页"策略——后台标签页更快进入冻结状态。如果你只有 8GB 内存，Edge 的优势更明显。
+Edge 的内存占用比 Chrome 低约 10%。这是因为 Edge 做了更积极的"睡眠标签页"策略——后台标签页更快进入冻结状态。如果你只有 8GB 内存，Edge 的优势更明显。内存紧张的用户也可以参考我们的 <a href="/tips/chrome-memory-optimization/">Chrome 内存占用优化指南</a>。
 
 ### 页面加载速度
 
@@ -88,7 +88,7 @@ Edge 的内存占用比 Chrome 低约 10%。这是因为 Edge 做了更积极的
 
 **Edge 的功能优势非常明显：** 内置 VPN、广告拦截、AI 助手、阅读模式、垂直标签页、集锦功能、游戏模式……这些都是 Chrome 不内置的功能。如果 Edge 的这些功能恰好是你需要的，它能节省你安装大量插件。
 
-**Chrome 的功能优势：插件生态。** Chrome Web Store 的插件数量和质量都远超 Edge 的附加组件商店。很多开发者只发布 Chrome 版插件。如果你依赖特定的 Chrome 插件（如某些开发工具或小众工具），Chrome 是更好的选择。
+**Chrome 的功能优势：插件生态。** Chrome Web Store 的插件数量和质量都远超 Edge 的附加组件商店。很多开发者只发布 Chrome 版插件。如果你依赖特定的 Chrome 插件（如某些开发工具或小众工具），Chrome 是更好的选择。可以看看我们的 <a href="/plugins/chrome-essential-extensions/">Chrome 必装插件推荐</a>，了解哪些插件真正值得装。
 
 ## 隐私对比
 
@@ -101,7 +101,7 @@ Edge 的内存占用比 Chrome 低约 10%。这是因为 Edge 做了更积极的
 
 **Edge 在隐私方面略好：** 默认启用更严格的追踪防护（三挡可选），不使用类似 FLOC 的用户追踪技术。但 Edge 仍然会收集使用数据用于产品改进，且微软的隐私政策并不比 Google 透明多少。
 
-**如果你非常在意隐私：** 两个都不够好。建议用 Firefox（默认严格追踪保护、非营利基金会运营、更透明的隐私政策），或者在 Chrome/Edge 上安装 uBlock Origin + Privacy Badger。
+**如果你非常在意隐私：** 两个都不够好。建议用 Firefox（默认严格追踪保护、非营利基金会运营、更透明的隐私政策），或者在 Chrome/Edge 上安装 uBlock Origin + Privacy Badger。我们也对比过 <a href="/plugins/chrome-ad-blocker-comparison/">Chrome 广告拦截插件</a>，其中 uBlock Origin 的隐私保护能力最强。
 
 ## 国内使用体验
 

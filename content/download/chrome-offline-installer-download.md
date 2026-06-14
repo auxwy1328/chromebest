@@ -48,7 +48,7 @@ faq:
 | 安装速度 | 取决于网速 | 1 分钟内完成 |
 | 适合场景 | 网络稳定时 | 网络不稳定 / 批量安装 / 系统重装后 |
 
-**建议：** 如果你在国内，优先下载离线安装包。在线安装包在国内经常因为 Google 服务器被限制而下载失败。
+**建议：** 如果你在国内，优先下载离线安装包。在线安装包在国内经常因为 Google 服务器被限制而下载失败。关于 <a href="/tips/chrome-common-problems-in-china/">Chrome 在国内使用的常见问题</a>我们也整理了详细的解决方案。
 
 ## Windows 版官方离线安装包下载地址
 
@@ -147,7 +147,7 @@ brew install --cask google-chrome
 
 双击下载好的 `chrome_installer.exe`，会弹出用户账户控制（UAC）提示，点击"是"。
 
-Chrome 会自动完成安装（约 30 秒），过程中不需要任何手动操作。安装路径默认为 `C:\Program Files\Google\Chrome\Application\`。
+Chrome 会自动完成安装（约 30 秒），过程中不需要任何手动操作。安装路径默认为 `C:\Program Files\Google\Chrome\Application\`。如果你在安装过程中遇到问题，也可以参考 <a href="/tips/chrome-common-problems-in-china/">Chrome 国内使用常见问题</a>中的解决方案。
 
 **安装过程中常见问题：**
 - **提示"安装失败，错误代码 0x80004005"：** 通常是因为权限不足。右键点击安装包 → "以管理员身份运行"重试。
@@ -167,8 +167,8 @@ Chrome 会自动完成安装（约 30 秒），过程中不需要任何手动操
 Chrome 首次启动后，建议做以下基础配置：
 
 1. **登录 Google 账号**：如果你有 Google 账号，登录后可以同步书签、密码和扩展。注意国内环境可能需要网络工具才能登录。
-2. **设置默认浏览器**：Chrome 会弹出提示，点击"设为默认"。也可以手动设置：Windows 设置 → 应用 → 默认应用 → Web 浏览器 → Google Chrome。
-3. **设置默认搜索引擎**：chrome://settings/search → 如果 Google 搜索不可用，可以添加百度或 Bing 作为默认。
+2. **设置默认浏览器**：Chrome 会弹出提示，点击"设为默认"。也可以手动设置：Windows 设置 → 应用 → 默认应用 → Web 浏览器 → Google Chrome。如果设置后被其他浏览器篡改，可以参考 <a href="/tips/chrome-default-browser/">Chrome 设为默认浏览器的完整教程</a>。
+3. **设置默认搜索引擎**：chrome://settings/search → 如果 Google 搜索不可用，可以添加百度或 Bing 作为默认。详细的搜索引擎切换方法可以参考 <a href="/tips/chrome-search-engine-change/">Chrome 搜索引擎切换全攻略</a>。
 4. **导入其他浏览器的数据**：Chrome → 设置 → 导入书签和设置 → 选择要导入的浏览器 → 勾选需要导入的数据（书签、密码、历史记录）。
 
 ## 企业批量安装（IT 管理员参考）
