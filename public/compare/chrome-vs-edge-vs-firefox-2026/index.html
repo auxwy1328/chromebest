@@ -100,7 +100,7 @@
     <div class="art-body">
       <p>网上搜 &ldquo;Chrome vs Edge vs Firefox&rdquo;，能找到几十篇对比文章。但仔细看，几乎每篇都有同样的问题：<strong>测试的都是 YouTube、Amazon、Twitter 这些英文站</strong>，对中国用户参考价值很有限。</p>
 <p>这篇文章不一样。我用<strong>淘宝、知乎、B站、京东、百度、GitHub</strong>这 6 个国内用户最常访问的网站做测试，并且附上 Chrome 任务管理器的真实截图。不是搬运数据，而是我自己一台电脑上的实测结果。</p>
-<p>结论先说：<strong>日常使用选 Chrome，办公协作选 Edge，隐私优先选 Firefox。</strong> 但如果你想看具体数据，往下看。</p>
+<p>结论先说：<strong>日常使用选 Chrome，办公协作选 Edge，隐私优先选 Firefox。</strong> 但如果你想看具体数据，往下看。我们也做了一份更详细的 <a href="/compare/chrome-vs-edge-2026/">Chrome 和 Edge 的深度对比</a>，在更细的维度上进行了比较。</p>
 <h2 id="测试环境和方法">测试环境和方法</h2>
 <p>先交代清楚，免得被质疑数据不靠谱。</p>
 <p><strong>测试电脑配置：</strong></p>
@@ -215,7 +215,7 @@
 </table>
 <p>Chrome 冷启动最快，因为 Windows 11 对 Chrome 做了启动预加载优化。Firefox 恢复标签页最快——如果你习惯关浏览器时不关标签页，Firefox 体验更好。</p>
 <p>但说实话，三者差距都在 1 秒以内，日常使用几乎感知不到区别。热启动（关闭后重新打开）三者都不到 1 秒，这部分差异可以忽略。</p>
-<p>补充一个有趣的发现：如果把默认搜索引擎从 Google 换成百度，Chrome 的首次搜索响应速度会从 1.2 秒降到 0.6 秒。虽然这只是网络延迟的差异，但对于国内用户来说体感明显。</p>
+<p>补充一个有趣的发现：如果把默认搜索引擎从 Google 换成百度，Chrome 的首次搜索响应速度会从 1.2 秒降到 0.6 秒。虽然这只是网络延迟的差异，但对于国内用户来说体感明显。如果想进一步优化 Chrome 的速度，可以看看我们的 <a href="/tips/chrome-memory-optimization/">Chrome 内存占用优化指南</a>。</p>
 <h2 id="国内网站加载速度三者差距不大">国内网站加载速度：三者差距不大</h2>
 <p><img src="/images/compare/chrome-vs-edge-vs-firefox-2026/body2.jpg" alt="#国内网站加载速度：三者差距不大"></p>
 <p>这是本次测试的重点。大部分竞品测的是 YouTube、Amazon、Twitter，那些数据对中国用户意义不大。我选了 6 个国内用户每天都会打开的网站。</p>
@@ -335,7 +335,7 @@
 <li><strong>Tampermonkey</strong>：三者均可，但部分国内脚本只在 Chrome 上测试过</li>
 <li><strong>IDM Integration</strong>（下载增强）：Chrome/Edge 正常，Firefox 需要额外配置</li>
 </ul>
-<p><strong>结论：如果你重度依赖中文插件（尤其是翻译类和视频增强类），选 Chrome 或 Edge。Firefox 能用但体验会打折扣。</strong></p>
+<p><strong>结论：如果你重度依赖中文插件（尤其是翻译类和视频增强类），选 Chrome 或 Edge。Firefox 能用但体验会打折扣。</strong> 我们在 <a href="/plugins/chrome-translation-extension-comparison/">Chrome 翻译插件对比</a>和 <a href="/plugins/chrome-ad-blocker-comparison/">广告拦截插件对比</a>中也验证了这一点——中文插件在 Chrome 上兼容性最好。</p>
 <p>补充一个实操建议：如果你从 Chrome 切换到 Edge，可以在 Edge 设置中开启&quot;允许从其他商店安装扩展&quot;，这样就能直接安装 Chrome 网上应用店的所有插件，过渡成本几乎为零。</p>
 <h2 id="隐私与安全firefox-完胜chrome-和-edge-都有数据收集">隐私与安全：Firefox 完胜，Chrome 和 Edge 都有数据收集</h2>
 <p><img src="/images/compare/chrome-vs-edge-vs-firefox-2026/body1.jpg" alt="#隐私与安全：Firefox 完胜，Ch"></p>
@@ -557,15 +557,15 @@
       <h3>📖 相关文章</h3>
       <div style="display:flex;flex-direction:column;gap:12px">
         
-        <a href="https://chromebest.com/tips/chrome-default-browser/" style="font-size:13px;line-height:1.5;color:var(--txt2)">Chrome 设为默认浏览器的完整教程：Windows、Mac、手机全覆盖</a>
+        <a href="https://chromebest.com/tips/chrome-extensions-not-working/" style="font-size:13px;line-height:1.5;color:var(--txt2)">Chrome 扩展程序打不开怎么办？5 种故障逐一排查修复 2026</a>
         
-        <a href="https://chromebest.com/tips/chrome-sync-settings-guide/" style="font-size:13px;line-height:1.5;color:var(--txt2)">Chrome 同步设置完整指南：多设备同步书签密码历史记录</a>
+        <a href="https://chromebest.com/tips/chrome-tab-groups/" style="font-size:13px;line-height:1.5;color:var(--txt2)">Chrome标签页分组管理技巧：2026年告别标签页混乱</a>
         
-        <a href="https://chromebest.com/tips/chrome-search-engine-switch/" style="font-size:13px;line-height:1.5;color:var(--txt2)">Chrome 浏览器默认搜索引擎切换与自定义设置指南（2026）</a>
+        <a href="https://chromebest.com/tips/chrome-video-download-guide/" style="font-size:13px;line-height:1.5;color:var(--txt2)">Chrome 下载视频的方法大全：从插件到在线工具，5 种方式实测</a>
         
-        <a href="https://chromebest.com/tips/chrome-privacy-settings-guide/" style="font-size:13px;line-height:1.5;color:var(--txt2)">Chrome 隐私设置完全指南：9 个必须改的安全选项（附截图说明）</a>
+        <a href="https://chromebest.com/tips/chrome-pdf-editor/" style="font-size:13px;line-height:1.5;color:var(--txt2)">Chrome 浏览器 PDF 编辑功能完整指南（2026 最新版）</a>
         
-        <a href="https://chromebest.com/tips/chrome-incognito-mode/" style="font-size:13px;line-height:1.5;color:var(--txt2)">Chrome 隐私模式的真相：它到底能隐藏什么，不能隐藏什么</a>
+        <a href="https://chromebest.com/tips/chrome-hardware-acceleration/" style="font-size:13px;line-height:1.5;color:var(--txt2)">Chrome 硬件加速设置教程：开启/关闭/故障排查，解决卡顿花屏崩溃</a>
         
       </div>
     </div>

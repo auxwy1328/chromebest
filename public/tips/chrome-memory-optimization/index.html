@@ -181,7 +181,7 @@
   </tbody>
 </table>
 <p>禁用了标记为&quot;不需要&quot;的 5 个扩展后，内存从 1688MB 降到 <strong>1378MB</strong>，再省 <strong>310MB（18%）</strong>。</p>
-<p><strong>评价：⭐⭐⭐⭐</strong> 效果明显，但需要牺牲部分扩展功能。建议只保留每天都会用到的 2-3 个扩展。</p>
+<p><strong>评价：⭐⭐⭐⭐</strong> 效果明显，但需要牺牲部分扩展功能。建议只保留每天都会用到的 2-3 个扩展。如果不知道哪些扩展值得保留，参考 <a href="/plugins/chrome-essential-extensions/">Chrome 必装插件推荐 2026</a>。</p>
 <hr>
 <h2 id="方法三使用-onetab-合并标签页节省-620mb">方法三：使用 OneTab 合并标签页（节省 620MB）</h2>
 <p><strong>操作：</strong> 安装 OneTab 扩展 → 点击 OneTab 图标 → 所有标签页被合并为一个列表</p>
@@ -213,13 +213,14 @@
 <li><strong>让你更愿意关掉不需要的标签页</strong>——看到&quot;工作（12个标签）&ldquo;这个分组，你会意识到其中一半已经不需要了</li>
 <li><strong>方便批量操作</strong>——右键点击分组可以一键关闭所有标签页</li>
 </ol>
+<p>更多标签页分组和管理技巧参考 <a href="/tips/chrome-tab-groups/">Chrome 标签页分组管理技巧</a>。</p>
 <p><strong>评价：⭐⭐⭐</strong> 不直接省内存，但间接帮助你管理标签页。</p>
 <hr>
 <h2 id="方法七启用硬件加速减少-cpu-占用间接节省内存">方法七：启用硬件加速（减少 CPU 占用，间接节省内存）</h2>
 <p><strong>操作：</strong> chrome://settings/system → 开启&quot;使用硬件加速模式&rdquo;</p>
 <p>硬件加速让 GPU 处理网页渲染，而不是让 CPU 做。CPU 占用降低后，系统有更多资源给其他程序，间接降低了整体内存压力。</p>
 <p><strong>实测效果：</strong> 打开 B站 1080P 视频 10 分钟，CPU 占用从 12% 降到 7%，内存占用从 480MB 降到 460MB（差异不大，但 CPU 效果明显）。</p>
-<p><strong>注意：</strong> 如果你使用的是集成显卡或老旧显卡，硬件加速可能导致画面闪烁。遇到这种情况就关掉。</p>
+<p><strong>注意：</strong> 如果你使用的是集成显卡或老旧显卡，硬件加速可能导致画面闪烁。遇到这种情况就关掉。详细的硬件加速故障排查参考 <a href="/tips/chrome-hardware-acceleration/">Chrome 硬件加速设置教程</a>。</p>
 <p><strong>评价：⭐⭐⭐</strong> CPU 效果明显，内存效果小。</p>
 <hr>
 <h2 id="方法八限制后台标签页的活动节省-95mb">方法八：限制后台标签页的活动（节省 95MB）</h2>
@@ -361,7 +362,7 @@
 <h3 id="8gb-内存用-chrome-够吗">8GB 内存用 Chrome 够吗？</h3>
 <p>有点勉强。8GB 内存减去系统占用约 3GB，只剩 5GB 给应用。Chrome 默认就占 1-2GB，再开几个其他应用就满了。建议：只保留 2-3 个必要扩展、开启内存节省程序、使用 OneTab 管理标签页、或考虑换用 Firefox（内存占用比 Chrome 低 20%）。</p>
 <h3 id="怎么查看每个标签页的内存占用">怎么查看每个标签页的内存占用？</h3>
-<p>按 Shift + Esc 打开 Chrome 自带的任务管理器。这里会显示每个标签页、扩展和子进程的内存占用。找出占用最高的标签页，决定是否关闭它。这个快捷键比打开 Windows 任务管理器然后找 Chrome 进程方便多了。</p>
+<p>按 Shift + Esc 打开 Chrome 自带的任务管理器。这里会显示每个标签页、扩展和子进程的内存占用。找出占用最高的标签页，决定是否关闭它。这个快捷键比打开 Windows 任务管理器然后找 Chrome 进程方便多了。更多效率快捷键参考 <a href="/tips/chrome-keyboard-shortcuts/">Chrome 快捷键大全</a>。</p>
 <h3 id="firefox-真的比-chrome-省内存吗">Firefox 真的比 Chrome 省内存吗？</h3>
 <p>是的，在我们的三款浏览器对比测试中，同样的 10 个标签页，Firefox 比 Chrome 少占约 20% 的内存。原因是 Firefox 的进程架构和 Chrome 不同——它不会为每个标签页创建独立的渲染进程（除非你手动启用了进程隔离）。但代价是单个标签页崩溃可能导致整个浏览器崩溃。</p>
 <h3 id="为什么关了标签页内存没降">为什么关了标签页内存没降？</h3>
@@ -478,15 +479,15 @@
       <h3>📖 相关文章</h3>
       <div style="display:flex;flex-direction:column;gap:12px">
         
-        <a href="https://chromebest.com/tips/chrome-clear-cache/" style="font-size:13px;line-height:1.5;color:var(--txt2)">Chrome 缓存怎么清理？手动&#43;自动&#43;只清指定网站 3 种方法详解 2026</a>
-        
-        <a href="https://chromebest.com/tips/chrome-search-engine-switch/" style="font-size:13px;line-height:1.5;color:var(--txt2)">Chrome 浏览器默认搜索引擎切换与自定义设置指南（2026）</a>
+        <a href="https://chromebest.com/plugins/chrome-ad-blocker-comparison/" style="font-size:13px;line-height:1.5;color:var(--txt2)">Chrome 广告拦截插件对比：uBlock Origin vs AdGuard vs 广告拦截管家（2026 实测）</a>
         
         <a href="https://chromebest.com/plugins/chrome-password-manager-comparison/" style="font-size:13px;line-height:1.5;color:var(--txt2)">Chrome 密码管理器对比：Bitwarden vs LastPass vs 1Password vs Chrome 内置</a>
         
-        <a href="https://chromebest.com/tips/chrome-secure-dns-setup/" style="font-size:13px;line-height:1.5;color:var(--txt2)">Chrome 安全 DNS 设置教程：提升浏览安全性和解析速度</a>
+        <a href="https://chromebest.com/tips/chrome-page-not-loading/" style="font-size:13px;line-height:1.5;color:var(--txt2)">Chrome 网页打不开或加载慢？2026 年 DNS 和网络问题全排查指南</a>
         
-        <a href="https://chromebest.com/tips/chrome-guest-mode/" style="font-size:13px;line-height:1.5;color:var(--txt2)">Chrome 访客模式、隐私模式、多用户模式有什么区别?哪个更适合你</a>
+        <a href="https://chromebest.com/plugins/chrome-translation-extension-comparison/" style="font-size:13px;line-height:1.5;color:var(--txt2)">5款Chrome翻译插件实测对比：沉浸式翻译、DeepL、Google翻译谁准确率最高</a>
+        
+        <a href="https://chromebest.com/tips/chrome-dark-mode/" style="font-size:13px;line-height:1.5;color:var(--txt2)">Chrome 深色模式设置完整指南：Windows/Mac/手机/扩展全攻略</a>
         
       </div>
     </div>

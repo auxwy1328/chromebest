@@ -128,7 +128,7 @@
 <li>定期清理：选择&quot;过去 24 小时&quot;或&quot;过去 7 天&quot;</li>
 <li>浏览敏感内容后：选择&quot;过去 1 小时&quot;</li>
 </ul>
-<p><strong>注意：</strong> 清除浏览数据时不要勾选&quot;密码和其他登录数据&quot;（除非你有密码管理器备份），否则所有已保存的登录信息都会丢失。</p>
+<p><strong>注意：</strong> 清除浏览数据时不要勾选&quot;密码和其他登录数据&quot;（除非你有密码管理器备份），否则所有已保存的登录信息都会丢失。手动+自动清理的完整方法参考 <a href="/tips/chrome-clear-cache/">Chrome 缓存清理教程</a>。</p>
 <h2 id="设置五启用安全浏览风险等级高">设置五：启用安全浏览（风险等级：高）</h2>
 <p><strong>这个设置 Chrome 默认已开启，但请确认一下。</strong></p>
 <p><strong>操作：</strong> chrome://settings/security → 确保&quot;安全浏览&quot;已开启，选择&quot;保护&quot;</p>
@@ -152,6 +152,7 @@
 <li>chrome://settings/autofill → 检查&quot;保存并自动填充付款方式&quot;和&quot;保存并自动填充地址&quot;</li>
 <li>如果你不希望 Chrome 保存密码，关闭&quot;询问是否保存密码&quot;，改用专门的密码管理器（如 Bitwarden、1Password）</li>
 </ol>
+<p>自动填充的安全风险和最佳配置参考 <a href="/tips/chrome-autofill/">Chrome 自动填充功能详解</a>。</p>
 <p><strong>Chrome 内置密码管理器 vs 专业密码管理器：</strong> Chrome 内置的密码管理器功能够用但安全性一般——密码以明文存储在本地数据库中（虽然系统有加密，但不如专业工具的安全级别）。如果你有大量重要账号（银行、邮箱、社交平台），建议使用 Bitwarden 或 1Password 等专业工具。</p>
 <h2 id="设置八关闭使用预测性服务来帮助搜索风险等级低">设置八：关闭&quot;使用预测性服务来帮助搜索&quot;（风险等级：低）</h2>
 <p><strong>不改会怎样：</strong> Chrome 会根据你的浏览历史、搜索记录和书签来预测你要搜索的内容，在地址栏输入时显示建议。方便但会进一步暴露你的兴趣偏好。</p>
@@ -172,6 +173,7 @@
 <li>不能隐藏你的 DNS 请求（你的 DNS 服务商知道你查询了什么域名）</li>
 <li>公司/学校网络管理员仍然可以看到你的网络流量</li>
 </ul>
+<p>无痕模式的完整能做什么不能做什么，参考 <a href="/tips/chrome-incognito-mode-guide/">Chrome 无痕模式详解</a>。</p>
 <p><strong>操作：</strong> Ctrl + Shift + N 打开无痕窗口</p>
 <p><strong>什么时候该用无痕模式：</strong></p>
 <ul>
@@ -252,7 +254,7 @@
   </tbody>
 </table>
 <p>前 3 个设置建议你现在就去改，2 分钟就能搞定。后面的设置可以根据你的隐私需求逐步调整。</p>
-<p>如果你对隐私保护有更高要求（比如防止浏览器指纹追踪），建议安装 uBlock Origin（广告拦截 + 反追踪）和 Privacy Badger（自动学习并阻止追踪器）这两个扩展。</p>
+<p>如果你对隐私保护有更高要求（比如防止浏览器指纹追踪），建议安装 uBlock Origin（广告拦截 + 反追踪）和 Privacy Badger（自动学习并阻止追踪器）这两个扩展。如果你在考虑是否换成其他浏览器，可以参考 <a href="/compare/chrome-vs-firefox-2026/">Chrome vs Firefox 2026 深度对比</a> 中的隐私保护对比部分。</p>
 <h2 id="常见问题">常见问题</h2>
 <h3 id="改了这些设置之后-chrome-会变慢吗">改了这些设置之后 Chrome 会变慢吗？</h3>
 <p>不会。关闭第三方 Cookie 和安全浏览不会影响页面加载速度。清理浏览数据后第一次加载某些网站可能稍慢（需要重新加载资源），之后就会恢复正常。</p>
@@ -375,15 +377,15 @@
       <h3>📖 相关文章</h3>
       <div style="display:flex;flex-direction:column;gap:12px">
         
-        <a href="https://chromebest.com/download/chrome-offline-installer/" style="font-size:13px;line-height:1.5;color:var(--txt2)">Chrome 离线安装包下载与安装完整指南（2026 最新版）</a>
+        <a href="https://chromebest.com/tips/chrome-clear-cache/" style="font-size:13px;line-height:1.5;color:var(--txt2)">Chrome 缓存怎么清理？手动&#43;自动&#43;只清指定网站 3 种方法详解 2026</a>
         
-        <a href="https://chromebest.com/tips/chrome-search-engine-switch/" style="font-size:13px;line-height:1.5;color:var(--txt2)">Chrome 浏览器默认搜索引擎切换与自定义设置指南（2026）</a>
+        <a href="https://chromebest.com/tips/chrome-bookmarks-management/" style="font-size:13px;line-height:1.5;color:var(--txt2)">Chrome 书签管理完全指南：导入导出、同步、整理技巧（含跨浏览器迁移）</a>
         
-        <a href="https://chromebest.com/plugins/chrome-password-manager-comparison/" style="font-size:13px;line-height:1.5;color:var(--txt2)">Chrome 密码管理器对比：Bitwarden vs LastPass vs 1Password vs Chrome 内置</a>
+        <a href="https://chromebest.com/tips/chrome-proxy-settings/" style="font-size:13px;line-height:1.5;color:var(--txt2)">Chrome 代理设置完整指南：系统代理、扩展代理、PAC 自动配置详解</a>
         
-        <a href="https://chromebest.com/plugins/chrome-translation-extension-comparison/" style="font-size:13px;line-height:1.5;color:var(--txt2)">5款Chrome翻译插件实测对比：沉浸式翻译、DeepL、Google翻译谁准确率最高</a>
+        <a href="https://chromebest.com/tips/chrome-pdf-editor/" style="font-size:13px;line-height:1.5;color:var(--txt2)">Chrome 浏览器 PDF 编辑功能完整指南（2026 最新版）</a>
         
-        <a href="https://chromebest.com/tips/chrome-memory-optimization/" style="font-size:13px;line-height:1.5;color:var(--txt2)">Chrome 内存占用优化：10 种方法实测，内存从 2.1GB 降到 1.3GB</a>
+        <a href="https://chromebest.com/tips/chrome-default-browser/" style="font-size:13px;line-height:1.5;color:var(--txt2)">Chrome 设为默认浏览器的完整教程：Windows、Mac、手机全覆盖</a>
         
       </div>
     </div>

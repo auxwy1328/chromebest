@@ -141,7 +141,7 @@
 <li>找到 <code>&lt;title&gt;</code> 标签：这就是网页的标题</li>
 <li>找到 <code>&lt;meta name=&quot;description&quot;&gt;</code> 标签：这就是网页的描述</li>
 </ol>
-<p>这比右键→&ldquo;查看页面源代码&quot;方便——源代码是压缩成一团的，Elements 面板是有层级缩进的，更容易阅读。</p>
+<p>这比右键→&ldquo;查看页面源代码&quot;方便——源代码是压缩成一团的，Elements 面板是有层级缩进的，更容易阅读。如果要查看完整的页面源代码，按 Ctrl + U 或参考 <a href="/tips/chrome-keyboard-shortcuts/">Chrome 快捷键大全</a> 中的开发者快捷键部分。</p>
 <p><strong>场景二：找到页面上某个元素的颜色值（设计师用）</strong></p>
 <ol>
 <li>按 Ctrl + Shift + C（选择元素工具）</li>
@@ -187,7 +187,7 @@
 <li>按时间排序：点击 Time 列标题</li>
 <li>找到加载时间最长的资源，通常就是拖慢页面的原因</li>
 </ol>
-<p>常见的原因包括：图片太大（超过 1MB 的图片）、JavaScript 文件太多或太大、第三方脚本（广告、统计、分享按钮）加载慢。根据 Google 的数据，超过 50% 的页面加载时间花在第三方资源上。</p>
+<p>常见的原因包括：图片太大（超过 1MB 的图片）、JavaScript 文件太多或太大、第三方脚本（广告、统计、分享按钮）加载慢。根据 Google 的数据，超过 50% 的页面加载时间花在第三方资源上。如果页面本身加载就慢，参考 <a href="/tips/chrome-page-not-loading/">Chrome 网页打不开或加载慢排查指南</a>。</p>
 <p><strong>小技巧：</strong> 在 Network 面板中勾选&quot;Disable cache&quot;复选框，然后刷新页面，可以看到在无缓存情况下每个资源的完整加载时间。这对评估新访客的体验更有参考价值。</p>
 <p><strong>场景二：查看页面向哪些服务器发送了请求</strong></p>
 <p>打开 Network 面板刷新页面后，Domain 列会显示每个请求的域名。你可以看到页面除了加载自己的资源外，还加载了哪些第三方域名的资源（广告商、追踪器、CDN 等）。这对于了解网站的技术架构和隐私实践很有帮助。</p>
@@ -203,7 +203,7 @@
 <li>可以看到所有 Cookie 的名称、值、过期时间</li>
 <li>选中不需要的 Cookie，按 Delete 键删除</li>
 </ol>
-<p>比在 Chrome 设置中清除所有 Cookie 精准得多——你可以只删除某个网站的特定 Cookie，而不影响其他网站的登录状态。比如某个网站登录出问题了，你可以只删除该网站的 Cookie 然后重新登录，其他网站的登录状态不受影响。</p>
+<p>比在 Chrome 设置中清除所有 Cookie 精准得多——你可以只删除某个网站的特定 Cookie，而不影响其他网站的登录状态。比如某个网站登录出问题了，你可以只删除该网站的 Cookie 然后重新登录，其他网站的登录状态不受影响。如果只是常规清理缓存，参考 <a href="/tips/chrome-clear-cache/">Chrome 缓存清理教程</a> 的手动+自动方法。</p>
 <p><strong>场景二：查看网站占用了多少本地存储</strong></p>
 <p>Application 面板中可以查看 Local Storage、Session Storage、IndexedDB、Cache Storage 等存储空间的使用情况。如果你发现 Chrome 占用了大量磁盘空间（有时候会达到几个 GB），很可能是因为某些网站在本地存储了大量缓存数据。在 Application 面板中可以按网站查看各站点的存储占用，精准定位并清理。</p>
 <h2 id="面板五lighthouse灯塔面板页面性能和-seo-评分">面板五：Lighthouse（灯塔面板）——页面性能和 SEO 评分</h2>
@@ -390,15 +390,15 @@
       <h3>📖 相关文章</h3>
       <div style="display:flex;flex-direction:column;gap:12px">
         
-        <a href="https://chromebest.com/tips/chrome-default-browser/" style="font-size:13px;line-height:1.5;color:var(--txt2)">Chrome 设为默认浏览器的完整教程：Windows、Mac、手机全覆盖</a>
-        
-        <a href="https://chromebest.com/compare/chrome-vs-brave-2026/" style="font-size:13px;line-height:1.5;color:var(--txt2)">Chrome 和 Brave 2026 年到底选哪个？深度实测对比</a>
+        <a href="https://chromebest.com/download/chrome-offline-installer/" style="font-size:13px;line-height:1.5;color:var(--txt2)">Chrome 离线安装包下载与安装完整指南（2026 最新版）</a>
         
         <a href="https://chromebest.com/tips/chrome-common-problems-in-china/" style="font-size:13px;line-height:1.5;color:var(--txt2)">Chrome 在国内使用的 10 个常见问题及解决方案（2026 最新版）</a>
         
-        <a href="https://chromebest.com/plugins/chrome-translation-extension-comparison/" style="font-size:13px;line-height:1.5;color:var(--txt2)">5款Chrome翻译插件实测对比：沉浸式翻译、DeepL、Google翻译谁准确率最高</a>
+        <a href="https://chromebest.com/tips/chrome-bookmarks-management/" style="font-size:13px;line-height:1.5;color:var(--txt2)">Chrome 书签管理完全指南：导入导出、同步、整理技巧（含跨浏览器迁移）</a>
         
-        <a href="https://chromebest.com/tips/chrome-memory-optimization/" style="font-size:13px;line-height:1.5;color:var(--txt2)">Chrome 内存占用优化：10 种方法实测，内存从 2.1GB 降到 1.3GB</a>
+        <a href="https://chromebest.com/tips/chrome-autofill/" style="font-size:13px;line-height:1.5;color:var(--txt2)">Chrome 自动填充功能详解：工作原理、安全风险与最佳配置</a>
+        
+        <a href="https://chromebest.com/tips/chrome-pdf-edit/" style="font-size:13px;line-height:1.5;color:var(--txt2)">Chrome 浏览器 PDF 编辑功能完整指南：标注、填写、合并全搞定</a>
         
       </div>
     </div>

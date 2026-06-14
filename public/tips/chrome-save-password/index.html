@@ -128,6 +128,15 @@
       </ul>
     </li>
     <li><a href="#根据你的场景选择最佳设置">根据你的场景选择最佳设置</a></li>
+    <li><a href="#常见问题">常见问题</a>
+      <ul>
+        <li><a href="#q1-chrome-保存密码时提示密码已泄露是不是误报">Q1: Chrome 保存密码时提示「密码已泄露」是不是误报？</a></li>
+        <li><a href="#q2-在隐私模式下登录网站chrome-还会提示保存密码吗">Q2: 在隐私模式下登录网站，Chrome 还会提示保存密码吗？</a></li>
+        <li><a href="#q3-chrome-保存的密码可以迁移到其他浏览器吗">Q3: Chrome 保存的密码可以迁移到其他浏览器吗？</a></li>
+        <li><a href="#q4-为什么某些网站的密码总是保存不上">Q4: 为什么某些网站的密码总是保存不上？</a></li>
+        <li><a href="#q5-chrome-和-google-账号的密码是同一个概念吗">Q5: Chrome 和 Google 账号的密码是同一个概念吗？</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
     </div>
@@ -292,6 +301,17 @@
 <p><strong>共享电脑（网吧、图书馆）：</strong> 使用隐私模式或访客模式。不要在共享电脑上使用已登录的 Chrome 配置文件，不要保存任何密码。</p>
 <p><strong>高安全需求（金融、安全从业者）：</strong> Chrome 永远不保存 + 使用硬件安全密钥（YubiKey 等）配合专业密码管理器。所有密码通过硬件密钥二次验证才能访问。</p>
 <p>Chrome 的密码保存功能本身没有对错，关键在于你是否理解它的工作方式，并根据自己真实的使用场景做出合理的配置。大多数人只需要花两分钟检查一下自己的设置，就能显著提升密码管理的安全性和可控性。</p>
+<h2 id="常见问题">常见问题</h2>
+<h3 id="q1-chrome-保存密码时提示密码已泄露是不是误报">Q1: Chrome 保存密码时提示「密码已泄露」是不是误报？</h3>
+<p>A: 有可能，但不能直接假设是误报。Chrome 的泄露检查是将你密码的哈希值与 Google 维护的已知泄露数据库进行比对，如果匹配说明该密码确实出现在过某次公开的数据泄露事件中。有可能是同一个密码被其他用户使用后泄露了，而你只是恰好用了相同的密码。但无论如何，收到这个提示就意味着这个密码已经暴露在公开渠道中，建议立即更换。即使不是你的账号被泄露，攻击者也会用泄露数据库中出现的密码尝试登录各种网站。</p>
+<h3 id="q2-在隐私模式下登录网站chrome-还会提示保存密码吗">Q2: 在隐私模式下登录网站，Chrome 还会提示保存密码吗？</h3>
+<p>A: 不会。隐私模式默认不提示保存密码、不自动填充密码，也不在密码管理器中记录任何新保存的密码。这是隐私模式设计的一部分。如果你在隐私窗口中登录了某个网站并希望 Chrome 记住密码，必须在正常模式下重新登录一次。详情参考 <a href="/tips/chrome-incognito-mode/">Chrome 隐私模式详解</a>。</p>
+<h3 id="q3-chrome-保存的密码可以迁移到其他浏览器吗">Q3: Chrome 保存的密码可以迁移到其他浏览器吗？</h3>
+<p>A: 可以。最直接的方法是通过 CSV 导出（在 Chrome 密码管理器中选择「导出密码」），然后在目标浏览器（Firefox、Edge 等）的密码管理器中导入 CSV 文件。Edge 支持直接从 Chrome 导入密码（不需要导出 CSV），Firefox 也支持从 Chrome 导入。注意 CSV 导出文件中的密码是明文的，迁移完成后立即删除。如果你想迁移到专业的密码管理器如 Bitwarden，它支持直接读取 Chrome 的密码数据库而不需要导出 CSV。</p>
+<h3 id="q4-为什么某些网站的密码总是保存不上">Q4: 为什么某些网站的密码总是保存不上？</h3>
+<p>A: 通常是因为网站使用了非标准登录表单（JavaScript 动态生成的表单、单页应用的登录弹窗），Chrome 无法正确识别表单提交事件。你可以尝试：先手动在密码管理器中添加该网站的登录凭据；或者在登录时确保用户名和密码都完整填写后，先点击页面其他位置让表单验证完成，再提交。如果还不行，可以借助密码管理器扩展（Bitwarden、1Password）的「手动保存」功能来绕过这个限制。</p>
+<h3 id="q5-chrome-和-google-账号的密码是同一个概念吗">Q5: Chrome 和 Google 账号的密码是同一个概念吗？</h3>
+<p>A: 不是。Chrome 保存的是你在各个网站上的登录密码（如淘宝、微博、GitHub），而 Google 账号密码是你用来登录 Google 服务（Gmail、YouTube、Chrome 同步）的那个主密码。两者完全独立。Chrome 的密码同步功能会把你在各网站保存的密码通过 Google 账号同步到其他设备，但同步过程中这些网站密码是用设备本地密钥加密的，Google 声称无法解密你的网站密码。不过你的 Google 账号密码本身的安全至关重要——如果它被破解，攻击者可以访问你的 Gmail、Drive，并可能通过重置其他网站密码来间接获取更多账户的访问权。</p>
 
 <div class="compliance-notice">
 <p>声明：本站为 Chrome 浏览器使用技巧分享平台，与 Google 公司无关。所有产品名称归原权利人所有。</p>
@@ -403,15 +423,15 @@
       <h3>📖 相关文章</h3>
       <div style="display:flex;flex-direction:column;gap:12px">
         
-        <a href="https://chromebest.com/tips/chrome-search-engine-change/" style="font-size:13px;line-height:1.5;color:var(--txt2)">Chrome 搜索引擎切换全攻略：从百度切到 Bing、Google、搜狗的完整步骤</a>
+        <a href="https://chromebest.com/tips/chrome-pdf-editor/" style="font-size:13px;line-height:1.5;color:var(--txt2)">Chrome 浏览器 PDF 编辑功能完整指南（2026 最新版）</a>
         
-        <a href="https://chromebest.com/tips/chrome-slow-download-fix/" style="font-size:13px;line-height:1.5;color:var(--txt2)">Chrome 下载速度慢怎么解决？2026 年加速下载完整指南</a>
+        <a href="https://chromebest.com/tips/chrome-tabs-lost-recover/" style="font-size:13px;line-height:1.5;color:var(--txt2)">Chrome 标签页丢失怎么找回？2026年5种恢复方法&#43;防丢失设置</a>
         
-        <a href="https://chromebest.com/tips/chrome-clear-cache/" style="font-size:13px;line-height:1.5;color:var(--txt2)">Chrome 缓存怎么清理？手动&#43;自动&#43;只清指定网站 3 种方法详解 2026</a>
+        <a href="https://chromebest.com/tips/chrome-set-default-browser-guide/" style="font-size:13px;line-height:1.5;color:var(--txt2)">Chrome 设为默认浏览器完整指南 &#43; 被篡改后的修复方法</a>
         
-        <a href="https://chromebest.com/tips/chrome-crash-fix/" style="font-size:13px;line-height:1.5;color:var(--txt2)">Chrome 崩溃闪退的 8 个原因及修复方法（附启动参数）</a>
+        <a href="https://chromebest.com/tips/chrome-proxy-settings/" style="font-size:13px;line-height:1.5;color:var(--txt2)">Chrome 代理设置完整指南：系统代理、扩展代理、PAC 自动配置详解</a>
         
-        <a href="https://chromebest.com/tips/chrome-guest-mode/" style="font-size:13px;line-height:1.5;color:var(--txt2)">Chrome 访客模式、隐私模式、多用户模式有什么区别?哪个更适合你</a>
+        <a href="https://chromebest.com/tips/chrome-reading-mode/" style="font-size:13px;line-height:1.5;color:var(--txt2)">Chrome 阅读模式使用教程：2026 年沉浸式阅读完整指南</a>
         
       </div>
     </div>

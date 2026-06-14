@@ -112,6 +112,15 @@
     </li>
     <li><a href="#chrome-密码安全和隐私的最佳实践">Chrome 密码安全和隐私的最佳实践</a></li>
     <li><a href="#总结">总结</a></li>
+    <li><a href="#常见问题">常见问题</a>
+      <ul>
+        <li><a href="#q1-chrome-密码管理器里的密码丢失了能找回来吗">Q1: Chrome 密码管理器里的密码丢失了，能找回来吗？</a></li>
+        <li><a href="#q2-chrome-保存的密码在手机和电脑之间同步需要什么条件">Q2: Chrome 保存的密码在手机和电脑之间同步需要什么条件？</a></li>
+        <li><a href="#q3-chrome-密码生成器生成的密码够安全吗">Q3: Chrome 密码生成器生成的密码够安全吗？</a></li>
+        <li><a href="#q4-在-chrome-里不小心删掉的密码还能恢复吗">Q4: 在 Chrome 里不小心删掉的密码还能恢复吗？</a></li>
+        <li><a href="#q5-chrome-密码管理器在电脑断网时能用吗">Q5: Chrome 密码管理器在电脑断网时能用吗？</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
     </div>
@@ -363,6 +372,7 @@
 <li><strong>使用独立的 Windows 用户账户</strong>。Chrome 的密码加密绑定到 Windows 用户账户，不同用户之间无法互相查看密码。</li>
 <li><strong>启用屏幕锁</strong>。离开电脑时按 <code>Win + L</code> 锁屏。</li>
 <li><strong>使用 Chrome 的个人资料功能</strong>。Chrome 支持创建多个个人资料（类似多个独立的浏览器），每个个人资料的密码互相隔离。</li>
+<li><strong>借电脑给别人时使用访客模式</strong>。如果你只是临时借电脑给人用，<a href="/tips/chrome-guest-mode/">Chrome 访客模式</a> 会创建一个完全独立的临时会话，对方看不到你的任何密码、书签和历史记录。</li>
 <li><strong>定期清除浏览数据</strong>。虽然清除浏览数据不会删除保存的密码（除非你手动勾选），但可以清除其他可能泄露信息的痕迹。关于清除数据的详细方法，参见 <a href="/tips/chrome-clear-cache/">Chrome 清除缓存</a>。</li>
 </ul>
 <h3 id="chrome-密码和-windows-凭据管理器的关系">Chrome 密码和 Windows 凭据管理器的关系</h3>
@@ -381,12 +391,23 @@
 <p><strong>5. 评估是否需要升级到专业密码管理器</strong></p>
 <p>如果你的密码数量超过 50 个，或者你需要在 Chrome 之外（手机浏览器、Firefox、Safari）使用密码自动填充，建议升级到 Bitwarden 或 1Password。这个投入在安全性上的回报远超成本。</p>
 <p><strong>6. 保持 Chrome 和系统更新</strong></p>
-<p>Chrome 的密码安全依赖于操作系统级别的加密机制。保持 Windows/macOS 更新可以确保加密模块的安全补丁及时生效。同时 Chrome 自身的更新也可能包含密码管理器的安全改进。</p>
+<p>Chrome 的密码安全依赖于操作系统级别的加密机制。保持 Windows/macOS 更新可以确保加密模块的安全补丁及时生效。同时 Chrome 自身的更新也可能包含密码管理器的安全改进。如果你还关心浏览器的其他隐私风险，<a href="/tips/chrome-privacy-settings-guide/">Chrome 隐私设置完全指南</a> 里列出了 9 个应该马上修改的安全选项。</p>
 <h2 id="总结">总结</h2>
 <p>Chrome 的密码管理器是一个方便的入门级工具，它为你提供了密码保存、自动填充、同步和泄露检查等核心功能。对于密码数量不多、只用 Chrome 浏览器的用户来说，它完全够用。</p>
 <p>但你应该清楚地知道它的局限性：不支持跨浏览器使用、没有安全备注和 TOTP、CSV 导出是明文的风险。如果你对密码安全有更高的要求，Bitwarden（免费开源）和 1Password（付费）是值得升级的选择。迁移过程并不复杂，而且不需要经过明文导出的中间步骤。</p>
 <p>最重要的是，无论你使用哪个密码管理器，都要养成定期检查密码状态的习惯。打开 Chrome 的密码管理器看看你存了多少密码，运行一次泄露检查，看看有没有需要紧急处理的密码。花 10 分钟做这件事，可能比你想象中重要得多。</p>
 <p>如果你对 Chrome 的其他隐私功能感兴趣，比如无痕模式的使用技巧，可以阅读我们的 <a href="/tips/chrome-incognito-mode/">Chrome 无痕模式指南</a>。或者如果你想全面比较 Chrome 与其他浏览器的差异，可以查看 <a href="/compare/chrome-vs-firefox-2026/">Chrome 与 Firefox 对比</a> 和 <a href="/compare/chrome-vs-brave-2026/">Chrome 与 Brave 对比</a>。</p>
+<h2 id="常见问题">常见问题</h2>
+<h3 id="q1-chrome-密码管理器里的密码丢失了能找回来吗">Q1: Chrome 密码管理器里的密码丢失了，能找回来吗？</h3>
+<p>A: 取决于丢失的原因。如果是重装了系统且没有同步 Google 账号——密码是找不回来的，因为 DPAPI 加密密钥绑定到了旧的 Windows 账户，新系统无法解密。如果是因为 Chrome 配置文件损坏导致本地密码丢失，但之前开启了 Google 同步，可以在新 Chrome 中登录同一 Google 账号来恢复。如果密码从未同步过且电脑硬盘被格式化，基本无法恢复。建议：开启密码同步作为备份，或者定期用 <a href="/tips/chrome-password-view/">Chrome 密码导出</a> 导出并加密保存。</p>
+<h3 id="q2-chrome-保存的密码在手机和电脑之间同步需要什么条件">Q2: Chrome 保存的密码在手机和电脑之间同步需要什么条件？</h3>
+<p>A: 需要满足三个条件：1）手机和电脑上的 Chrome 都登录了同一个 Google 账号；2）在 Chrome 设置 &gt; 同步和 Google 服务中，「密码」同步开关处于开启状态；3）手机和电脑都能正常连接到 Google 服务器（国内可能需要 VPN）。同步通常在半分钟内完成，但如果密码数量很多（几百条），首次同步可能需要几分钟。</p>
+<h3 id="q3-chrome-密码生成器生成的密码够安全吗">Q3: Chrome 密码生成器生成的密码够安全吗？</h3>
+<p>A: Chrome 默认生成的密码是 15 位随机字符（大小写字母+数字+特殊符号混合），暴力破解理论时间远超人类寿命，所以单从密码强度来说是完全够用的。不足的是：Chrome 的密码生成器不支持自定义长度、字符类型和排除易混淆字符（比如 0/O/I/l），也不支持生成易读口令（passphrase）。如果你需要更强的自定义选项，Bitwarden 的密码生成器更灵活。</p>
+<h3 id="q4-在-chrome-里不小心删掉的密码还能恢复吗">Q4: 在 Chrome 里不小心删掉的密码还能恢复吗？</h3>
+<p>A: 如果开启了 Google 密码同步，删除操作也会同步到服务器——所以从 Chrome 界面上是找不回已删除的密码的。不过在极少数情况下，如果你的另一台设备在删除操作同步前处于离线状态，那台设备上可能还保留着旧密码。唯一的替代方案是从之前的 CSV 备份中恢复（如果你之前做过导出）。因此建议：删除密码前三思，或者先导出 CSV 备份再批量删除。</p>
+<h3 id="q5-chrome-密码管理器在电脑断网时能用吗">Q5: Chrome 密码管理器在电脑断网时能用吗？</h3>
+<p>A: 可以本地使用。Chrome 的密码都存储在本地加密数据库中，不依赖网络连接。断网状态下你仍然可以查看保存的密码、使用自动填充功能、修改和删除密码。不能用的功能有：密码泄露检查（需要连接 Google 的泄露数据库）、跨设备密码同步、通过 passwords.google.com 网页版查看密码。</p>
 
 <div class="compliance-notice">
 <p>声明：本站为 Chrome 浏览器使用技巧分享平台，与 Google 公司无关。所有产品名称归原权利人所有。</p>
@@ -498,15 +519,15 @@
       <h3>📖 相关文章</h3>
       <div style="display:flex;flex-direction:column;gap:12px">
         
-        <a href="https://chromebest.com/tips/chrome-common-problems-in-china/" style="font-size:13px;line-height:1.5;color:var(--txt2)">Chrome 在国内使用的 10 个常见问题及解决方案（2026 最新版）</a>
+        <a href="https://chromebest.com/compare/chrome-vs-brave-2026/" style="font-size:13px;line-height:1.5;color:var(--txt2)">Chrome 和 Brave 2026 年到底选哪个？深度实测对比</a>
         
-        <a href="https://chromebest.com/tips/chrome-pdf-editor/" style="font-size:13px;line-height:1.5;color:var(--txt2)">Chrome 浏览器 PDF 编辑功能完整指南（2026 最新版）</a>
+        <a href="https://chromebest.com/tips/chrome-search-engine-switch/" style="font-size:13px;line-height:1.5;color:var(--txt2)">Chrome 浏览器默认搜索引擎切换与自定义设置指南（2026）</a>
         
-        <a href="https://chromebest.com/tips/chrome-set-default-browser-guide/" style="font-size:13px;line-height:1.5;color:var(--txt2)">Chrome 设为默认浏览器完整指南 &#43; 被篡改后的修复方法</a>
+        <a href="https://chromebest.com/tips/chrome-flash-player/" style="font-size:13px;line-height:1.5;color:var(--txt2)">Chrome Flash Player 已经彻底消失了：2026 年如何运行老旧 Flash 内容</a>
         
-        <a href="https://chromebest.com/tips/chrome-autofill/" style="font-size:13px;line-height:1.5;color:var(--txt2)">Chrome 自动填充功能详解：工作原理、安全风险与最佳配置</a>
+        <a href="https://chromebest.com/tips/chrome-sync-settings-guide/" style="font-size:13px;line-height:1.5;color:var(--txt2)">Chrome 同步设置完整指南：多设备同步书签密码历史记录</a>
         
-        <a href="https://chromebest.com/tips/chrome-tabs-lost-recover/" style="font-size:13px;line-height:1.5;color:var(--txt2)">Chrome 标签页丢失怎么找回？2026年5种恢复方法&#43;防丢失设置</a>
+        <a href="https://chromebest.com/tips/chrome-video-download-guide/" style="font-size:13px;line-height:1.5;color:var(--txt2)">Chrome 下载视频的方法大全：从插件到在线工具，5 种方式实测</a>
         
       </div>
     </div>

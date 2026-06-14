@@ -155,7 +155,7 @@
 <h3 id="5-快速切换无痕模式">5. 快速切换无痕模式</h3>
 <p><strong>安卓：</strong> 长按 Chrome 的应用图标（在桌面或应用抽屉中），在弹出的快捷菜单中选择&quot;新建无痕标签页&quot;。或者打开 Chrome 后点击三个点 → &ldquo;新建无痕标签页&rdquo;。</p>
 <p><strong>iOS：</strong> 长按 Chrome 图标 → &ldquo;新建无痕标签页&rdquo;。或者在 Chrome 内点击三个点 → &ldquo;新建无痕标签页&rdquo;。</p>
-<p><strong>小技巧：</strong> 如果你经常需要切换普通模式和无痕模式，可以在 Chrome 设置中启用&quot;无痕模式锁定&quot;功能——开启后切换回普通模式需要用指纹或面部识别验证，防止别人在你手机上关闭无痕模式看到历史记录。</p>
+<p><strong>小技巧：</strong> 如果你经常需要切换普通模式和无痕模式，可以在 Chrome 设置中启用&quot;无痕模式锁定&quot;功能——开启后切换回普通模式需要用指纹或面部识别验证，防止别人在你手机上关闭无痕模式看到历史记录。关于无痕模式能做什么不能做什么，参考 <a href="/tips/chrome-incognito-mode-guide/">Chrome 无痕模式详解</a>。</p>
 <h3 id="6-指纹锁定-chrome">6. 指纹锁定 Chrome</h3>
 <p><strong>安卓：</strong> 设置 → 隐私和安全 → 锁定 Chrome → 选择&quot;锁屏时&quot;或&quot;离开 Chrome 时&quot;。开启后，每次打开 Chrome 都需要指纹验证。</p>
 <p><strong>iOS：</strong> Chrome 130+ 支持 Face ID 锁定。设置 → 隐私和安全 → 锁定 Chrome。</p>
@@ -204,11 +204,11 @@
 <p><strong>与 Safari 共享密码：</strong> Chrome iOS 版可以访问 iCloud 钥匙串中保存的密码。设置 → 密码 → 使用已保存的密码 → 启用&quot;从 iCloud 钥匙串填充密码&quot;。</p>
 <h2 id="常见问题">常见问题</h2>
 <h3 id="chrome-手机版和桌面版可以同步吗">Chrome 手机版和桌面版可以同步吗？</h3>
-<p>可以，但需要登录同一个 Google 账号，并且需要网络工具来访问 Google 的同步服务器（国内环境下同步功能不可用）。可以同步的内容包括：书签、密码、历史记录、已打开的标签页、支付方式和地址信息。注意扩展程序不能在手机版上使用（手机版不支持桌面版插件）。</p>
+<p>可以，但需要登录同一个 Google 账号，并且需要网络工具来访问 Google 的同步服务器（国内环境下同步功能不可用）。可以同步的内容包括：书签、密码、历史记录、已打开的标签页、支付方式和地址信息。注意扩展程序不能在手机版上使用（手机版不支持桌面版插件）。同步的详细设置参考 <a href="/tips/chrome-sync-settings-guide/">Chrome 同步设置完整指南</a>。</p>
 <h3 id="手机版-chrome-能装广告拦截插件吗">手机版 Chrome 能装广告拦截插件吗？</h3>
 <p>安卓版 Chrome 不支持传统的桌面版扩展程序。但你可以通过以下方式实现广告拦截：安装 Chrome 安卓版自带的&quot;广告拦截&quot;实验性功能（chrome://flags → 搜索&quot;Ad Block&quot;），或者使用支持广告拦截的第三方浏览器（如 Brave、Firefox）。iOS 版 Chrome 也不支持扩展程序，但 Safari 支持内容拦截器扩展。</p>
 <h3 id="手机版-chrome-占用存储空间太大怎么办">手机版 Chrome 占用存储空间太大怎么办？</h3>
-<p>Chrome 的存储占用主要来自缓存数据和下载的文件。清理方法：设置 → 隐私和安全 → 清除浏览数据 → 勾选&quot;缓存的图片和文件&quot;→ 清除数据。另外检查&quot;下载内容&quot;页面，删除不需要的离线页面和下载文件。如果 Chrome 仍然占用大量空间，可以在手机设置 → 应用 → Chrome → 存储 → 清除缓存。</p>
+<p>Chrome 的存储占用主要来自缓存数据和下载的文件。清理方法：设置 → 隐私和安全 → 清除浏览数据 → 勾选&quot;缓存的图片和文件&quot;→ 清除数据。另外检查&quot;下载内容&quot;页面，删除不需要的离线页面和下载文件。如果 Chrome 仍然占用大量空间，可以在手机设置 → 应用 → Chrome → 存储 → 清除缓存。桌面版 Chrome 的缓存清理方法参考 <a href="/tips/chrome-clear-cache/">Chrome 缓存清理教程</a>。</p>
 <h3 id="如何在手机上查看网页的-html-源代码">如何在手机上查看网页的 HTML 源代码？</h3>
 <p>安卓版 Chrome 支持查看源代码：在地址栏中输入 <code>view-source:</code> 加上目标网址（例如 <code>view-source:https://www.example.com</code>），回车后即可查看该页面的 HTML 源代码。iOS 版 Chrome 暂不支持此功能。</p>
 <h3 id="手机版-chrome-有开发者工具吗">手机版 Chrome 有开发者工具吗？</h3>
@@ -324,15 +324,15 @@
       <h3>📖 相关文章</h3>
       <div style="display:flex;flex-direction:column;gap:12px">
         
-        <a href="https://chromebest.com/tips/chrome-sync-settings-guide/" style="font-size:13px;line-height:1.5;color:var(--txt2)">Chrome 同步设置完整指南：多设备同步书签密码历史记录</a>
+        <a href="https://chromebest.com/tips/chrome-reading-mode/" style="font-size:13px;line-height:1.5;color:var(--txt2)">Chrome 阅读模式使用教程：2026 年沉浸式阅读完整指南</a>
+        
+        <a href="https://chromebest.com/compare/chrome-vs-edge-2026/" style="font-size:13px;line-height:1.5;color:var(--txt2)">Chrome 和 Edge 到底选哪个？2026 年最新深度对比</a>
         
         <a href="https://chromebest.com/tips/chrome-crash-fix/" style="font-size:13px;line-height:1.5;color:var(--txt2)">Chrome 崩溃闪退的 8 个原因及修复方法（附启动参数）</a>
         
-        <a href="https://chromebest.com/tips/chrome-tab-groups/" style="font-size:13px;line-height:1.5;color:var(--txt2)">Chrome标签页分组管理技巧：2026年告别标签页混乱</a>
+        <a href="https://chromebest.com/tips/chrome-notification-settings/" style="font-size:13px;line-height:1.5;color:var(--txt2)">Chrome 怎么关闭网站通知弹窗？2026 年批量管理和精确管控全教程</a>
         
-        <a href="https://chromebest.com/tips/chrome-pdf-edit/" style="font-size:13px;line-height:1.5;color:var(--txt2)">Chrome 浏览器 PDF 编辑功能完整指南：标注、填写、合并全搞定</a>
-        
-        <a href="https://chromebest.com/tips/chrome-keyboard-shortcuts/" style="font-size:13px;line-height:1.5;color:var(--txt2)">Chrome 快捷键大全：30 个真正提高效率的快捷键（按场景分类）</a>
+        <a href="https://chromebest.com/tips/chrome-update-failed-fix/" style="font-size:13px;line-height:1.5;color:var(--txt2)">Chrome 更新失败怎么修？6 个常见错误码及解决方法（2026）</a>
         
       </div>
     </div>

@@ -115,6 +115,15 @@
       </ul>
     </li>
     <li><a href="#不同搜索引擎的搜索质量实测对比">不同搜索引擎的搜索质量实测对比</a></li>
+    <li><a href="#常见问题">常见问题</a>
+      <ul>
+        <li><a href="#q1-chrome-默认搜索引擎被篡改了改回来又自动变回去怎么办">Q1: Chrome 默认搜索引擎被篡改了，改回来又自动变回去怎么办？</a></li>
+        <li><a href="#q2-chrome-能同时使用多个搜索引擎的搜索建议吗">Q2: Chrome 能同时使用多个搜索引擎的搜索建议吗？</a></li>
+        <li><a href="#q3-为什么我添加的自定义搜索引擎搜索不了">Q3: 为什么我添加的自定义搜索引擎搜索不了？</a></li>
+        <li><a href="#q4-chrome-的搜索引擎设置会和-google-账号同步吗">Q4: Chrome 的搜索引擎设置会和 Google 账号同步吗？</a></li>
+        <li><a href="#q5-国内使用-chrome-默认搜索引擎选哪个最好">Q5: 国内使用 Chrome 默认搜索引擎选哪个最好？</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
     </div>
@@ -486,6 +495,17 @@
 <li>搜狗：学术搜索功能较弱，不推荐</li>
 </ul>
 <p>从测试结果可以看出，<strong>没有哪个搜索引擎在所有场景下都是最好的</strong>。这就是为什么 Chrome 的多搜索引擎切换功能如此重要——你可以根据搜索内容类型，快速选择最合适的引擎。</p>
+<h2 id="常见问题">常见问题</h2>
+<h3 id="q1-chrome-默认搜索引擎被篡改了改回来又自动变回去怎么办">Q1: Chrome 默认搜索引擎被篡改了，改回来又自动变回去怎么办？</h3>
+<p>A: 这是典型的搜索引擎劫持，说明有恶意软件或恶意扩展在持续修改你的设置。按以下顺序排查：首先打开 <code>chrome://extensions/</code>，逐个禁用可疑扩展（尤其是近期安装的、不熟悉的），每次禁用后检查搜索引擎是否还会被改回去。其次右键 Chrome 快捷方式 → 属性，检查「目标」栏末尾是否被追加了陌生网址（如 <code>http://xxx.com/search?q=%s</code>）。最后下载 Chrome Cleanup Tool 或 AdwCleaner 做全盘扫描。如果以上都无效，参考 <a href="/tips/chrome-clear-cache/">Chrome 缓存清理</a> 重置浏览器设置。</p>
+<h3 id="q2-chrome-能同时使用多个搜索引擎的搜索建议吗">Q2: Chrome 能同时使用多个搜索引擎的搜索建议吗？</h3>
+<p>A: 不能。Chrome 地址栏的搜索建议（输入时自动出现的下拉建议列表）只有一套，来自你当前设置的默认搜索引擎。不过你可以通过地址栏关键字（如 <code>@b</code> 切到 Bing、<code>@g</code> 切到 Google）快速在不同搜索引擎的建议之间切换——输入 <code>@b 关键词</code> 就会调出 Bing 的搜索建议，输入 <code>@g 关键词</code> 则是 Google 的。</p>
+<h3 id="q3-为什么我添加的自定义搜索引擎搜索不了">Q3: 为什么我添加的自定义搜索引擎搜索不了？</h3>
+<p>A: 最常见的原因是你填写的搜索 URL 格式不对。Chrome 要求搜索 URL 中用 <code>%s</code> 来代表搜索关键词的位置。比如百度正确的搜索 URL 是 <code>https://www.baidu.com/s?wd=%s</code>，其中 <code>%s</code> 会被替换为你输入的关键词。如果缺少 <code>%s</code> 或者 URL 拼写错误，搜索就会失败。另一个可能原因是该搜索引擎的域名在你的网络环境下无法访问（比如 Google 在国内需要代理）。</p>
+<h3 id="q4-chrome-的搜索引擎设置会和-google-账号同步吗">Q4: Chrome 的搜索引擎设置会和 Google 账号同步吗？</h3>
+<p>A: 会。如果你开启了 Chrome 同步，搜索引擎列表（包括你手动添加的自定义搜索引擎和关键字）会通过 Google 账号同步到其他设备。但默认搜索引擎的选择可能不会同步——不同设备上有时需要独立设置。如果你在多台设备上发现搜索引擎列表不一致，可以在 <code>chrome://settings/syncSetup</code> 中检查同步状态。更多同步相关设置参考 <a href="/tips/chrome-sync-settings-guide/">Chrome 同步设置指南</a>。</p>
+<h3 id="q5-国内使用-chrome-默认搜索引擎选哪个最好">Q5: 国内使用 Chrome 默认搜索引擎选哪个最好？</h3>
+<p>A: 没有绝对的最好，取决于你的主要搜索场景。如果以中文日常搜索为主（查新闻、找美食、搜生活问题），百度覆盖面最广。如果你经常需要搜英文技术文档和开发资料，Bing 是直连状态下最好的选择——不需要代理就能获得不错的英文搜索结果，AI 摘要功能也实用。如果你有稳定的代理环境，Google + 百度组合是最优解：日常搜索用百度，技术搜索在地址栏输入 <code>@g</code> 快速切换到 Google。搜狗的优势是微信公众号内容独家，适合需要搜微信文章的场景。</p>
 
 <div class="compliance-notice">
 <p>声明：本站为 Chrome 浏览器使用技巧分享平台，与 Google 公司无关。所有产品名称归原权利人所有。</p>
@@ -597,15 +617,15 @@
       <h3>📖 相关文章</h3>
       <div style="display:flex;flex-direction:column;gap:12px">
         
-        <a href="https://chromebest.com/tips/chrome-bookmarks-export/" style="font-size:13px;line-height:1.5;color:var(--txt2)">Chrome 书签导出、导入与迁移完整教程：换浏览器、换电脑都能搞定</a>
-        
-        <a href="https://chromebest.com/tips/chrome-incognito-mode/" style="font-size:13px;line-height:1.5;color:var(--txt2)">Chrome 隐私模式的真相：它到底能隐藏什么，不能隐藏什么</a>
-        
-        <a href="https://chromebest.com/plugins/chrome-translation-extension-comparison/" style="font-size:13px;line-height:1.5;color:var(--txt2)">5款Chrome翻译插件实测对比：沉浸式翻译、DeepL、Google翻译谁准确率最高</a>
-        
         <a href="https://chromebest.com/download/chrome-offline-installer/" style="font-size:13px;line-height:1.5;color:var(--txt2)">Chrome 离线安装包下载与安装完整指南（2026 最新版）</a>
         
-        <a href="https://chromebest.com/tips/chrome-appearance-customization/" style="font-size:13px;line-height:1.5;color:var(--txt2)">Chrome 主题和外观自定义教程：深色模式、壁纸、字体全方位设置</a>
+        <a href="https://chromebest.com/tips/chrome-update-failed/" style="font-size:13px;line-height:1.5;color:var(--txt2)">Chrome 更新失败怎么办？10 种常见原因和修复方法详解</a>
+        
+        <a href="https://chromebest.com/compare/chrome-vs-brave-2026/" style="font-size:13px;line-height:1.5;color:var(--txt2)">Chrome 和 Brave 2026 年到底选哪个？深度实测对比</a>
+        
+        <a href="https://chromebest.com/tips/chrome-password-view/" style="font-size:13px;line-height:1.5;color:var(--txt2)">Chrome 查看保存密码完整教程：导出、迁移、安全风险与替代方案</a>
+        
+        <a href="https://chromebest.com/compare/chrome-vs-firefox-2026/" style="font-size:13px;line-height:1.5;color:var(--txt2)">Chrome 和 Firefox 2026 年到底选哪个？深度实测对比</a>
         
       </div>
     </div>

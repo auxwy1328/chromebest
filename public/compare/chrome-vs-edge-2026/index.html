@@ -83,6 +83,20 @@
     </li>
     <li><a href="#功能对比">功能对比</a></li>
     <li><a href="#隐私对比">隐私对比</a></li>
+    <li><a href="#安全防护能力对比">安全防护能力对比</a>
+      <ul>
+        <li><a href="#恶意网站与钓鱼防护">恶意网站与钓鱼防护</a></li>
+        <li><a href="#沙盒与进程隔离">沙盒与进程隔离</a></li>
+        <li><a href="#扩展安全审核">扩展安全审核</a></li>
+      </ul>
+    </li>
+    <li><a href="#ai-功能深度对比copilot-vs-gemini">AI 功能深度对比：Copilot vs Gemini</a>
+      <ul>
+        <li><a href="#当前-ai-功能状态">当前 AI 功能状态</a></li>
+        <li><a href="#copilot-的实际使用场景">Copilot 的实际使用场景</a></li>
+        <li><a href="#chrome-的-ai-追赶策略">Chrome 的 AI 追赶策略</a></li>
+      </ul>
+    </li>
     <li><a href="#国内使用体验">国内使用体验</a></li>
     <li><a href="#我的推荐">我的推荐</a></li>
     <li><a href="#常见问题">常见问题</a>
@@ -102,7 +116,7 @@
     
     <div class="art-body">
       <p>Chrome 和 Edge 都是基于 Chromium 内核的浏览器，网页渲染效果几乎一样。但内核一样不代表体验一样——两个浏览器在性能调优、功能侧重、隐私策略和国内适配上差距不小。</p>
-<p>我们之前做过 Chrome、Edge、Firefox 的三方对比。这篇文章专门聚焦 Chrome vs Edge，在更细的维度上进行深度比较。</p>
+<p>我们之前做过 <a href="/compare/chrome-vs-edge-vs-firefox-2026/">Chrome、Edge、Firefox 的三方对比</a>。这篇文章专门聚焦 Chrome vs Edge，在更细的维度上进行深度比较。</p>
 <h2 id="性能对比">性能对比</h2>
 <h3 id="内存占用">内存占用</h3>
 <p><strong>测试条件：</strong> 打开 10 个标签页（百度、淘宝、知乎、B站、GitHub、微博、京东、CSDN、豆瓣、YouTube），等待 2 分钟。</p>
@@ -137,7 +151,7 @@
       </tr>
   </tbody>
 </table>
-<p>Edge 的内存占用比 Chrome 低约 10%。这是因为 Edge 做了更积极的&quot;睡眠标签页&quot;策略——后台标签页更快进入冻结状态。如果你只有 8GB 内存，Edge 的优势更明显。</p>
+<p>Edge 的内存占用比 Chrome 低约 10%。这是因为 Edge 做了更积极的&quot;睡眠标签页&quot;策略——后台标签页更快进入冻结状态。如果你只有 8GB 内存，Edge 的优势更明显。内存紧张的用户也可以参考我们的 <a href="/tips/chrome-memory-optimization/">Chrome 内存占用优化指南</a>。</p>
 <h3 id="页面加载速度">页面加载速度</h3>
 <p>测试 5 个网站的首屏加载时间：</p>
 <table>
@@ -251,7 +265,7 @@
   </tbody>
 </table>
 <p><strong>Edge 的功能优势非常明显：</strong> 内置 VPN、广告拦截、AI 助手、阅读模式、垂直标签页、集锦功能、游戏模式……这些都是 Chrome 不内置的功能。如果 Edge 的这些功能恰好是你需要的，它能节省你安装大量插件。</p>
-<p><strong>Chrome 的功能优势：插件生态。</strong> Chrome Web Store 的插件数量和质量都远超 Edge 的附加组件商店。很多开发者只发布 Chrome 版插件。如果你依赖特定的 Chrome 插件（如某些开发工具或小众工具），Chrome 是更好的选择。</p>
+<p><strong>Chrome 的功能优势：插件生态。</strong> Chrome Web Store 的插件数量和质量都远超 Edge 的附加组件商店。很多开发者只发布 Chrome 版插件。如果你依赖特定的 Chrome 插件（如某些开发工具或小众工具），Chrome 是更好的选择。可以看看我们的 <a href="/plugins/chrome-essential-extensions/">Chrome 必装插件推荐</a>，了解哪些插件真正值得装。</p>
 <h2 id="隐私对比">隐私对比</h2>
 <table>
   <thead>
@@ -285,7 +299,175 @@
   </tbody>
 </table>
 <p><strong>Edge 在隐私方面略好：</strong> 默认启用更严格的追踪防护（三挡可选），不使用类似 FLOC 的用户追踪技术。但 Edge 仍然会收集使用数据用于产品改进，且微软的隐私政策并不比 Google 透明多少。</p>
-<p><strong>如果你非常在意隐私：</strong> 两个都不够好。建议用 Firefox（默认严格追踪保护、非营利基金会运营、更透明的隐私政策），或者在 Chrome/Edge 上安装 uBlock Origin + Privacy Badger。</p>
+<p><strong>如果你非常在意隐私：</strong> 两个都不够好。建议用 Firefox（默认严格追踪保护、非营利基金会运营、更透明的隐私政策），或者在 Chrome/Edge 上安装 uBlock Origin + Privacy Badger。我们也对比过 <a href="/plugins/chrome-ad-blocker-comparison/">Chrome 广告拦截插件</a>，其中 uBlock Origin 的隐私保护能力最强。</p>
+<h2 id="安全防护能力对比">安全防护能力对比</h2>
+<p>隐私侧重数据收集的控制，安全侧重抵御恶意攻击。两个浏览器的安全防护各有侧重。</p>
+<h3 id="恶意网站与钓鱼防护">恶意网站与钓鱼防护</h3>
+<table>
+  <thead>
+      <tr>
+          <th>安全功能</th>
+          <th>Chrome</th>
+          <th>Edge</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>安全浏览（Safe Browsing）</td>
+          <td>✅ Google Safe Browsing</td>
+          <td>✅ Microsoft Defender SmartScreen</td>
+      </tr>
+      <tr>
+          <td>恶意网站拦截率</td>
+          <td>极高（全球最大恶意 URL 数据库）</td>
+          <td>高</td>
+      </tr>
+      <tr>
+          <td>钓鱼网站识别</td>
+          <td>基于机器学习+用户举报</td>
+          <td>基于机器学习+微软威胁情报</td>
+      </tr>
+      <tr>
+          <td>下载文件扫描</td>
+          <td>✅</td>
+          <td>✅</td>
+      </tr>
+      <tr>
+          <td>密码泄露检测</td>
+          <td>✅（密码安全检查）</td>
+          <td>✅（密码运行状况）</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>实测差异：</strong> 2025 年第三方安全测试机构 AV-Comparatives 的钓鱼防护测试中，Chrome 的拦截率为 96.1%，Edge 为 94.8%。差距很小，都在优秀范围内。Chrome 的优势在于 Google Safe Browsing 覆盖了更广的恶意 URL 数据（因为 Chrome 市场份额大，上报的恶意链接数据量也更大）。</p>
+<h3 id="沙盒与进程隔离">沙盒与进程隔离</h3>
+<p>两个浏览器都使用 Chromium 的沙盒机制，但实现细节不同：</p>
+<table>
+  <thead>
+      <tr>
+          <th>隔离技术</th>
+          <th>Chrome</th>
+          <th>Edge</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>站点隔离（Site Isolation）</td>
+          <td>✅ 默认启用</td>
+          <td>✅ 默认启用</td>
+      </tr>
+      <tr>
+          <td>渲染进程沙盒</td>
+          <td>✅</td>
+          <td>✅</td>
+      </tr>
+      <tr>
+          <td>网络进程沙盒</td>
+          <td>✅</td>
+          <td>✅</td>
+      </tr>
+      <tr>
+          <td>GPU 进程沙盒</td>
+          <td>✅</td>
+          <td>✅</td>
+      </tr>
+      <tr>
+          <td>应用防护（App Guard）</td>
+          <td>❌</td>
+          <td>✅（Windows 企业版）</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Edge 独有的应用防护功能：</strong> Windows 企业版中，Edge 支持 Microsoft Defender Application Guard，将浏览器会话隔离在一个 Hyper-V 虚拟机中运行。这意味着即使浏览器被恶意代码攻破，攻击者也接触不到宿主操作系统。普通版 Edge 没有这个功能，但它代表 Edge 在企业安全方向的差异化优势。</p>
+<h3 id="扩展安全审核">扩展安全审核</h3>
+<table>
+  <thead>
+      <tr>
+          <th>扩展安全</th>
+          <th>Chrome</th>
+          <th>Edge</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>商店扩展审核</td>
+          <td>自动审核+人工抽查</td>
+          <td>自动审核+人工抽查</td>
+      </tr>
+      <tr>
+          <td>恶意扩展检测</td>
+          <td>✅</td>
+          <td>✅</td>
+      </tr>
+      <tr>
+          <td>扩展权限提示</td>
+          <td>✅ 详细</td>
+          <td>✅ 详细</td>
+      </tr>
+      <tr>
+          <td>企业扩展白名单</td>
+          <td>✅（组策略）</td>
+          <td>✅（组策略+Intune）</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>结论：</strong> 两个浏览器的安全防护能力高度接近，日常使用差异极小。企业用户选 Edge 可以获得更完整的端点安全集成（配合 Microsoft 365 Defender），个人用户两者旗鼓相当。</p>
+<h2 id="ai-功能深度对比copilot-vs-gemini">AI 功能深度对比：Copilot vs Gemini</h2>
+<p>2025-2026 年浏览器竞争最大的变数是 AI 功能。Edge 内置了 Copilot，Chrome 正在逐步集成 Gemini。</p>
+<h3 id="当前-ai-功能状态">当前 AI 功能状态</h3>
+<table>
+  <thead>
+      <tr>
+          <th>AI 功能</th>
+          <th>Chrome</th>
+          <th>Edge</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>侧边栏 AI 助手</td>
+          <td>⚠️ 实验阶段（chrome://flags 启用）</td>
+          <td>✅ 正式功能（Copilot）</td>
+      </tr>
+      <tr>
+          <td>网页摘要</td>
+          <td>需安装扩展</td>
+          <td>✅ 内置</td>
+      </tr>
+      <tr>
+          <td>AI 写作辅助</td>
+          <td>需安装扩展</td>
+          <td>✅ 内置（Compose）</td>
+      </tr>
+      <tr>
+          <td>图片生成</td>
+          <td>❌</td>
+          <td>✅（Bing Image Creator）</td>
+      </tr>
+      <tr>
+          <td>AI 标签页管理</td>
+          <td>✅（标签页群组+智能建议）</td>
+          <td>✅</td>
+      </tr>
+      <tr>
+          <td>搜索引擎集成 AI</td>
+          <td>Google SGE（部分地区）</td>
+          <td>Bing Chat</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Edge 的 AI 体验目前更成熟。</strong> Copilot 可以直接在侧边栏中工作，不需要离开当前页面就能提问、总结、翻译。这是 Edge 最大的差异化优势之一——如果你每天用 AI 辅助工作，Edge 能省去来回切换窗口的时间。</p>
+<h3 id="copilot-的实际使用场景">Copilot 的实际使用场景</h3>
+<ol>
+<li><strong>网页摘要</strong>：打开一篇长文章，侧边栏输入「总结这篇文章的要点」，30 秒内得到 5 条核心结论</li>
+<li><strong>对比分析</strong>：打开两个产品页面，让 Copilot 对比两者的参数和价格</li>
+<li><strong>写作辅助</strong>：在任何文本框中选择文字 → 右键 → 「使用 Copilot 重写」，自动优化措辞</li>
+<li><strong>代码解释</strong>：GitHub 页面上的代码看不懂，选中代码段让 Copilot 解释</li>
+</ol>
+<h3 id="chrome-的-ai-追赶策略">Chrome 的 AI 追赶策略</h3>
+<p>Google 并没有坐以待毙。2026 年初推出的 Chrome 135 版本中，Google 在 <code>chrome://flags</code> 中集成了 Gemini 侧边栏（标记为 #gemini-sidebar）。不过目前这个功能仍在实验阶段，需要手动开启且功能不如 Copilot 完善。</p>
+<p><strong>关键问题：</strong> Google 的 AI 服务在国内需要网络工具才能访问，即使 Chrome 正式推出内置 AI 助手，国内用户也无法直接使用。而 Edge 的 Copilot 在国内通过 Bing 国际版可以间接使用（功能有限但至少可用）。</p>
+<p>如果你的 AI 使用场景偏重度（编程辅助、长文写作），两个浏览器的内置 AI 都不够强，建议直接使用 ChatGPT 或 Claude 的网页版配合浏览器的侧边栏功能。</p>
 <h2 id="国内使用体验">国内使用体验</h2>
 <p><img src="/images/compare/chrome-vs-edge-2026/body2.jpg" alt="#国内使用体验"></p>
 <table>
@@ -469,13 +651,13 @@
       <h3>📖 相关文章</h3>
       <div style="display:flex;flex-direction:column;gap:12px">
         
-        <a href="https://chromebest.com/plugins/chrome-screenshot-extensions/" style="font-size:13px;line-height:1.5;color:var(--txt2)">Chrome 截图插件推荐：5 款全页截图工具实测对比（含免费方案）</a>
-        
         <a href="https://chromebest.com/tips/chrome-keyboard-shortcuts/" style="font-size:13px;line-height:1.5;color:var(--txt2)">Chrome 快捷键大全：30 个真正提高效率的快捷键（按场景分类）</a>
         
-        <a href="https://chromebest.com/tips/chrome-clear-cache/" style="font-size:13px;line-height:1.5;color:var(--txt2)">Chrome 缓存怎么清理？手动&#43;自动&#43;只清指定网站 3 种方法详解 2026</a>
+        <a href="https://chromebest.com/download/chrome-offline-installer-download/" style="font-size:13px;line-height:1.5;color:var(--txt2)">Chrome 离线安装包下载教程：官方完整版地址 &#43; 安装步骤详解</a>
         
-        <a href="https://chromebest.com/compare/chrome-vs-firefox-2026/" style="font-size:13px;line-height:1.5;color:var(--txt2)">Chrome 和 Firefox 2026 年到底选哪个？深度实测对比</a>
+        <a href="https://chromebest.com/tips/chrome-crash-fix/" style="font-size:13px;line-height:1.5;color:var(--txt2)">Chrome 崩溃闪退的 8 个原因及修复方法（附启动参数）</a>
+        
+        <a href="https://chromebest.com/tips/chrome-proxy-settings/" style="font-size:13px;line-height:1.5;color:var(--txt2)">Chrome 代理设置完整指南：系统代理、扩展代理、PAC 自动配置详解</a>
         
         <a href="https://chromebest.com/tips/chrome-notification-settings/" style="font-size:13px;line-height:1.5;color:var(--txt2)">Chrome 怎么关闭网站通知弹窗？2026 年批量管理和精确管控全教程</a>
         

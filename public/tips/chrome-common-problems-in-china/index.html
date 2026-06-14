@@ -110,7 +110,7 @@
 </blockquote>
 <h2 id="问题一同步失败书签密码历史记录无法同步">问题一：同步失败——书签、密码、历史记录无法同步</h2>
 <p><strong>这是国内 Chrome 用户最常遇到的问题，没有之一。</strong></p>
-<p><strong>根本原因：</strong> Chrome 同步功能依赖 Google 账号，而 Google 的同步服务器（accounts.google.com、clients4.google.com）在国内无法直接访问。所以你登录 Google 账号后，同步一直显示&quot;同步正在进行&quot;但实际没有同步成功。</p>
+<p><strong>根本原因：</strong> Chrome 同步功能依赖 Google 账号，而 Google 的同步服务器（accounts.google.com、clients4.google.com）在国内无法直接访问。所以你登录 Google 账号后，同步一直显示&quot;同步正在进行&quot;但实际没有同步成功。详细的同步设置说明可以参考 <a href="/tips/chrome-sync-settings-guide/">Chrome 同步设置完整指南</a>。</p>
 <p><strong>解决方案（按推荐程度排序）：</strong></p>
 <p><strong>方案一：全局代理（最彻底）</strong></p>
 <p>如果你的网络环境允许，使用全局代理模式（而不是 PAC 或规则模式），让 Chrome 的所有请求都走代理。这样同步功能完全正常，书签、密码、历史记录都能同步。</p>
@@ -164,10 +164,10 @@
 <p>这样在地址栏输入搜索内容后按回车，就会使用 Google 搜索（需要能访问 Google 的网络环境）。</p>
 <h2 id="问题四chrome-更新失败提示更新检查失败">问题四：Chrome 更新失败，提示&quot;更新检查失败&quot;</h2>
 <p><img src="/images/tips/chrome-common-problems-in-china/body2.jpg" alt="#问题四：Chrome 更新失败，提示&quot;"></p>
-<p><strong>根本原因：</strong> Chrome 的自动更新服务器（update.googleapis.com）在国内无法直接访问。</p>
+<p><strong>根本原因：</strong> Chrome 的自动更新服务器（update.googleapis.com）在国内无法直接访问。不同错误码对应不同原因，详见 <a href="/tips/chrome-update-failed-fix/">Chrome 更新失败的 6 个错误码及修复方法</a>。</p>
 <p><strong>解决方案：</strong></p>
 <p><strong>方案一：使用离线安装包手动更新</strong></p>
-<p>从 Google 官方网站下载最新版离线安装包，直接覆盖安装即可。不需要先卸载旧版本，设置和书签都不会丢失。</p>
+<p>从 Google 官方网站下载最新版 <a href="/download/chrome-offline-installer/">Chrome 离线安装包</a>，直接覆盖安装即可。不需要先卸载旧版本，设置和书签都不会丢失。</p>
 <p><strong>方案二：修改 Hosts 文件（高级用户）</strong></p>
 <p>在 Windows 的 <code>C:\Windows\System32\drivers\etc\hosts</code> 文件中添加 Google 更新服务器的 IP 地址。但由于 Google 的 IP 经常变化，这个方案维护成本较高，不推荐普通用户使用。</p>
 <p><strong>方案三：使用 Edge 的自动更新机制</strong></p>
@@ -189,7 +189,7 @@
 <p>注意：关闭硬件加速后视频播放可能会有卡顿，如果只是网页加载慢，建议先尝试其他方案。</p>
 <h2 id="问题六chrome-占用内存越来越高电脑越来越卡">问题六：Chrome 占用内存越来越高，电脑越来越卡</h2>
 <p><img src="/images/tips/chrome-common-problems-in-china/body1.jpg" alt="#问题六：Chrome 占用内存越来越高"></p>
-<p><strong>原因和解决方案见这篇文章：</strong> Chrome 内存占用优化的完整方法。</p>
+<p><strong>原因和解决方案见这篇文章：</strong> <a href="/tips/chrome-memory-optimization/">Chrome 内存占用优化教程，实测 10 种方法效果数据</a>。</p>
 <p>简要说明：Chrome 每个标签页独立进程的架构天然比 Firefox 和 Edge 占更多内存。缓解方法包括：启用&quot;内存节省程序&quot;功能、使用&quot;标签页分组&quot;、定期重启浏览器、限制后台标签页的活动。</p>
 <p>Chrome 131 已默认启用&quot;内存节省程序&quot;（chrome://settings/performance），该功能会自动冻结不活跃的标签页释放内存。确认这个功能已开启即可。</p>
 <h2 id="问题七chrome-下载文件速度慢">问题七：Chrome 下载文件速度慢</h2>
@@ -423,15 +423,15 @@
       <h3>📖 相关文章</h3>
       <div style="display:flex;flex-direction:column;gap:12px">
         
-        <a href="https://chromebest.com/tips/chrome-pdf-edit/" style="font-size:13px;line-height:1.5;color:var(--txt2)">Chrome 浏览器 PDF 编辑功能完整指南：标注、填写、合并全搞定</a>
+        <a href="https://chromebest.com/tips/chrome-update-failed/" style="font-size:13px;line-height:1.5;color:var(--txt2)">Chrome 更新失败怎么办？10 种常见原因和修复方法详解</a>
         
-        <a href="https://chromebest.com/plugins/chrome-ad-blocker-comparison/" style="font-size:13px;line-height:1.5;color:var(--txt2)">Chrome 广告拦截插件对比：uBlock Origin vs AdGuard vs 广告拦截管家（2026 实测）</a>
+        <a href="https://chromebest.com/tips/chrome-search-engine-switch/" style="font-size:13px;line-height:1.5;color:var(--txt2)">Chrome 浏览器默认搜索引擎切换与自定义设置指南（2026）</a>
         
-        <a href="https://chromebest.com/tips/chrome-autofill/" style="font-size:13px;line-height:1.5;color:var(--txt2)">Chrome 自动填充功能详解：工作原理、安全风险与最佳配置</a>
+        <a href="https://chromebest.com/tips/chrome-hardware-acceleration/" style="font-size:13px;line-height:1.5;color:var(--txt2)">Chrome 硬件加速设置教程：开启/关闭/故障排查，解决卡顿花屏崩溃</a>
         
-        <a href="https://chromebest.com/tips/chrome-video-download-guide/" style="font-size:13px;line-height:1.5;color:var(--txt2)">Chrome 下载视频的方法大全：从插件到在线工具，5 种方式实测</a>
+        <a href="https://chromebest.com/tips/chrome-proxy-settings/" style="font-size:13px;line-height:1.5;color:var(--txt2)">Chrome 代理设置完整指南：系统代理、扩展代理、PAC 自动配置详解</a>
         
-        <a href="https://chromebest.com/tips/chrome-notification-settings/" style="font-size:13px;line-height:1.5;color:var(--txt2)">Chrome 怎么关闭网站通知弹窗？2026 年批量管理和精确管控全教程</a>
+        <a href="https://chromebest.com/tips/chrome-incognito-mode-guide/" style="font-size:13px;line-height:1.5;color:var(--txt2)">Chrome 无痕模式详解：能做什么不能做什么，90%的人都理解错了</a>
         
       </div>
     </div>

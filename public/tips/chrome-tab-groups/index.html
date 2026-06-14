@@ -104,6 +104,15 @@
         <li><a href="#移动端chrome的标签页分组">移动端Chrome的标签页分组</a></li>
       </ul>
     </li>
+    <li><a href="#常见问题">常见问题</a>
+      <ul>
+        <li><a href="#q1-chrome-重启后标签页分组会保留吗">Q1: Chrome 重启后标签页分组会保留吗？</a></li>
+        <li><a href="#q2-标签页分组的颜色只有预设的那几种吗">Q2: 标签页分组的颜色只有预设的那几种吗？</a></li>
+        <li><a href="#q3-标签页分组和书签文件夹有什么区别该用哪个">Q3: 标签页分组和书签文件夹有什么区别？该用哪个？</a></li>
+        <li><a href="#q4-移动端-chrome-的标签页分组能和电脑端同步吗">Q4: 移动端 Chrome 的标签页分组能和电脑端同步吗？</a></li>
+        <li><a href="#q5-有多少个标签页时才需要考虑分组管理">Q5: 有多少个标签页时才需要考虑分组管理？</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
     </div>
@@ -282,6 +291,17 @@
 <p>iOS版Chrome从v106开始支持标签页分组，操作方式与Android类似。移动端的分组不会和电脑端同步——目前Chrome的同步只同步标签页URL，不同步分组归属。希望在<a href="/tips/chrome-reading-mode/">Chrome未来版本</a>中能改进这个体验。</p>
 <p>Chrome还在不断改进标签页分组功能。2026年最新的更新支持了分组搜索——在标签页搜索栏（Ctrl+Shift+A）输入分组名可以快速定位。未来版本可能支持分组颜色自定义（不只是预设8种）和分组模板保存功能。</p>
 <p>如果你还没用过标签页分组，今天就开始试试——右键任意标签页→将标签页添加到新组，三秒钟就能体验到整理后的清爽感。</p>
+<h2 id="常见问题">常见问题</h2>
+<h3 id="q1-chrome-重启后标签页分组会保留吗">Q1: Chrome 重启后标签页分组会保留吗？</h3>
+<p>A: 会。标签页分组是持久化的——关闭 Chrome 再重新打开，分组名称、颜色和分组内的标签页都会完整保留（前提是你在 Chrome 设置中选择了「继续浏览上次打开的网页」而非「打开新标签页」）。Chrome 重启后所有分组默认是折叠状态，展开后就能看到之前的标签页。如果你是意外关闭 Chrome（崩溃或强制关机），下次启动时 Chrome 会提示恢复标签页，点恢复后分组也会一起恢复。</p>
+<h3 id="q2-标签页分组的颜色只有预设的那几种吗">Q2: 标签页分组的颜色只有预设的那几种吗？</h3>
+<p>A: 目前（Chrome 2026）只能从预设的 8 种颜色中选择（灰色、蓝色、红色、黄色、绿色、粉色、紫色、青色），不支持自定义色值。但 Chrome 开发团队已经在实验自定义颜色选择器功能，预计在 2026 年末或 2027 年初的版本中推出。如果你对此有强烈需求，可以在 <code>chrome://flags</code> 中搜索「Tab Groups」相关实验性功能，看是否有新的颜色方案可以尝试。</p>
+<h3 id="q3-标签页分组和书签文件夹有什么区别该用哪个">Q3: 标签页分组和书签文件夹有什么区别？该用哪个？</h3>
+<p>A: 分组适合「当前正在处理」的任务——比如你在做项目调研，打开了一组相关网页需要频繁切换，用分组把它们捆在一起。书签文件夹适合「以后可能用到」的长期保存——比如你发现了一篇好文章但暂时没时间读，或者想收藏一组参考资源。简单规则：如果今天之内还要反复看这些标签页，用分组；如果是以后备用的资源，用书签。两者不互斥，你可以先分组工作，完成后把值得保留的页面加书签然后关闭分组。</p>
+<h3 id="q4-移动端-chrome-的标签页分组能和电脑端同步吗">Q4: 移动端 Chrome 的标签页分组能和电脑端同步吗？</h3>
+<p>A: 不能。目前 Chrome 的同步只同步标签页的 URL，不同步分组归属关系和分组颜色。也就是说，你在电脑上创建了一个「工作」红色分组，在手机上能看到这些标签页（在「其他设备」标签页列表中），但它们不会以分组的形式出现。希望在未来的 Chrome 版本中这个问题能改善。如果你经常需要在电脑和手机之间切换工作上下文，建议用 <a href="/tips/chrome-sync-settings-guide/">Chrome 同步设置</a> 配合书签来弥补。</p>
+<h3 id="q5-有多少个标签页时才需要考虑分组管理">Q5: 有多少个标签页时才需要考虑分组管理？</h3>
+<p>A: 超过 8 个标签页时建议开始分组。8 个标签页在 Chrome 的标签栏上还能显示完整标题，超过这个数标签页会逐渐缩窄直到只显示图标，此时你已经很难快速找到想要的页面了。分组没有下限——即使你只有 3 个标签页，如果它们属于不同的任务上下文（比如 2 个工作标签 + 1 个购物标签），也可以分组来明确边界。另外，如果你同时有超过 20 个标签页且分组后仍然感觉混乱，可能需要配合 <a href="/tips/chrome-memory-optimization/">Chrome 内存优化</a> 来管理标签页占用的系统资源。</p>
 <p>⚠️ Chrome为Google旗下产品，本站为第三方教程平台，与官方无关联。</p>
 
 <div class="compliance-notice">
@@ -394,15 +414,15 @@
       <h3>📖 相关文章</h3>
       <div style="display:flex;flex-direction:column;gap:12px">
         
-        <a href="https://chromebest.com/plugins/chrome-ad-blocker-comparison/" style="font-size:13px;line-height:1.5;color:var(--txt2)">Chrome 广告拦截插件对比：uBlock Origin vs AdGuard vs 广告拦截管家（2026 实测）</a>
+        <a href="https://chromebest.com/tips/chrome-bookmarks-management/" style="font-size:13px;line-height:1.5;color:var(--txt2)">Chrome 书签管理完全指南：导入导出、同步、整理技巧（含跨浏览器迁移）</a>
         
-        <a href="https://chromebest.com/tips/chrome-update-failed/" style="font-size:13px;line-height:1.5;color:var(--txt2)">Chrome 更新失败怎么办？10 种常见原因和修复方法详解</a>
+        <a href="https://chromebest.com/tips/chrome-offline-installer/" style="font-size:13px;line-height:1.5;color:var(--txt2)">Chrome 离线安装包下载与完整安装指南（2026 最新版）</a>
         
-        <a href="https://chromebest.com/compare/chrome-desktop-vs-mobile-comparison/" style="font-size:13px;line-height:1.5;color:var(--txt2)">Chrome 电脑版 vs 安卓版 vs iOS 版功能差异详解</a>
+        <a href="https://chromebest.com/tips/chrome-secure-dns-setup/" style="font-size:13px;line-height:1.5;color:var(--txt2)">Chrome 安全 DNS 设置教程：提升浏览安全性和解析速度</a>
         
-        <a href="https://chromebest.com/compare/chrome-vs-brave-2026/" style="font-size:13px;line-height:1.5;color:var(--txt2)">Chrome 和 Brave 2026 年到底选哪个？深度实测对比</a>
+        <a href="https://chromebest.com/tips/chrome-flash-player/" style="font-size:13px;line-height:1.5;color:var(--txt2)">Chrome Flash Player 已经彻底消失了：2026 年如何运行老旧 Flash 内容</a>
         
-        <a href="https://chromebest.com/tips/chrome-pdf-edit/" style="font-size:13px;line-height:1.5;color:var(--txt2)">Chrome 浏览器 PDF 编辑功能完整指南：标注、填写、合并全搞定</a>
+        <a href="https://chromebest.com/tips/chrome-incognito-mode-guide/" style="font-size:13px;line-height:1.5;color:var(--txt2)">Chrome 无痕模式详解：能做什么不能做什么，90%的人都理解错了</a>
         
       </div>
     </div>

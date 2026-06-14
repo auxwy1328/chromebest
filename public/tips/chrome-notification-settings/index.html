@@ -93,6 +93,15 @@
     </li>
     <li><a href="#高级技巧用-chrome-扩展程序精细控制通知">高级技巧：用 Chrome 扩展程序精细控制通知</a></li>
     <li><a href="#三步清理法总结">三步清理法总结</a></li>
+    <li><a href="#常见问题">常见问题</a>
+      <ul>
+        <li><a href="#q1-通知设为屏蔽后网站还能再请求权限吗">Q1: 通知设为屏蔽后，网站还能再请求权限吗？</a></li>
+        <li><a href="#q2-chrome-通知权限会和-google-账号同步到其他设备吗">Q2: Chrome 通知权限会和 Google 账号同步到其他设备吗？</a></li>
+        <li><a href="#q3-chrome-通知弹窗和-windows-通知中心是什么关系">Q3: Chrome 通知弹窗和 Windows 通知中心是什么关系？</a></li>
+        <li><a href="#q4-如何让邮件类网站的通知只显示提醒但不弹窗">Q4: 如何让邮件类网站的通知只显示提醒但不弹窗？</a></li>
+        <li><a href="#q5-隐私模式下通知权限会被继承吗">Q5: 隐私模式下通知权限会被继承吗？</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
     </div>
@@ -210,6 +219,17 @@
 <p>记住一个原则：通知权限默认应该是屏蔽的，只有当你明确需要某个网站的通知时才单独允许。这比&quot;默认允许、事后一个个关&quot;省心得多。Chrome 通知机制的问题就在于它默认弹询问框——大部分人在没想清楚的情况下就点了&quot;允许&quot;，日积月累通知列表就炸了。</p>
 <p>一次性清理干净，以后新网站请求通知时养成&quot;先屏蔽再考虑&quot;的习惯，Chrome 就不会再打扰你了。</p>
 <p>如果你觉得 <a href="/">Chrome 浏览器下载</a>后除了通知之外还有别的烦人的地方，比如<a href="/plugins/chrome-ad-blocker-comparison/">广告太多</a>或者<a href="/tips/chrome-memory-optimization/">内存占用太高</a>，我们也有对应的教程，可以一并优化你的 Chrome 使用体验。</p>
+<h2 id="常见问题">常见问题</h2>
+<h3 id="q1-通知设为屏蔽后网站还能再请求权限吗">Q1: 通知设为屏蔽后，网站还能再请求权限吗？</h3>
+<p>A: 看你是如何设置的。如果你在通知列表里把某个网站设为「屏蔽」，该网站之后无法再弹出通知请求弹窗——Chrome 会静默拦截。但如果你只是把开关设为「默认（询问）」，网站访问时仍然会弹出询问框。如果你用了全局关闭（顶部「网站可以发送通知」开关关掉），所有网站都无法请求，且已授权的也会失效。</p>
+<h3 id="q2-chrome-通知权限会和-google-账号同步到其他设备吗">Q2: Chrome 通知权限会和 Google 账号同步到其他设备吗？</h3>
+<p>A: 不会。Chrome 的通知权限设置是设备本地存储的，不会通过 Google 账号同步到其他电脑或手机。这意味着你在公司电脑上允许了某网站的通知，家里的电脑不会自动获得同样的设置。每台设备需要单独配置。好消息是这也意味着你在手机上关掉通知不会影响电脑端的设置。</p>
+<h3 id="q3-chrome-通知弹窗和-windows-通知中心是什么关系">Q3: Chrome 通知弹窗和 Windows 通知中心是什么关系？</h3>
+<p>A: Chrome 网站通知通过 Windows 通知中心（Notification Center）来显示弹窗，所以即使 Chrome 本身没在前台，通知也能弹出。这就是为什么关闭了 Chrome 的网站通知权限后，还需要去 Windows 系统设置里单独关闭 Chrome 的系统通知权限——如果只关了一边，另一边还会响。两者是独立开关，需要分别管理。</p>
+<h3 id="q4-如何让邮件类网站的通知只显示提醒但不弹窗">Q4: 如何让邮件类网站的通知只显示提醒但不弹窗？</h3>
+<p>A: Chrome 原生不支持「静音通知」功能——每个网站的通知要么允许（弹窗+声音），要么屏蔽（什么都没有）。如果你需要精细控制（比如 Gmail 来邮件时只在标签页上显示小红点但不弹窗），可以借助第三方扩展程序如 Notification Control。或者更直接的做法：把邮件网站的通知关掉，改用手机 Gmail/Outlook App 的推送通知来替代。</p>
+<h3 id="q5-隐私模式下通知权限会被继承吗">Q5: 隐私模式下通知权限会被继承吗？</h3>
+<p>A: 不会。Chrome 隐私模式默认禁用所有扩展，且不保存会话数据。如果你在正常模式下允许了某些网站的通知权限，在隐私窗口中这些权限不生效——隐私窗口里的通知行为等同于「默认（询问）」。这是隐私模式设计的一部分：保证隐私浏览不留任何持久化痕迹。如果你对隐私模式的运作机制感兴趣，可以看 <a href="/tips/chrome-incognito-mode/">Chrome 隐私模式详解</a>。</p>
 
 <div class="compliance-notice">
 <p>声明：本站为 Chrome 浏览器使用技巧分享平台，与 Google 公司无关。所有产品名称归原权利人所有。</p>
@@ -321,15 +341,15 @@
       <h3>📖 相关文章</h3>
       <div style="display:flex;flex-direction:column;gap:12px">
         
-        <a href="https://chromebest.com/tips/chrome-hardware-acceleration/" style="font-size:13px;line-height:1.5;color:var(--txt2)">Chrome 硬件加速设置教程：开启/关闭/故障排查，解决卡顿花屏崩溃</a>
-        
         <a href="https://chromebest.com/compare/chrome-vs-brave-2026/" style="font-size:13px;line-height:1.5;color:var(--txt2)">Chrome 和 Brave 2026 年到底选哪个？深度实测对比</a>
         
-        <a href="https://chromebest.com/tips/chrome-offline-installer/" style="font-size:13px;line-height:1.5;color:var(--txt2)">Chrome 离线安装包下载与完整安装指南（2026 最新版）</a>
+        <a href="https://chromebest.com/tips/chrome-save-password/" style="font-size:13px;line-height:1.5;color:var(--txt2)">Chrome 自动保存密码功能详解：开启、关闭、安全设置与最佳实践</a>
         
-        <a href="https://chromebest.com/plugins/chrome-screenshot-extensions/" style="font-size:13px;line-height:1.5;color:var(--txt2)">Chrome 截图插件推荐：5 款全页截图工具实测对比（含免费方案）</a>
+        <a href="https://chromebest.com/tips/chrome-tab-groups/" style="font-size:13px;line-height:1.5;color:var(--txt2)">Chrome标签页分组管理技巧：2026年告别标签页混乱</a>
         
-        <a href="https://chromebest.com/tips/chrome-search-engine-change/" style="font-size:13px;line-height:1.5;color:var(--txt2)">Chrome 搜索引擎切换全攻略：从百度切到 Bing、Google、搜狗的完整步骤</a>
+        <a href="https://chromebest.com/tips/chrome-dark-mode/" style="font-size:13px;line-height:1.5;color:var(--txt2)">Chrome 深色模式设置完整指南：Windows/Mac/手机/扩展全攻略</a>
+        
+        <a href="https://chromebest.com/tips/chrome-page-not-loading/" style="font-size:13px;line-height:1.5;color:var(--txt2)">Chrome 网页打不开或加载慢？2026 年 DNS 和网络问题全排查指南</a>
         
       </div>
     </div>

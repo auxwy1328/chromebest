@@ -100,7 +100,7 @@
     <div class="art-body">
       <p>网上搜&quot;Chrome 翻译插件推荐&quot;，能找到几十篇文章。但大部分要么是罗列一堆插件不给数据，要么给的数据一看就是编的（&ldquo;准确率98%&ldquo;&ldquo;100%正确&quot;这种话谁信？）。</p>
 <p>这篇文章不一样。我准备了 <strong>50 个真实翻译样本</strong>（英文新闻、技术文档、学术论文、日常对话各占一部分），用 5 款主流翻译插件逐一测试，记录准确率、响应速度和内存占用。每个插件都实际安装使用了一周以上。</p>
-<p>先说结论：<strong>日常使用选沉浸式翻译（免费功能足够），追求翻译质量选 DeepL，只需要偶尔查词选划词翻译。</strong></p>
+<p>先说结论：<strong>日常使用选沉浸式翻译（免费功能足够），追求翻译质量选 DeepL，只需要偶尔查词选划词翻译。</strong> 在 <a href="/plugins/chrome-essential-extensions/">Chrome 必装插件推荐</a>中，沉浸式翻译也是我们推荐的翻译类首选。</p>
 <h2 id="测试方法">测试方法</h2>
 <p>先交代清楚测试标准，免得被质疑。</p>
 <p><strong>测试样本：</strong> 50 个英文段落，分四类：</p>
@@ -257,7 +257,7 @@
 </table>
 <p><strong>关键发现：</strong></p>
 <ol>
-<li>Google 翻译速度最快，因为直接调用 Google 的服务器（国内访问有延迟）</li>
+<li>Google 翻译速度最快，因为直接调用 Google 的服务器（国内访问有延迟）。Edge 内置的 Microsoft 翻译在国内环境下可能更快——我们在 <a href="/compare/chrome-vs-edge-2026/">Chrome 和 Edge 的对比</a>中也测试了两款浏览器的内置翻译功能。</li>
 <li>DeepL 翻译最慢，因为需要把文本发送到 DeepL 的欧洲服务器处理（网络延迟明显）</li>
 <li>划词翻译的划词功能响应最快（0.2s），因为是轻量级请求</li>
 <li>沉浸式翻译的速度适中，双语对照模式下比纯翻译模式快（因为只翻译新增的可见区域）</li>
@@ -410,7 +410,7 @@
       </tr>
   </tbody>
 </table>
-<p><strong>沉浸式翻译的核心优势是&quot;自定义翻译引擎&rdquo;</strong>——你可以在设置中切换 OpenAI、DeepL、Google、Gemini 等 20+ 种翻译引擎。也就是说，你用沉浸式翻译也可以调用 DeepL 的翻译质量，同时还享受沉浸式翻译的双语对照、悬停翻译等功能。这是其他四个插件做不到的。</p>
+<p><strong>沉浸式翻译的核心优势是&quot;自定义翻译引擎&rdquo;</strong>——你可以在设置中切换 OpenAI、DeepL、Google、Gemini 等 20+ 种翻译引擎。也就是说，你用沉浸式翻译也可以调用 DeepL 的翻译质量，同时还享受沉浸式翻译的双语对照、悬停翻译等功能。这是其他四个插件做不到的。如果你经常阅读长文，配合 <a href="/tips/chrome-reading-mode/">Chrome 阅读模式</a>使用体验会更流畅。</p>
 <h2 id="各插件的优缺点">各插件的优缺点</h2>
 <p><img src="/images/plugins/chrome-translation-extension-comparison/body1.jpg" alt="#各插件的优缺点"></p>
 <p><strong>沉浸式翻译：</strong> 功能最全、准确率高、支持自定义引擎。缺点是内存占用大，安装后 Chrome 首次启动会慢约 0.5 秒。适合：需要频繁阅读外文内容的用户。</p>
@@ -550,15 +550,15 @@
       <h3>📖 相关文章</h3>
       <div style="display:flex;flex-direction:column;gap:12px">
         
-        <a href="https://chromebest.com/tips/chrome-keyboard-shortcuts/" style="font-size:13px;line-height:1.5;color:var(--txt2)">Chrome 快捷键大全：30 个真正提高效率的快捷键（按场景分类）</a>
+        <a href="https://chromebest.com/tips/chrome-set-default-browser-guide/" style="font-size:13px;line-height:1.5;color:var(--txt2)">Chrome 设为默认浏览器完整指南 &#43; 被篡改后的修复方法</a>
         
-        <a href="https://chromebest.com/tips/chrome-bookmarks-management/" style="font-size:13px;line-height:1.5;color:var(--txt2)">Chrome 书签管理完全指南：导入导出、同步、整理技巧（含跨浏览器迁移）</a>
+        <a href="https://chromebest.com/tips/chrome-pdf-edit/" style="font-size:13px;line-height:1.5;color:var(--txt2)">Chrome 浏览器 PDF 编辑功能完整指南：标注、填写、合并全搞定</a>
+        
+        <a href="https://chromebest.com/tips/chrome-guest-mode/" style="font-size:13px;line-height:1.5;color:var(--txt2)">Chrome 访客模式、隐私模式、多用户模式有什么区别?哪个更适合你</a>
+        
+        <a href="https://chromebest.com/compare/chrome-vs-brave-2026/" style="font-size:13px;line-height:1.5;color:var(--txt2)">Chrome 和 Brave 2026 年到底选哪个？深度实测对比</a>
         
         <a href="https://chromebest.com/plugins/chrome-essential-extensions/" style="font-size:13px;line-height:1.5;color:var(--txt2)">Chrome 必装插件推荐 2026：10 款提高效率的扩展实测（按场景分类）</a>
-        
-        <a href="https://chromebest.com/tips/chrome-incognito-mode/" style="font-size:13px;line-height:1.5;color:var(--txt2)">Chrome 隐私模式的真相：它到底能隐藏什么，不能隐藏什么</a>
-        
-        <a href="https://chromebest.com/tips/chrome-search-engine-switch/" style="font-size:13px;line-height:1.5;color:var(--txt2)">Chrome 浏览器默认搜索引擎切换与自定义设置指南（2026）</a>
         
       </div>
     </div>
