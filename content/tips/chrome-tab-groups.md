@@ -1,4 +1,4 @@
----
+﻿---
 title: "Chrome标签页分组管理技巧：2026年告别标签页混乱"
 description: "Chrome标签页分组功能完整教程，包括创建分组、颜色命名规则、分组折叠展开、跨设备同步分组、5个高效管理技巧，从50+标签页混乱到井井有条。"
 keywords: "Chrome标签页分组, Chrome标签管理, Chrome tab groups, 浏览器标签整理, 标签页太多怎么办"
@@ -31,7 +31,7 @@ faq:
 
 这篇教程讲清楚Chrome标签页分组的所有功能，以及[快捷键](/tips/chrome-keyboard-shortcuts/)配合分组的进阶用法。
 
-![Chrome标签页分组效果](/images/tips/chrome-tab-groups/img-1.jpg)
+\[Chrome标签页分组效果](/images/tips/chrome-tab-groups/img-1.jpg)
 
 ## 创建标签页分组
 
@@ -83,7 +83,7 @@ faq:
 
 坦白讲，"取消分组"和"关闭分组"在右键菜单里挨着，我至少误操作过3次——本来想取消分组结果把所有标签页关了。建议操作前看清楚再点。
 
-![分组操作菜单](/images/tips/chrome-tab-groups/img-2.jpg)
+\[分组操作菜单](/images/tips/chrome-tab-groups/img-2.jpg)
 
 ## 进阶技巧
 
@@ -111,7 +111,7 @@ Chrome没有分组专用快捷键，但可以配合通用快捷键：
 
 Chrome支持在分组名中使用emoji，比如"🔥紧急""📌待办""✅完成"。emoji比颜色更容易识别，特别是你开了很多分组的时候。
 
-![分组进阶技巧](/images/tips/chrome-tab-groups/img-3.jpg)
+\[分组进阶技巧](/images/tips/chrome-tab-groups/img-3.jpg)
 
 ## 标签页分组 vs 其他管理方式
 

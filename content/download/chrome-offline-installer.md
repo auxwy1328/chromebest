@@ -1,4 +1,4 @@
----
+﻿---
 title: "Chrome 离线安装包下载与安装完整指南（2026 最新版）"
 date: 2026-05-07T10:00:00+08:00
 slug: "chrome-offline-installer"
@@ -16,7 +16,7 @@ card_icon: "📥"
 card_label: "离线安装"
 card_gradient: "#0d1f0d,#1a3a1a"
 images: ["/images/download/chrome-offline-installer/cover.jpg"]
-og_image: "/images/download/chrome-offline-installer/og.jpg"
+og_image: "/images/download/chrome-offline-installer/cover.jpg"
 keywords: "Chrome离线安装包,Chrome下载,Chrome安装教程,Chrome离线版,Chrome完整安装包,Chrome企业版"
 faq:
   - question: "Chrome 离线安装包和在线安装器有什么区别？"

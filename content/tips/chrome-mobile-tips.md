@@ -1,4 +1,4 @@
----
+﻿---
 title: "Chrome 手机版使用指南：安卓和 iOS 的 15 个实用技巧"
 date: 2026-05-06T02:00:00+08:00
 slug: "chrome-mobile-tips"
@@ -60,7 +60,7 @@ Chrome 手机版的用户量超过桌面版——全球有超过 30 亿人用手
 
 ## 隐私和安全技巧
 
-![#隐私和安全技巧](/images/tips/chrome-mobile-tips/body3.jpg)
+\[#隐私和安全技巧](/images/tips/chrome-mobile-tips/body3.jpg)
 
 ### 5. 快速切换无痕模式
 
@@ -108,7 +108,7 @@ Chrome 手机版的用户量超过桌面版——全球有超过 30 亿人用手
 
 ## 搜索和导航技巧
 
-![#搜索和导航技巧](/images/tips/chrome-mobile-tips/body2.jpg)
+\[#搜索和导航技巧](/images/tips/chrome-mobile-tips/body2.jpg)
 
 ### 11. 地址栏直接搜索
 
@@ -144,7 +144,7 @@ Chrome 手机版的用户量超过桌面版——全球有超过 30 亿人用手
 
 ## 安卓专属功能
 
-![#安卓专属功能](/images/tips/chrome-mobile-tips/body1.jpg)
+\[#安卓专属功能](/images/tips/chrome-mobile-tips/body1.jpg)
 
 ### Chrome 安卓版的额外技巧
 

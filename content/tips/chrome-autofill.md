@@ -1,4 +1,4 @@
----
+﻿---
 title: "Chrome 自动填充功能详解：工作原理、安全风险与最佳配置"
 date: 2026-06-04T10:00:00+08:00
 slug: "chrome-autofill"
@@ -16,7 +16,7 @@ card_icon: "✏️"
 card_label: "自动填充"
 card_gradient: "#0d1a2e,#1a2e3a"
 images: ["/images/tips/chrome-autofill/cover.jpg"]
-og_image: "/images/tips/chrome-autofill/og.jpg"
+og_image: "/images/tips/chrome-autofill/cover.jpg"
 faq:
   - question: "Chrome 自动填充安全吗？会被窃取吗？"
     answer: "Chrome 自动填充本身使用了加密存储和验证机制（显示填充内容需要验证系统密码）。但自动填充有一个已知风险：某些恶意网站会使用隐藏的表单字段（CSS 隐藏的 input），当你点击自动填充时，Chrome 会把地址、手机号等信息填入你不可见的字段中，恶意网站可以读取这些数据。这就是所谓的自动填充钓鱼攻击。防范方法是只在你信任的网站上使用自动填充，或者关闭敏感信息的自动填充。"

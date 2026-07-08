@@ -1,4 +1,4 @@
----
+﻿---
 title: "Chrome 访客模式、隐私模式、多用户模式有什么区别?哪个更适合你"
 date: 2026-06-03T10:00:00+08:00
 slug: "chrome-guest-mode"
@@ -16,7 +16,7 @@ card_icon: "👤"
 card_label: "访客模式"
 card_gradient: "#1a0d2e,#2e1a3a"
 images: ["/images/tips/chrome-guest-mode/cover.jpg"]
-og_image: "/images/tips/chrome-guest-mode/og.jpg"
+og_image: "/images/tips/chrome-guest-mode/cover.jpg"
 faq:
   - question: "Chrome 访客模式和隐私模式有什么区别?"
     answer: "核心区别在于数据访问权限。隐私模式共享你的 Chrome 个人资料(书签、密码、扩展仍然可用),只是本次浏览不保存记录。访客模式创建一个完全隔离的临时会话,无法访问你的书签、密码、扩展等任何个人数据。关闭访客窗口后所有数据自动清除。隐私模式适合你自己临时不想留记录的场景,访客模式适合把电脑借给别人使用。"

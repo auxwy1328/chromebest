@@ -1,4 +1,4 @@
----
+﻿---
 title: "Chrome 深色模式设置完整指南：Windows/Mac/手机/扩展全攻略"
 date: 2026-05-15T10:00:00+08:00
 slug: "chrome-dark-mode"
@@ -16,7 +16,7 @@ card_icon: "🌙"
 card_label: "深色模式"
 card_gradient: "#0d0d1a,#1a1a3a"
 images: ["/images/tips/chrome-dark-mode/cover.jpg"]
-og_image: "/images/tips/chrome-dark-mode/og.jpg"
+og_image: "/images/tips/chrome-dark-mode/cover.jpg"
 faq:
   - question: "Chrome 如何开启深色模式？"
     answer: "Windows 用户打开「设置 > 个性化 > 颜色」，将「选择默认应用模式」改为「深色」；Mac 用户打开「系统设置 > 外观」，选择「深色」。Chrome 会自动跟随系统主题。也可以在 Chrome 内部访问 chrome://flags/#enable-force-dark，将 Auto Dark Mode for Web Contents 改为 Enabled，强制所有网页使用深色模式渲染。"

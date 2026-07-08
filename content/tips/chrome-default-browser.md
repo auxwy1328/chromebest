@@ -1,4 +1,4 @@
----
+﻿---
 title: "Chrome 设为默认浏览器的完整教程：Windows、Mac、手机全覆盖"
 date: 2026-05-18T10:00:00+08:00
 slug: "chrome-default-browser"
@@ -16,7 +16,7 @@ card_icon: "🌐"
 card_label: "默认浏览器"
 card_gradient: "#0d1f2e,#1a2e3a"
 images: ["/images/tips/chrome-default-browser/cover.jpg"]
-og_image: "/images/tips/chrome-default-browser/og.jpg"
+og_image: "/images/tips/chrome-default-browser/cover.jpg"
 faq:
   - question: "Chrome 怎么设为默认浏览器？"
     answer: "Windows 用户打开设置 → 应用 → 默认应用，将 Web 浏览器改为 Google Chrome。Mac 用户打开系统设置 → 桌面与程序坞，将默认 Web 浏览器改为 Chrome。也可以直接在 Chrome 设置中点击设为默认浏览器。"

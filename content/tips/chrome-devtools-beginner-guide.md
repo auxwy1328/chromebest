@@ -1,4 +1,4 @@
----
+﻿---
 title: "Chrome 开发者工具入门：5 个面板详解 + 实用技巧（非程序员也能用）"
 date: 2026-05-05T23:00:00+08:00
 slug: "chrome-devtools-beginner-guide"
@@ -47,7 +47,7 @@ faq:
 
 ## 面板一：Elements（元素面板）——查看和修改页面结构
 
-![#面板一：Elements（元素面板）—](/images/tips/chrome-devtools-beginner-guide/body3.jpg)
+\[#面板一：Elements（元素面板）—](/images/tips/chrome-devtools-beginner-guide/body3.jpg)
 
 **用途：** 查看网页的 HTML 结构和 CSS 样式。
 
@@ -116,7 +116,7 @@ let total = 0; document.querySelectorAll('img').forEach(img => { if(img.naturalW
 
 ## 面板三：Network（网络面板）——分析页面加载性能
 
-![#面板三：Network（网络面板）——](/images/tips/chrome-devtools-beginner-guide/body2.jpg)
+\[#面板三：Network（网络面板）——](/images/tips/chrome-devtools-beginner-guide/body2.jpg)
 
 **用途：** 查看页面加载了哪些资源、每个资源的加载时间、加载顺序。
 
@@ -163,7 +163,7 @@ Application 面板中可以查看 Local Storage、Session Storage、IndexedDB、
 
 ## 面板五：Lighthouse（灯塔面板）——页面性能和 SEO 评分
 
-![#面板五：Lighthouse（灯塔面板](/images/tips/chrome-devtools-beginner-guide/body1.jpg)
+\[#面板五：Lighthouse（灯塔面板](/images/tips/chrome-devtools-beginner-guide/body1.jpg)
 
 **用途：** 自动分析页面的性能、可访问性、SEO、最佳实践等指标，给出评分和改进建议。
 

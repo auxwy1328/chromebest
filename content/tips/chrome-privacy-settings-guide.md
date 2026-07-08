@@ -1,4 +1,4 @@
----
+﻿---
 title: "Chrome 隐私设置完全指南：9 个必须改的安全选项（附截图说明）"
 date: 2026-05-05T20:30:00+08:00
 slug: "chrome-privacy-settings-guide"
@@ -48,7 +48,7 @@ faq:
 
 ## 设置二：禁止网站追踪你的物理位置（风险等级：高）
 
-![#设置二：禁止网站追踪你的物理位置（风险](/images/tips/chrome-privacy-settings-guide/body3.jpg)
+\[#设置二：禁止网站追踪你的物理位置（风险](/images/tips/chrome-privacy-settings-guide/body3.jpg)
 
 **不改会怎样：** 很多网站会请求获取你的地理位置，用于投放本地广告或推送附近商家信息。Chrome 默认会弹出位置请求，但用户经常不小心点了"允许"。
 
@@ -66,7 +66,7 @@ faq:
 
 ## 设置四：清除浏览数据（风险等级：中）
 
-![#设置四：清除浏览数据（风险等级：中）](/images/tips/chrome-privacy-settings-guide/body2.jpg)
+\[#设置四：清除浏览数据（风险等级：中）](/images/tips/chrome-privacy-settings-guide/body2.jpg)
 
 **不改会怎样：** Chrome 会保存你所有的浏览记录、下载历史、密码和表单数据。如果电脑被别人使用或中了恶意软件，这些数据都可能被窃取。
 
@@ -92,7 +92,7 @@ faq:
 
 ## 设置六：检查网站权限（摄像头、麦克风、屏幕共享）（风险等级：高）
 
-![#设置六：检查网站权限（摄像头、麦克风、](/images/tips/chrome-privacy-settings-guide/body1.jpg)
+\[#设置六：检查网站权限（摄像头、麦克风、](/images/tips/chrome-privacy-settings-guide/body1.jpg)
 
 **不改会怎样：** 如果你曾经不小心允许某个网站访问摄像头或麦克风，该网站可以在你不知情的情况下偷偷开启设备。
 

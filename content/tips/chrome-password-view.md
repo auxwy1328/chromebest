@@ -1,4 +1,4 @@
----
+﻿---
 title: "Chrome 查看保存密码完整教程：导出、迁移、安全风险与替代方案"
 date: 2026-06-02T10:00:00+08:00
 slug: "chrome-password-view"
@@ -16,7 +16,7 @@ card_icon: "🔐"
 card_label: "密码查看"
 card_gradient: "#2e0d1a,#3a1a2e"
 images: ["/images/tips/chrome-password-view/cover.jpg"]
-og_image: "/images/tips/chrome-password-view/og.jpg"
+og_image: "/images/tips/chrome-password-view/cover.jpg"
 faq:
   - question: "Chrome 保存的密码在哪里查看？"
     answer: "打开 Chrome 设置 → 密码和自动填充 → Google 密码管理器。在这里可以看到 Chrome 保存的所有账号和密码。点击密码栏的眼睛图标可以显示明文密码（需要输入电脑登录密码或 PIN 验证）。也可以直接访问 passwords.google.com 网页版查看。"

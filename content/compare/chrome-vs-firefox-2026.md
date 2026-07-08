@@ -1,4 +1,4 @@
----
+﻿---
 title: "Chrome 和 Firefox 2026 年到底选哪个？深度实测对比"
 date: 2026-05-23T10:00:00+08:00
 slug: "chrome-vs-firefox-2026"
@@ -17,7 +17,7 @@ card_icon: "⚔️"
 card_label: "Chrome vs Firefox"
 card_gradient: "#1a1a2e,#16213e"
 images: ["/images/compare/chrome-vs-firefox-2026/cover.jpg"]
-og_image: "/images/compare/chrome-vs-firefox-2026/og.jpg"
+og_image: "/images/compare/chrome-vs-firefox-2026/cover.jpg"
 faq:
   - question: "Firefox 真的比 Chrome 更保护隐私吗？"
     answer: "是的。Firefox 默认启用增强型跟踪保护，会自动屏蔽跨站追踪器和社交媒体追踪器。Chrome 虽然也做了隐私改进（如第三方 Cookie 淘汰），但 Google 本身就是广告公司，其隐私策略的设计方向与 Firefox 不同。Firefox 由非营利组织 Mozilla 运营，商业模式不依赖用户数据采集，这是根本区别。Firefox 还提供了容器标签页功能，可以为不同网站创建独立的 Cookie 环境，这意味着你可以同时登录多个账号而不会互相干扰。"

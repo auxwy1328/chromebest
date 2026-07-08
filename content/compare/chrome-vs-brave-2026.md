@@ -1,4 +1,4 @@
----
+﻿---
 title: "Chrome 和 Brave 2026 年到底选哪个？深度实测对比"
 date: 2026-05-24T10:00:00+08:00
 slug: "chrome-vs-brave-2026"
@@ -17,7 +17,7 @@ card_icon: "⚔️"
 card_label: "Chrome vs Brave"
 card_gradient: "#1a1a2e,#16213e"
 images: ["/images/compare/chrome-vs-brave-2026/cover.jpg"]
-og_image: "/images/compare/chrome-vs-brave-2026/og.jpg"
+og_image: "/images/compare/chrome-vs-brave-2026/cover.jpg"
 faq:
   - question: "Brave 和 Chrome 用的是同一个内核吗？"
     answer: "是的，两者都基于 Chromium 内核。这意味着 Brave 可以直接安装 Chrome Web Store 的扩展，网页渲染结果基本一致，Web 标准兼容性也相同。但 Brave 在 Chromium 基础上做了大量修改——去掉了所有 Google 服务集成代码，内置了广告拦截引擎，加入了 Brave Rewards 积分系统，使用了独立的自动更新通道。简单来说，Brave 是一个去掉 Google 痕迹、加了隐私工具的 Chromium 分支。"

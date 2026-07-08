@@ -1,4 +1,4 @@
----
+﻿---
 title: "Chrome 硬件加速设置教程：开启/关闭/故障排查，解决卡顿花屏崩溃"
 date: 2026-05-23T10:00:00+08:00
 slug: "chrome-hardware-acceleration"
@@ -16,7 +16,7 @@ card_icon: "⚡"
 card_label: "性能优化"
 card_gradient: "#1a1a2e,#16213e"
 images: ["/images/tips/chrome-hardware-acceleration/cover.jpg"]
-og_image: "/images/tips/chrome-hardware-acceleration/og.jpg"
+og_image: "/images/tips/chrome-hardware-acceleration/cover.jpg"
 keywords: "Chrome硬件加速,Chrome卡顿怎么办,Chrome花屏,Chrome黑屏,Chrome崩溃,Chrome性能优化,Chrome GPU"
 faq:
   - q: "Chrome 硬件加速应该开还是关？"

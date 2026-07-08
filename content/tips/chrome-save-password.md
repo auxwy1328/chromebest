@@ -1,4 +1,4 @@
----
+﻿---
 title: "Chrome 自动保存密码功能详解：开启、关闭、安全设置与最佳实践"
 date: 2026-06-01T10:00:00+08:00
 slug: "chrome-save-password"
@@ -15,8 +15,6 @@ excerpt: "Chrome 每次登录网站都弹窗问要不要保存密码？有些人
 card_icon: "💾"
 card_label: "密码保存"
 card_gradient: "#0d2e1a,#1a3a2e"
-images: ["/images/tips/chrome-save-password/cover.jpg"]
-og_image: "/images/tips/chrome-save-password/og.jpg"
 faq:
   - question: "Chrome 怎么开启或关闭自动保存密码？"
     answer: "打开 Chrome 设置 → 密码和自动填充 → Google 密码管理器，找到提供保存密码的开关。开启后 Chrome 会在你登录网站时自动提示保存密码。关闭后 Chrome 不会再保存新密码，也不会提示保存。已保存的密码不会自动删除，需要手动删除。"

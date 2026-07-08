@@ -1,4 +1,4 @@
----
+﻿---
 title: "Chrome 搜索引擎切换全攻略：从百度切到 Bing、Google、搜狗的完整步骤"
 date: 2026-05-12T10:00:00+08:00
 slug: "chrome-search-engine-change"
@@ -16,7 +16,7 @@ card_icon: "🔍"
 card_label: "搜索引擎切换"
 card_gradient: "#1a0d2e,#2e1a3a"
 images: ["/images/tips/chrome-search-engine-change/cover.jpg"]
-og_image: "/images/tips/chrome-search-engine-change/og.jpg"
+og_image: "/images/tips/chrome-search-engine-change/cover.jpg"
 faq:
   - question: "Chrome 怎么把默认搜索引擎改成百度？"
     answer: "打开 Chrome 设置 → 搜索引擎 → ![搜索引擎管理列表](/images/tips/chrome-search-engine-change/search-engine-list.jpg)

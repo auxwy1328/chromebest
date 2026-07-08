@@ -1,4 +1,4 @@
----
+﻿---
 title: "Chrome Flash Player 已经彻底消失了：2026 年如何运行老旧 Flash 内容"
 date: 2026-05-22T10:00:00+08:00
 slug: "chrome-flash-player"
@@ -15,8 +15,6 @@ excerpt: "在百度搜索 Chrome Flash 的人仍然很多，但 Flash 已于 202
 card_icon: "⚡"
 card_label: "Flash"
 card_gradient: "#2e0d0d,#3a1a1a"
-images: ["/images/tips/chrome-flash-player/cover.jpg"]
-og_image: "/images/tips/chrome-flash-player/og.jpg"
 faq:
   - question: "Chrome 还能运行 Flash 吗？"
     answer: "不能。Chrome 从 2020 年底开始逐步移除 Flash 支持，到 2021 年初已完全不再支持 Flash 内容。即使你手动安装 Flash Player 插件，Chrome 也不会加载它。所有主流浏览器（Chrome、Firefox、Edge、Safari）都已移除 Flash 支持。"

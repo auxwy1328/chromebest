@@ -1,4 +1,4 @@
----
+﻿---
 title: "Chrome 标签页丢失怎么找回？2026年5种恢复方法+防丢失设置"
 date: 2026-05-20
 slug: chrome-tabs-lost-recover
