@@ -40,3 +40,8 @@ pagerSize = 20
   changefreq = 'weekly'
   priority = 0.8
   filename = 'sitemap.xml'
+
+[params.indexnow]
+  enabled = true
+  key = "1746ece89b02d6f075b43c223f9789b5"
+  ping = "https://api.indexnow.org/IndexNow"

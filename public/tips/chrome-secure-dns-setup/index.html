@@ -1,24 +1,533 @@
-<!doctype html><html lang=zh-CN><head><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=msvalidate.01 content="58B8BC3B56964E4B68D451072143B15E"><title>Chrome 安全 DNS 设置教程：提升浏览安全性和解析速度 - ChromeBest</title><meta name=description content="Chrome 安全 DNS（DNS over HTTPS）设置教程。什么是安全 DNS，为什么国内用户应该关闭它，以及如何选择合适的 DNS 服务。"><meta name=keywords content="[Chrome安全DNS,Chrome DNS设置,DNS over HTTPS,Chrome DoH,加密DNS]"><link rel=canonical href=https://chromebest.com/tips/chrome-secure-dns-setup/><meta property="og:type" content="article"><meta property="og:title" content="Chrome 安全 DNS 设置教程：提升浏览安全性和解析速度"><meta property="og:description" content='Chrome 从版本 78 开始支持"安全 DNS"功能（也叫 DNS over HTTPS，简称 DoH）。这个功能推出后在隐私保护领域引起了很大讨论——支持者认为它增强了对 ISP 监控的防御，反对者认为它把 DNS 查询权从 ISP 转移到了少数几家大型科技公司手中。这个功能听起来很好——加密 …'><meta property="og:url" content="https://chromebest.com/tips/chrome-secure-dns-setup/"><meta property="og:site_name" content="ChromeBest"><meta property="og:image" content="https://chromebest.com/images/tips/chrome-secure-dns-setup/og.jpg"><meta name=twitter:card content="summary_large_image"><link rel=icon href=/favicon.ico sizes=32x32><link rel=apple-touch-icon href=/apple-touch-icon.png><link rel=stylesheet href=/css/style.css></head><body><nav class=nav><div class=nav-inner><a href=/ class=nav-logo><div class=nav-logo-icon><span>C</span></div><b>ChromeBest</b></a><ul class=nav-links><li><a href=/>首页</a></li><li><a href=/categories/下载安装>下载安装</a></li><li><a href=/categories/使用技巧>技巧教程</a></li><li><a href=/categories/插件推荐>插件推荐</a></li><li><a href=/categories/对比评测>对比评测</a></li><li><a href=/categories/性能优化>性能优化</a></li></ul><a href=https://www.google.com/chrome/ class=nav-dl rel=nofollow>⬇ 下载 Chrome</a></div></nav><div class=layout><article class=art-page><nav class=breadcrumb><a href=/>首页</a>
-<span class=breadcrumb-sep>›</span>
-<a href=/tips>tips</a>
-<span class=breadcrumb-sep>›</span>
-<span class=breadcrumb-current>Chrome 安全 DNS 设置教程：提升浏览安全性和解析速度</span></nav><span class="art-tag feat-tag blue">🔒 DNS设置</span><h1>Chrome 安全 DNS 设置教程：提升浏览安全性和解析速度</h1><div class=meta><span>📅 2026-05-06</span>
-<span>⏱ 8 分钟阅读</span>
-<span>📷 6 张真实截图</span></div><div class=cover><img src=/images/tips/chrome-secure-dns-setup/cover.jpg alt="Chrome 安全 DNS 设置教程：提升浏览安全性和解析速度"></div><div class=toc><h3>📑 目录</h3><nav id=TableOfContents><ul><li><a href=#什么是安全-dns>什么是安全 DNS</a></li><li><a href=#国内用户要不要开启安全-dns>国内用户要不要开启安全 DNS</a></li><li><a href=#如何设置安全-dns>如何设置安全 DNS</a><ul><li><a href=#关闭安全-dns国内用户推荐>关闭安全 DNS（国内用户推荐）</a></li><li><a href=#开启安全-dns海外用户或需要隐私保护的用户>开启安全 DNS（海外用户或需要隐私保护的用户）</a></li><li><a href=#使用自定义-doh-服务器>使用自定义 DoH 服务器</a></li></ul></li><li><a href=#系统-dns-设置和-chrome-安全-dns-是独立的>系统 DNS 设置（和 Chrome 安全 DNS 是独立的）</a><ul><li><a href=#windows-dns-设置>Windows DNS 设置</a></li><li><a href=#验证-dns-设置是否生效>验证 DNS 设置是否生效</a></li></ul></li><li><a href=#dns-缓存和刷新>DNS 缓存和刷新</a><ul><li><a href=#chrome-dns-缓存>Chrome DNS 缓存</a></li><li><a href=#系统-dns-缓存>系统 DNS 缓存</a></li></ul></li><li><a href=#国内-dns-环境的特殊问题>国内 DNS 环境的特殊问题</a><ul><li><a href=#dns-污染>DNS 污染</a></li><li><a href=#dns-劫持>DNS 劫持</a></li><li><a href=#cdn-和-dns-的关系>CDN 和 DNS 的关系</a></li></ul></li><li><a href=#如何判断你的-dns-是否正常工作>如何判断你的 DNS 是否正常工作</a></li><li><a href=#常见问题>常见问题</a><ul><li><a href=#安全-dns-能防止-dns-污染吗>安全 DNS 能防止 DNS 污染吗？</a></li><li><a href=#为什么有时候修改了-dns-但没生效>为什么有时候修改了 DNS 但没生效？</a></li><li><a href=#安全-dns-和-vpn-有什么区别>安全 DNS 和 VPN 有什么区别？</a></li><li><a href=#使用公共-dns-安全吗>使用公共 DNS 安全吗？</a></li><li><a href=#chrome-安全-dns-和系统-dns-哪个优先>Chrome 安全 DNS 和系统 DNS 哪个优先？</a></li></ul></li></ul></nav></div><div class=art-body><p>Chrome 从版本 78 开始支持"安全 DNS"功能（也叫 DNS over HTTPS，简称 DoH）。这个功能推出后在隐私保护领域引起了很大讨论——支持者认为它增强了对 ISP 监控的防御，反对者认为它把 DNS 查询权从 ISP 转移到了少数几家大型科技公司手中。这个功能听起来很好——加密 DNS 查询防止被窃听——但对国内用户来说，开启它反而可能导致网页加载变慢。</p><p>这篇文章解释安全 DNS 的原理、国内用户的使用建议，以及如何选择合适的 DNS 服务。</p><h2 id=什么是安全-dns>什么是安全 DNS</h2><p><strong>正常 DNS 查询：</strong> 当你在浏览器地址栏中输入 <code>www.taobao.com</code> 并按下回车时，浏览器实际上需要知道这个域名对应的服务器 IP 地址（比如 <code>140.205.220.96</code>）。这个过程叫做 DNS 解析（Domain Name System）。这个查询过程通常是明文传输的（使用 UDP 协议的 53 端口）——意味着你的网络服务商（ISP）和同一个 Wi-Fi 网络中的其他人理论上可以看到你查询了哪些域名。</p><p><strong>安全 DNS（DoH）：</strong> 使用 HTTPS 协议加密 DNS 查询。查询过程通过加密通道传输，ISP 和中间人看不到你查询了什么域名。</p><p><strong>另一种加密 DNS（DoT）：</strong> DNS over TLS，使用 TLS 协议加密 DNS 查询。和 DoH 功能类似，但加密层级不同。Chrome 支持的是 DoH。</p><h2 id=国内用户要不要开启安全-dns>国内用户要不要开启安全 DNS</h2><p>[#国内用户要不要开启安全 DNS](/images/tips/chrome-secure-dns-setup/body3.jpg)</p><p><strong>结论：建议关闭。</strong></p><p>原因：</p><ol><li><strong>速度变慢</strong>：Chrome 默认的安全 DNS 服务器由 Google 和 Cloudflare 提供，都在国外。国内用户每次 DNS 查询都要绕到国外服务器，增加延迟（正常情况下 DNS 查询只需 10-50ms，使用国外的 DoH 服务器则可能需要 200-500ms）</li><li><strong>安全性提升有限</strong>：ISP 能看到你访问了哪些网站（通过 IP 地址），即使 DNS 查询被加密了。安全 DNS 只隐藏了"你查询了什么域名"，不隐藏"你访问了什么 IP"</li><li><strong>国内 DNS 服务已经够用</strong>：运营商提供的 DNS 和国内公共 DNS（如阿里 DNS、腾讯 DNS）已经足够快和安全。如果网页加载仍然慢，参考 <a href=/tips/chrome-page-not-loading/>Chrome 网页打不开或加载慢排查指南</a>。</li></ol><h2 id=如何设置安全-dns>如何设置安全 DNS</h2><h3 id=关闭安全-dns国内用户推荐>关闭安全 DNS（国内用户推荐）</h3><p>chrome://settings/security → 安全浏览 → 关闭"使用安全 DNS"</p><p>关闭后 Chrome 会使用系统默认的 DNS 服务器（通常是你宽带运营商自动分配的 DNS）。</p><h3 id=开启安全-dns海外用户或需要隐私保护的用户>开启安全 DNS（海外用户或需要隐私保护的用户）</h3><p>chrome://settings/security → 安全浏览 → 开启"使用安全 DNS"→ 选择提供商</p><p><strong>推荐的 DoH 服务商：</strong></p><table><thead><tr><th>服务商</th><th>地址</th><th>特点</th></tr></thead><tbody><tr><td>Cloudflare</td><td><code>https://cloudflare-dns.com/dns-query</code></td><td>隐私保护好、全球节点多、速度快</td></tr><tr><td>Google</td><td><code>https://dns.google/dns-query</code></td><td>稳定可靠、全球覆盖</td></tr><tr><td>Quad9</td><td><code>https://dns.quad9.net/dns-query</code></td><td>自带恶意域名过滤</td></tr><tr><td>阿里 DNS DoH</td><td><code>https://dns.alidns.com/dns-query</code></td><td>国内访问快</td></tr><tr><td>腾讯 DNSPod DoH</td><td><code>https://doh.pub/dns-query</code></td><td>国内访问快</td></tr></tbody></table><p><strong>海外用户推荐 Cloudflare 或 Google。国内用户如果一定要用 DoH，选阿里 DNS 或腾讯 DNSPod。</strong></p><h3 id=使用自定义-doh-服务器>使用自定义 DoH 服务器</h3><p>如果你选择的 DoH 服务商不在 Chrome 的下拉列表中，可以通过自定义方式添加：</p><ol><li>在"使用安全 DNS"下方选择"使用"→ 选择"自定义"</li><li>在"自定义 DNS over HTTPS 服务器"中输入 DoH 服务器的 URL</li><li>点击"确定"保存</li></ol><h2 id=系统-dns-设置和-chrome-安全-dns-是独立的>系统 DNS 设置（和 Chrome 安全 DNS 是独立的）</h2><p>[#系统 DNS 设置（和 Chrome ](/images/tips/chrome-secure-dns-setup/body2.jpg)</p><p>Chrome 安全 DNS 只影响 Chrome 浏览器的 DNS 查询，不影响系统其他程序的 DNS。如果你想让所有程序都使用指定的 DNS，需要在操作系统中设置。</p><h3 id=windows-dns-设置>Windows DNS 设置</h3><ol><li>打开 Windows 设置 → 网络和 Internet → 点击你当前使用的网络连接（以太网或 Wi-Fi）→ DNS 服务器分配 → 点击"编辑"按钮</li><li>在弹出面板中选择"手动"模式</li><li>在"首选 DNS"和"备用 DNS"输入框中分别填入 DNS 服务器地址</li></ol><p><strong>推荐的国内公共 DNS：</strong></p><table><thead><tr><th>服务商</th><th>首选 DNS</th><th>备用 DNS</th><th>特点</th></tr></thead><tbody><tr><td>阿里 DNS</td><td>223.5.5.5</td><td>223.6.6.6</td><td>速度快、稳定</td></tr><tr><td>腾讯 DNSPod</td><td>119.29.29.29</td><td>182.254.116.116</td><td>速度快、支持 DoH/DoT</td></tr><tr><td>114 DNS</td><td>114.114.114.114</td><td>114.114.115.115</td><td>老牌、稳定</td></tr><tr><td>百度 DNS</td><td>180.76.76.76</td><td>—</td><td>简单</td></tr></tbody></table><h3 id=验证-dns-设置是否生效>验证 DNS 设置是否生效</h3><p>在命令提示符中运行：</p><pre tabindex=0><code>nslookup www.taobao.com
-</code></pre><p>查看返回的 DNS 服务器地址是否是你设置的 DNS 服务器。</p><h2 id=dns-缓存和刷新>DNS 缓存和刷新</h2><h3 id=chrome-dns-缓存>Chrome DNS 缓存</h3><p>Chrome 会缓存 DNS 查询结果以减少重复查询、加快页面加载速度。缓存中的每条记录都有一个 TTL（生存时间），过期后 Chrome 会重新查询。查看 Chrome 的 DNS 缓存：</p><ol><li>访问 chrome://net-internals/#dns</li><li>在"Host cache"部分可以看到所有缓存的 DNS 记录</li></ol><p>清除 Chrome DNS 缓存：点击"Clear host cache"按钮。</p><h3 id=系统-dns-缓存>系统 DNS 缓存</h3><p>Windows 操作系统也会缓存 DNS 查询结果（和 Chrome 的缓存是独立的）。清除系统 DNS 缓存的命令：</p><pre tabindex=0><code>ipconfig /flushdns
-</code></pre><p><strong>什么时候需要刷新 DNS 缓存：</strong> 网站迁移服务器后旧 IP 被缓存导致浏览器仍然访问旧服务器无法打开新网站；遭遇 DNS 劫持或 DNS 污染导致搜索被重定向到广告页面；修改了 DNS 设置后需要让新设置立即生效（而不是等待旧缓存自动过期）。</p><p>国内用户遇到的 DNS 劫持、污染等问题参考 <a href=/tips/chrome-common-problems-in-china/>Chrome 在国内使用的常见问题与解决方案</a>。</p><h2 id=国内-dns-环境的特殊问题>国内 DNS 环境的特殊问题</h2><p>[#国内 DNS 环境的特殊问题](/images/tips/chrome-secure-dns-setup/body1.jpg)</p><p>国内 DNS 环境有一些特殊问题需要了解：</p><h3 id=dns-污染>DNS 污染</h3><p>DNS 污染是指在网络传输过程中，DNS 查询的响应被篡改，返回错误的 IP 地址。常见的表现是访问 Google、YouTube 等网站时被跳转到其他页面，或者某些正常的域名解析失败。DNS 污染在国内是一个已知的存在，但普通用户不需要过于担心——它主要影响的是无法直接访问的网站。</p><h3 id=dns-劫持>DNS 劫持</h3><p>DNS 劫持比污染更恶劣——通常是运营商在 DNS 查询中注入广告或跳转。表现是访问一个不存在的域名时，浏览器会被跳转到运营商的广告页面或导航网站。解决办法：使用可信的公共 DNS（如阿里 DNS 223.5.5.5）替代运营商自动分配的 DNS。</p><h3 id=cdn-和-dns-的关系>CDN 和 DNS 的关系</h3><p>大型网站（如淘宝、B站、知乎）使用 CDN（内容分发网络）来加速访问。CDN 会根据你的地理位置返回最近的节点 IP。这意味着不同地区的用户即使使用同一个 DNS 服务器，解析到的 IP 地址也可能不同。使用公共 DNS 不会影响 CDN 的智能调度——CDN 是基于 DNS 查询的来源 IP 来判断地理位置的。</p><h2 id=如何判断你的-dns-是否正常工作>如何判断你的 DNS 是否正常工作</h2><p>有时候网页打不开、加载慢或跳转到奇怪页面，可能是 DNS 出了问题。以下是排查方法：</p><p><strong>第一步：用 nslookup 测试 DNS 解析</strong></p><p>在命令提示符中运行 <code>nslookup www.baidu.com</code>，如果返回了正确的 IP 地址（如 <code>39.156.66.10</code> 或 <code>110.242.68.66</code>），说明 DNS 解析正常。如果返回"DNS request timed out"或错误的 IP，说明 DNS 有问题。</p><p><strong>第二步：用 ping 测试连通性</strong></p><p>如果 DNS 解析正常但网页打不开，可能是网络连接问题。运行 <code>ping www.baidu.com</code>，如果能收到回复（显示时间和 TTL），说明网络连通性正常。</p><p><strong>第三步：尝试切换 DNS</strong></p><p>如果 DNS 解析失败，尝试切换到公共 DNS（如阿里 DNS 223.5.5.5），然后再次运行 nslookup 测试。如果切换后正常了，说明之前的 DNS 服务器有问题。</p><p><strong>第四步：清除 DNS 缓存</strong></p><p>如果切换 DNS 后仍然有问题，可能是本地缓存了错误的 DNS 记录。运行 <code>ipconfig /flushdns</code> 清除系统 DNS 缓存，同时在 Chrome 中访问 <code>chrome://net-internals/#dns</code> 清除 Chrome DNS 缓存。</p><p><strong>第五步：重置网络设置</strong></p><p>如果以上步骤都无法解决问题，可以在 Windows 设置 → 网络和 Internet → 高级网络设置 → 网络重置 中重置网络适配器。这会清除所有的网络适配器配置（包括 DNS 设置、代理服务器配置、VPN 连接信息等），恢复到 Windows 的默认出厂网络状态。</p><h2 id=常见问题>常见问题</h2><h3 id=安全-dns-能防止-dns-污染吗>安全 DNS 能防止 DNS 污染吗？</h3><p>部分可以。DNS 污染是指恶意方篡改 DNS 查询结果，让你访问到错误的 IP 地址。安全 DNS 通过加密通道发送查询请求，中间人无法篡改。但如果污染发生在 DNS 服务器端（比如返回了错误的 IP），安全 DNS 也无法防止。这种情况需要改用可信的 DNS 服务器来解决。</p><h3 id=为什么有时候修改了-dns-但没生效>为什么有时候修改了 DNS 但没生效？</h3><p>可能是 DNS 缓存还没过期。按以下顺序刷新：先清除 Chrome DNS 缓存（chrome://net-internals/#dns）→ 再清除系统 DNS 缓存（ipconfig /flushdns）→ 最后重启浏览器。如果仍然没有生效，可能需要等待 DNS 记录的 TTL（生存时间）自动过期后被清除，最长可能需要等待 48 小时（大部分 DNS 记录的 TTL 为 300 秒到 86400 秒不等）。</p><h3 id=安全-dns-和-vpn-有什么区别>安全 DNS 和 VPN 有什么区别？</h3><p>安全 DNS 只加密了 DNS 查询这一步（隐藏了"你想访问哪个域名"），但实际的网页访问过程（你和网站服务器之间的数据传输）仍然是明文的。VPN 则加密了所有网络流量（包括 DNS 查询和实际的网页数据传输），提供的是端到端的隐私保护。VPN 的隐私保护远强于安全 DNS。但如果只是想在 DNS 层面增加一些隐私保护，安全 DNS 比 VPN 轻量得多（不影响网速，不增加额外费用）。Chrome 代理设置的完整方法参考 <a href=/tips/chrome-proxy-settings/>Chrome 代理设置完整指南</a>。</p><h3 id=使用公共-dns-安全吗>使用公共 DNS 安全吗？</h3><p>国内主流的公共 DNS（如阿里 DNS、腾讯 DNSPod、114 DNS 等）均由大型互联网公司或专业 DNS 服务商运营，安全性和可靠性都有保障。但理论上，任何公共 DNS 的运营者都能看到你查询了哪些域名。如果你非常在意隐私，可以自己搭建 DNS 服务器（使用 Pi-hole 或 AdGuard Home），完全控制 DNS 查询日志。不过这需要一台常开的服务器（如家用 NAS 或树莓派）和一定的网络配置知识，技术门槛相对较高，更适合有一定技术能力的网络爱好者或家庭实验室用户。</p><h3 id=chrome-安全-dns-和系统-dns-哪个优先>Chrome 安全 DNS 和系统 DNS 哪个优先？</h3><p>Chrome 安全 DNS 优先于系统 DNS。当 Chrome 的安全 DNS 功能开启时，Chrome 不会使用系统设置的 DNS 服务器，而是使用你指定的 DoH 服务器。这意味着：即使你在 Windows 中设置了阿里 DNS，Chrome 仍然会使用 Cloudflare 或其他 DoH 服务器。只有关闭 Chrome 安全 DNS 后，Chrome 才会使用系统 DNS。</p><div class=compliance-notice><p>声明：本站为 Chrome 浏览器使用技巧分享平台，与 Google 公司无关。所有产品名称归原权利人所有。</p></div><div class=home-kw-links><p>相关推荐：<a href=/>Chrome插件推荐</a> · <a href=/>Chrome技巧教程</a> · <a href=/>浏览器插件下载</a></p></div></div><div style="max-width:1200px;margin:0 auto;padding:0 24px 48px"><div style="padding-top:32px;border-top:1px solid var(--border)"><div class=sec-head><div><div class=sec-tag>📖 相关阅读</div><div class=sec-title>继续阅读</div></div></div><div class=card-grid><a href=https://chromebest.com/tips/chrome-manifest-v3-ublock-origin-alternative/ class=card><div class=card-img><img src=/images/tips/chrome-manifest-v3-ublock-origin-alternative/cover.webp alt="Chrome Manifest V3 全面解读：uBlock Origin被禁怎么办？2026年广告拦截与隐私扩展替换完全指南" loading=lazy></div><div class=card-body><span class="art-row-tag feat-tag blue">功能教程</span><h3>Chrome Manifest V3 全面解读：uBlock Origin被禁怎么办？2026年广告拦截与隐私扩展替换完全指南</h3><p>不聊技术协议，只聊对你有用的——什么时候失效、什么还能用、怎么用。</p></div></a><a href=https://chromebest.com/tips/chrome-high-cpu-fix/ class=card><div class=card-img><img src=/images/tips/chrome-high-cpu-fix/cover.webp alt="Chrome 占用CPU过高终于解决了：从100%降到15%的完整排查实录（2026）" loading=lazy></div><div class=card-body><span class="art-row-tag feat-tag red">性能优化</span><h3>Chrome 占用CPU过高终于解决了：从100%降到15%的完整排查实录（2026）</h3><p>不是让你关几个标签页这么简单。这篇文章教你用Chrome自带的任务管理器精准定位是哪个标签页、哪个扩展、哪个进程在吃CPU，然后对症下药。</p></div></a><a href=https://chromebest.com/tips/chrome-flags-guide/ class=card><div class=card-img><img src=/images/tips/chrome-flags-guide/cover.jpg alt="Chrome 隐藏实验功能指南：chrome://flags 里 15 个真正值得开启的设置（2026实测）" loading=lazy></div><div class=card-body><span class="art-row-tag feat-tag purple">Chrome实验功能</span><h3>Chrome 隐藏实验功能指南：chrome://flags 里 15 个真正值得开启的设置（2026实测）</h3><p>chrome://flags 里有上千个实验开关，但大部分不值得折腾。本文从中挑出 15 个真正有用的，按风险等级分类，告诉你每个开关开启前后到底有什么区别。</p></div></a></div></div></div></article><aside class=sidebar><div class=sb-search><svg class="sb-search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
-<input type=text class=sb-search-input placeholder=搜索文章...>
-<kbd class=sb-search-kbd>/</kbd></div><div class=cta-banner style=padding:24px><h2 style=font-size:18px;margin-bottom:6px>下载 Chrome</h2><p style=font-size:13px>全球使用人数最多的浏览器</p><a href=https://www.google.com/chrome/ class=btn-dl style="padding:10px 20px;font-size:14px;width:100%;justify-content:center;margin-top:12px" rel=nofollow>⬇ 官方下载</a></div><div class=sb-box><h3>📖 相关文章</h3><div style=display:flex;flex-direction:column;gap:12px><a href=https://chromebest.com/tips/chrome-extensions-not-working/ style=font-size:13px;line-height:1.5;color:var(--txt2)>Chrome 扩展程序打不开怎么办？5 种故障逐一排查修复 2026</a>
-<a href=https://chromebest.com/plugins/chrome-password-manager-comparison/ style=font-size:13px;line-height:1.5;color:var(--txt2)>Chrome 密码管理器对比：Bitwarden vs LastPass vs 1Password vs Chrome 内置</a>
-<a href=https://chromebest.com/compare/chrome-vs-edge-2026/ style=font-size:13px;line-height:1.5;color:var(--txt2)>Chrome 和 Edge 到底选哪个？2026 年最新深度对比</a>
-<a href=https://chromebest.com/compare/chrome-vs-brave-2026/ style=font-size:13px;line-height:1.5;color:var(--txt2)>Chrome 和 Brave 2026 年到底选哪个？深度实测对比</a>
-<a href=https://chromebest.com/tips/chrome-high-cpu-fix/ style=font-size:13px;line-height:1.5;color:var(--txt2)>Chrome 占用CPU过高终于解决了：从100%降到15%的完整排查实录（2026）</a></div></div><div class=sb-box><h3>🏷 相关标签</h3><div class=tags><a href=/tags/chrome%E5%AE%89%E5%85%A8dns class=tag>Chrome安全DNS</a>
-<a href=/tags/chrome-dns%E8%AE%BE%E7%BD%AE class=tag>Chrome DNS设置</a>
-<a href=/tags/chrome-doh class=tag>Chrome DoH</a>
-<a href=/tags/dns%E5%8A%A0%E5%AF%86 class=tag>DNS加密</a>
-<a href=/tags/chrome%E7%BD%91%E7%BB%9C%E8%AE%BE%E7%BD%AE class=tag>Chrome网络设置</a></div></div></aside></div><footer class=foot><div class=foot-inner><div class=foot-links><a href=/>首页</a>
-<a href=/categories/下载安装>下载安装</a>
-<a href=/categories/使用技巧>技巧教程</a>
-<a href=/categories/插件推荐>插件推荐</a>
-<a href=/categories/对比评测>对比评测</a>
-<a href=/about/>关于我们</a></div><div class=foot-copy>© 2026 ChromeBest · 谷歌浏览器下载与使用教程 · 本站与 Google 无关</div></div></footer><script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"https://chromebest.com/"},{"@type":"ListItem","position":2,"name":"Tips","item":"https:\/\/chromebest.com\/tips\/"},{"@type":"ListItem","position":3,"name":"Chrome 安全 DNS 设置教程：提升浏览安全性和解析速度"}]}</script><script type=application/ld+json>{"@context":"https://schema.org","@type":"Article","headline":"Chrome 安全 DNS 设置教程：提升浏览安全性和解析速度","description":"Chrome 安全 DNS（DNS over HTTPS）设置教程。什么是安全 DNS，为什么国内用户应该关闭它，以及如何选择合适的 DNS 服务。","datePublished":"2026-05-06","dateModified":"2026-05-06","author":{"@type":"Organization","name":"ChromeBest"},"publisher":{"@type":"Organization","name":"ChromeBest","logo":{"@type":"ImageObject","url":"https://chromebest.com/og-default.jpg"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/chromebest.com\/tips\/chrome-secure-dns-setup\/"}}</script><script type=application/ld+json>{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"新手也能跟着操作吗？","acceptedAnswer":{"@type":"Answer","text":"可以，本文每一步都有详细说明。遇到不确定的地方，建议先阅读完整步骤再动手操作。"}},{"@type":"Question","name":"操作过程中出错怎么办？","acceptedAnswer":{"@type":"Answer","text":"先检查是否严格按照步骤操作，特别注意版本号和设置项。常见错误在文末的常见问题部分有解答。"}},{"@type":"Question","name":"使用Chrome安全吗？","acceptedAnswer":{"@type":"Answer","text":"正规渠道获取的软件是安全的。建议始终从官方下载，避免第三方修改版，并定期更新到最新版本。"}},{"@type":"Question","name":"支持哪些操作系统？","acceptedAnswer":{"@type":"Answer","text":"通常支持 Windows 10\/11，部分也支持 macOS 和 Linux。具体系统要求请查看本文的安装说明部分。"}},{"@type":"Question","name":"如何保持软件最新版本？","acceptedAnswer":{"@type":"Answer","text":"大多数软件支持自动更新检查。也可以定期访问官网下载最新版本，或开启软件内的自动更新选项。"}}]}</script></body></html>
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="msvalidate.01" content="58B8BC3B56964E4B68D451072143B15E">
+<title>Chrome 安全 DNS 设置教程：提升浏览安全性和解析速度 - ChromeBest</title>
+
+<meta name="description" content="Chrome 安全 DNS（DNS over HTTPS）设置教程。什么是安全 DNS，为什么国内用户应该关闭它，以及如何选择合适的 DNS 服务。">
+
+<meta name="keywords" content="[Chrome安全DNS,Chrome DNS设置,DNS over HTTPS,Chrome DoH,加密DNS]">
+<link rel="canonical" href="https://chromebest.com/tips/chrome-secure-dns-setup/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Chrome 安全 DNS 设置教程：提升浏览安全性和解析速度">
+<meta property="og:description" content="Chrome 从版本 78 开始支持&quot;安全 DNS&quot;功能（也叫 DNS over HTTPS，简称 DoH）。这个功能推出后在隐私保护领域引起了很大讨论——支持者认为它增强了对 ISP 监控的防御，反对者认为它把 DNS 查询权从 ISP 转移到了少数几家大型科技公司手中。这个功能听起来很好——加密 …">
+<meta property="og:url" content="https://chromebest.com/tips/chrome-secure-dns-setup/">
+<meta property="og:site_name" content="ChromeBest">
+<meta property="og:image" content="https://chromebest.com/images/tips/chrome-secure-dns-setup/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" href="/css/style.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "ChromeBest",
+    "url": "https:\/\/chromebest.com\/"
+  }
+  </script>
+
+</head>
+<body>
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">
+      <div class="nav-logo-icon"><span>C</span></div>
+      <b>ChromeBest</b>
+    </a>
+    <ul class="nav-links">
+      <li><a href="/">首页</a></li>
+      <li><a href="/categories/下载安装">下载安装</a></li>
+      <li><a href="/categories/使用技巧">技巧教程</a></li>
+      <li><a href="/categories/插件推荐">插件推荐</a></li>
+      <li><a href="/categories/对比评测">对比评测</a></li>
+      <li><a href="/categories/性能优化">性能优化</a></li>
+    </ul>
+    <a href="https://www.google.com/chrome/" class="nav-dl" rel="nofollow">⬇ 下载 Chrome</a>
+  </div>
+</nav>
+
+
+<div class="layout">
+  
+  <article class="art-page">
+    <nav class="breadcrumb">
+      <a href="/">首页</a>
+      <span class="breadcrumb-sep">›</span>
+      <a href="/tips">tips</a>
+      <span class="breadcrumb-sep">›</span>
+      <span class="breadcrumb-current">Chrome 安全 DNS 设置教程：提升浏览安全性和解析速度</span>
+    </nav>
+    <span class="art-tag feat-tag blue">🔒 DNS设置</span>
+    <h1>Chrome 安全 DNS 设置教程：提升浏览安全性和解析速度</h1>
+    <div class="meta">
+      <span>📅 2026-05-06</span>
+      <span>⏱ 8 分钟阅读</span>
+      <span>📷 6 张真实截图</span>
+      
+    </div>
+
+    
+    <div class="cover">
+      <img src="/images/tips/chrome-secure-dns-setup/cover.jpg" alt="Chrome 安全 DNS 设置教程：提升浏览安全性和解析速度">
+    </div>
+    
+
+    
+    
+    <div class="toc">
+      <h3>📑 目录</h3>
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#什么是安全-dns">什么是安全 DNS</a></li>
+    <li><a href="#国内用户要不要开启安全-dns">国内用户要不要开启安全 DNS</a></li>
+    <li><a href="#如何设置安全-dns">如何设置安全 DNS</a>
+      <ul>
+        <li><a href="#关闭安全-dns国内用户推荐">关闭安全 DNS（国内用户推荐）</a></li>
+        <li><a href="#开启安全-dns海外用户或需要隐私保护的用户">开启安全 DNS（海外用户或需要隐私保护的用户）</a></li>
+        <li><a href="#使用自定义-doh-服务器">使用自定义 DoH 服务器</a></li>
+      </ul>
+    </li>
+    <li><a href="#系统-dns-设置和-chrome-安全-dns-是独立的">系统 DNS 设置（和 Chrome 安全 DNS 是独立的）</a>
+      <ul>
+        <li><a href="#windows-dns-设置">Windows DNS 设置</a></li>
+        <li><a href="#验证-dns-设置是否生效">验证 DNS 设置是否生效</a></li>
+      </ul>
+    </li>
+    <li><a href="#dns-缓存和刷新">DNS 缓存和刷新</a>
+      <ul>
+        <li><a href="#chrome-dns-缓存">Chrome DNS 缓存</a></li>
+        <li><a href="#系统-dns-缓存">系统 DNS 缓存</a></li>
+      </ul>
+    </li>
+    <li><a href="#国内-dns-环境的特殊问题">国内 DNS 环境的特殊问题</a>
+      <ul>
+        <li><a href="#dns-污染">DNS 污染</a></li>
+        <li><a href="#dns-劫持">DNS 劫持</a></li>
+        <li><a href="#cdn-和-dns-的关系">CDN 和 DNS 的关系</a></li>
+      </ul>
+    </li>
+    <li><a href="#如何判断你的-dns-是否正常工作">如何判断你的 DNS 是否正常工作</a></li>
+    <li><a href="#常见问题">常见问题</a>
+      <ul>
+        <li><a href="#安全-dns-能防止-dns-污染吗">安全 DNS 能防止 DNS 污染吗？</a></li>
+        <li><a href="#为什么有时候修改了-dns-但没生效">为什么有时候修改了 DNS 但没生效？</a></li>
+        <li><a href="#安全-dns-和-vpn-有什么区别">安全 DNS 和 VPN 有什么区别？</a></li>
+        <li><a href="#使用公共-dns-安全吗">使用公共 DNS 安全吗？</a></li>
+        <li><a href="#chrome-安全-dns-和系统-dns-哪个优先">Chrome 安全 DNS 和系统 DNS 哪个优先？</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+    
+
+    
+    <div class="art-body">
+      <p>Chrome 从版本 78 开始支持&quot;安全 DNS&quot;功能（也叫 DNS over HTTPS，简称 DoH）。这个功能推出后在隐私保护领域引起了很大讨论——支持者认为它增强了对 ISP 监控的防御，反对者认为它把 DNS 查询权从 ISP 转移到了少数几家大型科技公司手中。这个功能听起来很好——加密 DNS 查询防止被窃听——但对国内用户来说，开启它反而可能导致网页加载变慢。</p>
+<p>这篇文章解释安全 DNS 的原理、国内用户的使用建议，以及如何选择合适的 DNS 服务。</p>
+<h2 id="什么是安全-dns">什么是安全 DNS</h2>
+<p><strong>正常 DNS 查询：</strong> 当你在浏览器地址栏中输入 <code>www.taobao.com</code> 并按下回车时，浏览器实际上需要知道这个域名对应的服务器 IP 地址（比如 <code>140.205.220.96</code>）。这个过程叫做 DNS 解析（Domain Name System）。这个查询过程通常是明文传输的（使用 UDP 协议的 53 端口）——意味着你的网络服务商（ISP）和同一个 Wi-Fi 网络中的其他人理论上可以看到你查询了哪些域名。</p>
+<p><strong>安全 DNS（DoH）：</strong> 使用 HTTPS 协议加密 DNS 查询。查询过程通过加密通道传输，ISP 和中间人看不到你查询了什么域名。</p>
+<p><strong>另一种加密 DNS（DoT）：</strong> DNS over TLS，使用 TLS 协议加密 DNS 查询。和 DoH 功能类似，但加密层级不同。Chrome 支持的是 DoH。</p>
+<h2 id="国内用户要不要开启安全-dns">国内用户要不要开启安全 DNS</h2>
+<p>[#国内用户要不要开启安全 DNS](/images/tips/chrome-secure-dns-setup/body3.jpg)</p>
+<p><strong>结论：建议关闭。</strong></p>
+<p>原因：</p>
+<ol>
+<li><strong>速度变慢</strong>：Chrome 默认的安全 DNS 服务器由 Google 和 Cloudflare 提供，都在国外。国内用户每次 DNS 查询都要绕到国外服务器，增加延迟（正常情况下 DNS 查询只需 10-50ms，使用国外的 DoH 服务器则可能需要 200-500ms）</li>
+<li><strong>安全性提升有限</strong>：ISP 能看到你访问了哪些网站（通过 IP 地址），即使 DNS 查询被加密了。安全 DNS 只隐藏了&quot;你查询了什么域名&quot;，不隐藏&quot;你访问了什么 IP&quot;</li>
+<li><strong>国内 DNS 服务已经够用</strong>：运营商提供的 DNS 和国内公共 DNS（如阿里 DNS、腾讯 DNS）已经足够快和安全。如果网页加载仍然慢，参考 <a href="/tips/chrome-page-not-loading/">Chrome 网页打不开或加载慢排查指南</a>。</li>
+</ol>
+<h2 id="如何设置安全-dns">如何设置安全 DNS</h2>
+<h3 id="关闭安全-dns国内用户推荐">关闭安全 DNS（国内用户推荐）</h3>
+<p>chrome://settings/security → 安全浏览 → 关闭&quot;使用安全 DNS&quot;</p>
+<p>关闭后 Chrome 会使用系统默认的 DNS 服务器（通常是你宽带运营商自动分配的 DNS）。</p>
+<h3 id="开启安全-dns海外用户或需要隐私保护的用户">开启安全 DNS（海外用户或需要隐私保护的用户）</h3>
+<p>chrome://settings/security → 安全浏览 → 开启&quot;使用安全 DNS&quot;→ 选择提供商</p>
+<p><strong>推荐的 DoH 服务商：</strong></p>
+<table>
+  <thead>
+      <tr>
+          <th>服务商</th>
+          <th>地址</th>
+          <th>特点</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Cloudflare</td>
+          <td><code>https://cloudflare-dns.com/dns-query</code></td>
+          <td>隐私保护好、全球节点多、速度快</td>
+      </tr>
+      <tr>
+          <td>Google</td>
+          <td><code>https://dns.google/dns-query</code></td>
+          <td>稳定可靠、全球覆盖</td>
+      </tr>
+      <tr>
+          <td>Quad9</td>
+          <td><code>https://dns.quad9.net/dns-query</code></td>
+          <td>自带恶意域名过滤</td>
+      </tr>
+      <tr>
+          <td>阿里 DNS DoH</td>
+          <td><code>https://dns.alidns.com/dns-query</code></td>
+          <td>国内访问快</td>
+      </tr>
+      <tr>
+          <td>腾讯 DNSPod DoH</td>
+          <td><code>https://doh.pub/dns-query</code></td>
+          <td>国内访问快</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>海外用户推荐 Cloudflare 或 Google。国内用户如果一定要用 DoH，选阿里 DNS 或腾讯 DNSPod。</strong></p>
+<h3 id="使用自定义-doh-服务器">使用自定义 DoH 服务器</h3>
+<p>如果你选择的 DoH 服务商不在 Chrome 的下拉列表中，可以通过自定义方式添加：</p>
+<ol>
+<li>在&quot;使用安全 DNS&quot;下方选择&quot;使用&quot;→ 选择&quot;自定义&quot;</li>
+<li>在&quot;自定义 DNS over HTTPS 服务器&quot;中输入 DoH 服务器的 URL</li>
+<li>点击&quot;确定&quot;保存</li>
+</ol>
+<h2 id="系统-dns-设置和-chrome-安全-dns-是独立的">系统 DNS 设置（和 Chrome 安全 DNS 是独立的）</h2>
+<p>[#系统 DNS 设置（和 Chrome ](/images/tips/chrome-secure-dns-setup/body2.jpg)</p>
+<p>Chrome 安全 DNS 只影响 Chrome 浏览器的 DNS 查询，不影响系统其他程序的 DNS。如果你想让所有程序都使用指定的 DNS，需要在操作系统中设置。</p>
+<h3 id="windows-dns-设置">Windows DNS 设置</h3>
+<ol>
+<li>打开 Windows 设置 → 网络和 Internet → 点击你当前使用的网络连接（以太网或 Wi-Fi）→ DNS 服务器分配 → 点击&quot;编辑&quot;按钮</li>
+<li>在弹出面板中选择&quot;手动&quot;模式</li>
+<li>在&quot;首选 DNS&quot;和&quot;备用 DNS&quot;输入框中分别填入 DNS 服务器地址</li>
+</ol>
+<p><strong>推荐的国内公共 DNS：</strong></p>
+<table>
+  <thead>
+      <tr>
+          <th>服务商</th>
+          <th>首选 DNS</th>
+          <th>备用 DNS</th>
+          <th>特点</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>阿里 DNS</td>
+          <td>223.5.5.5</td>
+          <td>223.6.6.6</td>
+          <td>速度快、稳定</td>
+      </tr>
+      <tr>
+          <td>腾讯 DNSPod</td>
+          <td>119.29.29.29</td>
+          <td>182.254.116.116</td>
+          <td>速度快、支持 DoH/DoT</td>
+      </tr>
+      <tr>
+          <td>114 DNS</td>
+          <td>114.114.114.114</td>
+          <td>114.114.115.115</td>
+          <td>老牌、稳定</td>
+      </tr>
+      <tr>
+          <td>百度 DNS</td>
+          <td>180.76.76.76</td>
+          <td>—</td>
+          <td>简单</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="验证-dns-设置是否生效">验证 DNS 设置是否生效</h3>
+<p>在命令提示符中运行：</p>
+<pre tabindex="0"><code>nslookup www.taobao.com
+</code></pre><p>查看返回的 DNS 服务器地址是否是你设置的 DNS 服务器。</p>
+<h2 id="dns-缓存和刷新">DNS 缓存和刷新</h2>
+<h3 id="chrome-dns-缓存">Chrome DNS 缓存</h3>
+<p>Chrome 会缓存 DNS 查询结果以减少重复查询、加快页面加载速度。缓存中的每条记录都有一个 TTL（生存时间），过期后 Chrome 会重新查询。查看 Chrome 的 DNS 缓存：</p>
+<ol>
+<li>访问 chrome://net-internals/#dns</li>
+<li>在&quot;Host cache&quot;部分可以看到所有缓存的 DNS 记录</li>
+</ol>
+<p>清除 Chrome DNS 缓存：点击&quot;Clear host cache&quot;按钮。</p>
+<h3 id="系统-dns-缓存">系统 DNS 缓存</h3>
+<p>Windows 操作系统也会缓存 DNS 查询结果（和 Chrome 的缓存是独立的）。清除系统 DNS 缓存的命令：</p>
+<pre tabindex="0"><code>ipconfig /flushdns
+</code></pre><p><strong>什么时候需要刷新 DNS 缓存：</strong> 网站迁移服务器后旧 IP 被缓存导致浏览器仍然访问旧服务器无法打开新网站；遭遇 DNS 劫持或 DNS 污染导致搜索被重定向到广告页面；修改了 DNS 设置后需要让新设置立即生效（而不是等待旧缓存自动过期）。</p>
+<p>国内用户遇到的 DNS 劫持、污染等问题参考 <a href="/tips/chrome-common-problems-in-china/">Chrome 在国内使用的常见问题与解决方案</a>。</p>
+<h2 id="国内-dns-环境的特殊问题">国内 DNS 环境的特殊问题</h2>
+<p>[#国内 DNS 环境的特殊问题](/images/tips/chrome-secure-dns-setup/body1.jpg)</p>
+<p>国内 DNS 环境有一些特殊问题需要了解：</p>
+<h3 id="dns-污染">DNS 污染</h3>
+<p>DNS 污染是指在网络传输过程中，DNS 查询的响应被篡改，返回错误的 IP 地址。常见的表现是访问 Google、YouTube 等网站时被跳转到其他页面，或者某些正常的域名解析失败。DNS 污染在国内是一个已知的存在，但普通用户不需要过于担心——它主要影响的是无法直接访问的网站。</p>
+<h3 id="dns-劫持">DNS 劫持</h3>
+<p>DNS 劫持比污染更恶劣——通常是运营商在 DNS 查询中注入广告或跳转。表现是访问一个不存在的域名时，浏览器会被跳转到运营商的广告页面或导航网站。解决办法：使用可信的公共 DNS（如阿里 DNS 223.5.5.5）替代运营商自动分配的 DNS。</p>
+<h3 id="cdn-和-dns-的关系">CDN 和 DNS 的关系</h3>
+<p>大型网站（如淘宝、B站、知乎）使用 CDN（内容分发网络）来加速访问。CDN 会根据你的地理位置返回最近的节点 IP。这意味着不同地区的用户即使使用同一个 DNS 服务器，解析到的 IP 地址也可能不同。使用公共 DNS 不会影响 CDN 的智能调度——CDN 是基于 DNS 查询的来源 IP 来判断地理位置的。</p>
+<h2 id="如何判断你的-dns-是否正常工作">如何判断你的 DNS 是否正常工作</h2>
+<p>有时候网页打不开、加载慢或跳转到奇怪页面，可能是 DNS 出了问题。以下是排查方法：</p>
+<p><strong>第一步：用 nslookup 测试 DNS 解析</strong></p>
+<p>在命令提示符中运行 <code>nslookup www.baidu.com</code>，如果返回了正确的 IP 地址（如 <code>39.156.66.10</code> 或 <code>110.242.68.66</code>），说明 DNS 解析正常。如果返回&quot;DNS request timed out&quot;或错误的 IP，说明 DNS 有问题。</p>
+<p><strong>第二步：用 ping 测试连通性</strong></p>
+<p>如果 DNS 解析正常但网页打不开，可能是网络连接问题。运行 <code>ping www.baidu.com</code>，如果能收到回复（显示时间和 TTL），说明网络连通性正常。</p>
+<p><strong>第三步：尝试切换 DNS</strong></p>
+<p>如果 DNS 解析失败，尝试切换到公共 DNS（如阿里 DNS 223.5.5.5），然后再次运行 nslookup 测试。如果切换后正常了，说明之前的 DNS 服务器有问题。</p>
+<p><strong>第四步：清除 DNS 缓存</strong></p>
+<p>如果切换 DNS 后仍然有问题，可能是本地缓存了错误的 DNS 记录。运行 <code>ipconfig /flushdns</code> 清除系统 DNS 缓存，同时在 Chrome 中访问 <code>chrome://net-internals/#dns</code> 清除 Chrome DNS 缓存。</p>
+<p><strong>第五步：重置网络设置</strong></p>
+<p>如果以上步骤都无法解决问题，可以在 Windows 设置 → 网络和 Internet → 高级网络设置 → 网络重置 中重置网络适配器。这会清除所有的网络适配器配置（包括 DNS 设置、代理服务器配置、VPN 连接信息等），恢复到 Windows 的默认出厂网络状态。</p>
+<h2 id="常见问题">常见问题</h2>
+<h3 id="安全-dns-能防止-dns-污染吗">安全 DNS 能防止 DNS 污染吗？</h3>
+<p>部分可以。DNS 污染是指恶意方篡改 DNS 查询结果，让你访问到错误的 IP 地址。安全 DNS 通过加密通道发送查询请求，中间人无法篡改。但如果污染发生在 DNS 服务器端（比如返回了错误的 IP），安全 DNS 也无法防止。这种情况需要改用可信的 DNS 服务器来解决。</p>
+<h3 id="为什么有时候修改了-dns-但没生效">为什么有时候修改了 DNS 但没生效？</h3>
+<p>可能是 DNS 缓存还没过期。按以下顺序刷新：先清除 Chrome DNS 缓存（chrome://net-internals/#dns）→ 再清除系统 DNS 缓存（ipconfig /flushdns）→ 最后重启浏览器。如果仍然没有生效，可能需要等待 DNS 记录的 TTL（生存时间）自动过期后被清除，最长可能需要等待 48 小时（大部分 DNS 记录的 TTL 为 300 秒到 86400 秒不等）。</p>
+<h3 id="安全-dns-和-vpn-有什么区别">安全 DNS 和 VPN 有什么区别？</h3>
+<p>安全 DNS 只加密了 DNS 查询这一步（隐藏了&quot;你想访问哪个域名&quot;），但实际的网页访问过程（你和网站服务器之间的数据传输）仍然是明文的。VPN 则加密了所有网络流量（包括 DNS 查询和实际的网页数据传输），提供的是端到端的隐私保护。VPN 的隐私保护远强于安全 DNS。但如果只是想在 DNS 层面增加一些隐私保护，安全 DNS 比 VPN 轻量得多（不影响网速，不增加额外费用）。Chrome 代理设置的完整方法参考 <a href="/tips/chrome-proxy-settings/">Chrome 代理设置完整指南</a>。</p>
+<h3 id="使用公共-dns-安全吗">使用公共 DNS 安全吗？</h3>
+<p>国内主流的公共 DNS（如阿里 DNS、腾讯 DNSPod、114 DNS 等）均由大型互联网公司或专业 DNS 服务商运营，安全性和可靠性都有保障。但理论上，任何公共 DNS 的运营者都能看到你查询了哪些域名。如果你非常在意隐私，可以自己搭建 DNS 服务器（使用 Pi-hole 或 AdGuard Home），完全控制 DNS 查询日志。不过这需要一台常开的服务器（如家用 NAS 或树莓派）和一定的网络配置知识，技术门槛相对较高，更适合有一定技术能力的网络爱好者或家庭实验室用户。</p>
+<h3 id="chrome-安全-dns-和系统-dns-哪个优先">Chrome 安全 DNS 和系统 DNS 哪个优先？</h3>
+<p>Chrome 安全 DNS 优先于系统 DNS。当 Chrome 的安全 DNS 功能开启时，Chrome 不会使用系统设置的 DNS 服务器，而是使用你指定的 DoH 服务器。这意味着：即使你在 Windows 中设置了阿里 DNS，Chrome 仍然会使用 Cloudflare 或其他 DoH 服务器。只有关闭 Chrome 安全 DNS 后，Chrome 才会使用系统 DNS。</p>
+
+<div class="compliance-notice">
+<p>声明：本站为 Chrome 浏览器使用技巧分享平台，与 Google 公司无关。所有产品名称归原权利人所有。</p>
+</div>
+<div class="home-kw-links">
+<p>相关推荐：<a href="/">Chrome插件推荐</a> · <a href="/">Chrome技巧教程</a> · <a href="/">浏览器插件下载</a></p>
+</div>
+    </div>
+
+    
+    
+    
+    <div style="max-width:1200px;margin:0 auto;padding:0 24px 48px">
+      <div style="padding-top:32px;border-top:1px solid var(--border)">
+        <div class="sec-head">
+          <div>
+            <div class="sec-tag">📖 相关阅读</div>
+            <div class="sec-title">继续阅读</div>
+          </div>
+        </div>
+        <div class="card-grid">
+          
+          <a href="https://chromebest.com/tips/chrome-built-in-ai-gemini-nano-guide/" class="card">
+            
+            <div class="card-img">
+              <img src="/images/tips/chrome-built-in-ai-gemini-nano-guide/cover.jpg" alt="Chrome 内置 AI 功能完全指南：2026年 Gemini Nano 离线写作、翻译、总结怎么用" loading="lazy">
+            </div>
+            
+            <div class="card-body">
+              <span class="art-row-tag feat-tag blue">教程</span>
+              <h3>Chrome 内置 AI 功能完全指南：2026年 Gemini Nano 离线写作、翻译、总结怎么用</h3>
+              <p><p>你可能在用 ChatGPT、Claude、文心一言——但你知道 Chrome 浏览器自己就内置了 AI 吗？</p>
+<p>2026年，Google 把 Gemini …</p></p>
+            </div>
+          </a>
+          
+          <a href="https://chromebest.com/tips/chrome-manifest-v3-ublock-origin-alternative/" class="card">
+            
+            <div class="card-img">
+              <img src="/images/tips/chrome-manifest-v3-ublock-origin-alternative/cover.webp" alt="Chrome Manifest V3 全面解读：uBlock Origin被禁怎么办？2026年广告拦截与隐私扩展替换完全指南" loading="lazy">
+            </div>
+            
+            <div class="card-body">
+              <span class="art-row-tag feat-tag blue">功能教程</span>
+              <h3>Chrome Manifest V3 全面解读：uBlock Origin被禁怎么办？2026年广告拦截与隐私扩展替换完全指南</h3>
+              <p>不聊技术协议，只聊对你有用的——什么时候失效、什么还能用、怎么用。</p>
+            </div>
+          </a>
+          
+          <a href="https://chromebest.com/tips/chrome-high-cpu-fix/" class="card">
+            
+            <div class="card-img">
+              <img src="/images/tips/chrome-high-cpu-fix/cover.webp" alt="Chrome 占用CPU过高终于解决了：从100%降到15%的完整排查实录（2026）" loading="lazy">
+            </div>
+            
+            <div class="card-body">
+              <span class="art-row-tag feat-tag red">性能优化</span>
+              <h3>Chrome 占用CPU过高终于解决了：从100%降到15%的完整排查实录（2026）</h3>
+              <p>不是让你关几个标签页这么简单。这篇文章教你用Chrome自带的任务管理器精准定位是哪个标签页、哪个扩展、哪个进程在吃CPU，然后对症下药。</p>
+            </div>
+          </a>
+          
+        </div>
+      </div>
+    </div>
+    
+  </article>
+
+  
+  <aside class="sidebar">
+    
+    <div class="sb-search">
+      <svg class="sb-search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+      <input type="text" class="sb-search-input" placeholder="搜索文章...">
+      <kbd class="sb-search-kbd">/</kbd>
+    </div>
+
+    
+    <div class="cta-banner" style="padding:24px">
+      <h2 style="font-size:18px;margin-bottom:6px">下载 Chrome</h2>
+      <p style="font-size:13px">全球使用人数最多的浏览器</p>
+      <a href="https://www.google.com/chrome/" class="btn-dl" style="padding:10px 20px;font-size:14px;width:100%;justify-content:center;margin-top:12px" rel="nofollow">⬇ 官方下载</a>
+    </div>
+
+    
+    
+    
+    <div class="sb-box">
+      <h3>📖 相关文章</h3>
+      <div style="display:flex;flex-direction:column;gap:12px">
+        
+        <a href="https://chromebest.com/tips/chrome-search-engine-change/" style="font-size:13px;line-height:1.5;color:var(--txt2)">Chrome 搜索引擎切换全攻略：从百度切到 Bing、Google、搜狗的完整步骤</a>
+        
+        <a href="https://chromebest.com/tips/chrome-mobile-tips/" style="font-size:13px;line-height:1.5;color:var(--txt2)">Chrome 手机版使用指南：安卓和 iOS 的 15 个实用技巧</a>
+        
+        <a href="https://chromebest.com/tips/chrome-bookmarks-management/" style="font-size:13px;line-height:1.5;color:var(--txt2)">Chrome 书签管理完全指南：导入导出、同步、整理技巧（含跨浏览器迁移）</a>
+        
+        <a href="https://chromebest.com/tips/chrome-bookmarks-export/" style="font-size:13px;line-height:1.5;color:var(--txt2)">Chrome 书签导出、导入与迁移完整教程：换浏览器、换电脑都能搞定</a>
+        
+        <a href="https://chromebest.com/tips/chrome-save-password/" style="font-size:13px;line-height:1.5;color:var(--txt2)">Chrome 自动保存密码功能详解：开启、关闭、安全设置与最佳实践</a>
+        
+      </div>
+    </div>
+    
+
+    
+    
+    <div class="sb-box">
+      <h3>🏷 相关标签</h3>
+      <div class="tags">
+        
+        <a href="/tags/chrome%E5%AE%89%E5%85%A8dns" class="tag">Chrome安全DNS</a>
+        
+        <a href="/tags/chrome-dns%E8%AE%BE%E7%BD%AE" class="tag">Chrome DNS设置</a>
+        
+        <a href="/tags/chrome-doh" class="tag">Chrome DoH</a>
+        
+        <a href="/tags/dns%E5%8A%A0%E5%AF%86" class="tag">DNS加密</a>
+        
+        <a href="/tags/chrome%E7%BD%91%E7%BB%9C%E8%AE%BE%E7%BD%AE" class="tag">Chrome网络设置</a>
+        
+      </div>
+    </div>
+    
+  </aside>
+</div>
+
+<footer class="foot">
+  <div class="foot-inner">
+    <div class="foot-links">
+      <a href="/">首页</a>
+      <a href="/categories/下载安装">下载安装</a>
+      <a href="/categories/使用技巧">技巧教程</a>
+      <a href="/categories/插件推荐">插件推荐</a>
+      <a href="/categories/对比评测">对比评测</a>
+      <a href="/about/">关于我们</a>
+    </div>
+    <div class="foot-copy">© 2026 ChromeBest · 谷歌浏览器下载与使用教程 · 本站与 Google 无关</div>
+  </div>
+</footer>
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "首页",
+      "item": "https://chromebest.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Tips",
+      "item": "https:\/\/chromebest.com\/tips\/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Chrome 安全 DNS 设置教程：提升浏览安全性和解析速度"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Chrome 安全 DNS 设置教程：提升浏览安全性和解析速度",
+  "description": "Chrome 安全 DNS（DNS over HTTPS）设置教程。什么是安全 DNS，为什么国内用户应该关闭它，以及如何选择合适的 DNS 服务。",
+  "datePublished": "2026-05-06",
+  "dateModified": "2026-05-06",
+  "author": {
+    "@type": "Organization",
+    "name": "ChromeBest"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "ChromeBest",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://chromebest.com/og-default.jpg"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https:\/\/chromebest.com\/tips\/chrome-secure-dns-setup\/"
+  }
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "新手也能跟着操作吗？",
+      "acceptedAnswer": { "@type": "Answer", "text": "可以，本文每一步都有详细说明。遇到不确定的地方，建议先阅读完整步骤再动手操作。" }
+    },{
+      "@type": "Question",
+      "name": "操作过程中出错怎么办？",
+      "acceptedAnswer": { "@type": "Answer", "text": "先检查是否严格按照步骤操作，特别注意版本号和设置项。常见错误在文末的常见问题部分有解答。" }
+    },{
+      "@type": "Question",
+      "name": "使用Chrome安全吗？",
+      "acceptedAnswer": { "@type": "Answer", "text": "正规渠道获取的软件是安全的。建议始终从官方下载，避免第三方修改版，并定期更新到最新版本。" }
+    },{
+      "@type": "Question",
+      "name": "支持哪些操作系统？",
+      "acceptedAnswer": { "@type": "Answer", "text": "通常支持 Windows 10\/11，部分也支持 macOS 和 Linux。具体系统要求请查看本文的安装说明部分。" }
+    },{
+      "@type": "Question",
+      "name": "如何保持软件最新版本？",
+      "acceptedAnswer": { "@type": "Answer", "text": "大多数软件支持自动更新检查。也可以定期访问官网下载最新版本，或开启软件内的自动更新选项。" }
+    }
+  ]
+}
+</script>
+
+
+
+
+
+
+<script>
+(function(){
+  var k="1746ece89b02d6f075b43c223f9789b5";
+  var u=encodeURIComponent("https:\/\/chromebest.com\/tips\/chrome-secure-dns-setup\/");
+  var x=new XMLHttpRequest();
+  x.open("GET","https://api.indexnow.org/indexnow?url="+u+"&key="+k,true);
+  x.send();
+})();
+</script>
+
+</body>
+</html>

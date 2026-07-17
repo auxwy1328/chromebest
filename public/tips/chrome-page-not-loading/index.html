@@ -1,27 +1,519 @@
-<!doctype html><html lang=zh-CN><head><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=msvalidate.01 content="58B8BC3B56964E4B68D451072143B15E"><title>Chrome 网页打不开或加载慢？2026 年 DNS 和网络问题全排查指南 - ChromeBest</title><meta name=description content="Chrome 网页打不开或加载很慢怎么办？本文从 DNS 解析、代理设置、SSL 证书、防火墙拦截到 Chrome 内部设置，系统梳理 Chrome 网络问题的 6 大排查方向和 15 个具体解决方案。"><meta name=keywords content="[谷歌浏览器 Chrome浏览器 Chrome下载 Chrome安装包 Chrome教程 Chrome插件 Chrome优化]"><link rel=canonical href=https://chromebest.com/tips/chrome-page-not-loading/><meta property="og:type" content="article"><meta property="og:title" content="Chrome 网页打不开或加载慢？2026 年 DNS 和网络问题全排查指南"><meta property="og:description" content='Chrome 打不开网页是日常使用中最高频的问题之一。大部分人第一反应是"网断了"，但实际情况往往不是网络本身的问题，而是 DNS、代理残留、SSL 证书、浏览器缓存等环节出了毛病。Chrome 浏览器虽然好用，但网络排查一直是它的痛点。
-这篇文章不讲空话，按排查优先级从高到低，把 Chrome 网 …'><meta property="og:url" content="https://chromebest.com/tips/chrome-page-not-loading/"><meta property="og:site_name" content="ChromeBest"><meta property="og:image" content="https://chromebest.com/images/tips/chrome-page-not-loading/cover.jpg"><meta name=twitter:card content="summary_large_image"><link rel=icon href=/favicon.ico sizes=32x32><link rel=apple-touch-icon href=/apple-touch-icon.png><link rel=stylesheet href=/css/style.css></head><body><nav class=nav><div class=nav-inner><a href=/ class=nav-logo><div class=nav-logo-icon><span>C</span></div><b>ChromeBest</b></a><ul class=nav-links><li><a href=/>首页</a></li><li><a href=/categories/下载安装>下载安装</a></li><li><a href=/categories/使用技巧>技巧教程</a></li><li><a href=/categories/插件推荐>插件推荐</a></li><li><a href=/categories/对比评测>对比评测</a></li><li><a href=/categories/性能优化>性能优化</a></li></ul><a href=https://www.google.com/chrome/ class=nav-dl rel=nofollow>⬇ 下载 Chrome</a></div></nav><div class=layout><article class=art-page><nav class=breadcrumb><a href=/>首页</a>
-<span class=breadcrumb-sep>›</span>
-<a href=/tips>tips</a>
-<span class=breadcrumb-sep>›</span>
-<span class=breadcrumb-current>Chrome 网页打不开或加载慢？2026 年 DNS 和网络问题全排查指南</span></nav><span class="art-tag feat-tag blue">🌐 网络问题</span><h1>Chrome 网页打不开或加载慢？2026 年 DNS 和网络问题全排查指南</h1><div class=meta><span>📅 2026-05-26</span>
-<span>⏱ 12 分钟阅读</span>
-<span>📷 6 张真实截图</span></div><div class=cover><img src=/images/tips/chrome-page-not-loading/cover.jpg alt="Chrome 网页打不开或加载慢？2026 年 DNS 和网络问题全排查指南"></div><div class=toc><h3>📑 目录</h3><nav id=TableOfContents><ul><li><a href=#第一步确认问题范围>第一步：确认问题范围</a></li><li><a href=#第二步最常见的原因--代理和-vpn-残留>第二步：最常见的原因 — 代理和 VPN 残留</a></li><li><a href=#第三步dns-问题--网页打不开的隐形杀手>第三步：DNS 问题 — 网页打不开的隐形杀手</a><ul><li><a href=#更换-dns-服务器>更换 DNS 服务器</a></li><li><a href=#清除-chrome-dns-缓存>清除 Chrome DNS 缓存</a></li><li><a href=#开启-chrome-安全-dns>开启 Chrome 安全 DNS</a></li></ul></li><li><a href=#第四步ssl-证书错误>第四步：SSL 证书错误</a></li><li><a href=#第五步扩展程序和缓存>第五步：扩展程序和缓存</a></li><li><a href=#第六步chrome-内部重置>第六步：Chrome 内部重置</a></li><li><a href=#按错误码快速查表>按错误码快速查表</a></li><li><a href=#移动端-chrome-网页打不开怎么排查>移动端 Chrome 网页打不开怎么排查</a></li><li><a href=#为什么有时候重启路由器能解决所有问题>为什么有时候重启路由器能解决所有问题？</a></li><li><a href=#常见问题>常见问题</a><ul><li><a href=#q1-chrome-报-err_connection_refused-但-edge-能正常打开怎么修>Q1: Chrome 报 ERR_CONNECTION_REFUSED 但 Edge 能正常打开，怎么修？</a></li><li><a href=#q2-chrome-安全-dns-开启后反而有些网站打不开了>Q2: Chrome 安全 DNS 开启后反而有些网站打不开了？</a></li><li><a href=#q3-手机-chrome-打不开网页的排查和电脑端有什么不同>Q3: 手机 Chrome 打不开网页的排查和电脑端有什么不同？</a></li><li><a href=#q4-chrome-打不开网页会是电脑中毒了吗>Q4: Chrome 打不开网页会是电脑中毒了吗？</a></li><li><a href=#q5-chrome-提示您的连接不是私密连接但网站是正常的能继续访问吗>Q5: Chrome 提示「您的连接不是私密连接」但网站是正常的，能继续访问吗？</a></li></ul></li></ul></nav></div><div class=art-body><p>Chrome 打不开网页是日常使用中最高频的问题之一。大部分人第一反应是"网断了"，但实际情况往往不是网络本身的问题，而是 DNS、代理残留、SSL 证书、浏览器缓存等环节出了毛病。<a href=/>Chrome 浏览器</a>虽然好用，但网络排查一直是它的痛点。</p><p>这篇文章不讲空话，按排查优先级从高到低，把 Chrome 网络问题分成 6 大方向逐一拆解。每一步都是可操作的具体方案，照着排查基本能解决 90% 以上的网页打不开问题。</p><h2 id=第一步确认问题范围>第一步：确认问题范围</h2><p>动手之前先搞清楚是哪种情况，不同情况的排查方向完全不同：</p><p><strong>情况一</strong>：Chrome 打不开，但微信、QQ、Edge 等其他软件正常 → 问题在 Chrome 自身设置
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="msvalidate.01" content="58B8BC3B56964E4B68D451072143B15E">
+<title>Chrome 网页打不开或加载慢？2026 年 DNS 和网络问题全排查指南 - ChromeBest</title>
+
+<meta name="description" content="Chrome 网页打不开或加载很慢怎么办？本文从 DNS 解析、代理设置、SSL 证书、防火墙拦截到 Chrome 内部设置，系统梳理 Chrome 网络问题的 6 大排查方向和 15 个具体解决方案。">
+
+<meta name="keywords" content="[谷歌浏览器 Chrome浏览器 Chrome下载 Chrome安装包 Chrome教程 Chrome插件 Chrome优化]">
+<link rel="canonical" href="https://chromebest.com/tips/chrome-page-not-loading/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Chrome 网页打不开或加载慢？2026 年 DNS 和网络问题全排查指南">
+<meta property="og:description" content="Chrome 打不开网页是日常使用中最高频的问题之一。大部分人第一反应是&quot;网断了&quot;，但实际情况往往不是网络本身的问题，而是 DNS、代理残留、SSL 证书、浏览器缓存等环节出了毛病。Chrome 浏览器虽然好用，但网络排查一直是它的痛点。
+这篇文章不讲空话，按排查优先级从高到低，把 Chrome 网 …">
+<meta property="og:url" content="https://chromebest.com/tips/chrome-page-not-loading/">
+<meta property="og:site_name" content="ChromeBest">
+<meta property="og:image" content="https://chromebest.com/images/tips/chrome-page-not-loading/cover.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" href="/css/style.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "ChromeBest",
+    "url": "https:\/\/chromebest.com\/"
+  }
+  </script>
+
+</head>
+<body>
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">
+      <div class="nav-logo-icon"><span>C</span></div>
+      <b>ChromeBest</b>
+    </a>
+    <ul class="nav-links">
+      <li><a href="/">首页</a></li>
+      <li><a href="/categories/下载安装">下载安装</a></li>
+      <li><a href="/categories/使用技巧">技巧教程</a></li>
+      <li><a href="/categories/插件推荐">插件推荐</a></li>
+      <li><a href="/categories/对比评测">对比评测</a></li>
+      <li><a href="/categories/性能优化">性能优化</a></li>
+    </ul>
+    <a href="https://www.google.com/chrome/" class="nav-dl" rel="nofollow">⬇ 下载 Chrome</a>
+  </div>
+</nav>
+
+
+<div class="layout">
+  
+  <article class="art-page">
+    <nav class="breadcrumb">
+      <a href="/">首页</a>
+      <span class="breadcrumb-sep">›</span>
+      <a href="/tips">tips</a>
+      <span class="breadcrumb-sep">›</span>
+      <span class="breadcrumb-current">Chrome 网页打不开或加载慢？2026 年 DNS 和网络问题全排查指南</span>
+    </nav>
+    <span class="art-tag feat-tag blue">🌐 网络问题</span>
+    <h1>Chrome 网页打不开或加载慢？2026 年 DNS 和网络问题全排查指南</h1>
+    <div class="meta">
+      <span>📅 2026-05-26</span>
+      <span>⏱ 12 分钟阅读</span>
+      <span>📷 6 张真实截图</span>
+      
+    </div>
+
+    
+    <div class="cover">
+      <img src="/images/tips/chrome-page-not-loading/cover.jpg" alt="Chrome 网页打不开或加载慢？2026 年 DNS 和网络问题全排查指南">
+    </div>
+    
+
+    
+    
+    <div class="toc">
+      <h3>📑 目录</h3>
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#第一步确认问题范围">第一步：确认问题范围</a></li>
+    <li><a href="#第二步最常见的原因--代理和-vpn-残留">第二步：最常见的原因 — 代理和 VPN 残留</a></li>
+    <li><a href="#第三步dns-问题--网页打不开的隐形杀手">第三步：DNS 问题 — 网页打不开的隐形杀手</a>
+      <ul>
+        <li><a href="#更换-dns-服务器">更换 DNS 服务器</a></li>
+        <li><a href="#清除-chrome-dns-缓存">清除 Chrome DNS 缓存</a></li>
+        <li><a href="#开启-chrome-安全-dns">开启 Chrome 安全 DNS</a></li>
+      </ul>
+    </li>
+    <li><a href="#第四步ssl-证书错误">第四步：SSL 证书错误</a></li>
+    <li><a href="#第五步扩展程序和缓存">第五步：扩展程序和缓存</a></li>
+    <li><a href="#第六步chrome-内部重置">第六步：Chrome 内部重置</a></li>
+    <li><a href="#按错误码快速查表">按错误码快速查表</a></li>
+    <li><a href="#移动端-chrome-网页打不开怎么排查">移动端 Chrome 网页打不开怎么排查</a></li>
+    <li><a href="#为什么有时候重启路由器能解决所有问题">为什么有时候重启路由器能解决所有问题？</a></li>
+    <li><a href="#常见问题">常见问题</a>
+      <ul>
+        <li><a href="#q1-chrome-报-err_connection_refused-但-edge-能正常打开怎么修">Q1: Chrome 报 ERR_CONNECTION_REFUSED 但 Edge 能正常打开，怎么修？</a></li>
+        <li><a href="#q2-chrome-安全-dns-开启后反而有些网站打不开了">Q2: Chrome 安全 DNS 开启后反而有些网站打不开了？</a></li>
+        <li><a href="#q3-手机-chrome-打不开网页的排查和电脑端有什么不同">Q3: 手机 Chrome 打不开网页的排查和电脑端有什么不同？</a></li>
+        <li><a href="#q4-chrome-打不开网页会是电脑中毒了吗">Q4: Chrome 打不开网页会是电脑中毒了吗？</a></li>
+        <li><a href="#q5-chrome-提示您的连接不是私密连接但网站是正常的能继续访问吗">Q5: Chrome 提示「您的连接不是私密连接」但网站是正常的，能继续访问吗？</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+    
+
+    
+    <div class="art-body">
+      <p>Chrome 打不开网页是日常使用中最高频的问题之一。大部分人第一反应是&quot;网断了&quot;，但实际情况往往不是网络本身的问题，而是 DNS、代理残留、SSL 证书、浏览器缓存等环节出了毛病。<a href="/">Chrome 浏览器</a>虽然好用，但网络排查一直是它的痛点。</p>
+<p>这篇文章不讲空话，按排查优先级从高到低，把 Chrome 网络问题分成 6 大方向逐一拆解。每一步都是可操作的具体方案，照着排查基本能解决 90% 以上的网页打不开问题。</p>
+<h2 id="第一步确认问题范围">第一步：确认问题范围</h2>
+<p>动手之前先搞清楚是哪种情况，不同情况的排查方向完全不同：</p>
+<p><strong>情况一</strong>：Chrome 打不开，但微信、QQ、Edge 等其他软件正常 → 问题在 Chrome 自身设置
 <strong>情况二</strong>：所有软件都上不了网 → 问题在网络层面（路由器、运营商、DNS）
 <strong>情况三</strong>：只有特定网站打不开 → 问题在该网站或 DNS 解析
-<strong>情况四</strong>：网页能打开但加载很慢 → 问题在 DNS 解析、扩展程序或硬件加速</p><p>搞清楚属于哪种，后面排查就不会走弯路。如果你的 Chrome 偶尔卡顿花屏，可以先看看 <a href=/tips/chrome-hardware-acceleration/>Chrome 硬件加速设置教程</a>，网络问题和硬件加速问题经常被混淆。</p><p><img src=/images/tips/chrome-page-not-loading/img-1.jpg alt="Chrome 网页打不开问题排查流程"></p><h2 id=第二步最常见的原因--代理和-vpn-残留>第二步：最常见的原因 — 代理和 VPN 残留</h2><p>这是国内用户 Chrome 打不开网页的<strong>第一大原因</strong>，超过 50% 的情况都是这个。</p><p>很多用户用过 VPN 或代理工具后没有彻底退出，Chrome 的系统代理设置还留着。关闭了 VPN 软件但系统代理没还原，Chrome 所有请求都走一个已经不通的代理通道，自然打不开任何网页。如果你不确定当前的代理配置是否正确，可以先参考 <a href=/tips/chrome-proxy-settings/>Chrome 代理设置</a> 完整了解代理的三种工作模式。</p><p><strong>检查方法</strong>：</p><ul><li>Windows：设置 > 网络和 Internet > 代理，确认"使用代理服务器"是关闭的</li><li>macOS：系统设置 > 网络 > 当前网络 > 代理，确认所有代理协议都是关闭的</li><li>Chrome 内部也可以快速检查：地址栏输入 <code>chrome://settings/system</code>，查看"打开计算机的代理设置"</li></ul><p><strong>解决方案</strong>：关闭所有代理选项，或者用 Chrome 内置的 <code>chrome://settings/system</code> 里直接关闭"使用代理"。</p><p>如果用了科学上网工具，检查它的系统代理模式——&ldquo;PAC 模式"和"全局模式"会影响所有流量，退出后可能不会自动还原。建议切换成"直连模式"再退出，或者手动清除系统代理。</p><h2 id=第三步dns-问题--网页打不开的隐形杀手>第三步：DNS 问题 — 网页打不开的隐形杀手</h2><p>DNS 是把域名（如 google.com）翻译成 IP 地址的服务。DNS 出了问题，Chrome 知道你要访问什么网站但找不到服务器在哪。如果你经常遇到 DNS 解析慢或不稳定，除了换 DNS 服务器外，<a href=/tips/chrome-secure-dns-setup/>Chrome 安全 DNS 设置</a> 中的 DNS over HTTPS 功能可以从协议层面提供额外保护。</p><p><strong>症状特征</strong>：Chrome 报错页面底部显示 <code>DNS_PROBE_POSSIBLE</code> 或 <code>DNS_NAME_NOT_RESOLVED</code>，或者特定网站打不开但 IP 直接访问可以。</p><h3 id=更换-dns-服务器>更换 DNS 服务器</h3><p>国内网络环境下推荐用以下 DNS：</p><ul><li><strong>腾讯 DNSPod</strong>：<code>119.29.29.29</code>（推荐，稳定性好）</li><li><strong>阿里 DNS</strong>：<code>223.5.5.5</code></li><li><strong>114 DNS</strong>：<code>114.114.114.114</code></li></ul><p>Windows 修改方法：设置 > 网络和 Internet > 以太网（或 Wi-Fi）> DNS 服务器分配 > 编辑，把首选 DNS 和备用 DNS 改成上面的地址。</p><h3 id=清除-chrome-dns-缓存>清除 Chrome DNS 缓存</h3><p>即使换了 DNS 服务器，Chrome 可能还缓存着旧的错误解析结果。清除方法：地址栏输入 <code>chrome://net-internals/#dns</code>，点击 <strong>Clear host cache</strong>。</p><h3 id=开启-chrome-安全-dns>开启 Chrome 安全 DNS</h3><p>Chrome 内置了加密 DNS 功能（DNS over HTTPS），可以绕过运营商的 DNS 劫持。开启方法：设置 > 隐私和安全 > 安全浏览 > 使用安全 DNS > 选择"使用&rdquo;。</p><p><img src=/images/tips/chrome-page-not-loading/img-2.jpg alt="DNS 设置对比"></p><h2 id=第四步ssl-证书错误>第四步：SSL 证书错误</h2><p>Chrome 报错页面显示 <code>NET::ERR_CERT_</code> 开头的信息，说明 SSL 证书验证失败。</p><p><strong>最常见的三个原因</strong>：</p><ol><li><strong>系统时间不对</strong> — 证书有有效期限，系统时间偏差太大会导致验证失败。右键任务栏时钟 > 调整日期/时间，确保自动同步时间已开启。</li><li><strong>证书过期</strong> — 网站管理员忘记续期证书。这种只能等网站方修复，你做不了什么。</li><li><strong>杀毒软件或公司网关替换了证书</strong> — 某些杀毒软件会做 HTTPS 拦截，用自己的证书替换原始证书。如果在公司网络中出现这个问题，联系 IT 部门处理。</li></ol><p><strong>临时绕过</strong>（仅限你信任的网站）：在 ERR_CERT_ 错误页面点击"高级"，然后点击"继续前往"。注意这会降低安全性，公共网站不要这样做。</p><h2 id=第五步扩展程序和缓存>第五步：扩展程序和缓存</h2><p>Chrome 安装了太多扩展程序会拖慢甚至阻断页面加载，尤其以下几类：</p><ul><li><strong>广告拦截类</strong>：uBlock Origin、AdGuard 等可能误拦截正常资源</li><li><strong>隐私类</strong>：Privacy Badger、Ghostery 等会拦截追踪器和部分 CDN 资源</li><li><strong>代理类</strong>：SwitchyOmega 等如果配置不当会导致请求走错通道</li></ul><p><strong>排查方法</strong>：打开 <code>chrome://extensions/</code>，逐个关闭扩展，每次关闭后刷新看页面是否恢复正常。找到问题扩展后更新或卸载。</p><p><strong>清除缓存和 Cookie</strong>：Ctrl+Shift+Delete，时间范围选"全部时间"，勾选缓存和 Cookie。有些网站的资源文件更新后，浏览器缓存中的旧版本会导致页面加载失败。这种情况在开发者频繁更新的网站上尤其常见，比如某些在线工具和 SaaS 平台。</p><p><strong>禁用问题扩展后的清理步骤</strong>：在 <code>chrome://extensions/</code> 找到问题扩展后，建议不仅禁用，最好直接移除然后重新安装最新版本。因为旧版本的扩展可能存在已知的网络兼容性 bug，更新后可能已经修复了。</p><h2 id=第六步chrome-内部重置>第六步：Chrome 内部重置</h2><p>如果以上所有步骤都没解决，最后手段是重置 Chrome 的网络相关设置：</p><ol><li><strong>重置网络设置</strong>：<code>chrome://settings/reset</code> > 将设置还原为原始默认设置</li><li><strong>清除 SSL 缓存</strong>：<code>chrome://net-internals/#hsts</code> > 在 Delete domain security policies 中输入出问题的域名 > Delete</li><li><strong>新建用户配置文件</strong>：Chrome 右上角头像 > 添加新用户。如果新用户中网页能正常打开，说明是你原来的配置文件损坏了，需要重建</li></ol><p><img src=/images/tips/chrome-page-not-loading/img-3.jpg alt="Chrome 重置设置位置"></p><h2 id=按错误码快速查表>按错误码快速查表</h2><table><thead><tr><th>Chrome 错误码</th><th>含义</th><th>最可能原因</th><th>首选解决方案</th></tr></thead><tbody><tr><td><code>ERR_CONNECTION_TIMED_OUT</code></td><td>连接超时</td><td>DNS 或防火墙</td><td>换 DNS + 检查防火墙</td></tr><tr><td><code>ERR_NAME_NOT_RESOLVED</code></td><td>域名无法解析</td><td>DNS 问题</td><td>换 DNS + 清 DNS 缓存</td></tr><tr><td><code>ERR_CONNECTION_REFUSED</code></td><td>连接被拒绝</td><td>服务器或代理</td><td>关代理 + 换网络</td></tr><tr><td><code>ERR_CERT_DATE_INVALID</code></td><td>证书过期</td><td>系统时间或网站</td><td>校准系统时间</td></tr><tr><td><code>ERR_SSL_PROTOCOL_ERROR</code></td><td>SSL 协议错误</td><td>杀毒软件拦截</td><td>关杀毒软件 HTTPS 扫描</td></tr><tr><td><code>ERR_PROXY_CONNECTION_FAILED</code></td><td>代理连接失败</td><td>VPN/代理残留</td><td>清除系统代理设置</td></tr><tr><td><code>ERR_INTERNET_DISCONNECTED</code></td><td>网络断开</td><td>网线/Wi-Fi 问题</td><td>检查物理网络连接</td></tr><tr><td><code>ERR_TOO_MANY_REDIRECTS</code></td><td>重定向循环</td><td>Cookie 或域名配置</td><td>清 Cookie + 换 DNS</td></tr></tbody></table><h2 id=移动端-chrome-网页打不开怎么排查>移动端 Chrome 网页打不开怎么排查</h2><p>Android 和 iOS 上的 Chrome 网络问题排查思路和电脑端基本一致，但有几个移动端特有的事项需要注意：</p><p><strong>Android 端</strong>：</p><ul><li>部分国产手机系统（华为、小米）有自带的 DNS 优化功能，可能和 Chrome 的安全 DNS 冲突。建议关闭系统的 DNS 优化，改用 Chrome 内置的安全 DNS。</li><li>Android 的 Chrome 无法直接修改系统 DNS（需要 Android 9+ 的私有 DNS 功能）。在系统设置 > 网络 > 私有 DNS 中设置 <code>dns.google</code> 或 <code>1dot1dot1dot1.cloudflare-dns.com</code>。</li><li>后台限制：部分省电模式会限制 Chrome 的后台网络访问。检查系统设置 > 电池 > Chrome，确保没有限制其后台活动。</li></ul><p><strong>iOS 端</strong>：</p><ul><li>iPhone 的低电量模式会限制后台网络活动。如果 Chrome 切到后台后再切回来发现页面没加载完，检查是否开了低电量模式。</li><li>iOS 的 DNS 由系统统一管理，在系统设置 > Wi-Fi > 当前网络 > 配置 DNS 中修改。</li><li>iOS 上某些 VPN 应用使用 VPN 配置文件而不是系统代理，退出后需要手动在设置 > VPN 中断开连接。只关闭 VPN 应用不够，系统的 VPN 连接可能仍然处于激活状态。</li></ul><h2 id=为什么有时候重启路由器能解决所有问题>为什么有时候重启路由器能解决所有问题？</h2><p>很多人遇到网络问题第一个反应就是重启路由器，而且经常真的管用。原因有三个：</p><p>第一，路由器的 DNS 缓存过期了。路由器会缓存 DNS 解析结果，缓存过期后如果刷新失败，会导致所有设备都打不开网页。重启路由器清空了缓存，强制重新解析。</p><p>第二，路由器运行时间长了内存泄漏。家用路由器长时间不断电运行，内存占用越来越高，处理网络请求的速度越来越慢，最终导致连接超时。重启释放了内存。</p><p>第三，运营商分配的 IP 地址租期到了。如果你用的是动态 IP，路由器的 IP 租约到期后需要重新获取。有时候续租过程失败，重启路由器会强制重新申请。</p><p>但如果重启路由器后 Chrome 还是打不开网页，而其他软件正常，那问题就确定在 Chrome 身上，回到前面的排查步骤逐个检查。</p><p>如果你经常遇到 <a href=/>Chrome 浏览器</a> 的各种问题，建议收藏这篇文章备用。<a href=/>Chrome 插件</a>也可能导致网络异常，排查时别忘了检查扩展程序。更多 Chrome 排查教程可以看 <a href=/tips/chrome-incognito-mode-guide/>Chrome 无痕模式详解</a> 和 <a href=/tips/chrome-slow-download-fix/>Chrome 下载速度慢怎么解决</a>。</p><p>相关推荐：<a href=/tips/chrome-privacy-settings-guide/>Chrome 隐私设置完全指南</a> · <a href=/tips/chrome-clear-cache/>Chrome 缓存清理教程</a></p><h2 id=常见问题>常见问题</h2><h3 id=q1-chrome-报-err_connection_refused-但-edge-能正常打开怎么修>Q1: Chrome 报 ERR_CONNECTION_REFUSED 但 Edge 能正常打开，怎么修？</h3><p>A: 这种情况说明网络本身没问题，问题出在 Chrome 的设置。按顺序排查：先在 <code>chrome://settings/system</code> 确认没开代理；然后清除 Chrome 的 DNS 缓存（<code>chrome://net-internals/#dns</code> → Clear host cache）；接着在 <code>chrome://extensions/</code> 逐个禁用扩展排查；最后尝试 <code>chrome://settings/reset</code> 重置 Chrome 设置。如果重置后问题还在，建议新建一个 Chrome 用户配置文件来排除配置文件损坏的可能。</p><h3 id=q2-chrome-安全-dns-开启后反而有些网站打不开了>Q2: Chrome 安全 DNS 开启后反而有些网站打不开了？</h3><p>A: DNS over HTTPS（安全 DNS）会把 DNS 查询加密后发送到指定 DNS 提供商，但如果该提供商对某些域名的解析不稳定或被阻断，就会导致这些网站打不开。解决方法：在 Chrome 设置 > 隐私和安全 > 安全浏览 > 安全 DNS 中，尝试切换到不同的 DNS 提供商（从 Google DNS 换到 Cloudflare 或 NextDNS），或者暂时关闭安全 DNS 用系统自带的 DNS 解析。</p><h3 id=q3-手机-chrome-打不开网页的排查和电脑端有什么不同>Q3: 手机 Chrome 打不开网页的排查和电脑端有什么不同？</h3><p>A: 手机端的排查多了几个特有因素：国产手机的省电模式可能限制 Chrome 后台网络（检查系统电池设置）；Android 的私有 DNS 功能可能与 Chrome 安全 DNS 冲突（建议只用其中一个，不要两个同时开）；iOS 的 VPN 配置文件退出后可能没有真正断开（需要到系统设置 > VPN 中手动断开）。除此之外，DNS、缓存、扩展的排查思路和电脑端一致。</p><h3 id=q4-chrome-打不开网页会是电脑中毒了吗>Q4: Chrome 打不开网页会是电脑中毒了吗？</h3><p>A: 有可能，但不是最常见的原因。恶意软件可能篡改系统代理设置、修改 hosts 文件或安装恶意根证书，导致 Chrome 无法正常访问网页。如果没有其他症状（CPU 异常高、弹窗广告、文件被加密），建议先按本文的前五步排查——90% 的情况下问题出在代理残留、DNS 或缓存，而非恶意软件。如果前五步都无效且多个浏览器都出现异常行为，再用杀毒软件全盘扫描。</p><h3 id=q5-chrome-提示您的连接不是私密连接但网站是正常的能继续访问吗>Q5: Chrome 提示「您的连接不是私密连接」但网站是正常的，能继续访问吗？</h3><p>A: 这个提示是 <code>NET::ERR_CERT_</code> 系列错误的表现，最常见的原因是系统时间偏差或该网站用的是自签名证书。如果是你信任的网站（银行、公司内网、政府网站），可以在错误页点击「高级」→「继续前往」临时访问。但如果是你不熟悉的网站，绝对不要点继续——这个提示说明 Chrome 无法验证网站的真实身份，可能存在中间人攻击。更安全的做法是先检查系统时间是否正确，然后刷新重试。</p><div class=compliance-notice><p>声明：本站为 Chrome 浏览器使用技巧分享平台，与 Google 公司无关。所有产品名称归原权利人所有。</p></div><div class=home-kw-links><p>相关推荐：<a href=/>Chrome插件推荐</a> · <a href=/>Chrome技巧教程</a> · <a href=/>浏览器插件下载</a></p></div></div><div style="max-width:1200px;margin:0 auto;padding:0 24px 48px"><div style="padding-top:32px;border-top:1px solid var(--border)"><div class=sec-head><div><div class=sec-tag>📖 相关阅读</div><div class=sec-title>继续阅读</div></div></div><div class=card-grid><a href=https://chromebest.com/tips/chrome-manifest-v3-ublock-origin-alternative/ class=card><div class=card-img><img src=/images/tips/chrome-manifest-v3-ublock-origin-alternative/cover.webp alt="Chrome Manifest V3 全面解读：uBlock Origin被禁怎么办？2026年广告拦截与隐私扩展替换完全指南" loading=lazy></div><div class=card-body><span class="art-row-tag feat-tag blue">功能教程</span><h3>Chrome Manifest V3 全面解读：uBlock Origin被禁怎么办？2026年广告拦截与隐私扩展替换完全指南</h3><p>不聊技术协议，只聊对你有用的——什么时候失效、什么还能用、怎么用。</p></div></a><a href=https://chromebest.com/tips/chrome-high-cpu-fix/ class=card><div class=card-img><img src=/images/tips/chrome-high-cpu-fix/cover.webp alt="Chrome 占用CPU过高终于解决了：从100%降到15%的完整排查实录（2026）" loading=lazy></div><div class=card-body><span class="art-row-tag feat-tag red">性能优化</span><h3>Chrome 占用CPU过高终于解决了：从100%降到15%的完整排查实录（2026）</h3><p>不是让你关几个标签页这么简单。这篇文章教你用Chrome自带的任务管理器精准定位是哪个标签页、哪个扩展、哪个进程在吃CPU，然后对症下药。</p></div></a><a href=https://chromebest.com/tips/chrome-flags-guide/ class=card><div class=card-img><img src=/images/tips/chrome-flags-guide/cover.jpg alt="Chrome 隐藏实验功能指南：chrome://flags 里 15 个真正值得开启的设置（2026实测）" loading=lazy></div><div class=card-body><span class="art-row-tag feat-tag purple">Chrome实验功能</span><h3>Chrome 隐藏实验功能指南：chrome://flags 里 15 个真正值得开启的设置（2026实测）</h3><p>chrome://flags 里有上千个实验开关，但大部分不值得折腾。本文从中挑出 15 个真正有用的，按风险等级分类，告诉你每个开关开启前后到底有什么区别。</p></div></a></div></div></div></article><aside class=sidebar><div class=sb-search><svg class="sb-search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
-<input type=text class=sb-search-input placeholder=搜索文章...>
-<kbd class=sb-search-kbd>/</kbd></div><div class=cta-banner style=padding:24px><h2 style=font-size:18px;margin-bottom:6px>下载 Chrome</h2><p style=font-size:13px>全球使用人数最多的浏览器</p><a href=https://www.google.com/chrome/ class=btn-dl style="padding:10px 20px;font-size:14px;width:100%;justify-content:center;margin-top:12px" rel=nofollow>⬇ 官方下载</a></div><div class=sb-box><h3>📖 相关文章</h3><div style=display:flex;flex-direction:column;gap:12px><a href=https://chromebest.com/tips/chrome-tab-groups/ style=font-size:13px;line-height:1.5;color:var(--txt2)>Chrome标签页分组管理技巧：2026年告别标签页混乱</a>
-<a href=https://chromebest.com/tips/chrome-default-browser/ style=font-size:13px;line-height:1.5;color:var(--txt2)>Chrome 设为默认浏览器的完整教程：Windows、Mac、手机全覆盖</a>
-<a href=https://chromebest.com/tips/chrome-offline-installer/ style=font-size:13px;line-height:1.5;color:var(--txt2)>Chrome 离线安装包下载与完整安装指南（2026 最新版）</a>
-<a href=https://chromebest.com/compare/chrome-vs-firefox-2026/ style=font-size:13px;line-height:1.5;color:var(--txt2)>Chrome 和 Firefox 2026 年到底选哪个？深度实测对比</a>
-<a href=https://chromebest.com/tips/chrome-privacy-settings-guide/ style=font-size:13px;line-height:1.5;color:var(--txt2)>Chrome 隐私设置完全指南：9 个必须改的安全选项（附截图说明）</a></div></div><div class=sb-box><h3>🏷 相关标签</h3><div class=tags><a href=/tags/chrome%E6%89%93%E4%B8%8D%E5%BC%80%E7%BD%91%E9%A1%B5 class=tag>Chrome打不开网页</a>
-<a href=/tags/chrome%E5%8A%A0%E8%BD%BD%E6%85%A2 class=tag>Chrome加载慢</a>
-<a href=/tags/chrome-dns class=tag>Chrome DNS</a>
-<a href=/tags/chrome%E7%BD%91%E7%BB%9C%E9%97%AE%E9%A2%98 class=tag>Chrome网络问题</a>
-<a href=/tags/chrome%E6%97%A0%E6%B3%95%E8%BF%9E%E6%8E%A5 class=tag>Chrome无法连接</a>
-<a href=/tags/chrome-err_connection class=tag>Chrome ERR_CONNECTION</a></div></div></aside></div><footer class=foot><div class=foot-inner><div class=foot-links><a href=/>首页</a>
-<a href=/categories/下载安装>下载安装</a>
-<a href=/categories/使用技巧>技巧教程</a>
-<a href=/categories/插件推荐>插件推荐</a>
-<a href=/categories/对比评测>对比评测</a>
-<a href=/about/>关于我们</a></div><div class=foot-copy>© 2026 ChromeBest · 谷歌浏览器下载与使用教程 · 本站与 Google 无关</div></div></footer><script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"https://chromebest.com/"},{"@type":"ListItem","position":2,"name":"Tips","item":"https:\/\/chromebest.com\/tips\/"},{"@type":"ListItem","position":3,"name":"Chrome 网页打不开或加载慢？2026 年 DNS 和网络问题全排查指南"}]}</script><script type=application/ld+json>{"@context":"https://schema.org","@type":"Article","headline":"Chrome 网页打不开或加载慢？2026 年 DNS 和网络问题全排查指南","description":"Chrome 网页打不开或加载很慢怎么办？本文从 DNS 解析、代理设置、SSL 证书、防火墙拦截到 Chrome 内部设置，系统梳理 Chrome 网络问题的 6 大排查方向和 15 个具体解决方案。","datePublished":"2026-05-26","dateModified":"2026-05-26","author":{"@type":"Organization","name":"ChromeBest"},"publisher":{"@type":"Organization","name":"ChromeBest","logo":{"@type":"ImageObject","url":"https://chromebest.com/og-default.jpg"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/chromebest.com\/tips\/chrome-page-not-loading\/"}}</script><script type=application/ld+json>{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"","acceptedAnswer":{"@type":"Answer","text":""}},{"@type":"Question","name":"","acceptedAnswer":{"@type":"Answer","text":""}},{"@type":"Question","name":"","acceptedAnswer":{"@type":"Answer","text":""}},{"@type":"Question","name":"","acceptedAnswer":{"@type":"Answer","text":""}},{"@type":"Question","name":"","acceptedAnswer":{"@type":"Answer","text":""}}]}</script></body></html>
+<strong>情况四</strong>：网页能打开但加载很慢 → 问题在 DNS 解析、扩展程序或硬件加速</p>
+<p>搞清楚属于哪种，后面排查就不会走弯路。如果你的 Chrome 偶尔卡顿花屏，可以先看看 <a href="/tips/chrome-hardware-acceleration/">Chrome 硬件加速设置教程</a>，网络问题和硬件加速问题经常被混淆。</p>
+<p><img src="/images/tips/chrome-page-not-loading/img-1.jpg" alt="Chrome 网页打不开问题排查流程"></p>
+<h2 id="第二步最常见的原因--代理和-vpn-残留">第二步：最常见的原因 — 代理和 VPN 残留</h2>
+<p>这是国内用户 Chrome 打不开网页的<strong>第一大原因</strong>，超过 50% 的情况都是这个。</p>
+<p>很多用户用过 VPN 或代理工具后没有彻底退出，Chrome 的系统代理设置还留着。关闭了 VPN 软件但系统代理没还原，Chrome 所有请求都走一个已经不通的代理通道，自然打不开任何网页。如果你不确定当前的代理配置是否正确，可以先参考 <a href="/tips/chrome-proxy-settings/">Chrome 代理设置</a> 完整了解代理的三种工作模式。</p>
+<p><strong>检查方法</strong>：</p>
+<ul>
+<li>Windows：设置 &gt; 网络和 Internet &gt; 代理，确认&quot;使用代理服务器&quot;是关闭的</li>
+<li>macOS：系统设置 &gt; 网络 &gt; 当前网络 &gt; 代理，确认所有代理协议都是关闭的</li>
+<li>Chrome 内部也可以快速检查：地址栏输入 <code>chrome://settings/system</code>，查看&quot;打开计算机的代理设置&quot;</li>
+</ul>
+<p><strong>解决方案</strong>：关闭所有代理选项，或者用 Chrome 内置的 <code>chrome://settings/system</code> 里直接关闭&quot;使用代理&quot;。</p>
+<p>如果用了科学上网工具，检查它的系统代理模式——&ldquo;PAC 模式&quot;和&quot;全局模式&quot;会影响所有流量，退出后可能不会自动还原。建议切换成&quot;直连模式&quot;再退出，或者手动清除系统代理。</p>
+<h2 id="第三步dns-问题--网页打不开的隐形杀手">第三步：DNS 问题 — 网页打不开的隐形杀手</h2>
+<p>DNS 是把域名（如 google.com）翻译成 IP 地址的服务。DNS 出了问题，Chrome 知道你要访问什么网站但找不到服务器在哪。如果你经常遇到 DNS 解析慢或不稳定，除了换 DNS 服务器外，<a href="/tips/chrome-secure-dns-setup/">Chrome 安全 DNS 设置</a> 中的 DNS over HTTPS 功能可以从协议层面提供额外保护。</p>
+<p><strong>症状特征</strong>：Chrome 报错页面底部显示 <code>DNS_PROBE_POSSIBLE</code> 或 <code>DNS_NAME_NOT_RESOLVED</code>，或者特定网站打不开但 IP 直接访问可以。</p>
+<h3 id="更换-dns-服务器">更换 DNS 服务器</h3>
+<p>国内网络环境下推荐用以下 DNS：</p>
+<ul>
+<li><strong>腾讯 DNSPod</strong>：<code>119.29.29.29</code>（推荐，稳定性好）</li>
+<li><strong>阿里 DNS</strong>：<code>223.5.5.5</code></li>
+<li><strong>114 DNS</strong>：<code>114.114.114.114</code></li>
+</ul>
+<p>Windows 修改方法：设置 &gt; 网络和 Internet &gt; 以太网（或 Wi-Fi）&gt; DNS 服务器分配 &gt; 编辑，把首选 DNS 和备用 DNS 改成上面的地址。</p>
+<h3 id="清除-chrome-dns-缓存">清除 Chrome DNS 缓存</h3>
+<p>即使换了 DNS 服务器，Chrome 可能还缓存着旧的错误解析结果。清除方法：地址栏输入 <code>chrome://net-internals/#dns</code>，点击 <strong>Clear host cache</strong>。</p>
+<h3 id="开启-chrome-安全-dns">开启 Chrome 安全 DNS</h3>
+<p>Chrome 内置了加密 DNS 功能（DNS over HTTPS），可以绕过运营商的 DNS 劫持。开启方法：设置 &gt; 隐私和安全 &gt; 安全浏览 &gt; 使用安全 DNS &gt; 选择&quot;使用&rdquo;。</p>
+<p><img src="/images/tips/chrome-page-not-loading/img-2.jpg" alt="DNS 设置对比"></p>
+<h2 id="第四步ssl-证书错误">第四步：SSL 证书错误</h2>
+<p>Chrome 报错页面显示 <code>NET::ERR_CERT_</code> 开头的信息，说明 SSL 证书验证失败。</p>
+<p><strong>最常见的三个原因</strong>：</p>
+<ol>
+<li><strong>系统时间不对</strong> — 证书有有效期限，系统时间偏差太大会导致验证失败。右键任务栏时钟 &gt; 调整日期/时间，确保自动同步时间已开启。</li>
+<li><strong>证书过期</strong> — 网站管理员忘记续期证书。这种只能等网站方修复，你做不了什么。</li>
+<li><strong>杀毒软件或公司网关替换了证书</strong> — 某些杀毒软件会做 HTTPS 拦截，用自己的证书替换原始证书。如果在公司网络中出现这个问题，联系 IT 部门处理。</li>
+</ol>
+<p><strong>临时绕过</strong>（仅限你信任的网站）：在 ERR_CERT_ 错误页面点击&quot;高级&quot;，然后点击&quot;继续前往&quot;。注意这会降低安全性，公共网站不要这样做。</p>
+<h2 id="第五步扩展程序和缓存">第五步：扩展程序和缓存</h2>
+<p>Chrome 安装了太多扩展程序会拖慢甚至阻断页面加载，尤其以下几类：</p>
+<ul>
+<li><strong>广告拦截类</strong>：uBlock Origin、AdGuard 等可能误拦截正常资源</li>
+<li><strong>隐私类</strong>：Privacy Badger、Ghostery 等会拦截追踪器和部分 CDN 资源</li>
+<li><strong>代理类</strong>：SwitchyOmega 等如果配置不当会导致请求走错通道</li>
+</ul>
+<p><strong>排查方法</strong>：打开 <code>chrome://extensions/</code>，逐个关闭扩展，每次关闭后刷新看页面是否恢复正常。找到问题扩展后更新或卸载。</p>
+<p><strong>清除缓存和 Cookie</strong>：Ctrl+Shift+Delete，时间范围选&quot;全部时间&quot;，勾选缓存和 Cookie。有些网站的资源文件更新后，浏览器缓存中的旧版本会导致页面加载失败。这种情况在开发者频繁更新的网站上尤其常见，比如某些在线工具和 SaaS 平台。</p>
+<p><strong>禁用问题扩展后的清理步骤</strong>：在 <code>chrome://extensions/</code> 找到问题扩展后，建议不仅禁用，最好直接移除然后重新安装最新版本。因为旧版本的扩展可能存在已知的网络兼容性 bug，更新后可能已经修复了。</p>
+<h2 id="第六步chrome-内部重置">第六步：Chrome 内部重置</h2>
+<p>如果以上所有步骤都没解决，最后手段是重置 Chrome 的网络相关设置：</p>
+<ol>
+<li><strong>重置网络设置</strong>：<code>chrome://settings/reset</code> &gt; 将设置还原为原始默认设置</li>
+<li><strong>清除 SSL 缓存</strong>：<code>chrome://net-internals/#hsts</code> &gt; 在 Delete domain security policies 中输入出问题的域名 &gt; Delete</li>
+<li><strong>新建用户配置文件</strong>：Chrome 右上角头像 &gt; 添加新用户。如果新用户中网页能正常打开，说明是你原来的配置文件损坏了，需要重建</li>
+</ol>
+<p><img src="/images/tips/chrome-page-not-loading/img-3.jpg" alt="Chrome 重置设置位置"></p>
+<h2 id="按错误码快速查表">按错误码快速查表</h2>
+<table>
+  <thead>
+      <tr>
+          <th>Chrome 错误码</th>
+          <th>含义</th>
+          <th>最可能原因</th>
+          <th>首选解决方案</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>ERR_CONNECTION_TIMED_OUT</code></td>
+          <td>连接超时</td>
+          <td>DNS 或防火墙</td>
+          <td>换 DNS + 检查防火墙</td>
+      </tr>
+      <tr>
+          <td><code>ERR_NAME_NOT_RESOLVED</code></td>
+          <td>域名无法解析</td>
+          <td>DNS 问题</td>
+          <td>换 DNS + 清 DNS 缓存</td>
+      </tr>
+      <tr>
+          <td><code>ERR_CONNECTION_REFUSED</code></td>
+          <td>连接被拒绝</td>
+          <td>服务器或代理</td>
+          <td>关代理 + 换网络</td>
+      </tr>
+      <tr>
+          <td><code>ERR_CERT_DATE_INVALID</code></td>
+          <td>证书过期</td>
+          <td>系统时间或网站</td>
+          <td>校准系统时间</td>
+      </tr>
+      <tr>
+          <td><code>ERR_SSL_PROTOCOL_ERROR</code></td>
+          <td>SSL 协议错误</td>
+          <td>杀毒软件拦截</td>
+          <td>关杀毒软件 HTTPS 扫描</td>
+      </tr>
+      <tr>
+          <td><code>ERR_PROXY_CONNECTION_FAILED</code></td>
+          <td>代理连接失败</td>
+          <td>VPN/代理残留</td>
+          <td>清除系统代理设置</td>
+      </tr>
+      <tr>
+          <td><code>ERR_INTERNET_DISCONNECTED</code></td>
+          <td>网络断开</td>
+          <td>网线/Wi-Fi 问题</td>
+          <td>检查物理网络连接</td>
+      </tr>
+      <tr>
+          <td><code>ERR_TOO_MANY_REDIRECTS</code></td>
+          <td>重定向循环</td>
+          <td>Cookie 或域名配置</td>
+          <td>清 Cookie + 换 DNS</td>
+      </tr>
+  </tbody>
+</table>
+<h2 id="移动端-chrome-网页打不开怎么排查">移动端 Chrome 网页打不开怎么排查</h2>
+<p>Android 和 iOS 上的 Chrome 网络问题排查思路和电脑端基本一致，但有几个移动端特有的事项需要注意：</p>
+<p><strong>Android 端</strong>：</p>
+<ul>
+<li>部分国产手机系统（华为、小米）有自带的 DNS 优化功能，可能和 Chrome 的安全 DNS 冲突。建议关闭系统的 DNS 优化，改用 Chrome 内置的安全 DNS。</li>
+<li>Android 的 Chrome 无法直接修改系统 DNS（需要 Android 9+ 的私有 DNS 功能）。在系统设置 &gt; 网络 &gt; 私有 DNS 中设置 <code>dns.google</code> 或 <code>1dot1dot1dot1.cloudflare-dns.com</code>。</li>
+<li>后台限制：部分省电模式会限制 Chrome 的后台网络访问。检查系统设置 &gt; 电池 &gt; Chrome，确保没有限制其后台活动。</li>
+</ul>
+<p><strong>iOS 端</strong>：</p>
+<ul>
+<li>iPhone 的低电量模式会限制后台网络活动。如果 Chrome 切到后台后再切回来发现页面没加载完，检查是否开了低电量模式。</li>
+<li>iOS 的 DNS 由系统统一管理，在系统设置 &gt; Wi-Fi &gt; 当前网络 &gt; 配置 DNS 中修改。</li>
+<li>iOS 上某些 VPN 应用使用 VPN 配置文件而不是系统代理，退出后需要手动在设置 &gt; VPN 中断开连接。只关闭 VPN 应用不够，系统的 VPN 连接可能仍然处于激活状态。</li>
+</ul>
+<h2 id="为什么有时候重启路由器能解决所有问题">为什么有时候重启路由器能解决所有问题？</h2>
+<p>很多人遇到网络问题第一个反应就是重启路由器，而且经常真的管用。原因有三个：</p>
+<p>第一，路由器的 DNS 缓存过期了。路由器会缓存 DNS 解析结果，缓存过期后如果刷新失败，会导致所有设备都打不开网页。重启路由器清空了缓存，强制重新解析。</p>
+<p>第二，路由器运行时间长了内存泄漏。家用路由器长时间不断电运行，内存占用越来越高，处理网络请求的速度越来越慢，最终导致连接超时。重启释放了内存。</p>
+<p>第三，运营商分配的 IP 地址租期到了。如果你用的是动态 IP，路由器的 IP 租约到期后需要重新获取。有时候续租过程失败，重启路由器会强制重新申请。</p>
+<p>但如果重启路由器后 Chrome 还是打不开网页，而其他软件正常，那问题就确定在 Chrome 身上，回到前面的排查步骤逐个检查。</p>
+<p>如果你经常遇到 <a href="/">Chrome 浏览器</a> 的各种问题，建议收藏这篇文章备用。<a href="/">Chrome 插件</a>也可能导致网络异常，排查时别忘了检查扩展程序。更多 Chrome 排查教程可以看 <a href="/tips/chrome-incognito-mode-guide/">Chrome 无痕模式详解</a> 和 <a href="/tips/chrome-slow-download-fix/">Chrome 下载速度慢怎么解决</a>。</p>
+<p>相关推荐：<a href="/tips/chrome-privacy-settings-guide/">Chrome 隐私设置完全指南</a> · <a href="/tips/chrome-clear-cache/">Chrome 缓存清理教程</a></p>
+<h2 id="常见问题">常见问题</h2>
+<h3 id="q1-chrome-报-err_connection_refused-但-edge-能正常打开怎么修">Q1: Chrome 报 ERR_CONNECTION_REFUSED 但 Edge 能正常打开，怎么修？</h3>
+<p>A: 这种情况说明网络本身没问题，问题出在 Chrome 的设置。按顺序排查：先在 <code>chrome://settings/system</code> 确认没开代理；然后清除 Chrome 的 DNS 缓存（<code>chrome://net-internals/#dns</code> → Clear host cache）；接着在 <code>chrome://extensions/</code> 逐个禁用扩展排查；最后尝试 <code>chrome://settings/reset</code> 重置 Chrome 设置。如果重置后问题还在，建议新建一个 Chrome 用户配置文件来排除配置文件损坏的可能。</p>
+<h3 id="q2-chrome-安全-dns-开启后反而有些网站打不开了">Q2: Chrome 安全 DNS 开启后反而有些网站打不开了？</h3>
+<p>A: DNS over HTTPS（安全 DNS）会把 DNS 查询加密后发送到指定 DNS 提供商，但如果该提供商对某些域名的解析不稳定或被阻断，就会导致这些网站打不开。解决方法：在 Chrome 设置 &gt; 隐私和安全 &gt; 安全浏览 &gt; 安全 DNS 中，尝试切换到不同的 DNS 提供商（从 Google DNS 换到 Cloudflare 或 NextDNS），或者暂时关闭安全 DNS 用系统自带的 DNS 解析。</p>
+<h3 id="q3-手机-chrome-打不开网页的排查和电脑端有什么不同">Q3: 手机 Chrome 打不开网页的排查和电脑端有什么不同？</h3>
+<p>A: 手机端的排查多了几个特有因素：国产手机的省电模式可能限制 Chrome 后台网络（检查系统电池设置）；Android 的私有 DNS 功能可能与 Chrome 安全 DNS 冲突（建议只用其中一个，不要两个同时开）；iOS 的 VPN 配置文件退出后可能没有真正断开（需要到系统设置 &gt; VPN 中手动断开）。除此之外，DNS、缓存、扩展的排查思路和电脑端一致。</p>
+<h3 id="q4-chrome-打不开网页会是电脑中毒了吗">Q4: Chrome 打不开网页会是电脑中毒了吗？</h3>
+<p>A: 有可能，但不是最常见的原因。恶意软件可能篡改系统代理设置、修改 hosts 文件或安装恶意根证书，导致 Chrome 无法正常访问网页。如果没有其他症状（CPU 异常高、弹窗广告、文件被加密），建议先按本文的前五步排查——90% 的情况下问题出在代理残留、DNS 或缓存，而非恶意软件。如果前五步都无效且多个浏览器都出现异常行为，再用杀毒软件全盘扫描。</p>
+<h3 id="q5-chrome-提示您的连接不是私密连接但网站是正常的能继续访问吗">Q5: Chrome 提示「您的连接不是私密连接」但网站是正常的，能继续访问吗？</h3>
+<p>A: 这个提示是 <code>NET::ERR_CERT_</code> 系列错误的表现，最常见的原因是系统时间偏差或该网站用的是自签名证书。如果是你信任的网站（银行、公司内网、政府网站），可以在错误页点击「高级」→「继续前往」临时访问。但如果是你不熟悉的网站，绝对不要点继续——这个提示说明 Chrome 无法验证网站的真实身份，可能存在中间人攻击。更安全的做法是先检查系统时间是否正确，然后刷新重试。</p>
+
+<div class="compliance-notice">
+<p>声明：本站为 Chrome 浏览器使用技巧分享平台，与 Google 公司无关。所有产品名称归原权利人所有。</p>
+</div>
+<div class="home-kw-links">
+<p>相关推荐：<a href="/">Chrome插件推荐</a> · <a href="/">Chrome技巧教程</a> · <a href="/">浏览器插件下载</a></p>
+</div>
+    </div>
+
+    
+    
+    
+    <div style="max-width:1200px;margin:0 auto;padding:0 24px 48px">
+      <div style="padding-top:32px;border-top:1px solid var(--border)">
+        <div class="sec-head">
+          <div>
+            <div class="sec-tag">📖 相关阅读</div>
+            <div class="sec-title">继续阅读</div>
+          </div>
+        </div>
+        <div class="card-grid">
+          
+          <a href="https://chromebest.com/tips/chrome-built-in-ai-gemini-nano-guide/" class="card">
+            
+            <div class="card-img">
+              <img src="/images/tips/chrome-built-in-ai-gemini-nano-guide/cover.jpg" alt="Chrome 内置 AI 功能完全指南：2026年 Gemini Nano 离线写作、翻译、总结怎么用" loading="lazy">
+            </div>
+            
+            <div class="card-body">
+              <span class="art-row-tag feat-tag blue">教程</span>
+              <h3>Chrome 内置 AI 功能完全指南：2026年 Gemini Nano 离线写作、翻译、总结怎么用</h3>
+              <p><p>你可能在用 ChatGPT、Claude、文心一言——但你知道 Chrome 浏览器自己就内置了 AI 吗？</p>
+<p>2026年，Google 把 Gemini …</p></p>
+            </div>
+          </a>
+          
+          <a href="https://chromebest.com/tips/chrome-manifest-v3-ublock-origin-alternative/" class="card">
+            
+            <div class="card-img">
+              <img src="/images/tips/chrome-manifest-v3-ublock-origin-alternative/cover.webp" alt="Chrome Manifest V3 全面解读：uBlock Origin被禁怎么办？2026年广告拦截与隐私扩展替换完全指南" loading="lazy">
+            </div>
+            
+            <div class="card-body">
+              <span class="art-row-tag feat-tag blue">功能教程</span>
+              <h3>Chrome Manifest V3 全面解读：uBlock Origin被禁怎么办？2026年广告拦截与隐私扩展替换完全指南</h3>
+              <p>不聊技术协议，只聊对你有用的——什么时候失效、什么还能用、怎么用。</p>
+            </div>
+          </a>
+          
+          <a href="https://chromebest.com/tips/chrome-high-cpu-fix/" class="card">
+            
+            <div class="card-img">
+              <img src="/images/tips/chrome-high-cpu-fix/cover.webp" alt="Chrome 占用CPU过高终于解决了：从100%降到15%的完整排查实录（2026）" loading="lazy">
+            </div>
+            
+            <div class="card-body">
+              <span class="art-row-tag feat-tag red">性能优化</span>
+              <h3>Chrome 占用CPU过高终于解决了：从100%降到15%的完整排查实录（2026）</h3>
+              <p>不是让你关几个标签页这么简单。这篇文章教你用Chrome自带的任务管理器精准定位是哪个标签页、哪个扩展、哪个进程在吃CPU，然后对症下药。</p>
+            </div>
+          </a>
+          
+        </div>
+      </div>
+    </div>
+    
+  </article>
+
+  
+  <aside class="sidebar">
+    
+    <div class="sb-search">
+      <svg class="sb-search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+      <input type="text" class="sb-search-input" placeholder="搜索文章...">
+      <kbd class="sb-search-kbd">/</kbd>
+    </div>
+
+    
+    <div class="cta-banner" style="padding:24px">
+      <h2 style="font-size:18px;margin-bottom:6px">下载 Chrome</h2>
+      <p style="font-size:13px">全球使用人数最多的浏览器</p>
+      <a href="https://www.google.com/chrome/" class="btn-dl" style="padding:10px 20px;font-size:14px;width:100%;justify-content:center;margin-top:12px" rel="nofollow">⬇ 官方下载</a>
+    </div>
+
+    
+    
+    
+    <div class="sb-box">
+      <h3>📖 相关文章</h3>
+      <div style="display:flex;flex-direction:column;gap:12px">
+        
+        <a href="https://chromebest.com/tips/chrome-secure-dns-setup/" style="font-size:13px;line-height:1.5;color:var(--txt2)">Chrome 安全 DNS 设置教程：提升浏览安全性和解析速度</a>
+        
+        <a href="https://chromebest.com/tips/chrome-reading-mode/" style="font-size:13px;line-height:1.5;color:var(--txt2)">Chrome 阅读模式使用教程：2026 年沉浸式阅读完整指南</a>
+        
+        <a href="https://chromebest.com/tips/chrome-devtools-beginner-guide/" style="font-size:13px;line-height:1.5;color:var(--txt2)">Chrome 开发者工具入门：5 个面板详解 &#43; 实用技巧（非程序员也能用）</a>
+        
+        <a href="https://chromebest.com/compare/chrome-vs-safari-2026/" style="font-size:13px;line-height:1.5;color:var(--txt2)">Chrome 和 Safari 到底怎么选？2026 Mac 用户双浏览器策略终极指南</a>
+        
+        <a href="https://chromebest.com/tips/chrome-flash-player/" style="font-size:13px;line-height:1.5;color:var(--txt2)">Chrome Flash Player 已经彻底消失了：2026 年如何运行老旧 Flash 内容</a>
+        
+      </div>
+    </div>
+    
+
+    
+    
+    <div class="sb-box">
+      <h3>🏷 相关标签</h3>
+      <div class="tags">
+        
+        <a href="/tags/chrome%E6%89%93%E4%B8%8D%E5%BC%80%E7%BD%91%E9%A1%B5" class="tag">Chrome打不开网页</a>
+        
+        <a href="/tags/chrome%E5%8A%A0%E8%BD%BD%E6%85%A2" class="tag">Chrome加载慢</a>
+        
+        <a href="/tags/chrome-dns" class="tag">Chrome DNS</a>
+        
+        <a href="/tags/chrome%E7%BD%91%E7%BB%9C%E9%97%AE%E9%A2%98" class="tag">Chrome网络问题</a>
+        
+        <a href="/tags/chrome%E6%97%A0%E6%B3%95%E8%BF%9E%E6%8E%A5" class="tag">Chrome无法连接</a>
+        
+        <a href="/tags/chrome-err_connection" class="tag">Chrome ERR_CONNECTION</a>
+        
+      </div>
+    </div>
+    
+  </aside>
+</div>
+
+<footer class="foot">
+  <div class="foot-inner">
+    <div class="foot-links">
+      <a href="/">首页</a>
+      <a href="/categories/下载安装">下载安装</a>
+      <a href="/categories/使用技巧">技巧教程</a>
+      <a href="/categories/插件推荐">插件推荐</a>
+      <a href="/categories/对比评测">对比评测</a>
+      <a href="/about/">关于我们</a>
+    </div>
+    <div class="foot-copy">© 2026 ChromeBest · 谷歌浏览器下载与使用教程 · 本站与 Google 无关</div>
+  </div>
+</footer>
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "首页",
+      "item": "https://chromebest.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Tips",
+      "item": "https:\/\/chromebest.com\/tips\/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Chrome 网页打不开或加载慢？2026 年 DNS 和网络问题全排查指南"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Chrome 网页打不开或加载慢？2026 年 DNS 和网络问题全排查指南",
+  "description": "Chrome 网页打不开或加载很慢怎么办？本文从 DNS 解析、代理设置、SSL 证书、防火墙拦截到 Chrome 内部设置，系统梳理 Chrome 网络问题的 6 大排查方向和 15 个具体解决方案。",
+  "datePublished": "2026-05-26",
+  "dateModified": "2026-05-26",
+  "author": {
+    "@type": "Organization",
+    "name": "ChromeBest"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "ChromeBest",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://chromebest.com/og-default.jpg"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https:\/\/chromebest.com\/tips\/chrome-page-not-loading\/"
+  }
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "",
+      "acceptedAnswer": { "@type": "Answer", "text": "" }
+    },{
+      "@type": "Question",
+      "name": "",
+      "acceptedAnswer": { "@type": "Answer", "text": "" }
+    },{
+      "@type": "Question",
+      "name": "",
+      "acceptedAnswer": { "@type": "Answer", "text": "" }
+    },{
+      "@type": "Question",
+      "name": "",
+      "acceptedAnswer": { "@type": "Answer", "text": "" }
+    },{
+      "@type": "Question",
+      "name": "",
+      "acceptedAnswer": { "@type": "Answer", "text": "" }
+    }
+  ]
+}
+</script>
+
+
+
+
+
+
+<script>
+(function(){
+  var k="1746ece89b02d6f075b43c223f9789b5";
+  var u=encodeURIComponent("https:\/\/chromebest.com\/tips\/chrome-page-not-loading\/");
+  var x=new XMLHttpRequest();
+  x.open("GET","https://api.indexnow.org/indexnow?url="+u+"&key="+k,true);
+  x.send();
+})();
+</script>
+
+</body>
+</html>

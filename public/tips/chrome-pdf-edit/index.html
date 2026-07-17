@@ -1,22 +1,627 @@
-<!doctype html><html lang=zh-CN><head><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=msvalidate.01 content="58B8BC3B56964E4B68D451072143B15E"><title>Chrome 浏览器 PDF 编辑功能完整指南：标注、填写、合并全搞定 - ChromeBest</title><meta name=description content="Chrome 浏览器内置的 PDF 编辑功能详解：标注、高亮、填写表单、添加签名、打印为PDF。不需要额外安装软件的完整教程。"><meta name=keywords content="[谷歌浏览器 Chrome浏览器 Chrome下载 Chrome安装包 Chrome教程 Chrome插件 Chrome优化]"><link rel=canonical href=https://chromebest.com/tips/chrome-pdf-edit/><meta property="og:type" content="article"><meta property="og:title" content="Chrome 浏览器 PDF 编辑功能完整指南：标注、填写、合并全搞定"><meta property="og:description" content="打开一个 PDF 文件时，大多数人会习惯性地下载然后用 Adobe Acrobat 或其他 PDF 软件打开。但 Chrome 浏览器 本身就内置了一个功能相当完善的 PDF 查看器和编辑器，完全可以胜任日常的 PDF 阅读与编辑需求。本文会详细讲解 Chrome PDF 编辑功能 的实际能力，包括标注高亮、填写表单、 …"><meta property="og:url" content="https://chromebest.com/tips/chrome-pdf-edit/"><meta property="og:site_name" content="ChromeBest"><meta property="og:image" content="https://chromebest.com/images/tips/chrome-pdf-edit/og.jpg"><meta name=twitter:card content="summary_large_image"><link rel=icon href=/favicon.ico sizes=32x32><link rel=apple-touch-icon href=/apple-touch-icon.png><link rel=stylesheet href=/css/style.css></head><body><nav class=nav><div class=nav-inner><a href=/ class=nav-logo><div class=nav-logo-icon><span>C</span></div><b>ChromeBest</b></a><ul class=nav-links><li><a href=/>首页</a></li><li><a href=/categories/下载安装>下载安装</a></li><li><a href=/categories/使用技巧>技巧教程</a></li><li><a href=/categories/插件推荐>插件推荐</a></li><li><a href=/categories/对比评测>对比评测</a></li><li><a href=/categories/性能优化>性能优化</a></li></ul><a href=https://www.google.com/chrome/ class=nav-dl rel=nofollow>⬇ 下载 Chrome</a></div></nav><div class=layout><article class=art-page><nav class=breadcrumb><a href=/>首页</a>
-<span class=breadcrumb-sep>›</span>
-<a href=/tips>tips</a>
-<span class=breadcrumb-sep>›</span>
-<span class=breadcrumb-current>Chrome 浏览器 PDF 编辑功能完整指南：标注、填写、合并全搞定</span></nav><span class="art-tag feat-tag red">📄 PDF技巧</span><h1>Chrome 浏览器 PDF 编辑功能完整指南：标注、填写、合并全搞定</h1><div class=meta><span>📅 2026-05-20</span>
-<span>⏱ 15 分钟阅读</span>
-<span>📷 6 张真实截图</span></div><div class=cover><img src=/images/tips/chrome-pdf-edit/cover.jpg alt="Chrome 浏览器 PDF 编辑功能完整指南：标注、填写、合并全搞定"></div><div class=toc><h3>📑 目录</h3><nav id=TableOfContents><ul><li><a href=#chrome-pdf-查看器的基本功能>Chrome PDF 查看器的基本功能</a></li><li><a href=#chrome-pdf-标注功能详解>Chrome PDF 标注功能详解</a><ul><li><a href=#开启标注工具栏>开启标注工具栏</a></li><li><a href=#可用的标注工具>可用的标注工具</a></li><li><a href=#标注的保存与导出>标注的保存与导出</a></li></ul></li><li><a href=#pdf-表单填写>PDF 表单填写</a><ul><li><a href=#识别可交互表单>识别可交互表单</a></li><li><a href=#填写技巧>填写技巧</a></li><li><a href=#扫描件表单的处理>扫描件表单的处理</a></li></ul></li><li><a href=#网页打印为-pdf>网页打印为 PDF</a><ul><li><a href=#操作步骤>操作步骤</a></li><li><a href=#高级打印技巧>高级打印技巧</a></li></ul></li><li><a href=#chrome-pdf-功能的局限性>Chrome PDF 功能的局限性</a><ul><li><a href=#无法修改原始内容>无法修改原始内容</a></li><li><a href=#无法删除或重排页面>无法删除或重排页面</a></li><li><a href=#无法添加或编辑表单字段>无法添加或编辑表单字段</a></li><li><a href=#标注功能的限制>标注功能的限制</a></li><li><a href=#文件大小限制>文件大小限制</a></li></ul></li><li><a href=#chrome-扩展增强-pdf-功能>Chrome 扩展增强 PDF 功能</a><ul><li><a href=#pdf-extra---pdf-编辑器>PDF Extra - PDF 编辑器</a></li><li><a href=#kami---pdf-标注与协作>Kami - PDF 标注与协作</a></li><li><a href=#docusign---电子签名>DocuSign - 电子签名</a></li><li><a href=#smallpdf>Smallpdf</a></li></ul></li><li><a href=#免费-pdf-工具替代方案>免费 PDF 工具替代方案</a><ul><li><a href=#pdf24-tools>PDF24 Tools</a></li><li><a href=#libreoffice-draw>LibreOffice Draw</a></li><li><a href=#microsoft-edge-的-pdf-功能>Microsoft Edge 的 PDF 功能</a></li></ul></li><li><a href=#常见问题排查>常见问题排查</a><ul><li><a href=#pdf-在-chrome-中打开是空白>PDF 在 Chrome 中打开是空白</a></li><li><a href=#pdf-显示乱码或中文缺失>PDF 显示乱码或中文缺失</a></li><li><a href=#pdf-被下载而不是预览>PDF 被下载而不是预览</a></li><li><a href=#chrome-pdf-查看器崩溃>Chrome PDF 查看器崩溃</a></li></ul></li><li><a href=#chrome-pdf-功能的实用场景总结>Chrome PDF 功能的实用场景总结</a></li></ul></nav></div><div class=art-body><p>打开一个 PDF 文件时，大多数人会习惯性地下载然后用 Adobe Acrobat 或其他 PDF 软件打开。但 <a href=/>Chrome 浏览器</a> 本身就内置了一个功能相当完善的 PDF 查看器和编辑器，完全可以胜任日常的 PDF 阅读与编辑需求。本文会详细讲解 <a href=/>Chrome PDF 编辑功能</a> 的实际能力，包括标注高亮、填写表单、打印保存、以及它的局限性和替代方案。</p><h2 id=chrome-pdf-查看器的基本功能>Chrome PDF 查看器的基本功能</h2><p>Chrome 从很早的版本开始就集成了 PDF 查看器，基于 PDFium 渲染引擎（Chromium 项目的开源 PDF 库）。当你点击一个 PDF 链接或打开本地 PDF 文件时，Chrome 不会调用外部程序，而是直接在标签页内渲染 PDF 内容。这一点在很多浏览器中并不常见——Firefox 直到 2024 年才完全内置了原生 PDF 渲染。</p><p>Chrome 的 PDF 查看器提供了以下基础功能：</p><ul><li><strong>缩放</strong>：通过工具栏的加减号按钮、快捷键 Ctrl+和 Ctrl&ndash;、或鼠标滚轮调整页面大小</li><li><strong>页面导航</strong>：上下翻页、跳转到指定页码、缩略图面板快速定位</li><li><strong>全屏阅读</strong>：按 F11 进入全屏模式，获得沉浸式阅读体验</li><li><strong>文本选择与复制</strong>：可以直接选中 PDF 中的文字进行复制</li><li><strong>搜索</strong>：Ctrl+F 在 PDF 全文中搜索关键词，高亮显示匹配结果</li><li><strong>旋转页面</strong>：对于方向错误的 PDF 页面可以旋转调整</li><li><strong>下载与打印</strong>：直接下载原始文件或通过打印功能保存</li></ul><p>这些基础功能在 <a href=/>Chrome 浏览器</a> PDF 查看器的顶部工具栏中都可以直接访问。如果想要更全面地了解 Chrome 的操作技巧，可以参考 <a href=/tips/chrome-clear-cache/>Chrome 键盘快捷键大全</a> 来提升操作效率。</p><h2 id=chrome-pdf-标注功能详解>Chrome PDF 标注功能详解</h2><p>[Chrome PDF 标注工具界面](/images/tips/chrome-pdf-edit/annotate.jpg)</p><p>Chrome PDF 查看器在近年的更新中加入了标注功能，这是很多用户完全没有注意到却非常实用的特性。标注工具栏默认隐藏，需要手动开启。</p><h3 id=开启标注工具栏>开启标注工具栏</h3><p>在 Chrome 中打开 PDF 文件后，有两种方式打开标注面板：</p><ol><li><strong>点击工具栏图标</strong>：在 PDF 查看器右上角找到画笔/铅笔形状的图标，点击即可展开标注工具面板</li><li><strong>快捷键方式</strong>：按 Shift+Ctrl+A（Windows）或 Shift+Cmd+A（Mac）快速打开</li></ol><p>标注面板打开后会在右侧弹出一个垂直工具条，包含多种标注工具。</p><h3 id=可用的标注工具>可用的标注工具</h3><p>Chrome PDF 标注支持以下几种操作：</p><p><strong>高亮标注</strong>：选中 PDF 中的文字后，可以添加黄色、绿色、蓝色、粉色等不同颜色的高亮。适合标记重要段落或需要二次审阅的内容。实际使用中发现，高亮颜色会自动保存，关闭标签页后重新打开依然保留。</p><p><strong>自由文字添加</strong>：选择文字工具后，点击 PDF 页面的任意位置即可在该处输入自定义文字。可以调整字体大小和颜色，适合在空白处添加批注、注释或说明。对于 <a href=/tips/chrome-reading-mode/>Chrome 阅读模式</a> 用户来说，这个功能弥补了网页转 PDF 后无法编辑的遗憾。</p><p><strong>下划线与删除线</strong>：对选中文字添加下划线或删除线标记，适合审校文档时标出需要修改或删除的内容。</p><p><strong>手绘涂鸦</strong>：用鼠标或触摸板在 PDF 上自由绘制线条和图形。适合在图表上圈注关键数据，或用箭头指向某个特定区域。线条粗细和颜色都可以调整。</p><p><strong>橡皮擦</strong>：撤销已添加的标注，支持逐个删除或一键清除全部标注。</p><h3 id=标注的保存与导出>标注的保存与导出</h3><p>添加的标注会自动保存在 Chrome 的本地存储中。但需要注意，这些标注并没有真正写入 PDF 文件本身，而是存储在浏览器的 IndexedDB 数据库中。这意味着：</p><ul><li>换一台电脑或清除浏览器数据后标注会丢失</li><li>直接下载（Ctrl+S）的 PDF 文件不包含标注</li><li>要把标注固化到 PDF 中，必须通过打印为 PDF（Ctrl+P，选择另存为 PDF）来实现</li></ul><p>这是一个很多人踩过的坑：辛苦标注了一整天的合同，直接下载后发现标注全没了。记住，打印为 PDF 才是保存标注的正确方式。</p><h2 id=pdf-表单填写>PDF 表单填写</h2><p>[在 Chrome 中填写 PDF 表单](/images/tips/chrome-pdf-edit/form-fill.jpg)</p><p>Chrome PDF 查看器支持填写包含交互字段的 PDF 表单。这在日常办公中非常实用，例如填写税务表格、申请表、合同模板等。</p><h3 id=识别可交互表单>识别可交互表单</h3><p>当你在 Chrome 中打开一个 PDF 表单时，如果该 PDF 包含可交互的表单字段，你会看到光标悬停在空白处会变为输入指针，点击后出现闪烁的输入光标或可点击的复选框。常见的交互字段类型包括：</p><ul><li><strong>文本输入框</strong>：用于填写姓名、地址、金额等信息</li><li><strong>复选框</strong>：勾选或取消勾选选项</li><li><strong>单选按钮</strong>：在一组互斥选项中选择一个</li><li><strong>下拉菜单</strong>：从预定义列表中选择一个选项</li><li><strong>日期选择器</strong>：选择特定日期</li><li><strong>数字输入框</strong>：只能输入数字的字段</li></ul><h3 id=填写技巧>填写技巧</h3><p>填写 PDF 表单时，有几个实用技巧可以提升效率：</p><p>Tab 键可以在表单字段之间快速切换，不用每次都用鼠标点击下一个输入框。对于大量文字输入的表格，键盘导航比鼠标操作快得多。</p><p>如果表单字段有预设的格式要求（如电话号码、邮政编码），Chrome 会自动进行基本的格式验证。输入不符合格式的内容时，字段可能会有红色边框提示。</p><p>填写完成后，强烈建议先预览一遍所有字段，确认没有遗漏。然后通过 Ctrl+P 打印为 PDF 保存填写结果。不要直接关闭标签页，否则填写内容可能会丢失。</p><h3 id=扫描件表单的处理>扫描件表单的处理</h3><p>需要注意，不是所有 PDF 表单都包含交互字段。很多扫描版 PDF（如扫描的纸质表格）本质上就是一张图片，无法直接点击填写。这种情况下有以下替代方案：</p><ol><li><strong>Chrome 标注工具手动填写</strong>：使用文字工具在扫描表格的空白处手动添加文字。效果不如原生表单自然，但可以应急使用</li><li><strong>OCR 识别后填写</strong>：使用 Google Drive 上传扫描 PDF，Drive 会自动进行 OCR 识别并转换为可编辑的 Google Docs 文档</li><li><strong>专业 PDF 工具</strong>：使用 PDF24 或 Adobe Acrobat 的 OCR 功能，将扫描件转换为可填写表单</li></ol><p>关于 Chrome 的更多实用功能设置，可以查看 <a href=/plugins/chrome-essential-extensions/>Chrome 外观自定义教程</a>。</p><h2 id=网页打印为-pdf>网页打印为 PDF</h2><p>[Chrome 打印对话框中选择另存为 PDF](/images/tips/chrome-pdf-edit/print-pdf.jpg)</p><p>将网页保存为 PDF 是 Chrome 最常用的 PDF 相关功能之一。无论是保存文章归档、制作报告截图、还是将在线表格导出为文件，打印为 PDF 都是最便捷的方式。</p><h3 id=操作步骤>操作步骤</h3><p>在任意网页上按 Ctrl+P（Mac 上为 Cmd+P）打开 Chrome 的打印对话框。在目标打印机选项中选择另存为 PDF，然后点击保存即可。但在保存之前，有几个关键设置值得调整：</p><p><strong>布局选项</strong>：纵向或横向。默认纵向，但宽表格或横向排版的内容需要切换为横向。</p><p><strong>页边距</strong>：默认、无、最小或自定义。选择无可以让内容铺满整页，适合截图类内容；默认边距更适合正式文档打印。</p><p><strong>缩放比例</strong>：默认 100%，可以调整让内容适配纸张大小。如果网页内容过宽导致被裁切，可以缩小到 80% 或 90%。</p><p><strong>背景图形</strong>：默认关闭，勾选后会保留网页的背景颜色和图片。对于需要完整保留网页外观的场景（如制作截图报告），务必勾选此选项。</p><p><strong>页眉和页脚</strong>：可以添加日期、URL、页码等信息到 PDF 的顶部和底部。如果只需要纯净内容，取消勾选即可。</p><h3 id=高级打印技巧>高级打印技巧</h3><p>Chrome 的打印为 PDF 功能还有一些不太为人知的技巧：</p><p><strong>自定义纸张大小</strong>：点击更多设置展开完整选项，可以在纸张大小中选择 A3、A4、Letter、Legal 等多种尺寸，也可以输入自定义尺寸。</p><p><strong>CSS 打印媒体查询</strong>：很多网站会针对打印输出优化样式。Chrome 打印时自动应用 @media print 样式，隐藏不必要的导航栏和广告，只保留正文内容。</p><p><strong>仅打印选中内容</strong>：在网页上先用鼠标选中需要保存的部分文字和图片，然后在打印对话框中勾选仅限选定内容，这样 PDF 只包含选中区域的内容，而不是整个页面。</p><p><strong>PDF 合并</strong>：虽然 Chrome 本身不支持直接合并 PDF，但有一个取巧的方法：在打印对话框的页面范围中选择多页，或者打开多个标签页后逐一打印为 PDF，然后用外部工具合并。更好的方案是使用 PDF24 的合并功能，直接拖拽多个 PDF 文件即可合并为一个。</p><p>如果经常遇到 Chrome 页面加载异常导致打印失败的情况，可以参考 <a href=/tips/chrome-page-not-loading/>Chrome 页面无法加载的解决方法</a> 进行排查。</p><h2 id=chrome-pdf-功能的局限性>Chrome PDF 功能的局限性</h2><p>Chrome 的 PDF 功能虽然日常够用，但和专业的 PDF 编辑软件相比有明显的功能缺失。了解这些局限可以帮助你在需要时选择更合适的工具。</p><h3 id=无法修改原始内容>无法修改原始内容</h3><p>这是最大的限制。Chrome PDF 查看器无法修改 PDF 文件中的现有文字、图片、表格等内容。你不能删除一段话、替换一张图片或修改表格数据。Chrome 只能在 PDF 上层叠添加标注，无法触及底层的 PDF 内容。</p><p>对于需要修改 PDF 原文内容的需求，推荐使用 PDF24（免费在线工具）或 LibreOffice Draw（开源桌面软件），两者都支持直接编辑 PDF 的文字和图片。</p><h3 id=无法删除或重排页面>无法删除或重排页面</h3><p>Chrome 不能删除 PDF 中的某一页，也不能调整页面顺序、插入新页面或将多个 PDF 合并为一个文件。如果你的 PDF 文档有多余的页面需要删除，必须使用外部工具。PDF24 提供了免费的在线页面管理功能，支持删除、旋转、提取和重排 PDF 页面。</p><h3 id=无法添加或编辑表单字段>无法添加或编辑表单字段</h3><p>Chrome 只能填写已有的交互表单，无法在 PDF 中创建新的表单字段。如果你需要在 PDF 中添加填空题、复选框或下拉菜单，需要使用 Adobe Acrobat 或 PDF24 Pro 等专业工具。</p><h3 id=标注功能的限制>标注功能的限制</h3><p>虽然 Chrome 支持添加标注，但相比专业 PDF 标注工具有以下不足：</p><ul><li>不支持添加附件（如将其他文件附到 PDF 某一页上）</li><li>不支持添加矩形、圆形、线条等标准图形</li><li>不支持撤销单个标注的历史记录（只能用橡皮擦逐个删除）</li><li>不支持标注的导出导入（换电脑标注就没了）</li><li>手绘线条不够平滑，不适合精细的审校工作</li></ul><h3 id=文件大小限制>文件大小限制</h3><p>对于特别大的 PDF 文件（超过 100MB），Chrome 的 PDF 查看器可能会变得卡顿甚至无法打开。这是因为 PDFium 引擎需要将整个文件加载到内存中。遇到这种情况，可以尝试用 <a href=/tips/chrome-hardware-acceleration/>Chrome 内存优化技巧</a> 释放系统资源，或者改用桌面端 PDF 阅读器。</p><h2 id=chrome-扩展增强-pdf-功能>Chrome 扩展增强 PDF 功能</h2><p>[不同 PDF 工具的对比](/images/tips/chrome-pdf-edit/tools-comparison.jpg)</p><p>如果你需要更强大的 PDF 编辑能力但又不想离开浏览器，Chrome 扩展是很好的补充。以下是一些经过实际测试的优质扩展：</p><h3 id=pdf-extra---pdf-编辑器>PDF Extra - PDF 编辑器</h3><p>PDF Extra 是一个功能丰富的 Chrome 扩展，在浏览器标签页内直接提供接近桌面级 PDF 编辑能力。支持修改 PDF 文字、添加图片、插入页面、填写表单、添加电子签名等操作。免费版支持基本的阅读和标注功能，高级编辑功能需要订阅。</p><p>优点是界面和 Google Drive PDF 查看器类似，学习成本低。缺点是免费版有水印，且文件大小限制在 10MB 以内。</p><h3 id=kami---pdf-标注与协作>Kami - PDF 标注与协作</h3><p>Kami 是一款以协作标注为核心的 PDF 扩展。除了标准的高亮、下划线、文字标注外，它还支持实时协作——多人同时打开同一个 PDF 文件进行标注和批注，适合团队审阅合同或学术论文。</p><p>Kami 提供语音批注、视频批注、屏幕截图标注等特色功能。教育用户可以免费使用，商业用户需要订阅。与 Google Classroom 和 LMS 平台的深度集成也是它的一大优势。</p><h3 id=docusign---电子签名>DocuSign - 电子签名</h3><p>如果你需要经常签署 PDF 文档，DocuSign 是最成熟的电子签名扩展。它提供法律认可的电子签名，支持拖放签名、自动填充签名信息、发送签署请求等功能。</p><p>免费账户每月有 5 次签署额度，对于偶尔签合同的用户来说足够了。DocuSign 的签名在法律上等同于手写签名，被全球 100 多个国家和地区认可。</p><h3 id=smallpdf>Smallpdf</h3><p>Smallpdf 是一个集成了多种 PDF 工具的扩展，包括压缩、转换、合并、拆分、加水印、加密码等功能。它的优势是操作极简，基本上每个功能都是上传文件后一键完成。</p><p>缺点是免费用户每天只能处理 2 个文件，且文件大小限制在 5MB。适合轻度使用，重度用户不如直接安装 PDF24 桌面版。</p><p>关于 Chrome 扩展的安装和管理，可以参考 <a href=/plugins/chrome-essential-extensions/>Chrome 必备扩展推荐</a> 一文。</p><h2 id=免费-pdf-工具替代方案>免费 PDF 工具替代方案</h2><p>当 Chrome 的内置功能不够用时，以下免费工具是最实用的替代选择：</p><h3 id=pdf24-tools>PDF24 Tools</h3><p>PDF24 是目前最全面的免费 PDF 工具套件。它提供在线版和桌面版两种使用方式。在线版通过浏览器直接访问，无需注册。桌面版支持 Windows、macOS 和 Linux。</p><p>PDF24 的核心功能包括：</p><ul><li><strong>合并 PDF</strong>：拖拽多个 PDF 文件到页面上，一键合并为一个文件</li><li><strong>拆分 PDF</strong>：按页码范围或每页单独拆分</li><li><strong>压缩 PDF</strong>：将大文件压缩到更小体积，适合邮件发送</li><li><strong>PDF 转 Word/Excel/PPT</strong>：高质量格式转换，保留排版</li><li><strong>编辑 PDF</strong>：直接修改 PDF 中的文字、图片和链接</li><li><strong>添加签名</strong>：手写签名或上传签名图片</li><li><strong>添加水印</strong>：批量给 PDF 添加文字或图片水印</li><li><strong>PDF 加密</strong>：设置密码保护，限制打印和编辑权限</li></ul><p>PDF24 的桌面版功能比在线版更强大，且没有文件大小限制。对于需要频繁处理 PDF 的用户，强烈建议安装桌面版。</p><h3 id=libreoffice-draw>LibreOffice Draw</h3><p>很多人不知道 LibreOffice 的 Draw 组件可以直接打开和编辑 PDF 文件。它可以修改 PDF 中的文字、替换图片、调整排版、添加图形和标注。虽然是矢量编辑工具，对于简单的内容修改完全胜任，而且完全免费开源。</p><p>缺点是对复杂排版的 PDF 支持不够好，特别是包含大量图表和特殊字体的文件可能会出现排版偏移。</p><h3 id=microsoft-edge-的-pdf-功能>Microsoft Edge 的 PDF 功能</h3><p>如果你使用的是 Windows 系统，Edge 浏览器的 PDF 查看器其实比 Chrome 更强大。Edge 基于 PDFium 的一个扩展版本，额外支持：朗读 PDF 内容（大声朗读功能）、手写笔输入（支持 Surface 等触控设备直接在 PDF 上书写）、更灵活的标注选项、墨迹书写与擦除。</p><p>如果你经常用触控笔在 PDF 上做笔记，Edge 可能比 Chrome 更合适。</p><h2 id=常见问题排查>常见问题排查</h2><h3 id=pdf-在-chrome-中打开是空白>PDF 在 Chrome 中打开是空白</h3><p>这是最常见的 Chrome PDF 问题之一。原因和解决方法如下：</p><p><strong>硬件加速冲突</strong>：Chrome 的硬件加速功能与某些显卡驱动不兼容，导致 PDF 渲染失败。在 Chrome 设置中搜索硬件加速，关闭该选项后重启浏览器。关闭后 PDF 渲染会使用 CPU 而非 GPU，虽然稍慢但更稳定。关于硬件加速的详细排查可以参考 <a href=/tips/chrome-hardware-acceleration/>Chrome 硬件加速设置指南</a>。</p><p><strong>PDFium 插件被禁用</strong>：在地址栏输入 chrome://plugins/，确认 Chrome PDF Viewer 插件处于启用状态。如果被禁用，PDF 文件会被直接下载而不是在浏览器中打开。</p><p><strong>缓存问题</strong>：清除 Chrome 缓存和 Cookie 后重新打开 PDF。按 Ctrl+Shift+Delete 打开清除浏览数据窗口，选择缓存的图片和文件后清除。详细的清理方法可以查看 <a href=/tips/chrome-clear-cache/>Chrome 清除缓存教程</a>。</p><h3 id=pdf-显示乱码或中文缺失>PDF 显示乱码或中文缺失</h3><p>乱码问题通常与字体缺失有关：</p><ul><li><strong>嵌入字体</strong>：如果 PDF 创建时没有嵌入中文字体，而你的电脑上恰好没有安装对应字体，Chrome 会使用系统默认字体替代，导致乱码</li><li><strong>解决方案</strong>：安装 Adobe 字体包或常用中文字体（如思源黑体、微软雅黑），然后重新打开 PDF</li><li><strong>GB2312 编码问题</strong>：一些老旧的中文 PDF 使用 GB2312 编码，Chrome 的 PDFium 引擎对这种编码支持有限。可以尝试下载后用 Adobe Reader 打开</li></ul><h3 id=pdf-被下载而不是预览>PDF 被下载而不是预览</h3><p>正常情况下 Chrome 应该在标签页内预览 PDF，但有时候会直接触发下载。排查方法：</p><ol><li>检查 Chrome 设置：进入设置中的隐私与安全，找到网站设置中的 PDF 文档，确保设置为在 Chrome 中打开 PDF 文件</li><li>检查 Content-Disposition：某些网站在响应头中设置了 Content-Disposition: attachment，强制浏览器下载而非预览。这需要网站管理员修改服务器配置</li><li>文件关联问题：如果系统默认的 PDF 程序不是 Chrome，可能会自动下载。在 Windows 设置的应用关联中检查 .pdf 文件的默认打开方式</li></ol><h3 id=chrome-pdf-查看器崩溃>Chrome PDF 查看器崩溃</h3><p>如果 Chrome 在打开某些 PDF 时频繁崩溃，尝试以下方法：</p><ul><li>禁用所有扩展后测试，排除扩展冲突</li><li>更新 Chrome 到最新版本</li><li>清除 Chrome 的 IndexedDB 数据（这会丢失已保存的标注）</li><li>在地址栏输入 chrome://settings/pdfDocuments，重置 PDF 文档设置</li></ul><p>如果以上方法都不起作用，可能是特定 PDF 文件的编码问题导致 PDFium 解析失败。尝试用其他 PDF 阅读器打开该文件确认是否为文件本身的问题。</p><h2 id=chrome-pdf-功能的实用场景总结>Chrome PDF 功能的实用场景总结</h2><p>在日常使用中，Chrome 的 PDF 功能可以覆盖以下常见需求：</p><table><thead><tr><th>使用场景</th><th>Chrome 是否支持</th><th>推荐操作方式</th></tr></thead><tbody><tr><td>阅读 PDF 文档</td><td>支持</td><td>直接拖拽到 Chrome 标签页</td></tr><tr><td>高亮标记重要内容</td><td>支持</td><td>标注工具栏</td></tr><tr><td>在空白处添加批注</td><td>支持</td><td>文字标注工具</td></tr><tr><td>填写交互式表单</td><td>支持</td><td>直接点击填写</td></tr><tr><td>网页保存为 PDF</td><td>支持</td><td>Ctrl+P 另存为 PDF</td></tr><tr><td>修改 PDF 正文内容</td><td>不支持</td><td>使用 PDF24 或 LibreOffice</td></tr><tr><td>删除 PDF 页面</td><td>不支持</td><td>使用 PDF24 在线工具</td></tr><tr><td>合并多个 PDF</td><td>不支持</td><td>使用 PDF24 拖拽合并</td></tr><tr><td>添加电子签名</td><td>有限支持</td><td>使用扩展或外部工具</td></tr><tr><td>PDF 转 Word</td><td>不支持</td><td>使用 PDF24 或 Smallpdf</td></tr><tr><td>加密保护 PDF</td><td>不支持</td><td>使用 PDF24 密码保护</td></tr></tbody></table><p>对于 Chrome 浏览器的其他常见问题，推荐阅读 <a href=/tips/chrome-page-not-loading/>Chrome 常见问题汇总</a> 和 <a href=/tips/chrome-extensions-not-working/>Chrome 扩展无法工作的修复方法</a>。</p><p>Chrome 的 PDF 功能虽然在专业编辑方面还有不足，但对于日常的阅读、标注、填写和保存操作已经足够实用。<a href=/>Chrome 浏览器</a> 不需要安装任何额外软件，打开就能完成大部分 PDF 处理工作——这正是 Chrome 作为全能浏览器的优势所在。遇到 Chrome 无法处理的 PDF 任务时，PDF24 是最推荐的免费替代方案，在线版即开即用，桌面版功能更强大。</p><div class=compliance-notice><p>声明：本站为 Chrome 浏览器使用技巧分享平台，与 Google 公司无关。所有产品名称归原权利人所有。</p></div><div class=home-kw-links><p>相关推荐：<a href=/>Chrome插件推荐</a> · <a href=/>Chrome技巧教程</a> · <a href=/>浏览器插件下载</a></p></div></div><div style="max-width:1200px;margin:0 auto;padding:0 24px 48px"><div style="padding-top:32px;border-top:1px solid var(--border)"><div class=sec-head><div><div class=sec-tag>📖 相关阅读</div><div class=sec-title>继续阅读</div></div></div><div class=card-grid><a href=https://chromebest.com/tips/chrome-manifest-v3-ublock-origin-alternative/ class=card><div class=card-img><img src=/images/tips/chrome-manifest-v3-ublock-origin-alternative/cover.webp alt="Chrome Manifest V3 全面解读：uBlock Origin被禁怎么办？2026年广告拦截与隐私扩展替换完全指南" loading=lazy></div><div class=card-body><span class="art-row-tag feat-tag blue">功能教程</span><h3>Chrome Manifest V3 全面解读：uBlock Origin被禁怎么办？2026年广告拦截与隐私扩展替换完全指南</h3><p>不聊技术协议，只聊对你有用的——什么时候失效、什么还能用、怎么用。</p></div></a><a href=https://chromebest.com/tips/chrome-high-cpu-fix/ class=card><div class=card-img><img src=/images/tips/chrome-high-cpu-fix/cover.webp alt="Chrome 占用CPU过高终于解决了：从100%降到15%的完整排查实录（2026）" loading=lazy></div><div class=card-body><span class="art-row-tag feat-tag red">性能优化</span><h3>Chrome 占用CPU过高终于解决了：从100%降到15%的完整排查实录（2026）</h3><p>不是让你关几个标签页这么简单。这篇文章教你用Chrome自带的任务管理器精准定位是哪个标签页、哪个扩展、哪个进程在吃CPU，然后对症下药。</p></div></a><a href=https://chromebest.com/tips/chrome-flags-guide/ class=card><div class=card-img><img src=/images/tips/chrome-flags-guide/cover.jpg alt="Chrome 隐藏实验功能指南：chrome://flags 里 15 个真正值得开启的设置（2026实测）" loading=lazy></div><div class=card-body><span class="art-row-tag feat-tag purple">Chrome实验功能</span><h3>Chrome 隐藏实验功能指南：chrome://flags 里 15 个真正值得开启的设置（2026实测）</h3><p>chrome://flags 里有上千个实验开关，但大部分不值得折腾。本文从中挑出 15 个真正有用的，按风险等级分类，告诉你每个开关开启前后到底有什么区别。</p></div></a></div></div></div></article><aside class=sidebar><div class=sb-search><svg class="sb-search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
-<input type=text class=sb-search-input placeholder=搜索文章...>
-<kbd class=sb-search-kbd>/</kbd></div><div class=cta-banner style=padding:24px><h2 style=font-size:18px;margin-bottom:6px>下载 Chrome</h2><p style=font-size:13px>全球使用人数最多的浏览器</p><a href=https://www.google.com/chrome/ class=btn-dl style="padding:10px 20px;font-size:14px;width:100%;justify-content:center;margin-top:12px" rel=nofollow>⬇ 官方下载</a></div><div class=sb-box><h3>📖 相关文章</h3><div style=display:flex;flex-direction:column;gap:12px><a href=https://chromebest.com/tips/chrome-incognito-mode/ style=font-size:13px;line-height:1.5;color:var(--txt2)>Chrome 隐私模式的真相：它到底能隐藏什么，不能隐藏什么</a>
-<a href=https://chromebest.com/tips/chrome-autofill/ style=font-size:13px;line-height:1.5;color:var(--txt2)>Chrome 自动填充功能详解：工作原理、安全风险与最佳配置</a>
-<a href=https://chromebest.com/tips/chrome-mobile-tips/ style=font-size:13px;line-height:1.5;color:var(--txt2)>Chrome 手机版使用指南：安卓和 iOS 的 15 个实用技巧</a>
-<a href=https://chromebest.com/tips/chrome-save-password/ style=font-size:13px;line-height:1.5;color:var(--txt2)>Chrome 自动保存密码功能详解：开启、关闭、安全设置与最佳实践</a>
-<a href=https://chromebest.com/tips/chrome-video-download-guide/ style=font-size:13px;line-height:1.5;color:var(--txt2)>Chrome 下载视频的方法大全：从插件到在线工具，5 种方式实测</a></div></div><div class=sb-box><h3>🏷 相关标签</h3><div class=tags><a href=/tags/chrome-pdf%E7%BC%96%E8%BE%91 class=tag>Chrome PDF编辑</a>
-<a href=/tags/chrome-pdf%E6%A0%87%E6%B3%A8 class=tag>Chrome PDF标注</a>
-<a href=/tags/chrome%E5%A1%AB%E5%86%99pdf class=tag>Chrome填写PDF</a>
-<a href=/tags/chrome%E6%89%93%E5%8D%B0pdf class=tag>Chrome打印PDF</a>
-<a href=/tags/chrome-pdf%E5%8A%9F%E8%83%BD class=tag>Chrome PDF功能</a></div></div></aside></div><footer class=foot><div class=foot-inner><div class=foot-links><a href=/>首页</a>
-<a href=/categories/下载安装>下载安装</a>
-<a href=/categories/使用技巧>技巧教程</a>
-<a href=/categories/插件推荐>插件推荐</a>
-<a href=/categories/对比评测>对比评测</a>
-<a href=/about/>关于我们</a></div><div class=foot-copy>© 2026 ChromeBest · 谷歌浏览器下载与使用教程 · 本站与 Google 无关</div></div></footer><script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"https://chromebest.com/"},{"@type":"ListItem","position":2,"name":"Tips","item":"https:\/\/chromebest.com\/tips\/"},{"@type":"ListItem","position":3,"name":"Chrome 浏览器 PDF 编辑功能完整指南：标注、填写、合并全搞定"}]}</script><script type=application/ld+json>{"@context":"https://schema.org","@type":"Article","headline":"Chrome 浏览器 PDF 编辑功能完整指南：标注、填写、合并全搞定","description":"Chrome 浏览器内置的 PDF 编辑功能详解：标注、高亮、填写表单、添加签名、打印为PDF。不需要额外安装软件的完整教程。","datePublished":"2026-05-20","dateModified":"2026-05-20","author":{"@type":"Organization","name":"ChromeBest"},"publisher":{"@type":"Organization","name":"ChromeBest","logo":{"@type":"ImageObject","url":"https://chromebest.com/og-default.jpg"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/chromebest.com\/tips\/chrome-pdf-edit\/"}}</script><script type=application/ld+json>{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"","acceptedAnswer":{"@type":"Answer","text":""}},{"@type":"Question","name":"","acceptedAnswer":{"@type":"Answer","text":""}},{"@type":"Question","name":"","acceptedAnswer":{"@type":"Answer","text":""}},{"@type":"Question","name":"","acceptedAnswer":{"@type":"Answer","text":""}},{"@type":"Question","name":"","acceptedAnswer":{"@type":"Answer","text":""}}]}</script></body></html>
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="msvalidate.01" content="58B8BC3B56964E4B68D451072143B15E">
+<title>Chrome 浏览器 PDF 编辑功能完整指南：标注、填写、合并全搞定 - ChromeBest</title>
+
+<meta name="description" content="Chrome 浏览器内置的 PDF 编辑功能详解：标注、高亮、填写表单、添加签名、打印为PDF。不需要额外安装软件的完整教程。">
+
+<meta name="keywords" content="[谷歌浏览器 Chrome浏览器 Chrome下载 Chrome安装包 Chrome教程 Chrome插件 Chrome优化]">
+<link rel="canonical" href="https://chromebest.com/tips/chrome-pdf-edit/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Chrome 浏览器 PDF 编辑功能完整指南：标注、填写、合并全搞定">
+<meta property="og:description" content="打开一个 PDF 文件时，大多数人会习惯性地下载然后用 Adobe Acrobat 或其他 PDF 软件打开。但 Chrome 浏览器 本身就内置了一个功能相当完善的 PDF 查看器和编辑器，完全可以胜任日常的 PDF 阅读与编辑需求。本文会详细讲解 Chrome PDF 编辑功能 的实际能力，包括标注高亮、填写表单、 …">
+<meta property="og:url" content="https://chromebest.com/tips/chrome-pdf-edit/">
+<meta property="og:site_name" content="ChromeBest">
+<meta property="og:image" content="https://chromebest.com/images/tips/chrome-pdf-edit/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" href="/css/style.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "ChromeBest",
+    "url": "https:\/\/chromebest.com\/"
+  }
+  </script>
+
+</head>
+<body>
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">
+      <div class="nav-logo-icon"><span>C</span></div>
+      <b>ChromeBest</b>
+    </a>
+    <ul class="nav-links">
+      <li><a href="/">首页</a></li>
+      <li><a href="/categories/下载安装">下载安装</a></li>
+      <li><a href="/categories/使用技巧">技巧教程</a></li>
+      <li><a href="/categories/插件推荐">插件推荐</a></li>
+      <li><a href="/categories/对比评测">对比评测</a></li>
+      <li><a href="/categories/性能优化">性能优化</a></li>
+    </ul>
+    <a href="https://www.google.com/chrome/" class="nav-dl" rel="nofollow">⬇ 下载 Chrome</a>
+  </div>
+</nav>
+
+
+<div class="layout">
+  
+  <article class="art-page">
+    <nav class="breadcrumb">
+      <a href="/">首页</a>
+      <span class="breadcrumb-sep">›</span>
+      <a href="/tips">tips</a>
+      <span class="breadcrumb-sep">›</span>
+      <span class="breadcrumb-current">Chrome 浏览器 PDF 编辑功能完整指南：标注、填写、合并全搞定</span>
+    </nav>
+    <span class="art-tag feat-tag red">📄 PDF技巧</span>
+    <h1>Chrome 浏览器 PDF 编辑功能完整指南：标注、填写、合并全搞定</h1>
+    <div class="meta">
+      <span>📅 2026-05-20</span>
+      <span>⏱ 15 分钟阅读</span>
+      <span>📷 6 张真实截图</span>
+      
+    </div>
+
+    
+    <div class="cover">
+      <img src="/images/tips/chrome-pdf-edit/cover.jpg" alt="Chrome 浏览器 PDF 编辑功能完整指南：标注、填写、合并全搞定">
+    </div>
+    
+
+    
+    
+    <div class="toc">
+      <h3>📑 目录</h3>
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#chrome-pdf-查看器的基本功能">Chrome PDF 查看器的基本功能</a></li>
+    <li><a href="#chrome-pdf-标注功能详解">Chrome PDF 标注功能详解</a>
+      <ul>
+        <li><a href="#开启标注工具栏">开启标注工具栏</a></li>
+        <li><a href="#可用的标注工具">可用的标注工具</a></li>
+        <li><a href="#标注的保存与导出">标注的保存与导出</a></li>
+      </ul>
+    </li>
+    <li><a href="#pdf-表单填写">PDF 表单填写</a>
+      <ul>
+        <li><a href="#识别可交互表单">识别可交互表单</a></li>
+        <li><a href="#填写技巧">填写技巧</a></li>
+        <li><a href="#扫描件表单的处理">扫描件表单的处理</a></li>
+      </ul>
+    </li>
+    <li><a href="#网页打印为-pdf">网页打印为 PDF</a>
+      <ul>
+        <li><a href="#操作步骤">操作步骤</a></li>
+        <li><a href="#高级打印技巧">高级打印技巧</a></li>
+      </ul>
+    </li>
+    <li><a href="#chrome-pdf-功能的局限性">Chrome PDF 功能的局限性</a>
+      <ul>
+        <li><a href="#无法修改原始内容">无法修改原始内容</a></li>
+        <li><a href="#无法删除或重排页面">无法删除或重排页面</a></li>
+        <li><a href="#无法添加或编辑表单字段">无法添加或编辑表单字段</a></li>
+        <li><a href="#标注功能的限制">标注功能的限制</a></li>
+        <li><a href="#文件大小限制">文件大小限制</a></li>
+      </ul>
+    </li>
+    <li><a href="#chrome-扩展增强-pdf-功能">Chrome 扩展增强 PDF 功能</a>
+      <ul>
+        <li><a href="#pdf-extra---pdf-编辑器">PDF Extra - PDF 编辑器</a></li>
+        <li><a href="#kami---pdf-标注与协作">Kami - PDF 标注与协作</a></li>
+        <li><a href="#docusign---电子签名">DocuSign - 电子签名</a></li>
+        <li><a href="#smallpdf">Smallpdf</a></li>
+      </ul>
+    </li>
+    <li><a href="#免费-pdf-工具替代方案">免费 PDF 工具替代方案</a>
+      <ul>
+        <li><a href="#pdf24-tools">PDF24 Tools</a></li>
+        <li><a href="#libreoffice-draw">LibreOffice Draw</a></li>
+        <li><a href="#microsoft-edge-的-pdf-功能">Microsoft Edge 的 PDF 功能</a></li>
+      </ul>
+    </li>
+    <li><a href="#常见问题排查">常见问题排查</a>
+      <ul>
+        <li><a href="#pdf-在-chrome-中打开是空白">PDF 在 Chrome 中打开是空白</a></li>
+        <li><a href="#pdf-显示乱码或中文缺失">PDF 显示乱码或中文缺失</a></li>
+        <li><a href="#pdf-被下载而不是预览">PDF 被下载而不是预览</a></li>
+        <li><a href="#chrome-pdf-查看器崩溃">Chrome PDF 查看器崩溃</a></li>
+      </ul>
+    </li>
+    <li><a href="#chrome-pdf-功能的实用场景总结">Chrome PDF 功能的实用场景总结</a></li>
+  </ul>
+</nav>
+    </div>
+    
+
+    
+    <div class="art-body">
+      <p>打开一个 PDF 文件时，大多数人会习惯性地下载然后用 Adobe Acrobat 或其他 PDF 软件打开。但 <a href="/">Chrome 浏览器</a> 本身就内置了一个功能相当完善的 PDF 查看器和编辑器，完全可以胜任日常的 PDF 阅读与编辑需求。本文会详细讲解 <a href="/">Chrome PDF 编辑功能</a> 的实际能力，包括标注高亮、填写表单、打印保存、以及它的局限性和替代方案。</p>
+<h2 id="chrome-pdf-查看器的基本功能">Chrome PDF 查看器的基本功能</h2>
+<p>Chrome 从很早的版本开始就集成了 PDF 查看器，基于 PDFium 渲染引擎（Chromium 项目的开源 PDF 库）。当你点击一个 PDF 链接或打开本地 PDF 文件时，Chrome 不会调用外部程序，而是直接在标签页内渲染 PDF 内容。这一点在很多浏览器中并不常见——Firefox 直到 2024 年才完全内置了原生 PDF 渲染。</p>
+<p>Chrome 的 PDF 查看器提供了以下基础功能：</p>
+<ul>
+<li><strong>缩放</strong>：通过工具栏的加减号按钮、快捷键 Ctrl+和 Ctrl&ndash;、或鼠标滚轮调整页面大小</li>
+<li><strong>页面导航</strong>：上下翻页、跳转到指定页码、缩略图面板快速定位</li>
+<li><strong>全屏阅读</strong>：按 F11 进入全屏模式，获得沉浸式阅读体验</li>
+<li><strong>文本选择与复制</strong>：可以直接选中 PDF 中的文字进行复制</li>
+<li><strong>搜索</strong>：Ctrl+F 在 PDF 全文中搜索关键词，高亮显示匹配结果</li>
+<li><strong>旋转页面</strong>：对于方向错误的 PDF 页面可以旋转调整</li>
+<li><strong>下载与打印</strong>：直接下载原始文件或通过打印功能保存</li>
+</ul>
+<p>这些基础功能在 <a href="/">Chrome 浏览器</a> PDF 查看器的顶部工具栏中都可以直接访问。如果想要更全面地了解 Chrome 的操作技巧，可以参考 <a href="/tips/chrome-clear-cache/">Chrome 键盘快捷键大全</a> 来提升操作效率。</p>
+<h2 id="chrome-pdf-标注功能详解">Chrome PDF 标注功能详解</h2>
+<p>[Chrome PDF 标注工具界面](/images/tips/chrome-pdf-edit/annotate.jpg)</p>
+<p>Chrome PDF 查看器在近年的更新中加入了标注功能，这是很多用户完全没有注意到却非常实用的特性。标注工具栏默认隐藏，需要手动开启。</p>
+<h3 id="开启标注工具栏">开启标注工具栏</h3>
+<p>在 Chrome 中打开 PDF 文件后，有两种方式打开标注面板：</p>
+<ol>
+<li><strong>点击工具栏图标</strong>：在 PDF 查看器右上角找到画笔/铅笔形状的图标，点击即可展开标注工具面板</li>
+<li><strong>快捷键方式</strong>：按 Shift+Ctrl+A（Windows）或 Shift+Cmd+A（Mac）快速打开</li>
+</ol>
+<p>标注面板打开后会在右侧弹出一个垂直工具条，包含多种标注工具。</p>
+<h3 id="可用的标注工具">可用的标注工具</h3>
+<p>Chrome PDF 标注支持以下几种操作：</p>
+<p><strong>高亮标注</strong>：选中 PDF 中的文字后，可以添加黄色、绿色、蓝色、粉色等不同颜色的高亮。适合标记重要段落或需要二次审阅的内容。实际使用中发现，高亮颜色会自动保存，关闭标签页后重新打开依然保留。</p>
+<p><strong>自由文字添加</strong>：选择文字工具后，点击 PDF 页面的任意位置即可在该处输入自定义文字。可以调整字体大小和颜色，适合在空白处添加批注、注释或说明。对于 <a href="/tips/chrome-reading-mode/">Chrome 阅读模式</a> 用户来说，这个功能弥补了网页转 PDF 后无法编辑的遗憾。</p>
+<p><strong>下划线与删除线</strong>：对选中文字添加下划线或删除线标记，适合审校文档时标出需要修改或删除的内容。</p>
+<p><strong>手绘涂鸦</strong>：用鼠标或触摸板在 PDF 上自由绘制线条和图形。适合在图表上圈注关键数据，或用箭头指向某个特定区域。线条粗细和颜色都可以调整。</p>
+<p><strong>橡皮擦</strong>：撤销已添加的标注，支持逐个删除或一键清除全部标注。</p>
+<h3 id="标注的保存与导出">标注的保存与导出</h3>
+<p>添加的标注会自动保存在 Chrome 的本地存储中。但需要注意，这些标注并没有真正写入 PDF 文件本身，而是存储在浏览器的 IndexedDB 数据库中。这意味着：</p>
+<ul>
+<li>换一台电脑或清除浏览器数据后标注会丢失</li>
+<li>直接下载（Ctrl+S）的 PDF 文件不包含标注</li>
+<li>要把标注固化到 PDF 中，必须通过打印为 PDF（Ctrl+P，选择另存为 PDF）来实现</li>
+</ul>
+<p>这是一个很多人踩过的坑：辛苦标注了一整天的合同，直接下载后发现标注全没了。记住，打印为 PDF 才是保存标注的正确方式。</p>
+<h2 id="pdf-表单填写">PDF 表单填写</h2>
+<p>[在 Chrome 中填写 PDF 表单](/images/tips/chrome-pdf-edit/form-fill.jpg)</p>
+<p>Chrome PDF 查看器支持填写包含交互字段的 PDF 表单。这在日常办公中非常实用，例如填写税务表格、申请表、合同模板等。</p>
+<h3 id="识别可交互表单">识别可交互表单</h3>
+<p>当你在 Chrome 中打开一个 PDF 表单时，如果该 PDF 包含可交互的表单字段，你会看到光标悬停在空白处会变为输入指针，点击后出现闪烁的输入光标或可点击的复选框。常见的交互字段类型包括：</p>
+<ul>
+<li><strong>文本输入框</strong>：用于填写姓名、地址、金额等信息</li>
+<li><strong>复选框</strong>：勾选或取消勾选选项</li>
+<li><strong>单选按钮</strong>：在一组互斥选项中选择一个</li>
+<li><strong>下拉菜单</strong>：从预定义列表中选择一个选项</li>
+<li><strong>日期选择器</strong>：选择特定日期</li>
+<li><strong>数字输入框</strong>：只能输入数字的字段</li>
+</ul>
+<h3 id="填写技巧">填写技巧</h3>
+<p>填写 PDF 表单时，有几个实用技巧可以提升效率：</p>
+<p>Tab 键可以在表单字段之间快速切换，不用每次都用鼠标点击下一个输入框。对于大量文字输入的表格，键盘导航比鼠标操作快得多。</p>
+<p>如果表单字段有预设的格式要求（如电话号码、邮政编码），Chrome 会自动进行基本的格式验证。输入不符合格式的内容时，字段可能会有红色边框提示。</p>
+<p>填写完成后，强烈建议先预览一遍所有字段，确认没有遗漏。然后通过 Ctrl+P 打印为 PDF 保存填写结果。不要直接关闭标签页，否则填写内容可能会丢失。</p>
+<h3 id="扫描件表单的处理">扫描件表单的处理</h3>
+<p>需要注意，不是所有 PDF 表单都包含交互字段。很多扫描版 PDF（如扫描的纸质表格）本质上就是一张图片，无法直接点击填写。这种情况下有以下替代方案：</p>
+<ol>
+<li><strong>Chrome 标注工具手动填写</strong>：使用文字工具在扫描表格的空白处手动添加文字。效果不如原生表单自然，但可以应急使用</li>
+<li><strong>OCR 识别后填写</strong>：使用 Google Drive 上传扫描 PDF，Drive 会自动进行 OCR 识别并转换为可编辑的 Google Docs 文档</li>
+<li><strong>专业 PDF 工具</strong>：使用 PDF24 或 Adobe Acrobat 的 OCR 功能，将扫描件转换为可填写表单</li>
+</ol>
+<p>关于 Chrome 的更多实用功能设置，可以查看 <a href="/plugins/chrome-essential-extensions/">Chrome 外观自定义教程</a>。</p>
+<h2 id="网页打印为-pdf">网页打印为 PDF</h2>
+<p>[Chrome 打印对话框中选择另存为 PDF](/images/tips/chrome-pdf-edit/print-pdf.jpg)</p>
+<p>将网页保存为 PDF 是 Chrome 最常用的 PDF 相关功能之一。无论是保存文章归档、制作报告截图、还是将在线表格导出为文件，打印为 PDF 都是最便捷的方式。</p>
+<h3 id="操作步骤">操作步骤</h3>
+<p>在任意网页上按 Ctrl+P（Mac 上为 Cmd+P）打开 Chrome 的打印对话框。在目标打印机选项中选择另存为 PDF，然后点击保存即可。但在保存之前，有几个关键设置值得调整：</p>
+<p><strong>布局选项</strong>：纵向或横向。默认纵向，但宽表格或横向排版的内容需要切换为横向。</p>
+<p><strong>页边距</strong>：默认、无、最小或自定义。选择无可以让内容铺满整页，适合截图类内容；默认边距更适合正式文档打印。</p>
+<p><strong>缩放比例</strong>：默认 100%，可以调整让内容适配纸张大小。如果网页内容过宽导致被裁切，可以缩小到 80% 或 90%。</p>
+<p><strong>背景图形</strong>：默认关闭，勾选后会保留网页的背景颜色和图片。对于需要完整保留网页外观的场景（如制作截图报告），务必勾选此选项。</p>
+<p><strong>页眉和页脚</strong>：可以添加日期、URL、页码等信息到 PDF 的顶部和底部。如果只需要纯净内容，取消勾选即可。</p>
+<h3 id="高级打印技巧">高级打印技巧</h3>
+<p>Chrome 的打印为 PDF 功能还有一些不太为人知的技巧：</p>
+<p><strong>自定义纸张大小</strong>：点击更多设置展开完整选项，可以在纸张大小中选择 A3、A4、Letter、Legal 等多种尺寸，也可以输入自定义尺寸。</p>
+<p><strong>CSS 打印媒体查询</strong>：很多网站会针对打印输出优化样式。Chrome 打印时自动应用 @media print 样式，隐藏不必要的导航栏和广告，只保留正文内容。</p>
+<p><strong>仅打印选中内容</strong>：在网页上先用鼠标选中需要保存的部分文字和图片，然后在打印对话框中勾选仅限选定内容，这样 PDF 只包含选中区域的内容，而不是整个页面。</p>
+<p><strong>PDF 合并</strong>：虽然 Chrome 本身不支持直接合并 PDF，但有一个取巧的方法：在打印对话框的页面范围中选择多页，或者打开多个标签页后逐一打印为 PDF，然后用外部工具合并。更好的方案是使用 PDF24 的合并功能，直接拖拽多个 PDF 文件即可合并为一个。</p>
+<p>如果经常遇到 Chrome 页面加载异常导致打印失败的情况，可以参考 <a href="/tips/chrome-page-not-loading/">Chrome 页面无法加载的解决方法</a> 进行排查。</p>
+<h2 id="chrome-pdf-功能的局限性">Chrome PDF 功能的局限性</h2>
+<p>Chrome 的 PDF 功能虽然日常够用，但和专业的 PDF 编辑软件相比有明显的功能缺失。了解这些局限可以帮助你在需要时选择更合适的工具。</p>
+<h3 id="无法修改原始内容">无法修改原始内容</h3>
+<p>这是最大的限制。Chrome PDF 查看器无法修改 PDF 文件中的现有文字、图片、表格等内容。你不能删除一段话、替换一张图片或修改表格数据。Chrome 只能在 PDF 上层叠添加标注，无法触及底层的 PDF 内容。</p>
+<p>对于需要修改 PDF 原文内容的需求，推荐使用 PDF24（免费在线工具）或 LibreOffice Draw（开源桌面软件），两者都支持直接编辑 PDF 的文字和图片。</p>
+<h3 id="无法删除或重排页面">无法删除或重排页面</h3>
+<p>Chrome 不能删除 PDF 中的某一页，也不能调整页面顺序、插入新页面或将多个 PDF 合并为一个文件。如果你的 PDF 文档有多余的页面需要删除，必须使用外部工具。PDF24 提供了免费的在线页面管理功能，支持删除、旋转、提取和重排 PDF 页面。</p>
+<h3 id="无法添加或编辑表单字段">无法添加或编辑表单字段</h3>
+<p>Chrome 只能填写已有的交互表单，无法在 PDF 中创建新的表单字段。如果你需要在 PDF 中添加填空题、复选框或下拉菜单，需要使用 Adobe Acrobat 或 PDF24 Pro 等专业工具。</p>
+<h3 id="标注功能的限制">标注功能的限制</h3>
+<p>虽然 Chrome 支持添加标注，但相比专业 PDF 标注工具有以下不足：</p>
+<ul>
+<li>不支持添加附件（如将其他文件附到 PDF 某一页上）</li>
+<li>不支持添加矩形、圆形、线条等标准图形</li>
+<li>不支持撤销单个标注的历史记录（只能用橡皮擦逐个删除）</li>
+<li>不支持标注的导出导入（换电脑标注就没了）</li>
+<li>手绘线条不够平滑，不适合精细的审校工作</li>
+</ul>
+<h3 id="文件大小限制">文件大小限制</h3>
+<p>对于特别大的 PDF 文件（超过 100MB），Chrome 的 PDF 查看器可能会变得卡顿甚至无法打开。这是因为 PDFium 引擎需要将整个文件加载到内存中。遇到这种情况，可以尝试用 <a href="/tips/chrome-hardware-acceleration/">Chrome 内存优化技巧</a> 释放系统资源，或者改用桌面端 PDF 阅读器。</p>
+<h2 id="chrome-扩展增强-pdf-功能">Chrome 扩展增强 PDF 功能</h2>
+<p>[不同 PDF 工具的对比](/images/tips/chrome-pdf-edit/tools-comparison.jpg)</p>
+<p>如果你需要更强大的 PDF 编辑能力但又不想离开浏览器，Chrome 扩展是很好的补充。以下是一些经过实际测试的优质扩展：</p>
+<h3 id="pdf-extra---pdf-编辑器">PDF Extra - PDF 编辑器</h3>
+<p>PDF Extra 是一个功能丰富的 Chrome 扩展，在浏览器标签页内直接提供接近桌面级 PDF 编辑能力。支持修改 PDF 文字、添加图片、插入页面、填写表单、添加电子签名等操作。免费版支持基本的阅读和标注功能，高级编辑功能需要订阅。</p>
+<p>优点是界面和 Google Drive PDF 查看器类似，学习成本低。缺点是免费版有水印，且文件大小限制在 10MB 以内。</p>
+<h3 id="kami---pdf-标注与协作">Kami - PDF 标注与协作</h3>
+<p>Kami 是一款以协作标注为核心的 PDF 扩展。除了标准的高亮、下划线、文字标注外，它还支持实时协作——多人同时打开同一个 PDF 文件进行标注和批注，适合团队审阅合同或学术论文。</p>
+<p>Kami 提供语音批注、视频批注、屏幕截图标注等特色功能。教育用户可以免费使用，商业用户需要订阅。与 Google Classroom 和 LMS 平台的深度集成也是它的一大优势。</p>
+<h3 id="docusign---电子签名">DocuSign - 电子签名</h3>
+<p>如果你需要经常签署 PDF 文档，DocuSign 是最成熟的电子签名扩展。它提供法律认可的电子签名，支持拖放签名、自动填充签名信息、发送签署请求等功能。</p>
+<p>免费账户每月有 5 次签署额度，对于偶尔签合同的用户来说足够了。DocuSign 的签名在法律上等同于手写签名，被全球 100 多个国家和地区认可。</p>
+<h3 id="smallpdf">Smallpdf</h3>
+<p>Smallpdf 是一个集成了多种 PDF 工具的扩展，包括压缩、转换、合并、拆分、加水印、加密码等功能。它的优势是操作极简，基本上每个功能都是上传文件后一键完成。</p>
+<p>缺点是免费用户每天只能处理 2 个文件，且文件大小限制在 5MB。适合轻度使用，重度用户不如直接安装 PDF24 桌面版。</p>
+<p>关于 Chrome 扩展的安装和管理，可以参考 <a href="/plugins/chrome-essential-extensions/">Chrome 必备扩展推荐</a> 一文。</p>
+<h2 id="免费-pdf-工具替代方案">免费 PDF 工具替代方案</h2>
+<p>当 Chrome 的内置功能不够用时，以下免费工具是最实用的替代选择：</p>
+<h3 id="pdf24-tools">PDF24 Tools</h3>
+<p>PDF24 是目前最全面的免费 PDF 工具套件。它提供在线版和桌面版两种使用方式。在线版通过浏览器直接访问，无需注册。桌面版支持 Windows、macOS 和 Linux。</p>
+<p>PDF24 的核心功能包括：</p>
+<ul>
+<li><strong>合并 PDF</strong>：拖拽多个 PDF 文件到页面上，一键合并为一个文件</li>
+<li><strong>拆分 PDF</strong>：按页码范围或每页单独拆分</li>
+<li><strong>压缩 PDF</strong>：将大文件压缩到更小体积，适合邮件发送</li>
+<li><strong>PDF 转 Word/Excel/PPT</strong>：高质量格式转换，保留排版</li>
+<li><strong>编辑 PDF</strong>：直接修改 PDF 中的文字、图片和链接</li>
+<li><strong>添加签名</strong>：手写签名或上传签名图片</li>
+<li><strong>添加水印</strong>：批量给 PDF 添加文字或图片水印</li>
+<li><strong>PDF 加密</strong>：设置密码保护，限制打印和编辑权限</li>
+</ul>
+<p>PDF24 的桌面版功能比在线版更强大，且没有文件大小限制。对于需要频繁处理 PDF 的用户，强烈建议安装桌面版。</p>
+<h3 id="libreoffice-draw">LibreOffice Draw</h3>
+<p>很多人不知道 LibreOffice 的 Draw 组件可以直接打开和编辑 PDF 文件。它可以修改 PDF 中的文字、替换图片、调整排版、添加图形和标注。虽然是矢量编辑工具，对于简单的内容修改完全胜任，而且完全免费开源。</p>
+<p>缺点是对复杂排版的 PDF 支持不够好，特别是包含大量图表和特殊字体的文件可能会出现排版偏移。</p>
+<h3 id="microsoft-edge-的-pdf-功能">Microsoft Edge 的 PDF 功能</h3>
+<p>如果你使用的是 Windows 系统，Edge 浏览器的 PDF 查看器其实比 Chrome 更强大。Edge 基于 PDFium 的一个扩展版本，额外支持：朗读 PDF 内容（大声朗读功能）、手写笔输入（支持 Surface 等触控设备直接在 PDF 上书写）、更灵活的标注选项、墨迹书写与擦除。</p>
+<p>如果你经常用触控笔在 PDF 上做笔记，Edge 可能比 Chrome 更合适。</p>
+<h2 id="常见问题排查">常见问题排查</h2>
+<h3 id="pdf-在-chrome-中打开是空白">PDF 在 Chrome 中打开是空白</h3>
+<p>这是最常见的 Chrome PDF 问题之一。原因和解决方法如下：</p>
+<p><strong>硬件加速冲突</strong>：Chrome 的硬件加速功能与某些显卡驱动不兼容，导致 PDF 渲染失败。在 Chrome 设置中搜索硬件加速，关闭该选项后重启浏览器。关闭后 PDF 渲染会使用 CPU 而非 GPU，虽然稍慢但更稳定。关于硬件加速的详细排查可以参考 <a href="/tips/chrome-hardware-acceleration/">Chrome 硬件加速设置指南</a>。</p>
+<p><strong>PDFium 插件被禁用</strong>：在地址栏输入 chrome://plugins/，确认 Chrome PDF Viewer 插件处于启用状态。如果被禁用，PDF 文件会被直接下载而不是在浏览器中打开。</p>
+<p><strong>缓存问题</strong>：清除 Chrome 缓存和 Cookie 后重新打开 PDF。按 Ctrl+Shift+Delete 打开清除浏览数据窗口，选择缓存的图片和文件后清除。详细的清理方法可以查看 <a href="/tips/chrome-clear-cache/">Chrome 清除缓存教程</a>。</p>
+<h3 id="pdf-显示乱码或中文缺失">PDF 显示乱码或中文缺失</h3>
+<p>乱码问题通常与字体缺失有关：</p>
+<ul>
+<li><strong>嵌入字体</strong>：如果 PDF 创建时没有嵌入中文字体，而你的电脑上恰好没有安装对应字体，Chrome 会使用系统默认字体替代，导致乱码</li>
+<li><strong>解决方案</strong>：安装 Adobe 字体包或常用中文字体（如思源黑体、微软雅黑），然后重新打开 PDF</li>
+<li><strong>GB2312 编码问题</strong>：一些老旧的中文 PDF 使用 GB2312 编码，Chrome 的 PDFium 引擎对这种编码支持有限。可以尝试下载后用 Adobe Reader 打开</li>
+</ul>
+<h3 id="pdf-被下载而不是预览">PDF 被下载而不是预览</h3>
+<p>正常情况下 Chrome 应该在标签页内预览 PDF，但有时候会直接触发下载。排查方法：</p>
+<ol>
+<li>检查 Chrome 设置：进入设置中的隐私与安全，找到网站设置中的 PDF 文档，确保设置为在 Chrome 中打开 PDF 文件</li>
+<li>检查 Content-Disposition：某些网站在响应头中设置了 Content-Disposition: attachment，强制浏览器下载而非预览。这需要网站管理员修改服务器配置</li>
+<li>文件关联问题：如果系统默认的 PDF 程序不是 Chrome，可能会自动下载。在 Windows 设置的应用关联中检查 .pdf 文件的默认打开方式</li>
+</ol>
+<h3 id="chrome-pdf-查看器崩溃">Chrome PDF 查看器崩溃</h3>
+<p>如果 Chrome 在打开某些 PDF 时频繁崩溃，尝试以下方法：</p>
+<ul>
+<li>禁用所有扩展后测试，排除扩展冲突</li>
+<li>更新 Chrome 到最新版本</li>
+<li>清除 Chrome 的 IndexedDB 数据（这会丢失已保存的标注）</li>
+<li>在地址栏输入 chrome://settings/pdfDocuments，重置 PDF 文档设置</li>
+</ul>
+<p>如果以上方法都不起作用，可能是特定 PDF 文件的编码问题导致 PDFium 解析失败。尝试用其他 PDF 阅读器打开该文件确认是否为文件本身的问题。</p>
+<h2 id="chrome-pdf-功能的实用场景总结">Chrome PDF 功能的实用场景总结</h2>
+<p>在日常使用中，Chrome 的 PDF 功能可以覆盖以下常见需求：</p>
+<table>
+  <thead>
+      <tr>
+          <th>使用场景</th>
+          <th>Chrome 是否支持</th>
+          <th>推荐操作方式</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>阅读 PDF 文档</td>
+          <td>支持</td>
+          <td>直接拖拽到 Chrome 标签页</td>
+      </tr>
+      <tr>
+          <td>高亮标记重要内容</td>
+          <td>支持</td>
+          <td>标注工具栏</td>
+      </tr>
+      <tr>
+          <td>在空白处添加批注</td>
+          <td>支持</td>
+          <td>文字标注工具</td>
+      </tr>
+      <tr>
+          <td>填写交互式表单</td>
+          <td>支持</td>
+          <td>直接点击填写</td>
+      </tr>
+      <tr>
+          <td>网页保存为 PDF</td>
+          <td>支持</td>
+          <td>Ctrl+P 另存为 PDF</td>
+      </tr>
+      <tr>
+          <td>修改 PDF 正文内容</td>
+          <td>不支持</td>
+          <td>使用 PDF24 或 LibreOffice</td>
+      </tr>
+      <tr>
+          <td>删除 PDF 页面</td>
+          <td>不支持</td>
+          <td>使用 PDF24 在线工具</td>
+      </tr>
+      <tr>
+          <td>合并多个 PDF</td>
+          <td>不支持</td>
+          <td>使用 PDF24 拖拽合并</td>
+      </tr>
+      <tr>
+          <td>添加电子签名</td>
+          <td>有限支持</td>
+          <td>使用扩展或外部工具</td>
+      </tr>
+      <tr>
+          <td>PDF 转 Word</td>
+          <td>不支持</td>
+          <td>使用 PDF24 或 Smallpdf</td>
+      </tr>
+      <tr>
+          <td>加密保护 PDF</td>
+          <td>不支持</td>
+          <td>使用 PDF24 密码保护</td>
+      </tr>
+  </tbody>
+</table>
+<p>对于 Chrome 浏览器的其他常见问题，推荐阅读 <a href="/tips/chrome-page-not-loading/">Chrome 常见问题汇总</a> 和 <a href="/tips/chrome-extensions-not-working/">Chrome 扩展无法工作的修复方法</a>。</p>
+<p>Chrome 的 PDF 功能虽然在专业编辑方面还有不足，但对于日常的阅读、标注、填写和保存操作已经足够实用。<a href="/">Chrome 浏览器</a> 不需要安装任何额外软件，打开就能完成大部分 PDF 处理工作——这正是 Chrome 作为全能浏览器的优势所在。遇到 Chrome 无法处理的 PDF 任务时，PDF24 是最推荐的免费替代方案，在线版即开即用，桌面版功能更强大。</p>
+
+<div class="compliance-notice">
+<p>声明：本站为 Chrome 浏览器使用技巧分享平台，与 Google 公司无关。所有产品名称归原权利人所有。</p>
+</div>
+<div class="home-kw-links">
+<p>相关推荐：<a href="/">Chrome插件推荐</a> · <a href="/">Chrome技巧教程</a> · <a href="/">浏览器插件下载</a></p>
+</div>
+    </div>
+
+    
+    
+    
+    <div style="max-width:1200px;margin:0 auto;padding:0 24px 48px">
+      <div style="padding-top:32px;border-top:1px solid var(--border)">
+        <div class="sec-head">
+          <div>
+            <div class="sec-tag">📖 相关阅读</div>
+            <div class="sec-title">继续阅读</div>
+          </div>
+        </div>
+        <div class="card-grid">
+          
+          <a href="https://chromebest.com/tips/chrome-built-in-ai-gemini-nano-guide/" class="card">
+            
+            <div class="card-img">
+              <img src="/images/tips/chrome-built-in-ai-gemini-nano-guide/cover.jpg" alt="Chrome 内置 AI 功能完全指南：2026年 Gemini Nano 离线写作、翻译、总结怎么用" loading="lazy">
+            </div>
+            
+            <div class="card-body">
+              <span class="art-row-tag feat-tag blue">教程</span>
+              <h3>Chrome 内置 AI 功能完全指南：2026年 Gemini Nano 离线写作、翻译、总结怎么用</h3>
+              <p><p>你可能在用 ChatGPT、Claude、文心一言——但你知道 Chrome 浏览器自己就内置了 AI 吗？</p>
+<p>2026年，Google 把 Gemini …</p></p>
+            </div>
+          </a>
+          
+          <a href="https://chromebest.com/tips/chrome-manifest-v3-ublock-origin-alternative/" class="card">
+            
+            <div class="card-img">
+              <img src="/images/tips/chrome-manifest-v3-ublock-origin-alternative/cover.webp" alt="Chrome Manifest V3 全面解读：uBlock Origin被禁怎么办？2026年广告拦截与隐私扩展替换完全指南" loading="lazy">
+            </div>
+            
+            <div class="card-body">
+              <span class="art-row-tag feat-tag blue">功能教程</span>
+              <h3>Chrome Manifest V3 全面解读：uBlock Origin被禁怎么办？2026年广告拦截与隐私扩展替换完全指南</h3>
+              <p>不聊技术协议，只聊对你有用的——什么时候失效、什么还能用、怎么用。</p>
+            </div>
+          </a>
+          
+          <a href="https://chromebest.com/tips/chrome-high-cpu-fix/" class="card">
+            
+            <div class="card-img">
+              <img src="/images/tips/chrome-high-cpu-fix/cover.webp" alt="Chrome 占用CPU过高终于解决了：从100%降到15%的完整排查实录（2026）" loading="lazy">
+            </div>
+            
+            <div class="card-body">
+              <span class="art-row-tag feat-tag red">性能优化</span>
+              <h3>Chrome 占用CPU过高终于解决了：从100%降到15%的完整排查实录（2026）</h3>
+              <p>不是让你关几个标签页这么简单。这篇文章教你用Chrome自带的任务管理器精准定位是哪个标签页、哪个扩展、哪个进程在吃CPU，然后对症下药。</p>
+            </div>
+          </a>
+          
+        </div>
+      </div>
+    </div>
+    
+  </article>
+
+  
+  <aside class="sidebar">
+    
+    <div class="sb-search">
+      <svg class="sb-search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+      <input type="text" class="sb-search-input" placeholder="搜索文章...">
+      <kbd class="sb-search-kbd">/</kbd>
+    </div>
+
+    
+    <div class="cta-banner" style="padding:24px">
+      <h2 style="font-size:18px;margin-bottom:6px">下载 Chrome</h2>
+      <p style="font-size:13px">全球使用人数最多的浏览器</p>
+      <a href="https://www.google.com/chrome/" class="btn-dl" style="padding:10px 20px;font-size:14px;width:100%;justify-content:center;margin-top:12px" rel="nofollow">⬇ 官方下载</a>
+    </div>
+
+    
+    
+    
+    <div class="sb-box">
+      <h3>📖 相关文章</h3>
+      <div style="display:flex;flex-direction:column;gap:12px">
+        
+        <a href="https://chromebest.com/tips/chrome-offline-installer/" style="font-size:13px;line-height:1.5;color:var(--txt2)">Chrome 离线安装包下载与完整安装指南（2026 最新版）</a>
+        
+        <a href="https://chromebest.com/tips/chrome-tab-groups/" style="font-size:13px;line-height:1.5;color:var(--txt2)">Chrome标签页分组管理技巧：2026年告别标签页混乱</a>
+        
+        <a href="https://chromebest.com/tips/chrome-incognito-mode/" style="font-size:13px;line-height:1.5;color:var(--txt2)">Chrome 隐私模式的真相：它到底能隐藏什么，不能隐藏什么</a>
+        
+        <a href="https://chromebest.com/tips/chrome-proxy-settings/" style="font-size:13px;line-height:1.5;color:var(--txt2)">Chrome 代理设置完整指南：系统代理、扩展代理、PAC 自动配置详解</a>
+        
+        <a href="https://chromebest.com/tips/chrome-set-default-browser-guide/" style="font-size:13px;line-height:1.5;color:var(--txt2)">Chrome 设为默认浏览器完整指南 &#43; 被篡改后的修复方法</a>
+        
+      </div>
+    </div>
+    
+
+    
+    
+    <div class="sb-box">
+      <h3>🏷 相关标签</h3>
+      <div class="tags">
+        
+        <a href="/tags/chrome-pdf%E7%BC%96%E8%BE%91" class="tag">Chrome PDF编辑</a>
+        
+        <a href="/tags/chrome-pdf%E6%A0%87%E6%B3%A8" class="tag">Chrome PDF标注</a>
+        
+        <a href="/tags/chrome%E5%A1%AB%E5%86%99pdf" class="tag">Chrome填写PDF</a>
+        
+        <a href="/tags/chrome%E6%89%93%E5%8D%B0pdf" class="tag">Chrome打印PDF</a>
+        
+        <a href="/tags/chrome-pdf%E5%8A%9F%E8%83%BD" class="tag">Chrome PDF功能</a>
+        
+      </div>
+    </div>
+    
+  </aside>
+</div>
+
+<footer class="foot">
+  <div class="foot-inner">
+    <div class="foot-links">
+      <a href="/">首页</a>
+      <a href="/categories/下载安装">下载安装</a>
+      <a href="/categories/使用技巧">技巧教程</a>
+      <a href="/categories/插件推荐">插件推荐</a>
+      <a href="/categories/对比评测">对比评测</a>
+      <a href="/about/">关于我们</a>
+    </div>
+    <div class="foot-copy">© 2026 ChromeBest · 谷歌浏览器下载与使用教程 · 本站与 Google 无关</div>
+  </div>
+</footer>
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "首页",
+      "item": "https://chromebest.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Tips",
+      "item": "https:\/\/chromebest.com\/tips\/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Chrome 浏览器 PDF 编辑功能完整指南：标注、填写、合并全搞定"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Chrome 浏览器 PDF 编辑功能完整指南：标注、填写、合并全搞定",
+  "description": "Chrome 浏览器内置的 PDF 编辑功能详解：标注、高亮、填写表单、添加签名、打印为PDF。不需要额外安装软件的完整教程。",
+  "datePublished": "2026-05-20",
+  "dateModified": "2026-05-20",
+  "author": {
+    "@type": "Organization",
+    "name": "ChromeBest"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "ChromeBest",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://chromebest.com/og-default.jpg"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https:\/\/chromebest.com\/tips\/chrome-pdf-edit\/"
+  }
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "",
+      "acceptedAnswer": { "@type": "Answer", "text": "" }
+    },{
+      "@type": "Question",
+      "name": "",
+      "acceptedAnswer": { "@type": "Answer", "text": "" }
+    },{
+      "@type": "Question",
+      "name": "",
+      "acceptedAnswer": { "@type": "Answer", "text": "" }
+    },{
+      "@type": "Question",
+      "name": "",
+      "acceptedAnswer": { "@type": "Answer", "text": "" }
+    },{
+      "@type": "Question",
+      "name": "",
+      "acceptedAnswer": { "@type": "Answer", "text": "" }
+    }
+  ]
+}
+</script>
+
+
+
+
+
+
+<script>
+(function(){
+  var k="1746ece89b02d6f075b43c223f9789b5";
+  var u=encodeURIComponent("https:\/\/chromebest.com\/tips\/chrome-pdf-edit\/");
+  var x=new XMLHttpRequest();
+  x.open("GET","https://api.indexnow.org/indexnow?url="+u+"&key="+k,true);
+  x.send();
+})();
+</script>
+
+</body>
+</html>

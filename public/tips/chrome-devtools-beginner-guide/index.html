@@ -1,31 +1,532 @@
-<!doctype html><html lang=zh-CN><head><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=msvalidate.01 content="58B8BC3B56964E4B68D451072143B15E"><title>Chrome 开发者工具入门：5 个面板详解 + 实用技巧（非程序员也能用） - ChromeBest</title><meta name=description content="Chrome 开发者工具入门教程，详解 Elements、Console、Network、Application、Lighthouse 五个核心面板。非程序员也能学会的实用调试和分析技巧。"><meta name=keywords content="[Chrome开发者工具,Chrome DevTools,Chrome调试,Chrome Elements,Chrome Network,Chrome SEO]"><link rel=canonical href=https://chromebest.com/tips/chrome-devtools-beginner-guide/><meta property="og:type" content="article"><meta property="og:title" content="Chrome 开发者工具入门：5 个面板详解 + 实用技巧（非程序员也能用）"><meta property="og:description" content="很多人觉得 Chrome 开发者工具（DevTools）只是程序员用的。实际上，SEO 人员、设计师、甚至普通用户都能用它解决实际问题——比如查看网页标题、分析页面加载速度、找出网页上某个元素的颜色值。
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="msvalidate.01" content="58B8BC3B56964E4B68D451072143B15E">
+<title>Chrome 开发者工具入门：5 个面板详解 &#43; 实用技巧（非程序员也能用） - ChromeBest</title>
+
+<meta name="description" content="Chrome 开发者工具入门教程，详解 Elements、Console、Network、Application、Lighthouse 五个核心面板。非程序员也能学会的实用调试和分析技巧。">
+
+<meta name="keywords" content="[Chrome开发者工具,Chrome DevTools,Chrome调试,Chrome Elements,Chrome Network,Chrome SEO]">
+<link rel="canonical" href="https://chromebest.com/tips/chrome-devtools-beginner-guide/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Chrome 开发者工具入门：5 个面板详解 &#43; 实用技巧（非程序员也能用）">
+<meta property="og:description" content="很多人觉得 Chrome 开发者工具（DevTools）只是程序员用的。实际上，SEO 人员、设计师、甚至普通用户都能用它解决实际问题——比如查看网页标题、分析页面加载速度、找出网页上某个元素的颜色值。
 这篇文章面向非程序员用户，用最通俗易懂的语言讲解 Chrome 开发者工具的 5 个核心面板。
-打开开发者工具 三种 …"><meta property="og:url" content="https://chromebest.com/tips/chrome-devtools-beginner-guide/"><meta property="og:site_name" content="ChromeBest"><meta property="og:image" content="https://chromebest.com/images/tips/chrome-devtools-beginner-guide/og.jpg"><meta name=twitter:card content="summary_large_image"><link rel=icon href=/favicon.ico sizes=32x32><link rel=apple-touch-icon href=/apple-touch-icon.png><link rel=stylesheet href=/css/style.css></head><body><nav class=nav><div class=nav-inner><a href=/ class=nav-logo><div class=nav-logo-icon><span>C</span></div><b>ChromeBest</b></a><ul class=nav-links><li><a href=/>首页</a></li><li><a href=/categories/下载安装>下载安装</a></li><li><a href=/categories/使用技巧>技巧教程</a></li><li><a href=/categories/插件推荐>插件推荐</a></li><li><a href=/categories/对比评测>对比评测</a></li><li><a href=/categories/性能优化>性能优化</a></li></ul><a href=https://www.google.com/chrome/ class=nav-dl rel=nofollow>⬇ 下载 Chrome</a></div></nav><div class=layout><article class=art-page><nav class=breadcrumb><a href=/>首页</a>
-<span class=breadcrumb-sep>›</span>
-<a href=/tips>tips</a>
-<span class=breadcrumb-sep>›</span>
-<span class=breadcrumb-current>Chrome 开发者工具入门：5 个面板详解 + 实用技巧（非程序员也能用）</span></nav><span class="art-tag feat-tag indigo">🛠️ 开发者工具</span><h1>Chrome 开发者工具入门：5 个面板详解 + 实用技巧（非程序员也能用）</h1><div class=meta><span>📅 2026-05-05</span>
-<span>⏱ 10 分钟阅读</span>
-<span>📷 10 张真实截图</span></div><div class=cover><img src=/images/tips/chrome-devtools-beginner-guide/cover.jpg alt="Chrome 开发者工具入门：5 个面板详解 + 实用技巧（非程序员也能用）"></div><div class=toc><h3>📑 目录</h3><nav id=TableOfContents><ul><li><a href=#打开开发者工具>打开开发者工具</a></li><li><a href=#面板一elements元素面板查看和修改页面结构>面板一：Elements（元素面板）——查看和修改页面结构</a><ul><li><a href=#非程序员的实用场景>非程序员的实用场景</a></li></ul></li><li><a href=#面板二console控制台执行-javascript-代码>面板二：Console（控制台）——执行 JavaScript 代码</a><ul><li><a href=#非程序员的实用场景-1>非程序员的实用场景</a></li></ul></li><li><a href=#面板三network网络面板分析页面加载性能>面板三：Network（网络面板）——分析页面加载性能</a><ul><li><a href=#非程序员的实用场景-2>非程序员的实用场景</a></li></ul></li><li><a href=#面板四application应用面板查看存储数据>面板四：Application（应用面板）——查看存储数据</a><ul><li><a href=#非程序员的实用场景-3>非程序员的实用场景</a></li></ul></li><li><a href=#面板五lighthouse灯塔面板页面性能和-seo-评分>面板五：Lighthouse（灯塔面板）——页面性能和 SEO 评分</a><ul><li><a href=#使用方法>使用方法</a></li><li><a href=#评分说明>评分说明</a></li></ul></li><li><a href=#快捷键速查>快捷键速查</a></li><li><a href=#常见问题>常见问题</a><ul><li><a href=#开发者工具会影响页面性能吗>开发者工具会影响页面性能吗？</a></li><li><a href=#手机-chrome-能用开发者工具吗>手机 Chrome 能用开发者工具吗？</a></li><li><a href=#devtools-修改的样式会保存吗>DevTools 修改的样式会保存吗？</a></li><li><a href=#怎么用-devtools-查看网页是用的什么框架>怎么用 DevTools 查看网页是用的什么框架？</a></li><li><a href=#lighthouse-评分多久更新一次>Lighthouse 评分多久更新一次？</a></li></ul></li></ul></nav></div><div class=art-body><p>很多人觉得 Chrome 开发者工具（DevTools）只是程序员用的。实际上，SEO 人员、设计师、甚至普通用户都能用它解决实际问题——比如查看网页标题、分析页面加载速度、找出网页上某个元素的颜色值。</p><p>这篇文章面向<strong>非程序员用户</strong>，用最通俗易懂的语言讲解 Chrome 开发者工具的 5 个核心面板。</p><h2 id=打开开发者工具>打开开发者工具</h2><p>三种方式：</p><ul><li><strong>F12</strong>：最快的方式</li><li><strong>Ctrl + Shift + I</strong>：和 F12 效果一样</li><li><strong>右键 → 检查</strong>：直接定位到你右键点击的元素</li></ul><p>打开后你会看到开发者工具窗口出现在页面底部（或右侧）。默认显示的是 Elements 面板。如果觉得窗口太小，可以点击 DevTools 右上角的三个点图标，选择停靠位置（底部、右侧或独立窗口）。</p><h2 id=面板一elements元素面板查看和修改页面结构>面板一：Elements（元素面板）——查看和修改页面结构</h2><p>[#面板一：Elements（元素面板）—](/images/tips/chrome-devtools-beginner-guide/body3.jpg)</p><p><strong>用途：</strong> 查看网页的 HTML 结构和 CSS 样式。</p><h3 id=非程序员的实用场景>非程序员的实用场景</h3><p><strong>场景一：查看网页的标题和描述（SEO 用）</strong></p><ol><li>按 F12 打开 DevTools</li><li>在 Elements 面板中找到 <code>&lt;head></code> 部分（一般在最上面几行）</li><li>找到 <code>&lt;title></code> 标签：这就是网页的标题</li><li>找到 <code>&lt;meta name="description"></code> 标签：这就是网页的描述</li></ol><p>这比右键→&ldquo;查看页面源代码"方便——源代码是压缩成一团的，Elements 面板是有层级缩进的，更容易阅读。如果要查看完整的页面源代码，按 Ctrl + U 或参考 <a href=/tips/chrome-keyboard-shortcuts/>Chrome 快捷键大全</a> 中的开发者快捷键部分。</p><p><strong>场景二：找到页面上某个元素的颜色值（设计师用）</strong></p><ol><li>按 Ctrl + Shift + C（选择元素工具）</li><li>点击页面上你想要的颜色元素</li><li>在右侧的 Styles 面板中找到 <code>color</code> 或 <code>background-color</code> 属性</li><li>点击颜色值旁边的小方块，会弹出取色器</li></ol><p>比截图然后用取色工具方便多了。</p><p><strong>场景三：临时隐藏页面上的某个元素</strong></p><p>比如你想截图一个页面但不想要某个弹窗或广告：</p><ol><li>在 Elements 面板中找到该元素的 HTML</li><li>右键 → &ldquo;Hide element&rdquo;（或直接按 H 键）</li><li>元素暂时消失，截图后刷新页面即可恢复</li></ol><p>这个方法也可以用来测试"去掉某个元素后页面布局会怎样&rdquo;——设计师和前端人员在沟通页面调整方案时经常用到。比在源代码中注释掉元素快得多。</p><h2 id=面板二console控制台执行-javascript-代码>面板二：Console（控制台）——执行 JavaScript 代码</h2><p><strong>用途：</strong> 执行 JavaScript 命令、查看错误信息。</p><h3 id=非程序员的实用场景-1>非程序员的实用场景</h3><p><strong>场景一：查看页面报错</strong></p><p>如果页面加载后功能不正常（按钮点不动、图片显示不出来），打开 Console 面板看是否有红色错误信息。把错误信息复制给开发人员，可以快速定位问题。</p><p><strong>场景二：快速提取页面上的所有链接</strong></p><p>在 Console 中输入以下代码，按回车：</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-javascript data-lang=javascript><span style=display:flex><span>document.<span style=color:#a6e22e>querySelectorAll</span>(<span style=color:#e6db74>&#39;a&#39;</span>).<span style=color:#a6e22e>forEach</span>(<span style=color:#a6e22e>a</span> =&gt; <span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>(<span style=color:#a6e22e>a</span>.<span style=color:#a6e22e>href</span>))
-</span></span></code></pre></div><p>所有链接会打印在控制台中。你可以复制这些链接去做分析或批量下载。</p><p><strong>场景三：修改页面上的文字（临时）</strong></p><p>在 Console 中输入：</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-javascript data-lang=javascript><span style=display:flex><span>document.<span style=color:#a6e22e>querySelector</span>(<span style=color:#e6db74>&#39;h1&#39;</span>).<span style=color:#a6e22e>textContent</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#39;你好世界&#39;</span>
-</span></span></code></pre></div><p>页面标题会临时变成"你好世界"（刷新后恢复）。这个功能常用于测试页面改版效果，或者制作演示截图。</p><p><strong>场景四：计算页面上的所有图片总大小</strong></p><p>在 Console 中输入以下代码，可以统计当前页面加载的所有图片的总大小：</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-javascript data-lang=javascript><span style=display:flex><span><span style=color:#66d9ef>let</span> <span style=color:#a6e22e>total</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>; document.<span style=color:#a6e22e>querySelectorAll</span>(<span style=color:#e6db74>&#39;img&#39;</span>).<span style=color:#a6e22e>forEach</span>(<span style=color:#a6e22e>img</span> =&gt; { <span style=color:#66d9ef>if</span>(<span style=color:#a6e22e>img</span>.<span style=color:#a6e22e>naturalWidth</span>) <span style=color:#a6e22e>total</span> <span style=color:#f92672>+=</span> <span style=color:#a6e22e>img</span>.<span style=color:#a6e22e>naturalWidth</span> <span style=color:#f92672>*</span> <span style=color:#a6e22e>img</span>.<span style=color:#a6e22e>naturalHeight</span> <span style=color:#f92672>*</span> <span style=color:#ae81ff>4</span> }); <span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>(<span style=color:#e6db74>&#39;Total pixels: &#39;</span> <span style=color:#f92672>+</span> (<span style=color:#a6e22e>total</span><span style=color:#f92672>/</span><span style=color:#ae81ff>1024</span><span style=color:#f92672>/</span><span style=color:#ae81ff>1024</span>).<span style=color:#a6e22e>toFixed</span>(<span style=color:#ae81ff>2</span>) <span style=color:#f92672>+</span> <span style=color:#e6db74>&#39;MB (uncompressed)&#39;</span>)
-</span></span></code></pre></div><p>这对于检查页面是否有超大图片（导致加载慢）很有用。如果发现总大小超过 5MB，说明图片需要优化压缩。</p><h2 id=面板三network网络面板分析页面加载性能>面板三：Network（网络面板）——分析页面加载性能</h2><p>[#面板三：Network（网络面板）——](/images/tips/chrome-devtools-beginner-guide/body2.jpg)</p><p><strong>用途：</strong> 查看页面加载了哪些资源、每个资源的加载时间、加载顺序。</p><h3 id=非程序员的实用场景-2>非程序员的实用场景</h3><p><strong>场景一：分析页面加载慢的原因</strong></p><ol><li>打开 Network 面板</li><li>刷新页面（F5）</li><li>查看每个资源的加载时间（Time 列）</li><li>按时间排序：点击 Time 列标题</li><li>找到加载时间最长的资源，通常就是拖慢页面的原因</li></ol><p>常见的原因包括：图片太大（超过 1MB 的图片）、JavaScript 文件太多或太大、第三方脚本（广告、统计、分享按钮）加载慢。根据 Google 的数据，超过 50% 的页面加载时间花在第三方资源上。如果页面本身加载就慢，参考 <a href=/tips/chrome-page-not-loading/>Chrome 网页打不开或加载慢排查指南</a>。</p><p><strong>小技巧：</strong> 在 Network 面板中勾选"Disable cache"复选框，然后刷新页面，可以看到在无缓存情况下每个资源的完整加载时间。这对评估新访客的体验更有参考价值。</p><p><strong>场景二：查看页面向哪些服务器发送了请求</strong></p><p>打开 Network 面板刷新页面后，Domain 列会显示每个请求的域名。你可以看到页面除了加载自己的资源外，还加载了哪些第三方域名的资源（广告商、追踪器、CDN 等）。这对于了解网站的技术架构和隐私实践很有帮助。</p><p><strong>场景三：检查 API 请求和响应</strong></p><p>如果你对网站的数据接口感兴趣，在 Network 面板中筛选"Fetch/XHR"类型的请求，可以看到页面和服务器之间的数据交换。点击某个请求可以在 Preview 标签页中查看返回的数据。不过这个功能更偏向开发人员。</p><h2 id=面板四application应用面板查看存储数据>面板四：Application（应用面板）——查看存储数据</h2><p><strong>用途：</strong> 查看网站存储在你浏览器中的数据（Cookie、本地存储、缓存等）。</p><h3 id=非程序员的实用场景-3>非程序员的实用场景</h3><p><strong>场景一：查看和删除网站的 Cookie</strong></p><ol><li>打开 Application 面板</li><li>左侧展开 &ldquo;Cookies&rdquo; → 点击当前网站的域名</li><li>可以看到所有 Cookie 的名称、值、过期时间</li><li>选中不需要的 Cookie，按 Delete 键删除</li></ol><p>比在 Chrome 设置中清除所有 Cookie 精准得多——你可以只删除某个网站的特定 Cookie，而不影响其他网站的登录状态。比如某个网站登录出问题了，你可以只删除该网站的 Cookie 然后重新登录，其他网站的登录状态不受影响。如果只是常规清理缓存，参考 <a href=/tips/chrome-clear-cache/>Chrome 缓存清理教程</a> 的手动+自动方法。</p><p><strong>场景二：查看网站占用了多少本地存储</strong></p><p>Application 面板中可以查看 Local Storage、Session Storage、IndexedDB、Cache Storage 等存储空间的使用情况。如果你发现 Chrome 占用了大量磁盘空间（有时候会达到几个 GB），很可能是因为某些网站在本地存储了大量缓存数据。在 Application 面板中可以按网站查看各站点的存储占用，精准定位并清理。</p><h2 id=面板五lighthouse灯塔面板页面性能和-seo-评分>面板五：Lighthouse（灯塔面板）——页面性能和 SEO 评分</h2><p>[#面板五：Lighthouse（灯塔面板](/images/tips/chrome-devtools-beginner-guide/body1.jpg)</p><p><strong>用途：</strong> 自动分析页面的性能、可访问性、SEO、最佳实践等指标，给出评分和改进建议。</p><h3 id=使用方法>使用方法</h3><ol><li>打开 DevTools → 点击顶部标签栏的 &ldquo;Lighthouse&rdquo;</li><li>选择需要分析的类别（Performance、Accessibility、Best Practices、SEO）</li><li>点击 &ldquo;Analyze page load&rdquo;（首次分析需要等待 30-60 秒）</li><li>查看评分报告</li></ol><h3 id=评分说明>评分说明</h3><ul><li><strong>Performance（性能）</strong>：0-100 分，衡量页面加载速度和交互响应速度。90 分以上为绿色（优秀）</li><li><strong>Accessibility（可访问性）</strong>：衡量页面对残障用户的友好程度</li><li><strong>Best Practices（最佳实践）</strong>：检查是否使用了安全的 HTTP 头、是否使用了 HTTPS 等</li><li><strong>SEO</strong>：检查页面是否有标题、描述、规范的图片 alt 属性等基础 SEO 元素</li></ul><p><strong>SEO 评分低于 90 分时，Lighthouse 会列出具体的问题和改进建议。</strong> 常见的问题包括：&ldquo;文档没有 meta description"&ldquo;图片没有 alt 属性"&ldquo;链接文本不够描述性"&ldquo;robots.txt 阻止了重要页面"等。每条建议都有详细的说明和修复方法。这比手动检查 SEO 要全面和高效得多——一份 Lighthouse 报告通常能在 30 秒内发现需要 30 分钟手动检查才能找全的问题。</p><h2 id=快捷键速查>快捷键速查</h2><table><thead><tr><th>快捷键</th><th>功能</th></tr></thead><tbody><tr><td>Ctrl + Shift + C</td><td>选择元素检查</td></tr><tr><td>Ctrl + Shift + J</td><td>打开 Console</td></tr><tr><td>Ctrl + Shift + M</td><td>设备模拟（移动端视图）</td></tr><tr><td>Ctrl + [</td><td>左侧面板折叠/展开</td></tr><tr><td>Ctrl + Shift + P</td><td>命令面板（输入命令快速操作）</td></tr><tr><td>Ctrl + F</td><td>在 Elements 面板中搜索 HTML</td></tr><tr><td>Ctrl + Shift + F</td><td>在所有文件中搜索</td></tr></tbody></table><p>**Ctrl + Shift + P（命令面板）**是最容易被忽略但最实用的快捷键——打开后输入任何操作的英文名称就能快速执行，比如输入"screenshot"可以截图整个页面或某个元素、输入"dark"可以切换深色主题、输入"coverage"可以分析页面代码的实际使用率。当你记不住某个功能在哪个面板时，命令面板就是最好的入口。</p><h2 id=常见问题>常见问题</h2><h3 id=开发者工具会影响页面性能吗>开发者工具会影响页面性能吗？</h3><p>会，但影响很小。打开 DevTools 后 Chrome 会收集额外的调试信息，内存占用增加约 50-100MB。如果你同时打开了 Network 面板并开启了日志记录，页面加载速度可能变慢 10-20%。建议只在需要调试时打开 DevTools，平时关闭。</p><h3 id=手机-chrome-能用开发者工具吗>手机 Chrome 能用开发者工具吗？</h3><p>手机 Chrome 不支持完整的 DevTools，但可以通过 USB 连接电脑使用远程调试：手机 Chrome → 设置 → 开启"USB 调试&rdquo; → USB 连接电脑 → 电脑 Chrome 访问 chrome://inspect → 点击"inspect&rdquo;。这样就能在电脑上调试手机 Chrome 的页面了。</p><h3 id=devtools-修改的样式会保存吗>DevTools 修改的样式会保存吗？</h3><p>不会。你在 Elements 面板中修改的 HTML 和 CSS 都是临时的——刷新页面后会恢复原样。如果需要永久修改样式，需要编辑源代码文件。</p><h3 id=怎么用-devtools-查看网页是用的什么框架>怎么用 DevTools 查看网页是用的什么框架？</h3><p>在 Elements 面板中观察 HTML 结构的特征：如果有很多 <code>&lt;div class="xxx-xxx"></code> 格式的 class 命名，可能是 Tailwind CSS；如果有 <code>data-reactroot</code> 属性，说明用的是 React；如果有 <code>ng-version</code> 属性，说明用的是 Angular。也可以直接在 Console 中运行以下代码快速检测：</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-javascript data-lang=javascript><span style=display:flex><span><span style=color:#75715e>// 检测 React
-</span></span></span><span style=display:flex><span>document.<span style=color:#a6e22e>querySelector</span>(<span style=color:#e6db74>&#39;[data-reactroot]&#39;</span>) <span style=color:#f92672>?</span> <span style=color:#e6db74>&#39;React&#39;</span> <span style=color:#f92672>:</span> <span style=color:#66d9ef>null</span>
-</span></span><span style=display:flex><span><span style=color:#75715e>// 检测 Vue
-</span></span></span><span style=display:flex><span>document.<span style=color:#a6e22e>querySelector</span>(<span style=color:#e6db74>&#39;[data-v-]&#39;</span>) <span style=color:#f92672>?</span> <span style=color:#e6db74>&#39;Vue&#39;</span> <span style=color:#f92672>:</span> <span style=color:#66d9ef>null</span>
-</span></span></code></pre></div><h3 id=lighthouse-评分多久更新一次>Lighthouse 评分多久更新一次？</h3><p>每次运行 Lighthouse 都会重新分析页面，所以评分反映的是当前时刻的状态。Lighthouse 的评分标准每隔几个月会更新一次，所以同一个页面在不同版本的 Lighthouse 中可能得到不同的评分。建议在优化前后用同一个 Chrome 版本运行 Lighthouse 进行对比。</p><div class=compliance-notice><p>声明：本站为 Chrome 浏览器使用技巧分享平台，与 Google 公司无关。所有产品名称归原权利人所有。</p></div><div class=home-kw-links><p>相关推荐：<a href=/>Chrome插件推荐</a> · <a href=/>Chrome技巧教程</a> · <a href=/>浏览器插件下载</a></p></div></div><div style="max-width:1200px;margin:0 auto;padding:0 24px 48px"><div style="padding-top:32px;border-top:1px solid var(--border)"><div class=sec-head><div><div class=sec-tag>📖 相关阅读</div><div class=sec-title>继续阅读</div></div></div><div class=card-grid><a href=https://chromebest.com/tips/chrome-manifest-v3-ublock-origin-alternative/ class=card><div class=card-img><img src=/images/tips/chrome-manifest-v3-ublock-origin-alternative/cover.webp alt="Chrome Manifest V3 全面解读：uBlock Origin被禁怎么办？2026年广告拦截与隐私扩展替换完全指南" loading=lazy></div><div class=card-body><span class="art-row-tag feat-tag blue">功能教程</span><h3>Chrome Manifest V3 全面解读：uBlock Origin被禁怎么办？2026年广告拦截与隐私扩展替换完全指南</h3><p>不聊技术协议，只聊对你有用的——什么时候失效、什么还能用、怎么用。</p></div></a><a href=https://chromebest.com/tips/chrome-high-cpu-fix/ class=card><div class=card-img><img src=/images/tips/chrome-high-cpu-fix/cover.webp alt="Chrome 占用CPU过高终于解决了：从100%降到15%的完整排查实录（2026）" loading=lazy></div><div class=card-body><span class="art-row-tag feat-tag red">性能优化</span><h3>Chrome 占用CPU过高终于解决了：从100%降到15%的完整排查实录（2026）</h3><p>不是让你关几个标签页这么简单。这篇文章教你用Chrome自带的任务管理器精准定位是哪个标签页、哪个扩展、哪个进程在吃CPU，然后对症下药。</p></div></a><a href=https://chromebest.com/tips/chrome-flags-guide/ class=card><div class=card-img><img src=/images/tips/chrome-flags-guide/cover.jpg alt="Chrome 隐藏实验功能指南：chrome://flags 里 15 个真正值得开启的设置（2026实测）" loading=lazy></div><div class=card-body><span class="art-row-tag feat-tag purple">Chrome实验功能</span><h3>Chrome 隐藏实验功能指南：chrome://flags 里 15 个真正值得开启的设置（2026实测）</h3><p>chrome://flags 里有上千个实验开关，但大部分不值得折腾。本文从中挑出 15 个真正有用的，按风险等级分类，告诉你每个开关开启前后到底有什么区别。</p></div></a></div></div></div></article><aside class=sidebar><div class=sb-search><svg class="sb-search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
-<input type=text class=sb-search-input placeholder=搜索文章...>
-<kbd class=sb-search-kbd>/</kbd></div><div class=cta-banner style=padding:24px><h2 style=font-size:18px;margin-bottom:6px>下载 Chrome</h2><p style=font-size:13px>全球使用人数最多的浏览器</p><a href=https://www.google.com/chrome/ class=btn-dl style="padding:10px 20px;font-size:14px;width:100%;justify-content:center;margin-top:12px" rel=nofollow>⬇ 官方下载</a></div><div class=sb-box><h3>📖 相关文章</h3><div style=display:flex;flex-direction:column;gap:12px><a href=https://chromebest.com/tips/chrome-hardware-acceleration/ style=font-size:13px;line-height:1.5;color:var(--txt2)>Chrome 硬件加速设置教程：开启/关闭/故障排查，解决卡顿花屏崩溃</a>
-<a href=https://chromebest.com/compare/chrome-vs-brave-2026/ style=font-size:13px;line-height:1.5;color:var(--txt2)>Chrome 和 Brave 2026 年到底选哪个？深度实测对比</a>
-<a href=https://chromebest.com/tips/chrome-manifest-v3-ublock-origin-alternative/ style=font-size:13px;line-height:1.5;color:var(--txt2)>Chrome Manifest V3 全面解读：uBlock Origin被禁怎么办？2026年广告拦截与隐私扩展替换完全指南</a>
-<a href=https://chromebest.com/tips/chrome-page-not-loading/ style=font-size:13px;line-height:1.5;color:var(--txt2)>Chrome 网页打不开或加载慢？2026 年 DNS 和网络问题全排查指南</a>
-<a href=https://chromebest.com/tips/chrome-proxy-settings/ style=font-size:13px;line-height:1.5;color:var(--txt2)>Chrome 代理设置完整指南：系统代理、扩展代理、PAC 自动配置详解</a></div></div><div class=sb-box><h3>🏷 相关标签</h3><div class=tags><a href=/tags/chrome%E5%BC%80%E5%8F%91%E8%80%85%E5%B7%A5%E5%85%B7 class=tag>Chrome开发者工具</a>
-<a href=/tags/chrome-devtools class=tag>Chrome DevTools</a>
-<a href=/tags/chrome%E8%B0%83%E8%AF%95 class=tag>Chrome调试</a>
-<a href=/tags/chrome%E5%89%8D%E7%AB%AF class=tag>Chrome前端</a>
-<a href=/tags/chrome-seo class=tag>Chrome SEO</a></div></div></aside></div><footer class=foot><div class=foot-inner><div class=foot-links><a href=/>首页</a>
-<a href=/categories/下载安装>下载安装</a>
-<a href=/categories/使用技巧>技巧教程</a>
-<a href=/categories/插件推荐>插件推荐</a>
-<a href=/categories/对比评测>对比评测</a>
-<a href=/about/>关于我们</a></div><div class=foot-copy>© 2026 ChromeBest · 谷歌浏览器下载与使用教程 · 本站与 Google 无关</div></div></footer><script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"https://chromebest.com/"},{"@type":"ListItem","position":2,"name":"Tips","item":"https:\/\/chromebest.com\/tips\/"},{"@type":"ListItem","position":3,"name":"Chrome 开发者工具入门：5 个面板详解 \u002b 实用技巧（非程序员也能用）"}]}</script><script type=application/ld+json>{"@context":"https://schema.org","@type":"Article","headline":"Chrome 开发者工具入门：5 个面板详解 \u002b 实用技巧（非程序员也能用）","description":"Chrome 开发者工具入门教程，详解 Elements、Console、Network、Application、Lighthouse 五个核心面板。非程序员也能学会的实用调试和分析技巧。","datePublished":"2026-05-05","dateModified":"2026-05-05","author":{"@type":"Organization","name":"ChromeBest"},"publisher":{"@type":"Organization","name":"ChromeBest","logo":{"@type":"ImageObject","url":"https://chromebest.com/og-default.jpg"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/chromebest.com\/tips\/chrome-devtools-beginner-guide\/"}}</script><script type=application/ld+json>{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Chrome 开发者工具入门：5 个面板详解 \u002b 实用技巧（非程序员也能用）需要付费吗？","acceptedAnswer":{"@type":"Answer","text":"基础功能免费使用，部分高级功能可能需要付费。具体差异请参考本文的功能对比部分。"}},{"@type":"Question","name":"新手适合用这个吗？","acceptedAnswer":{"@type":"Answer","text":"适合，操作界面设计直观。建议先从基础功能入手，熟悉后再探索进阶功能。"}},{"@type":"Question","name":"使用Chrome安全吗？","acceptedAnswer":{"@type":"Answer","text":"正规渠道获取的软件是安全的。建议始终从官方下载，避免第三方修改版，并定期更新到最新版本。"}},{"@type":"Question","name":"支持哪些操作系统？","acceptedAnswer":{"@type":"Answer","text":"通常支持 Windows 10\/11，部分也支持 macOS 和 Linux。具体系统要求请查看本文的安装说明部分。"}},{"@type":"Question","name":"如何保持软件最新版本？","acceptedAnswer":{"@type":"Answer","text":"大多数软件支持自动更新检查。也可以定期访问官网下载最新版本，或开启软件内的自动更新选项。"}}]}</script></body></html>
+打开开发者工具 三种 …">
+<meta property="og:url" content="https://chromebest.com/tips/chrome-devtools-beginner-guide/">
+<meta property="og:site_name" content="ChromeBest">
+<meta property="og:image" content="https://chromebest.com/images/tips/chrome-devtools-beginner-guide/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" href="/css/style.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "ChromeBest",
+    "url": "https:\/\/chromebest.com\/"
+  }
+  </script>
+
+</head>
+<body>
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">
+      <div class="nav-logo-icon"><span>C</span></div>
+      <b>ChromeBest</b>
+    </a>
+    <ul class="nav-links">
+      <li><a href="/">首页</a></li>
+      <li><a href="/categories/下载安装">下载安装</a></li>
+      <li><a href="/categories/使用技巧">技巧教程</a></li>
+      <li><a href="/categories/插件推荐">插件推荐</a></li>
+      <li><a href="/categories/对比评测">对比评测</a></li>
+      <li><a href="/categories/性能优化">性能优化</a></li>
+    </ul>
+    <a href="https://www.google.com/chrome/" class="nav-dl" rel="nofollow">⬇ 下载 Chrome</a>
+  </div>
+</nav>
+
+
+<div class="layout">
+  
+  <article class="art-page">
+    <nav class="breadcrumb">
+      <a href="/">首页</a>
+      <span class="breadcrumb-sep">›</span>
+      <a href="/tips">tips</a>
+      <span class="breadcrumb-sep">›</span>
+      <span class="breadcrumb-current">Chrome 开发者工具入门：5 个面板详解 &#43; 实用技巧（非程序员也能用）</span>
+    </nav>
+    <span class="art-tag feat-tag indigo">🛠️ 开发者工具</span>
+    <h1>Chrome 开发者工具入门：5 个面板详解 &#43; 实用技巧（非程序员也能用）</h1>
+    <div class="meta">
+      <span>📅 2026-05-05</span>
+      <span>⏱ 10 分钟阅读</span>
+      <span>📷 10 张真实截图</span>
+      
+    </div>
+
+    
+    <div class="cover">
+      <img src="/images/tips/chrome-devtools-beginner-guide/cover.jpg" alt="Chrome 开发者工具入门：5 个面板详解 &#43; 实用技巧（非程序员也能用）">
+    </div>
+    
+
+    
+    
+    <div class="toc">
+      <h3>📑 目录</h3>
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#打开开发者工具">打开开发者工具</a></li>
+    <li><a href="#面板一elements元素面板查看和修改页面结构">面板一：Elements（元素面板）——查看和修改页面结构</a>
+      <ul>
+        <li><a href="#非程序员的实用场景">非程序员的实用场景</a></li>
+      </ul>
+    </li>
+    <li><a href="#面板二console控制台执行-javascript-代码">面板二：Console（控制台）——执行 JavaScript 代码</a>
+      <ul>
+        <li><a href="#非程序员的实用场景-1">非程序员的实用场景</a></li>
+      </ul>
+    </li>
+    <li><a href="#面板三network网络面板分析页面加载性能">面板三：Network（网络面板）——分析页面加载性能</a>
+      <ul>
+        <li><a href="#非程序员的实用场景-2">非程序员的实用场景</a></li>
+      </ul>
+    </li>
+    <li><a href="#面板四application应用面板查看存储数据">面板四：Application（应用面板）——查看存储数据</a>
+      <ul>
+        <li><a href="#非程序员的实用场景-3">非程序员的实用场景</a></li>
+      </ul>
+    </li>
+    <li><a href="#面板五lighthouse灯塔面板页面性能和-seo-评分">面板五：Lighthouse（灯塔面板）——页面性能和 SEO 评分</a>
+      <ul>
+        <li><a href="#使用方法">使用方法</a></li>
+        <li><a href="#评分说明">评分说明</a></li>
+      </ul>
+    </li>
+    <li><a href="#快捷键速查">快捷键速查</a></li>
+    <li><a href="#常见问题">常见问题</a>
+      <ul>
+        <li><a href="#开发者工具会影响页面性能吗">开发者工具会影响页面性能吗？</a></li>
+        <li><a href="#手机-chrome-能用开发者工具吗">手机 Chrome 能用开发者工具吗？</a></li>
+        <li><a href="#devtools-修改的样式会保存吗">DevTools 修改的样式会保存吗？</a></li>
+        <li><a href="#怎么用-devtools-查看网页是用的什么框架">怎么用 DevTools 查看网页是用的什么框架？</a></li>
+        <li><a href="#lighthouse-评分多久更新一次">Lighthouse 评分多久更新一次？</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+    
+
+    
+    <div class="art-body">
+      <p>很多人觉得 Chrome 开发者工具（DevTools）只是程序员用的。实际上，SEO 人员、设计师、甚至普通用户都能用它解决实际问题——比如查看网页标题、分析页面加载速度、找出网页上某个元素的颜色值。</p>
+<p>这篇文章面向<strong>非程序员用户</strong>，用最通俗易懂的语言讲解 Chrome 开发者工具的 5 个核心面板。</p>
+<h2 id="打开开发者工具">打开开发者工具</h2>
+<p>三种方式：</p>
+<ul>
+<li><strong>F12</strong>：最快的方式</li>
+<li><strong>Ctrl + Shift + I</strong>：和 F12 效果一样</li>
+<li><strong>右键 → 检查</strong>：直接定位到你右键点击的元素</li>
+</ul>
+<p>打开后你会看到开发者工具窗口出现在页面底部（或右侧）。默认显示的是 Elements 面板。如果觉得窗口太小，可以点击 DevTools 右上角的三个点图标，选择停靠位置（底部、右侧或独立窗口）。</p>
+<h2 id="面板一elements元素面板查看和修改页面结构">面板一：Elements（元素面板）——查看和修改页面结构</h2>
+<p>[#面板一：Elements（元素面板）—](/images/tips/chrome-devtools-beginner-guide/body3.jpg)</p>
+<p><strong>用途：</strong> 查看网页的 HTML 结构和 CSS 样式。</p>
+<h3 id="非程序员的实用场景">非程序员的实用场景</h3>
+<p><strong>场景一：查看网页的标题和描述（SEO 用）</strong></p>
+<ol>
+<li>按 F12 打开 DevTools</li>
+<li>在 Elements 面板中找到 <code>&lt;head&gt;</code> 部分（一般在最上面几行）</li>
+<li>找到 <code>&lt;title&gt;</code> 标签：这就是网页的标题</li>
+<li>找到 <code>&lt;meta name=&quot;description&quot;&gt;</code> 标签：这就是网页的描述</li>
+</ol>
+<p>这比右键→&ldquo;查看页面源代码&quot;方便——源代码是压缩成一团的，Elements 面板是有层级缩进的，更容易阅读。如果要查看完整的页面源代码，按 Ctrl + U 或参考 <a href="/tips/chrome-keyboard-shortcuts/">Chrome 快捷键大全</a> 中的开发者快捷键部分。</p>
+<p><strong>场景二：找到页面上某个元素的颜色值（设计师用）</strong></p>
+<ol>
+<li>按 Ctrl + Shift + C（选择元素工具）</li>
+<li>点击页面上你想要的颜色元素</li>
+<li>在右侧的 Styles 面板中找到 <code>color</code> 或 <code>background-color</code> 属性</li>
+<li>点击颜色值旁边的小方块，会弹出取色器</li>
+</ol>
+<p>比截图然后用取色工具方便多了。</p>
+<p><strong>场景三：临时隐藏页面上的某个元素</strong></p>
+<p>比如你想截图一个页面但不想要某个弹窗或广告：</p>
+<ol>
+<li>在 Elements 面板中找到该元素的 HTML</li>
+<li>右键 → &ldquo;Hide element&rdquo;（或直接按 H 键）</li>
+<li>元素暂时消失，截图后刷新页面即可恢复</li>
+</ol>
+<p>这个方法也可以用来测试&quot;去掉某个元素后页面布局会怎样&rdquo;——设计师和前端人员在沟通页面调整方案时经常用到。比在源代码中注释掉元素快得多。</p>
+<h2 id="面板二console控制台执行-javascript-代码">面板二：Console（控制台）——执行 JavaScript 代码</h2>
+<p><strong>用途：</strong> 执行 JavaScript 命令、查看错误信息。</p>
+<h3 id="非程序员的实用场景-1">非程序员的实用场景</h3>
+<p><strong>场景一：查看页面报错</strong></p>
+<p>如果页面加载后功能不正常（按钮点不动、图片显示不出来），打开 Console 面板看是否有红色错误信息。把错误信息复制给开发人员，可以快速定位问题。</p>
+<p><strong>场景二：快速提取页面上的所有链接</strong></p>
+<p>在 Console 中输入以下代码，按回车：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span>document.<span style="color:#a6e22e">querySelectorAll</span>(<span style="color:#e6db74">&#39;a&#39;</span>).<span style="color:#a6e22e">forEach</span>(<span style="color:#a6e22e">a</span> =&gt; <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">a</span>.<span style="color:#a6e22e">href</span>))
+</span></span></code></pre></div><p>所有链接会打印在控制台中。你可以复制这些链接去做分析或批量下载。</p>
+<p><strong>场景三：修改页面上的文字（临时）</strong></p>
+<p>在 Console 中输入：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span>document.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#39;h1&#39;</span>).<span style="color:#a6e22e">textContent</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;你好世界&#39;</span>
+</span></span></code></pre></div><p>页面标题会临时变成&quot;你好世界&quot;（刷新后恢复）。这个功能常用于测试页面改版效果，或者制作演示截图。</p>
+<p><strong>场景四：计算页面上的所有图片总大小</strong></p>
+<p>在 Console 中输入以下代码，可以统计当前页面加载的所有图片的总大小：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">total</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; document.<span style="color:#a6e22e">querySelectorAll</span>(<span style="color:#e6db74">&#39;img&#39;</span>).<span style="color:#a6e22e">forEach</span>(<span style="color:#a6e22e">img</span> =&gt; { <span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">img</span>.<span style="color:#a6e22e">naturalWidth</span>) <span style="color:#a6e22e">total</span> <span style="color:#f92672">+=</span> <span style="color:#a6e22e">img</span>.<span style="color:#a6e22e">naturalWidth</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">img</span>.<span style="color:#a6e22e">naturalHeight</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">4</span> }); <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;Total pixels: &#39;</span> <span style="color:#f92672">+</span> (<span style="color:#a6e22e">total</span><span style="color:#f92672">/</span><span style="color:#ae81ff">1024</span><span style="color:#f92672">/</span><span style="color:#ae81ff">1024</span>).<span style="color:#a6e22e">toFixed</span>(<span style="color:#ae81ff">2</span>) <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;MB (uncompressed)&#39;</span>)
+</span></span></code></pre></div><p>这对于检查页面是否有超大图片（导致加载慢）很有用。如果发现总大小超过 5MB，说明图片需要优化压缩。</p>
+<h2 id="面板三network网络面板分析页面加载性能">面板三：Network（网络面板）——分析页面加载性能</h2>
+<p>[#面板三：Network（网络面板）——](/images/tips/chrome-devtools-beginner-guide/body2.jpg)</p>
+<p><strong>用途：</strong> 查看页面加载了哪些资源、每个资源的加载时间、加载顺序。</p>
+<h3 id="非程序员的实用场景-2">非程序员的实用场景</h3>
+<p><strong>场景一：分析页面加载慢的原因</strong></p>
+<ol>
+<li>打开 Network 面板</li>
+<li>刷新页面（F5）</li>
+<li>查看每个资源的加载时间（Time 列）</li>
+<li>按时间排序：点击 Time 列标题</li>
+<li>找到加载时间最长的资源，通常就是拖慢页面的原因</li>
+</ol>
+<p>常见的原因包括：图片太大（超过 1MB 的图片）、JavaScript 文件太多或太大、第三方脚本（广告、统计、分享按钮）加载慢。根据 Google 的数据，超过 50% 的页面加载时间花在第三方资源上。如果页面本身加载就慢，参考 <a href="/tips/chrome-page-not-loading/">Chrome 网页打不开或加载慢排查指南</a>。</p>
+<p><strong>小技巧：</strong> 在 Network 面板中勾选&quot;Disable cache&quot;复选框，然后刷新页面，可以看到在无缓存情况下每个资源的完整加载时间。这对评估新访客的体验更有参考价值。</p>
+<p><strong>场景二：查看页面向哪些服务器发送了请求</strong></p>
+<p>打开 Network 面板刷新页面后，Domain 列会显示每个请求的域名。你可以看到页面除了加载自己的资源外，还加载了哪些第三方域名的资源（广告商、追踪器、CDN 等）。这对于了解网站的技术架构和隐私实践很有帮助。</p>
+<p><strong>场景三：检查 API 请求和响应</strong></p>
+<p>如果你对网站的数据接口感兴趣，在 Network 面板中筛选&quot;Fetch/XHR&quot;类型的请求，可以看到页面和服务器之间的数据交换。点击某个请求可以在 Preview 标签页中查看返回的数据。不过这个功能更偏向开发人员。</p>
+<h2 id="面板四application应用面板查看存储数据">面板四：Application（应用面板）——查看存储数据</h2>
+<p><strong>用途：</strong> 查看网站存储在你浏览器中的数据（Cookie、本地存储、缓存等）。</p>
+<h3 id="非程序员的实用场景-3">非程序员的实用场景</h3>
+<p><strong>场景一：查看和删除网站的 Cookie</strong></p>
+<ol>
+<li>打开 Application 面板</li>
+<li>左侧展开 &ldquo;Cookies&rdquo; → 点击当前网站的域名</li>
+<li>可以看到所有 Cookie 的名称、值、过期时间</li>
+<li>选中不需要的 Cookie，按 Delete 键删除</li>
+</ol>
+<p>比在 Chrome 设置中清除所有 Cookie 精准得多——你可以只删除某个网站的特定 Cookie，而不影响其他网站的登录状态。比如某个网站登录出问题了，你可以只删除该网站的 Cookie 然后重新登录，其他网站的登录状态不受影响。如果只是常规清理缓存，参考 <a href="/tips/chrome-clear-cache/">Chrome 缓存清理教程</a> 的手动+自动方法。</p>
+<p><strong>场景二：查看网站占用了多少本地存储</strong></p>
+<p>Application 面板中可以查看 Local Storage、Session Storage、IndexedDB、Cache Storage 等存储空间的使用情况。如果你发现 Chrome 占用了大量磁盘空间（有时候会达到几个 GB），很可能是因为某些网站在本地存储了大量缓存数据。在 Application 面板中可以按网站查看各站点的存储占用，精准定位并清理。</p>
+<h2 id="面板五lighthouse灯塔面板页面性能和-seo-评分">面板五：Lighthouse（灯塔面板）——页面性能和 SEO 评分</h2>
+<p>[#面板五：Lighthouse（灯塔面板](/images/tips/chrome-devtools-beginner-guide/body1.jpg)</p>
+<p><strong>用途：</strong> 自动分析页面的性能、可访问性、SEO、最佳实践等指标，给出评分和改进建议。</p>
+<h3 id="使用方法">使用方法</h3>
+<ol>
+<li>打开 DevTools → 点击顶部标签栏的 &ldquo;Lighthouse&rdquo;</li>
+<li>选择需要分析的类别（Performance、Accessibility、Best Practices、SEO）</li>
+<li>点击 &ldquo;Analyze page load&rdquo;（首次分析需要等待 30-60 秒）</li>
+<li>查看评分报告</li>
+</ol>
+<h3 id="评分说明">评分说明</h3>
+<ul>
+<li><strong>Performance（性能）</strong>：0-100 分，衡量页面加载速度和交互响应速度。90 分以上为绿色（优秀）</li>
+<li><strong>Accessibility（可访问性）</strong>：衡量页面对残障用户的友好程度</li>
+<li><strong>Best Practices（最佳实践）</strong>：检查是否使用了安全的 HTTP 头、是否使用了 HTTPS 等</li>
+<li><strong>SEO</strong>：检查页面是否有标题、描述、规范的图片 alt 属性等基础 SEO 元素</li>
+</ul>
+<p><strong>SEO 评分低于 90 分时，Lighthouse 会列出具体的问题和改进建议。</strong> 常见的问题包括：&ldquo;文档没有 meta description&quot;&ldquo;图片没有 alt 属性&quot;&ldquo;链接文本不够描述性&quot;&ldquo;robots.txt 阻止了重要页面&quot;等。每条建议都有详细的说明和修复方法。这比手动检查 SEO 要全面和高效得多——一份 Lighthouse 报告通常能在 30 秒内发现需要 30 分钟手动检查才能找全的问题。</p>
+<h2 id="快捷键速查">快捷键速查</h2>
+<table>
+  <thead>
+      <tr>
+          <th>快捷键</th>
+          <th>功能</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Ctrl + Shift + C</td>
+          <td>选择元素检查</td>
+      </tr>
+      <tr>
+          <td>Ctrl + Shift + J</td>
+          <td>打开 Console</td>
+      </tr>
+      <tr>
+          <td>Ctrl + Shift + M</td>
+          <td>设备模拟（移动端视图）</td>
+      </tr>
+      <tr>
+          <td>Ctrl + [</td>
+          <td>左侧面板折叠/展开</td>
+      </tr>
+      <tr>
+          <td>Ctrl + Shift + P</td>
+          <td>命令面板（输入命令快速操作）</td>
+      </tr>
+      <tr>
+          <td>Ctrl + F</td>
+          <td>在 Elements 面板中搜索 HTML</td>
+      </tr>
+      <tr>
+          <td>Ctrl + Shift + F</td>
+          <td>在所有文件中搜索</td>
+      </tr>
+  </tbody>
+</table>
+<p>**Ctrl + Shift + P（命令面板）**是最容易被忽略但最实用的快捷键——打开后输入任何操作的英文名称就能快速执行，比如输入&quot;screenshot&quot;可以截图整个页面或某个元素、输入&quot;dark&quot;可以切换深色主题、输入&quot;coverage&quot;可以分析页面代码的实际使用率。当你记不住某个功能在哪个面板时，命令面板就是最好的入口。</p>
+<h2 id="常见问题">常见问题</h2>
+<h3 id="开发者工具会影响页面性能吗">开发者工具会影响页面性能吗？</h3>
+<p>会，但影响很小。打开 DevTools 后 Chrome 会收集额外的调试信息，内存占用增加约 50-100MB。如果你同时打开了 Network 面板并开启了日志记录，页面加载速度可能变慢 10-20%。建议只在需要调试时打开 DevTools，平时关闭。</p>
+<h3 id="手机-chrome-能用开发者工具吗">手机 Chrome 能用开发者工具吗？</h3>
+<p>手机 Chrome 不支持完整的 DevTools，但可以通过 USB 连接电脑使用远程调试：手机 Chrome → 设置 → 开启&quot;USB 调试&rdquo; → USB 连接电脑 → 电脑 Chrome 访问 chrome://inspect → 点击&quot;inspect&rdquo;。这样就能在电脑上调试手机 Chrome 的页面了。</p>
+<h3 id="devtools-修改的样式会保存吗">DevTools 修改的样式会保存吗？</h3>
+<p>不会。你在 Elements 面板中修改的 HTML 和 CSS 都是临时的——刷新页面后会恢复原样。如果需要永久修改样式，需要编辑源代码文件。</p>
+<h3 id="怎么用-devtools-查看网页是用的什么框架">怎么用 DevTools 查看网页是用的什么框架？</h3>
+<p>在 Elements 面板中观察 HTML 结构的特征：如果有很多 <code>&lt;div class=&quot;xxx-xxx&quot;&gt;</code> 格式的 class 命名，可能是 Tailwind CSS；如果有 <code>data-reactroot</code> 属性，说明用的是 React；如果有 <code>ng-version</code> 属性，说明用的是 Angular。也可以直接在 Console 中运行以下代码快速检测：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#75715e">// 检测 React
+</span></span></span><span style="display:flex;"><span>document.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#39;[data-reactroot]&#39;</span>) <span style="color:#f92672">?</span> <span style="color:#e6db74">&#39;React&#39;</span> <span style="color:#f92672">:</span> <span style="color:#66d9ef">null</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// 检测 Vue
+</span></span></span><span style="display:flex;"><span>document.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#39;[data-v-]&#39;</span>) <span style="color:#f92672">?</span> <span style="color:#e6db74">&#39;Vue&#39;</span> <span style="color:#f92672">:</span> <span style="color:#66d9ef">null</span>
+</span></span></code></pre></div><h3 id="lighthouse-评分多久更新一次">Lighthouse 评分多久更新一次？</h3>
+<p>每次运行 Lighthouse 都会重新分析页面，所以评分反映的是当前时刻的状态。Lighthouse 的评分标准每隔几个月会更新一次，所以同一个页面在不同版本的 Lighthouse 中可能得到不同的评分。建议在优化前后用同一个 Chrome 版本运行 Lighthouse 进行对比。</p>
+
+<div class="compliance-notice">
+<p>声明：本站为 Chrome 浏览器使用技巧分享平台，与 Google 公司无关。所有产品名称归原权利人所有。</p>
+</div>
+<div class="home-kw-links">
+<p>相关推荐：<a href="/">Chrome插件推荐</a> · <a href="/">Chrome技巧教程</a> · <a href="/">浏览器插件下载</a></p>
+</div>
+    </div>
+
+    
+    
+    
+    <div style="max-width:1200px;margin:0 auto;padding:0 24px 48px">
+      <div style="padding-top:32px;border-top:1px solid var(--border)">
+        <div class="sec-head">
+          <div>
+            <div class="sec-tag">📖 相关阅读</div>
+            <div class="sec-title">继续阅读</div>
+          </div>
+        </div>
+        <div class="card-grid">
+          
+          <a href="https://chromebest.com/tips/chrome-built-in-ai-gemini-nano-guide/" class="card">
+            
+            <div class="card-img">
+              <img src="/images/tips/chrome-built-in-ai-gemini-nano-guide/cover.jpg" alt="Chrome 内置 AI 功能完全指南：2026年 Gemini Nano 离线写作、翻译、总结怎么用" loading="lazy">
+            </div>
+            
+            <div class="card-body">
+              <span class="art-row-tag feat-tag blue">教程</span>
+              <h3>Chrome 内置 AI 功能完全指南：2026年 Gemini Nano 离线写作、翻译、总结怎么用</h3>
+              <p><p>你可能在用 ChatGPT、Claude、文心一言——但你知道 Chrome 浏览器自己就内置了 AI 吗？</p>
+<p>2026年，Google 把 Gemini …</p></p>
+            </div>
+          </a>
+          
+          <a href="https://chromebest.com/tips/chrome-manifest-v3-ublock-origin-alternative/" class="card">
+            
+            <div class="card-img">
+              <img src="/images/tips/chrome-manifest-v3-ublock-origin-alternative/cover.webp" alt="Chrome Manifest V3 全面解读：uBlock Origin被禁怎么办？2026年广告拦截与隐私扩展替换完全指南" loading="lazy">
+            </div>
+            
+            <div class="card-body">
+              <span class="art-row-tag feat-tag blue">功能教程</span>
+              <h3>Chrome Manifest V3 全面解读：uBlock Origin被禁怎么办？2026年广告拦截与隐私扩展替换完全指南</h3>
+              <p>不聊技术协议，只聊对你有用的——什么时候失效、什么还能用、怎么用。</p>
+            </div>
+          </a>
+          
+          <a href="https://chromebest.com/tips/chrome-high-cpu-fix/" class="card">
+            
+            <div class="card-img">
+              <img src="/images/tips/chrome-high-cpu-fix/cover.webp" alt="Chrome 占用CPU过高终于解决了：从100%降到15%的完整排查实录（2026）" loading="lazy">
+            </div>
+            
+            <div class="card-body">
+              <span class="art-row-tag feat-tag red">性能优化</span>
+              <h3>Chrome 占用CPU过高终于解决了：从100%降到15%的完整排查实录（2026）</h3>
+              <p>不是让你关几个标签页这么简单。这篇文章教你用Chrome自带的任务管理器精准定位是哪个标签页、哪个扩展、哪个进程在吃CPU，然后对症下药。</p>
+            </div>
+          </a>
+          
+        </div>
+      </div>
+    </div>
+    
+  </article>
+
+  
+  <aside class="sidebar">
+    
+    <div class="sb-search">
+      <svg class="sb-search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+      <input type="text" class="sb-search-input" placeholder="搜索文章...">
+      <kbd class="sb-search-kbd">/</kbd>
+    </div>
+
+    
+    <div class="cta-banner" style="padding:24px">
+      <h2 style="font-size:18px;margin-bottom:6px">下载 Chrome</h2>
+      <p style="font-size:13px">全球使用人数最多的浏览器</p>
+      <a href="https://www.google.com/chrome/" class="btn-dl" style="padding:10px 20px;font-size:14px;width:100%;justify-content:center;margin-top:12px" rel="nofollow">⬇ 官方下载</a>
+    </div>
+
+    
+    
+    
+    <div class="sb-box">
+      <h3>📖 相关文章</h3>
+      <div style="display:flex;flex-direction:column;gap:12px">
+        
+        <a href="https://chromebest.com/tips/chrome-update-failed-fix/" style="font-size:13px;line-height:1.5;color:var(--txt2)">Chrome 更新失败怎么修？6 个常见错误码及解决方法（2026）</a>
+        
+        <a href="https://chromebest.com/tips/chrome-video-download-guide/" style="font-size:13px;line-height:1.5;color:var(--txt2)">Chrome 下载视频的方法大全：从插件到在线工具，5 种方式实测</a>
+        
+        <a href="https://chromebest.com/tips/chrome-pdf-editor/" style="font-size:13px;line-height:1.5;color:var(--txt2)">Chrome 浏览器 PDF 编辑功能完整指南（2026 最新版）</a>
+        
+        <a href="https://chromebest.com/tips/chrome-bookmarks-export/" style="font-size:13px;line-height:1.5;color:var(--txt2)">Chrome 书签导出、导入与迁移完整教程：换浏览器、换电脑都能搞定</a>
+        
+        <a href="https://chromebest.com/tips/chrome-high-cpu-fix/" style="font-size:13px;line-height:1.5;color:var(--txt2)">Chrome 占用CPU过高终于解决了：从100%降到15%的完整排查实录（2026）</a>
+        
+      </div>
+    </div>
+    
+
+    
+    
+    <div class="sb-box">
+      <h3>🏷 相关标签</h3>
+      <div class="tags">
+        
+        <a href="/tags/chrome%E5%BC%80%E5%8F%91%E8%80%85%E5%B7%A5%E5%85%B7" class="tag">Chrome开发者工具</a>
+        
+        <a href="/tags/chrome-devtools" class="tag">Chrome DevTools</a>
+        
+        <a href="/tags/chrome%E8%B0%83%E8%AF%95" class="tag">Chrome调试</a>
+        
+        <a href="/tags/chrome%E5%89%8D%E7%AB%AF" class="tag">Chrome前端</a>
+        
+        <a href="/tags/chrome-seo" class="tag">Chrome SEO</a>
+        
+      </div>
+    </div>
+    
+  </aside>
+</div>
+
+<footer class="foot">
+  <div class="foot-inner">
+    <div class="foot-links">
+      <a href="/">首页</a>
+      <a href="/categories/下载安装">下载安装</a>
+      <a href="/categories/使用技巧">技巧教程</a>
+      <a href="/categories/插件推荐">插件推荐</a>
+      <a href="/categories/对比评测">对比评测</a>
+      <a href="/about/">关于我们</a>
+    </div>
+    <div class="foot-copy">© 2026 ChromeBest · 谷歌浏览器下载与使用教程 · 本站与 Google 无关</div>
+  </div>
+</footer>
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "首页",
+      "item": "https://chromebest.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Tips",
+      "item": "https:\/\/chromebest.com\/tips\/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Chrome 开发者工具入门：5 个面板详解 \u002b 实用技巧（非程序员也能用）"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Chrome 开发者工具入门：5 个面板详解 \u002b 实用技巧（非程序员也能用）",
+  "description": "Chrome 开发者工具入门教程，详解 Elements、Console、Network、Application、Lighthouse 五个核心面板。非程序员也能学会的实用调试和分析技巧。",
+  "datePublished": "2026-05-05",
+  "dateModified": "2026-05-05",
+  "author": {
+    "@type": "Organization",
+    "name": "ChromeBest"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "ChromeBest",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://chromebest.com/og-default.jpg"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https:\/\/chromebest.com\/tips\/chrome-devtools-beginner-guide\/"
+  }
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Chrome 开发者工具入门：5 个面板详解 \u002b 实用技巧（非程序员也能用）需要付费吗？",
+      "acceptedAnswer": { "@type": "Answer", "text": "基础功能免费使用，部分高级功能可能需要付费。具体差异请参考本文的功能对比部分。" }
+    },{
+      "@type": "Question",
+      "name": "新手适合用这个吗？",
+      "acceptedAnswer": { "@type": "Answer", "text": "适合，操作界面设计直观。建议先从基础功能入手，熟悉后再探索进阶功能。" }
+    },{
+      "@type": "Question",
+      "name": "使用Chrome安全吗？",
+      "acceptedAnswer": { "@type": "Answer", "text": "正规渠道获取的软件是安全的。建议始终从官方下载，避免第三方修改版，并定期更新到最新版本。" }
+    },{
+      "@type": "Question",
+      "name": "支持哪些操作系统？",
+      "acceptedAnswer": { "@type": "Answer", "text": "通常支持 Windows 10\/11，部分也支持 macOS 和 Linux。具体系统要求请查看本文的安装说明部分。" }
+    },{
+      "@type": "Question",
+      "name": "如何保持软件最新版本？",
+      "acceptedAnswer": { "@type": "Answer", "text": "大多数软件支持自动更新检查。也可以定期访问官网下载最新版本，或开启软件内的自动更新选项。" }
+    }
+  ]
+}
+</script>
+
+
+
+
+
+
+<script>
+(function(){
+  var k="1746ece89b02d6f075b43c223f9789b5";
+  var u=encodeURIComponent("https:\/\/chromebest.com\/tips\/chrome-devtools-beginner-guide\/");
+  var x=new XMLHttpRequest();
+  x.open("GET","https://api.indexnow.org/indexnow?url="+u+"&key="+k,true);
+  x.send();
+})();
+</script>
+
+</body>
+</html>

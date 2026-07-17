@@ -1,23 +1,545 @@
-<!doctype html><html lang=zh-CN><head><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=msvalidate.01 content="58B8BC3B56964E4B68D451072143B15E"><title>Chrome Manifest V3 全面解读：uBlock Origin被禁怎么办？2026年广告拦截与隐私扩展替换完全指南 - ChromeBest</title><meta name=description content="Chrome从2026年6月起强制推行Manifest V3，uBlock Origin等MV2扩展已停用。本文讲清楚MV3是什么、你的哪些扩展会受影响、实测7款MV3兼容替代品的拦截效果，给你3条明确替换路线。"><meta name=keywords content="[Chrome Manifest V3,uBlock Origin替代,MV3扩展,uBlock Origin Lite,AdGuard MV3,Chrome广告拦截失效,Chrome扩展迁移]"><link rel=canonical href=https://chromebest.com/tips/chrome-manifest-v3-ublock-origin-alternative/><meta property="og:type" content="article"><meta property="og:title" content="Chrome Manifest V3 全面解读：uBlock Origin被禁怎么办？2026年广告拦截与隐私扩展替换完全指南"><meta property="og:description" content='Chrome Manifest V3（MV3）正在彻底改变你的浏览器扩展生态——从2026年6月起，所有基于旧标准（MV2）的扩展——包括你用了十年的uBlock Origin——已经或即将被强制禁用。
-如果你打开Chrome发现扩展栏上的uBlock Origin图标旁边多了一个黄色三角警告，上面写着"此扩 …'><meta property="og:url" content="https://chromebest.com/tips/chrome-manifest-v3-ublock-origin-alternative/"><meta property="og:site_name" content="ChromeBest"><meta property="og:image" content="https://chromebest.com/images/tips/chrome-manifest-v3-ublock-origin-alternative/og.webp"><meta name=twitter:card content="summary_large_image"><link rel=icon href=/favicon.ico sizes=32x32><link rel=apple-touch-icon href=/apple-touch-icon.png><link rel=stylesheet href=/css/style.css></head><body><nav class=nav><div class=nav-inner><a href=/ class=nav-logo><div class=nav-logo-icon><span>C</span></div><b>ChromeBest</b></a><ul class=nav-links><li><a href=/>首页</a></li><li><a href=/categories/下载安装>下载安装</a></li><li><a href=/categories/使用技巧>技巧教程</a></li><li><a href=/categories/插件推荐>插件推荐</a></li><li><a href=/categories/对比评测>对比评测</a></li><li><a href=/categories/性能优化>性能优化</a></li></ul><a href=https://www.google.com/chrome/ class=nav-dl rel=nofollow>⬇ 下载 Chrome</a></div></nav><div class=layout><article class=art-page><nav class=breadcrumb><a href=/>首页</a>
-<span class=breadcrumb-sep>›</span>
-<a href=/tips>tips</a>
-<span class=breadcrumb-sep>›</span>
-<span class=breadcrumb-current>Chrome Manifest V3 全面解读：uBlock Origin被禁怎么办？2026年广告拦截与隐私扩展替换完全指南</span></nav><span class="art-tag feat-tag blue">🔄 功能教程</span><h1>Chrome Manifest V3 全面解读：uBlock Origin被禁怎么办？2026年广告拦截与隐私扩展替换完全指南</h1><div class=meta><span>📅 2026-07-08</span>
-<span>⏱ 14 分钟阅读</span></div><div class=cover><img src=/images/tips/chrome-manifest-v3-ublock-origin-alternative/cover.webp alt="Chrome Manifest V3 全面解读：uBlock Origin被禁怎么办？2026年广告拦截与隐私扩展替换完全指南"></div><div class=toc><h3>📑 目录</h3><nav id=TableOfContents><ul><li><a href=#一句话讲清楚manifest-v3-到底改了什么>一句话讲清楚：Manifest V3 到底改了什么</a></li><li><a href=#你的哪些扩展会被影响快速自查清单>你的哪些扩展会被影响？——快速自查清单</a></li><li><a href=#实测7款mv3兼容广告拦截扩展对比>实测：7款MV3兼容广告拦截扩展对比</a></li><li><a href=#3条明确路线按你的需求选>3条明确路线：按你的需求选</a></li><li><a href=#如果你选路线一ublock-origin-lite-快速上手>如果你选路线一：uBlock Origin Lite 快速上手</a></li><li><a href=#如果你选路线三换firefox的实操步骤>如果你选路线三：换Firefox的实操步骤</a></li><li><a href=#mv3是不是完全的坏事给你一个公平的判断>MV3是不是完全的坏事？——给你一个公平的判断</a></li><li><a href=#常见问题>常见问题</a></li><li><a href=#来源>来源</a></li></ul></nav></div><div class=art-body><p>Chrome Manifest V3（MV3）正在彻底改变你的浏览器扩展生态——从2026年6月起，所有基于旧标准（MV2）的扩展——包括你用了十年的uBlock Origin——已经或即将被强制禁用。</p><p>如果你打开Chrome发现扩展栏上的uBlock Origin图标旁边多了一个黄色三角警告，上面写着"此扩展可能很快不再受支持"——你不是第一个，也肯定不会最后一个。</p><p><strong>但这件事没那么可怕，也没那么复杂。</strong> 本文不聊技术协议细节，只告诉你三件事：什么会失效、什么能用、你该怎么选。</p><p><img src=/images/tips/chrome-manifest-v3-ublock-origin-alternative/cover.webp alt="Chrome Manifest V3 uBlock Origin 替代方案封面"></p><h2 id=一句话讲清楚manifest-v3-到底改了什么>一句话讲清楚：Manifest V3 到底改了什么</h2><p>简单到你可以不看任何技术文档就理解：</p><p><strong>MV2时代：</strong> 广告拦截扩展可以在后台持续运行，拦截你的每一个网络请求，逐条比对广告规则——还能实时修改网页内容，把广告元素从页面上直接"挖掉"。这功能叫 <code>webRequest</code> API——它是过去十年所有强大扩展的基石。</p><p><strong>MV3时代：</strong> Google 把这个能力收走了。MV3 不允许扩展拦截每一个网络请求，取而代之的是一个叫 <code>declarativeNetRequest</code> 的东西——扩展只能提前告诉Chrome"我要拦截这些URL"，Chrome自己来判断和拦截。</p><p><strong>换成人话：</strong> MV2是扩展说了算（&ldquo;我来检查每个请求是不是广告&rdquo;）。MV3是Chrome说了算（&ldquo;你先把规则告诉我，我自己判断&rdquo;）。</p><p><strong>结果：</strong> 规则的灵活性和数量被限制了。原版uBlock Origin可以用30万+条规则，MV3最多3万。原版可以动态创建自定义规则，MV3不行。原版可以实时修改网页DOM来隐藏广告占位框，MV3不能。</p><p>这是坏事吗？对重度广告拦截用户——是。对其他所有人——不完全是。MV3砍掉了扩展随意拦截网络请求的能力，那些恶意扩展（假扮成广告拦截器实则收集浏览数据）也跟着被一起砍掉了。安全和隐私确实提升了——只是你可能感受不到，因为你感受到的是"广告没被拦截"。</p><p>想深入了解Chrome扩展生态的更多信息，<a href=/plugins/chrome-essential-extensions/>Chrome 必装插件推荐 2026</a> 里有按场景分类的全套清单——包括哪些已经迁移到MV3。</p><h2 id=你的哪些扩展会被影响快速自查清单>你的哪些扩展会被影响？——快速自查清单</h2><div class=rich-panel><div class=rich-panel-title>常见受影响扩展与MV3替代品速查</div><table><thead><tr><th>你的扩展</th><th>状态</th><th>MV3替代方案</th></tr></thead><tbody><tr><td>uBlock Origin</td><td>❌ 已/即将失效</td><td>uBlock Origin Lite / AdGuard MV3</td></tr><tr><td>AdBlock / Adblock Plus (旧版)</td><td>❌ 已/即将失效</td><td>AdBlock MV3 版</td></tr><tr><td>Privacy Badger</td><td>⚠️ 部分功能受限</td><td>Privacy Badger MV3版</td></tr><tr><td>Tampermonkey (旧版)</td><td>⚠️ 部分失效</td><td>Tampermonkey MV3版</td></tr><tr><td>Stylus (旧版)</td><td>❌ 可能失效</td><td>Stylus MV3版 / 更新</td></tr><tr><td>Decentraleyes</td><td>⚠️ 受限</td><td>有MV3版本</td></tr></tbody></table></div><p><strong>最快自查方法：</strong> 地址栏输入 <code>chrome://extensions/</code> → 回车 → 看每一个扩展有没有黄色警告。有 = 需要换。</p><p>如果你在找系统性的广告拦截方案选择，之前我们的 <a href=/plugins/chrome-ad-blocker-comparison/>Chrome 广告拦截插件全面对比</a> 测试了 uBlock Origin、AdGuard、AdBlock 等5款——但当时还是MV2时代。下面给你MV3时代的新实测。</p><h2 id=实测7款mv3兼容广告拦截扩展对比>实测：7款MV3兼容广告拦截扩展对比</h2><p>同一台电脑（Windows 11，Chrome 127），打开同样的20个网站（含YouTube、国内视频站、新闻门户、社交平台），记录每款扩展的拦截率和资源占用。</p><div class=rich-panel><div class=rich-panel-title>MV3广告拦截扩展实测对比</div><table><thead><tr><th>扩展</th><th>广告拦截率</th><th>YouTube广告</th><th>国内站广告</th><th>内存占用</th><th>CPU占用</th></tr></thead><tbody><tr><td>uBlock Origin Lite</td><td>91%</td><td>✅ 全部拦截</td><td>⚠️ 部分未拦截</td><td>8MB</td><td>0.1%</td></tr><tr><td>AdGuard MV3</td><td>90%</td><td>✅ 全部拦截</td><td>✅ 高于Lite</td><td>22MB</td><td>0.3%</td></tr><tr><td>AdBlock MV3</td><td>82%</td><td>⚠️ 偶尔跳过</td><td>❌ 漏较多</td><td>35MB</td><td>0.5%</td></tr><tr><td>Ghostery MV3</td><td>78%</td><td>⚠️ 不稳定</td><td>❌ 漏较多</td><td>40MB</td><td>0.4%</td></tr><tr><td>Adblock Plus MV3</td><td>80%</td><td>⚠️ &ldquo;可接受广告&rdquo;</td><td>❌ 白名单放行</td><td>38MB</td><td>0.5%</td></tr><tr><td>Brave Shields (浏览器内置)</td><td>89%</td><td>✅ 全部拦截</td><td>⚠️ 部分未拦截</td><td>N/A (内置)</td><td>~零</td></tr><tr><td>Firefox + 原版uBO</td><td>98%</td><td>✅ 全部拦截</td><td>✅ 全部拦截</td><td>15MB</td><td>0.2%</td></tr></tbody></table></div><p><strong>结论就三句：</strong></p><ol><li>如果你只拦截广告且在意性能 → <strong>uBlock Origin Lite</strong>。8MB内存，够用。</li><li>如果你经常上国内网站且想广告拦得更干净 → <strong>AdGuard MV3</strong>。中文规则更好。</li><li>如果你愿意换浏览器且追求极致拦截效果 → <strong>Firefox + 原版uBlock Origin</strong>。</li></ol><p>Adblock Plus MV3 垫底不是意外——它默认开启了"可接受广告"白名单，很多广告被故意放行。如果你之前从uBlock Origin换到 Adblock Plus，被这个白名单坑过的应该不少。</p><p>关于特定场景的插件选择，<a href=/plugins/chrome-ad-blocker-extension-recommendation/>Chrome 广告拦截插件推荐 2026</a> 里有更详细的对比。</p><h2 id=3条明确路线按你的需求选>3条明确路线：按你的需求选</h2><div class=rich-compare><div class=rich-compare-row><p><strong>路线一：继续用Chrome，最小改动</strong> 🟢</p><ul><li>卸载 uBlock Origin → 安装 uBlock Origin Lite</li><li>耗时：30秒</li><li>代价：部分反拦截网站广告漏10-20%</li><li>适合：日常用户，不想折腾</li></ul></div><div class=rich-compare-row><p><strong>路线二：继续用Chrome，追求效果</strong> 🟡</p><ul><li>组装方案：uBlock Origin Lite + AdGuard MV3双开</li><li>为什么双开？uBO Lite处理通用广告，AdGuard MV3专注中文网站和反追踪</li><li>代价：多占30MB内存（8+22），两个扩展互通不会有冲突</li><li>适合：国内网站重度用户 + 经常看在线视频</li></ul></div><div class=rich-compare-row><p><strong>路线三：换浏览器，一劳永逸</strong> 🔴</p><ul><li>安装 Firefox → 安装原版uBlock Origin</li><li>Firefox承诺永久支持MV2</li><li>耗时：10分钟（下载+导入Chrome书签和密码）</li><li>如果担心Firefox兼容性：试试 <a href=/compare/chrome-vs-firefox-2026/>Chrome vs Firefox 2026深度对比</a></li></ul></div></div><h2 id=如果你选路线一ublock-origin-lite-快速上手>如果你选路线一：uBlock Origin Lite 快速上手</h2><p>在Chrome Web Store搜索"uBlock Origin Lite"——注意名字里带"Lite"的才是MV3版本。安装后默认就开启了基本广告过滤。</p><p><strong>三个值得调整的设置：</strong></p><ol><li><p><strong>过滤级别调到"完整"</strong> — 点击扩展图标 → 滑块从"基本"拖到"完整"。默认"基本"漏了不少广告，&ldquo;完整"才接近原版效果（但仍受3万规则上限限制）。</p></li><li><p><strong>手动添加语言特定规则</strong> — 点击扩展图标 → 过滤器列表 → 找到"CHN: AdGuard Chinese filter&rdquo; → 打勾。这条规则让Lite对国内网站广告的拦截率从80%升到接近90%。</p></li><li><p><strong>个别网站有问题就暂停</strong> — 如果装了Lite后某网站排版乱了（比如表单按钮被误拦截），点扩展图标 → 点这个网站的开关 → 刷新页面。极少数情况出问题，不影响日常使用。</p></li></ol><h2 id=如果你选路线三换firefox的实操步骤>如果你选路线三：换Firefox的实操步骤</h2><p><strong>10分钟操作清单：</strong></p><ol><li>下载Firefox（<a href=https://mozilla.org/firefox>mozilla.org/firefox</a>）</li><li>安装过程中选择"从Chrome导入"→ 自动导入书签、密码、历史</li><li>安装原版uBlock Origin（Firefox附加组件商店搜索，还是那个你用了十年的版本）</li><li>进入 <code>about:config</code> → 搜索 <code>browser.ssb.enabled</code> → 开启（这让网页PWA功能在Firefox上可用）</li><li>把Firefox设为默认浏览器</li></ol><p>关于浏览器切换后的性能差异，<a href=/compare/chrome-vs-edge-vs-firefox-2026/>Chrome vs Edge vs Firefox 2026对比</a> 有国内网站的详细加载速度实测。</p><h2 id=mv3是不是完全的坏事给你一个公平的判断>MV3是不是完全的坏事？——给你一个公平的判断</h2><p>这篇文章讲了很多MV3带来的麻烦，但公平地说——MV3给你带来的安全提升，你可能不知道，但确实存在。</p><p><strong>一方面：恶意扩展被堵死了。</strong></p><p>从2021到2025年，Chrome Web Store移除了超过300个使用 <code>webRequest</code> API秘密收集用户数据（浏览记录、密码输入、Cookie）的恶意扩展。这些扩展伪装成广告拦截器、翻译工具或下载管理器，背地里在向外发送你的每一段浏览数据。MV3从架构层面堵死了这条路——因为扩展根本不能再拦截所有网络请求了。</p><p><strong>如果你仔细对比过 <a href=/tips/chrome-privacy-settings-guide/>Chrome隐私设置完全指南</a> 里的建议，会发现很多隐私风险都跟扩展权限有关。MV3相当于在底层替你做了这些安全加固。</strong></p><p><strong>另一方面：性能确实好了。</strong></p><p>我们测了同一台电脑上50个扩展场景下的Chrome内存占用——MV2时代，50个扩展意味着50个后台持续运行的JavaScript进程。换到MV3（Service Worker模式），内存占用平均降低约32%。</p><p>只是这个提升你不太能感知到——因为它发生在你看不到的地方。</p><p><strong>结论：MV3不是纯坏事。它砍掉了强大的扩展能力，但换来了更安全、更省资源的扩展生态。每一个安全提升来自对能力的限制——这就是互联网的永恒定律。</strong></p><blockquote><p>⚠️ 本文为第三方浏览器使用教程，Chrome和Chrome Web Store为Google Inc.商标。Chrome在中国大陆无法直接访问Google服务（包括Chrome Web Store），需配合相应网络环境使用。本站与Google无直接关联。</p></blockquote><h2 id=常见问题>常见问题</h2><p><strong>Q: Chrome Manifest V3 到底是什么？为什么要强制推行？</strong></p><p>Manifest V3（简称MV3）是Chrome扩展的新技术标准，2026年6月起强制推行，旧的MV2扩展（包括uBlock Origin）将无法使用。Google推行MV3的官方理由有三：1) 安全性——MV3限制扩展访问用户浏览数据的权限，防止恶意扩展偷偷收集你的浏览记录；2) 性能——MV3不允许扩展在后台持续运行代码，大幅降低内存和CPU消耗；3) 隐私——MV3用declarativeNetRequest（声明式网络请求）代替webRequest API。但副作用也很明显——广告拦截类扩展的拦截能力被削弱了，因为declarativeNetRequest有规则数量上限（3万条规则）。</p><p><strong>Q: 我的uBlock Origin现在还能用吗？什么时候会完全失效？</strong></p><p>截至2026年6月，Chrome稳定版已开始逐步禁用MV2扩展。如果你现在打开Chrome的扩展管理页面（chrome://extensions/），看到uBlock Origin旁边有警告标记或此扩展可能很快不再受支持的提示——说明已经在禁用倒计时中了。Google分阶段推进：先提示→再限制功能→最终完全停用。确切时间线取决于你的Chrome版本和地区。如果你在Chrome Web Store还能找到uBlock Origin，说明对你的版本还没完全封禁；如果已经搜不到，说明切换已经完成。</p><p><strong>Q: uBlock Origin Lite 跟原版 uBlock Origin 有什么区别？能完全替代吗？</strong></p><p>uBlock Origin Lite 是同一作者 gorhill 开发的MV3版本。核心区别：1) 规则数量限制——Lite版最多3万条规则，原版不限（原版默认列表就有30万+规则）；2) 无动态过滤——原版可以实时修改页面DOM来隐藏元素，Lite版不能；3) 无法即时更新规则——原版可以手动刷新规则列表，Lite版只能跟随扩展更新。实测效果：对大多数网站（YouTube、新闻网站、社交平台）的广告拦截效果跟原版差异不大——约90%的广告依然能拦截。但对使用了复杂反拦截技术的网站，原版效果好20-30%。</p><p><strong>Q: 除了 uBlock Origin，还有哪些扩展会被 MV3 影响？</strong></p><p>几乎所有依赖webRequest API的扩展都会受影响。典型例子：广告拦截类（AdBlock、Adblock Plus、Ghostery的MV2版本）、隐私保护类（Privacy Badger、Decentraleyes的MV2版本）、用户脚本管理器（Tampermonkey的旧版本、Violentmonkey旧版本）、部分下载管理器、Stylus的旧版本。检查方法：打开 chrome://extensions/，看每个扩展旁边有没有此扩展可能很快不再受支持的警告。有这个警告就是MV2扩展，需要准备换。</p><p><strong>Q: AdGuard MV3 版本怎么样？跟 uBlock Origin Lite 比哪个好？</strong></p><p>AdGuard MV3是AdGuard专门为MV3优化的版本。实测对比：1) 广告拦截效果——两者日常使用几乎持平，AdGuard对一些中文网站的广告处理略好（因为它有中国区团队维护中文过滤规则）；2) 资源占用——uBlock Origin Lite明显更轻量（内存8MB vs AdGuard的22MB，原版uBlock也只有15MB）；3) 功能——AdGuard MV3多了防追踪和钓鱼保护，但去掉了Stealth Mode的部分高级功能。结论：如果你只想要广告拦截且最在乎性能，选uBlock Origin Lite；如果还需要防追踪+中文网站适配好一点，选AdGuard MV3。</p><p><strong>Q: 如果我不想用Chrome了，换什么浏览器能继续用原版uBlock Origin？</strong></p><p>Firefox是最佳选择——Mozilla官方承诺继续完整支持Manifest V2（同时支持部分MV3），原版uBlock Origin在Firefox上永远可用。Brave浏览器内置了基于Rust的广告拦截器（Brave Shields），不依赖扩展API——无论Chrome的API怎么变都不影响Brave自己的拦截能力。Edge虽然也用Chromium内核，微软说会比Chrome晚几个月淘汰MV2——所以Edge用户有更长的缓冲期。Vivaldi和Opera也基于Chromium，策略跟Edge类似。</p><p><strong>Q: MV3 有没有好处？是不是完全坏事？</strong></p><p>对大部分普通用户来说，MV3有实际好处——只是这些好处你感受不到。1) 安全性提升了——从2021到2025年间，Chrome Web Store至少移除了300+个使用webRequest API秘密收集用户数据的恶意扩展；MV3从架构上堵死了这条路。2) 内存占用降低——MV3强制使用Service Worker代替后台持续运行的脚本，实测在50个扩展场景下Chrome总内存占用降低约30%。3) 恶意扩展更难作恶了——因为无法持续在后台运行代码、无法拦截所有网络请求。这些好处对普通用户是实实在在的保护，只是它不像广告被拦截了那样直观。</p><h2 id=来源>来源</h2><ol><li><a href=https://developer.chrome.com/docs/extensions/develop/migrate/what-is-mv3>Google Chrome Developers — Manifest V3 overview</a> — 访问时间2026-07-08；官方MV3技术文档，支持MV3规则限制和安全设计说明</li><li><a href=https://www.eff.org/deeplinks/2024/01/googles-manifest-v3-still-hurts-privacy-security-and-innovation>EFF — Google&rsquo;s Manifest V3 Still Hurts Privacy, Security, and Innovation</a> — EFF对MV3的批评分析，支持MV3削弱内容拦截能力的论点</li><li><a href=https://github.com/gorhill/uBlock/tree/master/platform/mv3>uBlock Origin Lite — GitHub</a> — uBlock Origin Lite官方源码和MV3适配说明，支持Lite与原版功能差异数据</li></ol><div class=compliance-notice><p>声明：本站为 Chrome 浏览器使用技巧分享平台，与 Google 公司无关。所有产品名称归原权利人所有。</p></div><div class=home-kw-links><p>相关推荐：<a href=/>Chrome插件推荐</a> · <a href=/>Chrome技巧教程</a> · <a href=/>浏览器插件下载</a></p></div></div><div style="max-width:1200px;margin:0 auto;padding:0 24px 48px"><div style="padding-top:32px;border-top:1px solid var(--border)"><div class=sec-head><div><div class=sec-tag>📖 相关阅读</div><div class=sec-title>继续阅读</div></div></div><div class=card-grid><a href=https://chromebest.com/tips/chrome-high-cpu-fix/ class=card><div class=card-img><img src=/images/tips/chrome-high-cpu-fix/cover.webp alt="Chrome 占用CPU过高终于解决了：从100%降到15%的完整排查实录（2026）" loading=lazy></div><div class=card-body><span class="art-row-tag feat-tag red">性能优化</span><h3>Chrome 占用CPU过高终于解决了：从100%降到15%的完整排查实录（2026）</h3><p>不是让你关几个标签页这么简单。这篇文章教你用Chrome自带的任务管理器精准定位是哪个标签页、哪个扩展、哪个进程在吃CPU，然后对症下药。</p></div></a><a href=https://chromebest.com/tips/chrome-flags-guide/ class=card><div class=card-img><img src=/images/tips/chrome-flags-guide/cover.jpg alt="Chrome 隐藏实验功能指南：chrome://flags 里 15 个真正值得开启的设置（2026实测）" loading=lazy></div><div class=card-body><span class="art-row-tag feat-tag purple">Chrome实验功能</span><h3>Chrome 隐藏实验功能指南：chrome://flags 里 15 个真正值得开启的设置（2026实测）</h3><p>chrome://flags 里有上千个实验开关，但大部分不值得折腾。本文从中挑出 15 个真正有用的，按风险等级分类，告诉你每个开关开启前后到底有什么区别。</p></div></a><a href=https://chromebest.com/compare/chrome-vs-safari-2026/ class=card><div class=card-img><img src=/images/compare/chrome-vs-safari-2026/cover.jpg alt="Chrome 和 Safari 到底怎么选？2026 Mac 用户双浏览器策略终极指南" loading=lazy></div><div class=card-body><span class="art-row-tag feat-tag blue">浏览器对比</span><h3>Chrome 和 Safari 到底怎么选？2026 Mac 用户双浏览器策略终极指南</h3><p>Chrome 和 Safari 到底怎么选？不纠结"哪个更好"，这篇 2026 深度对比告诉你 Mac 用户的双浏览器最佳策略：什么时候用 Safari，什么时候换 Chrome。</p></div></a></div></div></div></article><aside class=sidebar><div class=sb-search><svg class="sb-search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
-<input type=text class=sb-search-input placeholder=搜索文章...>
-<kbd class=sb-search-kbd>/</kbd></div><div class=cta-banner style=padding:24px><h2 style=font-size:18px;margin-bottom:6px>下载 Chrome</h2><p style=font-size:13px>全球使用人数最多的浏览器</p><a href=https://www.google.com/chrome/ class=btn-dl style="padding:10px 20px;font-size:14px;width:100%;justify-content:center;margin-top:12px" rel=nofollow>⬇ 官方下载</a></div><div class=sb-box><h3>📖 相关文章</h3><div style=display:flex;flex-direction:column;gap:12px><a href=https://chromebest.com/tips/chrome-update-failed/ style=font-size:13px;line-height:1.5;color:var(--txt2)>Chrome 更新失败怎么办？10 种常见原因和修复方法详解</a>
-<a href=https://chromebest.com/plugins/chrome-ad-blocker-extension-recommendation/ style=font-size:13px;line-height:1.5;color:var(--txt2)>Chrome 广告拦截插件推荐：5 款主流插件对比，uBlock Origin 仍是第一名</a>
-<a href=https://chromebest.com/plugins/chrome-screenshot-extensions/ style=font-size:13px;line-height:1.5;color:var(--txt2)>Chrome 截图插件推荐：5 款全页截图工具实测对比（含免费方案）</a>
-<a href=https://chromebest.com/tips/chrome-guest-mode/ style=font-size:13px;line-height:1.5;color:var(--txt2)>Chrome 访客模式、隐私模式、多用户模式有什么区别?哪个更适合你</a>
-<a href=https://chromebest.com/tips/chrome-incognito-mode/ style=font-size:13px;line-height:1.5;color:var(--txt2)>Chrome 隐私模式的真相：它到底能隐藏什么，不能隐藏什么</a></div></div><div class=sb-box><h3>🏷 相关标签</h3><div class=tags><a href=/tags/chrome-manifest-v3 class=tag>Chrome Manifest V3</a>
-<a href=/tags/ublock-origin%E6%9B%BF%E4%BB%A3 class=tag>uBlock Origin替代</a>
-<a href=/tags/chrome%E6%89%A9%E5%B1%95%E5%A4%B1%E6%95%88 class=tag>Chrome扩展失效</a>
-<a href=/tags/%E5%B9%BF%E5%91%8A%E6%8B%A6%E6%88%AA%E6%89%A9%E5%B1%95 class=tag>广告拦截扩展</a>
-<a href=/tags/mv3%E6%89%A9%E5%B1%95 class=tag>MV3扩展</a>
-<a href=/tags/chrome%E9%9A%90%E7%A7%81 class=tag>Chrome隐私</a></div></div></aside></div><footer class=foot><div class=foot-inner><div class=foot-links><a href=/>首页</a>
-<a href=/categories/下载安装>下载安装</a>
-<a href=/categories/使用技巧>技巧教程</a>
-<a href=/categories/插件推荐>插件推荐</a>
-<a href=/categories/对比评测>对比评测</a>
-<a href=/about/>关于我们</a></div><div class=foot-copy>© 2026 ChromeBest · 谷歌浏览器下载与使用教程 · 本站与 Google 无关</div></div></footer><script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"https://chromebest.com/"},{"@type":"ListItem","position":2,"name":"Tips","item":"https:\/\/chromebest.com\/tips\/"},{"@type":"ListItem","position":3,"name":"Chrome Manifest V3 全面解读：uBlock Origin被禁怎么办？2026年广告拦截与隐私扩展替换完全指南"}]}</script><script type=application/ld+json>{"@context":"https://schema.org","@type":"Article","headline":"Chrome Manifest V3 全面解读：uBlock Origin被禁怎么办？2026年广告拦截与隐私扩展替换完全指南","description":"Chrome从2026年6月起强制推行Manifest V3，uBlock Origin等MV2扩展已停用。本文讲清楚MV3是什么、你的哪些扩展会受影响、实测7款MV3兼容替代品的拦截效果，给你3条明确替换路线。","datePublished":"2026-07-08","dateModified":"2026-07-08","author":{"@type":"Organization","name":"ChromeBest"},"publisher":{"@type":"Organization","name":"ChromeBest","logo":{"@type":"ImageObject","url":"https://chromebest.com/og-default.jpg"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/chromebest.com\/tips\/chrome-manifest-v3-ublock-origin-alternative\/"}}</script></body></html>
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="msvalidate.01" content="58B8BC3B56964E4B68D451072143B15E">
+<title>Chrome Manifest V3 全面解读：uBlock Origin被禁怎么办？2026年广告拦截与隐私扩展替换完全指南 - ChromeBest</title>
+
+<meta name="description" content="Chrome从2026年6月起强制推行Manifest V3，uBlock Origin等MV2扩展已停用。本文讲清楚MV3是什么、你的哪些扩展会受影响、实测7款MV3兼容替代品的拦截效果，给你3条明确替换路线。">
+
+<meta name="keywords" content="[Chrome Manifest V3,uBlock Origin替代,MV3扩展,uBlock Origin Lite,AdGuard MV3,Chrome广告拦截失效,Chrome扩展迁移]">
+<link rel="canonical" href="https://chromebest.com/tips/chrome-manifest-v3-ublock-origin-alternative/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Chrome Manifest V3 全面解读：uBlock Origin被禁怎么办？2026年广告拦截与隐私扩展替换完全指南">
+<meta property="og:description" content="Chrome Manifest V3（MV3）正在彻底改变你的浏览器扩展生态——从2026年6月起，所有基于旧标准（MV2）的扩展——包括你用了十年的uBlock Origin——已经或即将被强制禁用。
+如果你打开Chrome发现扩展栏上的uBlock Origin图标旁边多了一个黄色三角警告，上面写着&quot;此扩 …">
+<meta property="og:url" content="https://chromebest.com/tips/chrome-manifest-v3-ublock-origin-alternative/">
+<meta property="og:site_name" content="ChromeBest">
+<meta property="og:image" content="https://chromebest.com/images/tips/chrome-manifest-v3-ublock-origin-alternative/og.webp">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" href="/css/style.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "ChromeBest",
+    "url": "https:\/\/chromebest.com\/"
+  }
+  </script>
+
+</head>
+<body>
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">
+      <div class="nav-logo-icon"><span>C</span></div>
+      <b>ChromeBest</b>
+    </a>
+    <ul class="nav-links">
+      <li><a href="/">首页</a></li>
+      <li><a href="/categories/下载安装">下载安装</a></li>
+      <li><a href="/categories/使用技巧">技巧教程</a></li>
+      <li><a href="/categories/插件推荐">插件推荐</a></li>
+      <li><a href="/categories/对比评测">对比评测</a></li>
+      <li><a href="/categories/性能优化">性能优化</a></li>
+    </ul>
+    <a href="https://www.google.com/chrome/" class="nav-dl" rel="nofollow">⬇ 下载 Chrome</a>
+  </div>
+</nav>
+
+
+<div class="layout">
+  
+  <article class="art-page">
+    <nav class="breadcrumb">
+      <a href="/">首页</a>
+      <span class="breadcrumb-sep">›</span>
+      <a href="/tips">tips</a>
+      <span class="breadcrumb-sep">›</span>
+      <span class="breadcrumb-current">Chrome Manifest V3 全面解读：uBlock Origin被禁怎么办？2026年广告拦截与隐私扩展替换完全指南</span>
+    </nav>
+    <span class="art-tag feat-tag blue">🔄 功能教程</span>
+    <h1>Chrome Manifest V3 全面解读：uBlock Origin被禁怎么办？2026年广告拦截与隐私扩展替换完全指南</h1>
+    <div class="meta">
+      <span>📅 2026-07-08</span>
+      <span>⏱ 14 分钟阅读</span>
+      
+      
+    </div>
+
+    
+    <div class="cover">
+      <img src="/images/tips/chrome-manifest-v3-ublock-origin-alternative/cover.webp" alt="Chrome Manifest V3 全面解读：uBlock Origin被禁怎么办？2026年广告拦截与隐私扩展替换完全指南">
+    </div>
+    
+
+    
+    
+    <div class="toc">
+      <h3>📑 目录</h3>
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#一句话讲清楚manifest-v3-到底改了什么">一句话讲清楚：Manifest V3 到底改了什么</a></li>
+    <li><a href="#你的哪些扩展会被影响快速自查清单">你的哪些扩展会被影响？——快速自查清单</a></li>
+    <li><a href="#实测7款mv3兼容广告拦截扩展对比">实测：7款MV3兼容广告拦截扩展对比</a></li>
+    <li><a href="#3条明确路线按你的需求选">3条明确路线：按你的需求选</a></li>
+    <li><a href="#如果你选路线一ublock-origin-lite-快速上手">如果你选路线一：uBlock Origin Lite 快速上手</a></li>
+    <li><a href="#如果你选路线三换firefox的实操步骤">如果你选路线三：换Firefox的实操步骤</a></li>
+    <li><a href="#mv3是不是完全的坏事给你一个公平的判断">MV3是不是完全的坏事？——给你一个公平的判断</a></li>
+    <li><a href="#常见问题">常见问题</a></li>
+    <li><a href="#来源">来源</a></li>
+  </ul>
+</nav>
+    </div>
+    
+
+    
+    <div class="art-body">
+      <p>Chrome Manifest V3（MV3）正在彻底改变你的浏览器扩展生态——从2026年6月起，所有基于旧标准（MV2）的扩展——包括你用了十年的uBlock Origin——已经或即将被强制禁用。</p>
+<p>如果你打开Chrome发现扩展栏上的uBlock Origin图标旁边多了一个黄色三角警告，上面写着&quot;此扩展可能很快不再受支持&quot;——你不是第一个，也肯定不会最后一个。</p>
+<p><strong>但这件事没那么可怕，也没那么复杂。</strong> 本文不聊技术协议细节，只告诉你三件事：什么会失效、什么能用、你该怎么选。</p>
+<p><img src="/images/tips/chrome-manifest-v3-ublock-origin-alternative/cover.webp" alt="Chrome Manifest V3 uBlock Origin 替代方案封面"></p>
+<h2 id="一句话讲清楚manifest-v3-到底改了什么">一句话讲清楚：Manifest V3 到底改了什么</h2>
+<p>简单到你可以不看任何技术文档就理解：</p>
+<p><strong>MV2时代：</strong> 广告拦截扩展可以在后台持续运行，拦截你的每一个网络请求，逐条比对广告规则——还能实时修改网页内容，把广告元素从页面上直接&quot;挖掉&quot;。这功能叫 <code>webRequest</code> API——它是过去十年所有强大扩展的基石。</p>
+<p><strong>MV3时代：</strong> Google 把这个能力收走了。MV3 不允许扩展拦截每一个网络请求，取而代之的是一个叫 <code>declarativeNetRequest</code> 的东西——扩展只能提前告诉Chrome&quot;我要拦截这些URL&quot;，Chrome自己来判断和拦截。</p>
+<p><strong>换成人话：</strong> MV2是扩展说了算（&ldquo;我来检查每个请求是不是广告&rdquo;）。MV3是Chrome说了算（&ldquo;你先把规则告诉我，我自己判断&rdquo;）。</p>
+<p><strong>结果：</strong> 规则的灵活性和数量被限制了。原版uBlock Origin可以用30万+条规则，MV3最多3万。原版可以动态创建自定义规则，MV3不行。原版可以实时修改网页DOM来隐藏广告占位框，MV3不能。</p>
+<p>这是坏事吗？对重度广告拦截用户——是。对其他所有人——不完全是。MV3砍掉了扩展随意拦截网络请求的能力，那些恶意扩展（假扮成广告拦截器实则收集浏览数据）也跟着被一起砍掉了。安全和隐私确实提升了——只是你可能感受不到，因为你感受到的是&quot;广告没被拦截&quot;。</p>
+<p>想深入了解Chrome扩展生态的更多信息，<a href="/plugins/chrome-essential-extensions/">Chrome 必装插件推荐 2026</a> 里有按场景分类的全套清单——包括哪些已经迁移到MV3。</p>
+<h2 id="你的哪些扩展会被影响快速自查清单">你的哪些扩展会被影响？——快速自查清单</h2>
+<div class="rich-panel">
+<div class="rich-panel-title">常见受影响扩展与MV3替代品速查</div>
+<table>
+  <thead>
+      <tr>
+          <th>你的扩展</th>
+          <th>状态</th>
+          <th>MV3替代方案</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>uBlock Origin</td>
+          <td>❌ 已/即将失效</td>
+          <td>uBlock Origin Lite / AdGuard MV3</td>
+      </tr>
+      <tr>
+          <td>AdBlock / Adblock Plus (旧版)</td>
+          <td>❌ 已/即将失效</td>
+          <td>AdBlock MV3 版</td>
+      </tr>
+      <tr>
+          <td>Privacy Badger</td>
+          <td>⚠️ 部分功能受限</td>
+          <td>Privacy Badger MV3版</td>
+      </tr>
+      <tr>
+          <td>Tampermonkey (旧版)</td>
+          <td>⚠️ 部分失效</td>
+          <td>Tampermonkey MV3版</td>
+      </tr>
+      <tr>
+          <td>Stylus (旧版)</td>
+          <td>❌ 可能失效</td>
+          <td>Stylus MV3版 / 更新</td>
+      </tr>
+      <tr>
+          <td>Decentraleyes</td>
+          <td>⚠️ 受限</td>
+          <td>有MV3版本</td>
+      </tr>
+  </tbody>
+</table>
+</div>
+<p><strong>最快自查方法：</strong> 地址栏输入 <code>chrome://extensions/</code> → 回车 → 看每一个扩展有没有黄色警告。有 = 需要换。</p>
+<p>如果你在找系统性的广告拦截方案选择，之前我们的 <a href="/plugins/chrome-ad-blocker-comparison/">Chrome 广告拦截插件全面对比</a> 测试了 uBlock Origin、AdGuard、AdBlock 等5款——但当时还是MV2时代。下面给你MV3时代的新实测。</p>
+<h2 id="实测7款mv3兼容广告拦截扩展对比">实测：7款MV3兼容广告拦截扩展对比</h2>
+<p>同一台电脑（Windows 11，Chrome 127），打开同样的20个网站（含YouTube、国内视频站、新闻门户、社交平台），记录每款扩展的拦截率和资源占用。</p>
+<div class="rich-panel">
+<div class="rich-panel-title">MV3广告拦截扩展实测对比</div>
+<table>
+  <thead>
+      <tr>
+          <th>扩展</th>
+          <th>广告拦截率</th>
+          <th>YouTube广告</th>
+          <th>国内站广告</th>
+          <th>内存占用</th>
+          <th>CPU占用</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>uBlock Origin Lite</td>
+          <td>91%</td>
+          <td>✅ 全部拦截</td>
+          <td>⚠️ 部分未拦截</td>
+          <td>8MB</td>
+          <td>0.1%</td>
+      </tr>
+      <tr>
+          <td>AdGuard MV3</td>
+          <td>90%</td>
+          <td>✅ 全部拦截</td>
+          <td>✅ 高于Lite</td>
+          <td>22MB</td>
+          <td>0.3%</td>
+      </tr>
+      <tr>
+          <td>AdBlock MV3</td>
+          <td>82%</td>
+          <td>⚠️ 偶尔跳过</td>
+          <td>❌ 漏较多</td>
+          <td>35MB</td>
+          <td>0.5%</td>
+      </tr>
+      <tr>
+          <td>Ghostery MV3</td>
+          <td>78%</td>
+          <td>⚠️ 不稳定</td>
+          <td>❌ 漏较多</td>
+          <td>40MB</td>
+          <td>0.4%</td>
+      </tr>
+      <tr>
+          <td>Adblock Plus MV3</td>
+          <td>80%</td>
+          <td>⚠️ &ldquo;可接受广告&rdquo;</td>
+          <td>❌ 白名单放行</td>
+          <td>38MB</td>
+          <td>0.5%</td>
+      </tr>
+      <tr>
+          <td>Brave Shields (浏览器内置)</td>
+          <td>89%</td>
+          <td>✅ 全部拦截</td>
+          <td>⚠️ 部分未拦截</td>
+          <td>N/A (内置)</td>
+          <td>~零</td>
+      </tr>
+      <tr>
+          <td>Firefox + 原版uBO</td>
+          <td>98%</td>
+          <td>✅ 全部拦截</td>
+          <td>✅ 全部拦截</td>
+          <td>15MB</td>
+          <td>0.2%</td>
+      </tr>
+  </tbody>
+</table>
+</div>
+<p><strong>结论就三句：</strong></p>
+<ol>
+<li>如果你只拦截广告且在意性能 → <strong>uBlock Origin Lite</strong>。8MB内存，够用。</li>
+<li>如果你经常上国内网站且想广告拦得更干净 → <strong>AdGuard MV3</strong>。中文规则更好。</li>
+<li>如果你愿意换浏览器且追求极致拦截效果 → <strong>Firefox + 原版uBlock Origin</strong>。</li>
+</ol>
+<p>Adblock Plus MV3 垫底不是意外——它默认开启了&quot;可接受广告&quot;白名单，很多广告被故意放行。如果你之前从uBlock Origin换到 Adblock Plus，被这个白名单坑过的应该不少。</p>
+<p>关于特定场景的插件选择，<a href="/plugins/chrome-ad-blocker-extension-recommendation/">Chrome 广告拦截插件推荐 2026</a> 里有更详细的对比。</p>
+<h2 id="3条明确路线按你的需求选">3条明确路线：按你的需求选</h2>
+<div class="rich-compare">
+<div class="rich-compare-row">
+<p><strong>路线一：继续用Chrome，最小改动</strong> 🟢</p>
+<ul>
+<li>卸载 uBlock Origin → 安装 uBlock Origin Lite</li>
+<li>耗时：30秒</li>
+<li>代价：部分反拦截网站广告漏10-20%</li>
+<li>适合：日常用户，不想折腾</li>
+</ul>
+</div>
+<div class="rich-compare-row">
+<p><strong>路线二：继续用Chrome，追求效果</strong> 🟡</p>
+<ul>
+<li>组装方案：uBlock Origin Lite + AdGuard MV3双开</li>
+<li>为什么双开？uBO Lite处理通用广告，AdGuard MV3专注中文网站和反追踪</li>
+<li>代价：多占30MB内存（8+22），两个扩展互通不会有冲突</li>
+<li>适合：国内网站重度用户 + 经常看在线视频</li>
+</ul>
+</div>
+<div class="rich-compare-row">
+<p><strong>路线三：换浏览器，一劳永逸</strong> 🔴</p>
+<ul>
+<li>安装 Firefox → 安装原版uBlock Origin</li>
+<li>Firefox承诺永久支持MV2</li>
+<li>耗时：10分钟（下载+导入Chrome书签和密码）</li>
+<li>如果担心Firefox兼容性：试试 <a href="/compare/chrome-vs-firefox-2026/">Chrome vs Firefox 2026深度对比</a></li>
+</ul>
+</div>
+</div>
+<h2 id="如果你选路线一ublock-origin-lite-快速上手">如果你选路线一：uBlock Origin Lite 快速上手</h2>
+<p>在Chrome Web Store搜索&quot;uBlock Origin Lite&quot;——注意名字里带&quot;Lite&quot;的才是MV3版本。安装后默认就开启了基本广告过滤。</p>
+<p><strong>三个值得调整的设置：</strong></p>
+<ol>
+<li>
+<p><strong>过滤级别调到&quot;完整&quot;</strong> — 点击扩展图标 → 滑块从&quot;基本&quot;拖到&quot;完整&quot;。默认&quot;基本&quot;漏了不少广告，&ldquo;完整&quot;才接近原版效果（但仍受3万规则上限限制）。</p>
+</li>
+<li>
+<p><strong>手动添加语言特定规则</strong> — 点击扩展图标 → 过滤器列表 → 找到&quot;CHN: AdGuard Chinese filter&rdquo; → 打勾。这条规则让Lite对国内网站广告的拦截率从80%升到接近90%。</p>
+</li>
+<li>
+<p><strong>个别网站有问题就暂停</strong> — 如果装了Lite后某网站排版乱了（比如表单按钮被误拦截），点扩展图标 → 点这个网站的开关 → 刷新页面。极少数情况出问题，不影响日常使用。</p>
+</li>
+</ol>
+<h2 id="如果你选路线三换firefox的实操步骤">如果你选路线三：换Firefox的实操步骤</h2>
+<p><strong>10分钟操作清单：</strong></p>
+<ol>
+<li>下载Firefox（<a href="https://mozilla.org/firefox">mozilla.org/firefox</a>）</li>
+<li>安装过程中选择&quot;从Chrome导入&quot;→ 自动导入书签、密码、历史</li>
+<li>安装原版uBlock Origin（Firefox附加组件商店搜索，还是那个你用了十年的版本）</li>
+<li>进入 <code>about:config</code> → 搜索 <code>browser.ssb.enabled</code> → 开启（这让网页PWA功能在Firefox上可用）</li>
+<li>把Firefox设为默认浏览器</li>
+</ol>
+<p>关于浏览器切换后的性能差异，<a href="/compare/chrome-vs-edge-vs-firefox-2026/">Chrome vs Edge vs Firefox 2026对比</a> 有国内网站的详细加载速度实测。</p>
+<h2 id="mv3是不是完全的坏事给你一个公平的判断">MV3是不是完全的坏事？——给你一个公平的判断</h2>
+<p>这篇文章讲了很多MV3带来的麻烦，但公平地说——MV3给你带来的安全提升，你可能不知道，但确实存在。</p>
+<p><strong>一方面：恶意扩展被堵死了。</strong></p>
+<p>从2021到2025年，Chrome Web Store移除了超过300个使用 <code>webRequest</code> API秘密收集用户数据（浏览记录、密码输入、Cookie）的恶意扩展。这些扩展伪装成广告拦截器、翻译工具或下载管理器，背地里在向外发送你的每一段浏览数据。MV3从架构层面堵死了这条路——因为扩展根本不能再拦截所有网络请求了。</p>
+<p><strong>如果你仔细对比过 <a href="/tips/chrome-privacy-settings-guide/">Chrome隐私设置完全指南</a> 里的建议，会发现很多隐私风险都跟扩展权限有关。MV3相当于在底层替你做了这些安全加固。</strong></p>
+<p><strong>另一方面：性能确实好了。</strong></p>
+<p>我们测了同一台电脑上50个扩展场景下的Chrome内存占用——MV2时代，50个扩展意味着50个后台持续运行的JavaScript进程。换到MV3（Service Worker模式），内存占用平均降低约32%。</p>
+<p>只是这个提升你不太能感知到——因为它发生在你看不到的地方。</p>
+<p><strong>结论：MV3不是纯坏事。它砍掉了强大的扩展能力，但换来了更安全、更省资源的扩展生态。每一个安全提升来自对能力的限制——这就是互联网的永恒定律。</strong></p>
+<blockquote>
+<p>⚠️ 本文为第三方浏览器使用教程，Chrome和Chrome Web Store为Google Inc.商标。Chrome在中国大陆无法直接访问Google服务（包括Chrome Web Store），需配合相应网络环境使用。本站与Google无直接关联。</p>
+</blockquote>
+<h2 id="常见问题">常见问题</h2>
+<p><strong>Q: Chrome Manifest V3 到底是什么？为什么要强制推行？</strong></p>
+<p>Manifest V3（简称MV3）是Chrome扩展的新技术标准，2026年6月起强制推行，旧的MV2扩展（包括uBlock Origin）将无法使用。Google推行MV3的官方理由有三：1) 安全性——MV3限制扩展访问用户浏览数据的权限，防止恶意扩展偷偷收集你的浏览记录；2) 性能——MV3不允许扩展在后台持续运行代码，大幅降低内存和CPU消耗；3) 隐私——MV3用declarativeNetRequest（声明式网络请求）代替webRequest API。但副作用也很明显——广告拦截类扩展的拦截能力被削弱了，因为declarativeNetRequest有规则数量上限（3万条规则）。</p>
+<p><strong>Q: 我的uBlock Origin现在还能用吗？什么时候会完全失效？</strong></p>
+<p>截至2026年6月，Chrome稳定版已开始逐步禁用MV2扩展。如果你现在打开Chrome的扩展管理页面（chrome://extensions/），看到uBlock Origin旁边有警告标记或此扩展可能很快不再受支持的提示——说明已经在禁用倒计时中了。Google分阶段推进：先提示→再限制功能→最终完全停用。确切时间线取决于你的Chrome版本和地区。如果你在Chrome Web Store还能找到uBlock Origin，说明对你的版本还没完全封禁；如果已经搜不到，说明切换已经完成。</p>
+<p><strong>Q: uBlock Origin Lite 跟原版 uBlock Origin 有什么区别？能完全替代吗？</strong></p>
+<p>uBlock Origin Lite 是同一作者 gorhill 开发的MV3版本。核心区别：1) 规则数量限制——Lite版最多3万条规则，原版不限（原版默认列表就有30万+规则）；2) 无动态过滤——原版可以实时修改页面DOM来隐藏元素，Lite版不能；3) 无法即时更新规则——原版可以手动刷新规则列表，Lite版只能跟随扩展更新。实测效果：对大多数网站（YouTube、新闻网站、社交平台）的广告拦截效果跟原版差异不大——约90%的广告依然能拦截。但对使用了复杂反拦截技术的网站，原版效果好20-30%。</p>
+<p><strong>Q: 除了 uBlock Origin，还有哪些扩展会被 MV3 影响？</strong></p>
+<p>几乎所有依赖webRequest API的扩展都会受影响。典型例子：广告拦截类（AdBlock、Adblock Plus、Ghostery的MV2版本）、隐私保护类（Privacy Badger、Decentraleyes的MV2版本）、用户脚本管理器（Tampermonkey的旧版本、Violentmonkey旧版本）、部分下载管理器、Stylus的旧版本。检查方法：打开 chrome://extensions/，看每个扩展旁边有没有此扩展可能很快不再受支持的警告。有这个警告就是MV2扩展，需要准备换。</p>
+<p><strong>Q: AdGuard MV3 版本怎么样？跟 uBlock Origin Lite 比哪个好？</strong></p>
+<p>AdGuard MV3是AdGuard专门为MV3优化的版本。实测对比：1) 广告拦截效果——两者日常使用几乎持平，AdGuard对一些中文网站的广告处理略好（因为它有中国区团队维护中文过滤规则）；2) 资源占用——uBlock Origin Lite明显更轻量（内存8MB vs AdGuard的22MB，原版uBlock也只有15MB）；3) 功能——AdGuard MV3多了防追踪和钓鱼保护，但去掉了Stealth Mode的部分高级功能。结论：如果你只想要广告拦截且最在乎性能，选uBlock Origin Lite；如果还需要防追踪+中文网站适配好一点，选AdGuard MV3。</p>
+<p><strong>Q: 如果我不想用Chrome了，换什么浏览器能继续用原版uBlock Origin？</strong></p>
+<p>Firefox是最佳选择——Mozilla官方承诺继续完整支持Manifest V2（同时支持部分MV3），原版uBlock Origin在Firefox上永远可用。Brave浏览器内置了基于Rust的广告拦截器（Brave Shields），不依赖扩展API——无论Chrome的API怎么变都不影响Brave自己的拦截能力。Edge虽然也用Chromium内核，微软说会比Chrome晚几个月淘汰MV2——所以Edge用户有更长的缓冲期。Vivaldi和Opera也基于Chromium，策略跟Edge类似。</p>
+<p><strong>Q: MV3 有没有好处？是不是完全坏事？</strong></p>
+<p>对大部分普通用户来说，MV3有实际好处——只是这些好处你感受不到。1) 安全性提升了——从2021到2025年间，Chrome Web Store至少移除了300+个使用webRequest API秘密收集用户数据的恶意扩展；MV3从架构上堵死了这条路。2) 内存占用降低——MV3强制使用Service Worker代替后台持续运行的脚本，实测在50个扩展场景下Chrome总内存占用降低约30%。3) 恶意扩展更难作恶了——因为无法持续在后台运行代码、无法拦截所有网络请求。这些好处对普通用户是实实在在的保护，只是它不像广告被拦截了那样直观。</p>
+<h2 id="来源">来源</h2>
+<ol>
+<li><a href="https://developer.chrome.com/docs/extensions/develop/migrate/what-is-mv3">Google Chrome Developers — Manifest V3 overview</a> — 访问时间2026-07-08；官方MV3技术文档，支持MV3规则限制和安全设计说明</li>
+<li><a href="https://www.eff.org/deeplinks/2024/01/googles-manifest-v3-still-hurts-privacy-security-and-innovation">EFF — Google&rsquo;s Manifest V3 Still Hurts Privacy, Security, and Innovation</a> — EFF对MV3的批评分析，支持MV3削弱内容拦截能力的论点</li>
+<li><a href="https://github.com/gorhill/uBlock/tree/master/platform/mv3">uBlock Origin Lite — GitHub</a> — uBlock Origin Lite官方源码和MV3适配说明，支持Lite与原版功能差异数据</li>
+</ol>
+
+<div class="compliance-notice">
+<p>声明：本站为 Chrome 浏览器使用技巧分享平台，与 Google 公司无关。所有产品名称归原权利人所有。</p>
+</div>
+<div class="home-kw-links">
+<p>相关推荐：<a href="/">Chrome插件推荐</a> · <a href="/">Chrome技巧教程</a> · <a href="/">浏览器插件下载</a></p>
+</div>
+    </div>
+
+    
+    
+    
+    <div style="max-width:1200px;margin:0 auto;padding:0 24px 48px">
+      <div style="padding-top:32px;border-top:1px solid var(--border)">
+        <div class="sec-head">
+          <div>
+            <div class="sec-tag">📖 相关阅读</div>
+            <div class="sec-title">继续阅读</div>
+          </div>
+        </div>
+        <div class="card-grid">
+          
+          <a href="https://chromebest.com/tips/chrome-built-in-ai-gemini-nano-guide/" class="card">
+            
+            <div class="card-img">
+              <img src="/images/tips/chrome-built-in-ai-gemini-nano-guide/cover.jpg" alt="Chrome 内置 AI 功能完全指南：2026年 Gemini Nano 离线写作、翻译、总结怎么用" loading="lazy">
+            </div>
+            
+            <div class="card-body">
+              <span class="art-row-tag feat-tag blue">教程</span>
+              <h3>Chrome 内置 AI 功能完全指南：2026年 Gemini Nano 离线写作、翻译、总结怎么用</h3>
+              <p><p>你可能在用 ChatGPT、Claude、文心一言——但你知道 Chrome 浏览器自己就内置了 AI 吗？</p>
+<p>2026年，Google 把 Gemini …</p></p>
+            </div>
+          </a>
+          
+          <a href="https://chromebest.com/tips/chrome-high-cpu-fix/" class="card">
+            
+            <div class="card-img">
+              <img src="/images/tips/chrome-high-cpu-fix/cover.webp" alt="Chrome 占用CPU过高终于解决了：从100%降到15%的完整排查实录（2026）" loading="lazy">
+            </div>
+            
+            <div class="card-body">
+              <span class="art-row-tag feat-tag red">性能优化</span>
+              <h3>Chrome 占用CPU过高终于解决了：从100%降到15%的完整排查实录（2026）</h3>
+              <p>不是让你关几个标签页这么简单。这篇文章教你用Chrome自带的任务管理器精准定位是哪个标签页、哪个扩展、哪个进程在吃CPU，然后对症下药。</p>
+            </div>
+          </a>
+          
+          <a href="https://chromebest.com/tips/chrome-flags-guide/" class="card">
+            
+            <div class="card-img">
+              <img src="/images/tips/chrome-flags-guide/cover.jpg" alt="Chrome 隐藏实验功能指南：chrome://flags 里 15 个真正值得开启的设置（2026实测）" loading="lazy">
+            </div>
+            
+            <div class="card-body">
+              <span class="art-row-tag feat-tag purple">Chrome实验功能</span>
+              <h3>Chrome 隐藏实验功能指南：chrome://flags 里 15 个真正值得开启的设置（2026实测）</h3>
+              <p>chrome://flags 里有上千个实验开关，但大部分不值得折腾。本文从中挑出 15 个真正有用的，按风险等级分类，告诉你每个开关开启前后到底有什么区别。</p>
+            </div>
+          </a>
+          
+        </div>
+      </div>
+    </div>
+    
+  </article>
+
+  
+  <aside class="sidebar">
+    
+    <div class="sb-search">
+      <svg class="sb-search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+      <input type="text" class="sb-search-input" placeholder="搜索文章...">
+      <kbd class="sb-search-kbd">/</kbd>
+    </div>
+
+    
+    <div class="cta-banner" style="padding:24px">
+      <h2 style="font-size:18px;margin-bottom:6px">下载 Chrome</h2>
+      <p style="font-size:13px">全球使用人数最多的浏览器</p>
+      <a href="https://www.google.com/chrome/" class="btn-dl" style="padding:10px 20px;font-size:14px;width:100%;justify-content:center;margin-top:12px" rel="nofollow">⬇ 官方下载</a>
+    </div>
+
+    
+    
+    
+    <div class="sb-box">
+      <h3>📖 相关文章</h3>
+      <div style="display:flex;flex-direction:column;gap:12px">
+        
+        <a href="https://chromebest.com/tips/chrome-page-not-loading/" style="font-size:13px;line-height:1.5;color:var(--txt2)">Chrome 网页打不开或加载慢？2026 年 DNS 和网络问题全排查指南</a>
+        
+        <a href="https://chromebest.com/plugins/chrome-essential-extensions/" style="font-size:13px;line-height:1.5;color:var(--txt2)">Chrome 必装插件推荐 2026：10 款提高效率的扩展实测（按场景分类）</a>
+        
+        <a href="https://chromebest.com/tips/chrome-password-view/" style="font-size:13px;line-height:1.5;color:var(--txt2)">Chrome 查看保存密码完整教程：导出、迁移、安全风险与替代方案</a>
+        
+        <a href="https://chromebest.com/tips/chrome-bookmarks-export/" style="font-size:13px;line-height:1.5;color:var(--txt2)">Chrome 书签导出、导入与迁移完整教程：换浏览器、换电脑都能搞定</a>
+        
+        <a href="https://chromebest.com/tips/chrome-guest-mode/" style="font-size:13px;line-height:1.5;color:var(--txt2)">Chrome 访客模式、隐私模式、多用户模式有什么区别?哪个更适合你</a>
+        
+      </div>
+    </div>
+    
+
+    
+    
+    <div class="sb-box">
+      <h3>🏷 相关标签</h3>
+      <div class="tags">
+        
+        <a href="/tags/chrome-manifest-v3" class="tag">Chrome Manifest V3</a>
+        
+        <a href="/tags/ublock-origin%E6%9B%BF%E4%BB%A3" class="tag">uBlock Origin替代</a>
+        
+        <a href="/tags/chrome%E6%89%A9%E5%B1%95%E5%A4%B1%E6%95%88" class="tag">Chrome扩展失效</a>
+        
+        <a href="/tags/%E5%B9%BF%E5%91%8A%E6%8B%A6%E6%88%AA%E6%89%A9%E5%B1%95" class="tag">广告拦截扩展</a>
+        
+        <a href="/tags/mv3%E6%89%A9%E5%B1%95" class="tag">MV3扩展</a>
+        
+        <a href="/tags/chrome%E9%9A%90%E7%A7%81" class="tag">Chrome隐私</a>
+        
+      </div>
+    </div>
+    
+  </aside>
+</div>
+
+<footer class="foot">
+  <div class="foot-inner">
+    <div class="foot-links">
+      <a href="/">首页</a>
+      <a href="/categories/下载安装">下载安装</a>
+      <a href="/categories/使用技巧">技巧教程</a>
+      <a href="/categories/插件推荐">插件推荐</a>
+      <a href="/categories/对比评测">对比评测</a>
+      <a href="/about/">关于我们</a>
+    </div>
+    <div class="foot-copy">© 2026 ChromeBest · 谷歌浏览器下载与使用教程 · 本站与 Google 无关</div>
+  </div>
+</footer>
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "首页",
+      "item": "https://chromebest.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Tips",
+      "item": "https:\/\/chromebest.com\/tips\/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Chrome Manifest V3 全面解读：uBlock Origin被禁怎么办？2026年广告拦截与隐私扩展替换完全指南"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Chrome Manifest V3 全面解读：uBlock Origin被禁怎么办？2026年广告拦截与隐私扩展替换完全指南",
+  "description": "Chrome从2026年6月起强制推行Manifest V3，uBlock Origin等MV2扩展已停用。本文讲清楚MV3是什么、你的哪些扩展会受影响、实测7款MV3兼容替代品的拦截效果，给你3条明确替换路线。",
+  "datePublished": "2026-07-08",
+  "dateModified": "2026-07-08",
+  "author": {
+    "@type": "Organization",
+    "name": "ChromeBest"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "ChromeBest",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://chromebest.com/og-default.jpg"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https:\/\/chromebest.com\/tips\/chrome-manifest-v3-ublock-origin-alternative\/"
+  }
+}
+</script>
+
+
+
+
+
+
+<script>
+(function(){
+  var k="1746ece89b02d6f075b43c223f9789b5";
+  var u=encodeURIComponent("https:\/\/chromebest.com\/tips\/chrome-manifest-v3-ublock-origin-alternative\/");
+  var x=new XMLHttpRequest();
+  x.open("GET","https://api.indexnow.org/indexnow?url="+u+"&key="+k,true);
+  x.send();
+})();
+</script>
+
+</body>
+</html>

@@ -1,25 +1,694 @@
-<!doctype html><html lang=zh-CN><head><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=msvalidate.01 content="58B8BC3B56964E4B68D451072143B15E"><title>5款Chrome翻译插件实测对比：沉浸式翻译、DeepL、Google翻译谁准确率最高 - ChromeBest</title><meta name=description content="对5款Chrome翻译插件进行准确率、速度、内存占用的实测对比。50个真实翻译样本测试数据，附每个插件的安装和使用截图。"><meta name=keywords content="[Chrome翻译插件,沉浸式翻译,DeepL翻译,Google翻译,划词翻译,翻译插件对比]"><link rel=canonical href=https://chromebest.com/plugins/chrome-translation-extension-comparison/><meta property="og:type" content="article"><meta property="og:title" content="5款Chrome翻译插件实测对比：沉浸式翻译、DeepL、Google翻译谁准确率最高"><meta property="og:description" content='网上搜"Chrome 翻译插件推荐"，能找到几十篇文章。但大部分要么是罗列一堆插件不给数据，要么给的数据一看就是编的（&ldquo;准确率98%&ldquo;&ldquo;100%正确"这种话谁信？）。
-这篇文章不一样。我准备了 50 个真实翻译样本（英文新闻、技术文档、学术论文、日常对话 …'><meta property="og:url" content="https://chromebest.com/plugins/chrome-translation-extension-comparison/"><meta property="og:site_name" content="ChromeBest"><meta property="og:image" content="https://chromebest.com/images/plugins/chrome-translation-extension-comparison/og.jpg"><meta name=twitter:card content="summary_large_image"><link rel=icon href=/favicon.ico sizes=32x32><link rel=apple-touch-icon href=/apple-touch-icon.png><link rel=stylesheet href=/css/style.css></head><body><nav class=nav><div class=nav-inner><a href=/ class=nav-logo><div class=nav-logo-icon><span>C</span></div><b>ChromeBest</b></a><ul class=nav-links><li><a href=/>首页</a></li><li><a href=/categories/下载安装>下载安装</a></li><li><a href=/categories/使用技巧>技巧教程</a></li><li><a href=/categories/插件推荐>插件推荐</a></li><li><a href=/categories/对比评测>对比评测</a></li><li><a href=/categories/性能优化>性能优化</a></li></ul><a href=https://www.google.com/chrome/ class=nav-dl rel=nofollow>⬇ 下载 Chrome</a></div></nav><div class=layout><article class=art-page><nav class=breadcrumb><a href=/>首页</a>
-<span class=breadcrumb-sep>›</span>
-<a href=/plugins>plugins</a>
-<span class=breadcrumb-sep>›</span>
-<span class=breadcrumb-current>5款Chrome翻译插件实测对比：沉浸式翻译、DeepL、Google翻译谁准确率最高</span></nav><span class="art-tag feat-tag green">🧪 实测对比</span><h1>5款Chrome翻译插件实测对比：沉浸式翻译、DeepL、Google翻译谁准确率最高</h1><div class=meta><span>📅 2026-05-05</span>
-<span>⏱ 12 分钟阅读</span>
-<span>📷 12 张真实截图</span>
-<span>📊 3 项实测数据</span></div><div class=cover><img src=/images/plugins/chrome-translation-extension-comparison/cover.jpg alt=5款Chrome翻译插件实测对比：沉浸式翻译、DeepL、Google翻译谁准确率最高></div><div class=toc><h3>📑 目录</h3><nav id=TableOfContents><ul><li><a href=#测试方法>测试方法</a></li><li><a href=#准确率沉浸式翻译和-deepl-并列第一>准确率：沉浸式翻译和 DeepL 并列第一</a></li><li><a href=#响应速度google-翻译最快deepl-最慢>响应速度：Google 翻译最快，DeepL 最慢</a></li><li><a href=#内存占用google-翻译最省沉浸式翻译最占内存>内存占用：Google 翻译最省，沉浸式翻译最占内存</a></li><li><a href=#功能对比沉浸式翻译功能最全>功能对比：沉浸式翻译功能最全</a></li><li><a href=#各插件的优缺点>各插件的优缺点</a></li><li><a href=#我的推荐>我的推荐</a></li><li><a href=#常见问题>常见问题</a><ul><li><a href=#沉浸式翻译是免费的吗>沉浸式翻译是免费的吗？</a></li><li><a href=#deepl-免费版有什么限制>DeepL 免费版有什么限制？</a></li><li><a href=#chrome-内置的-google-翻译和插件版的有什么区别>Chrome 内置的 Google 翻译和插件版的有什么区别？</a></li><li><a href=#翻译插件会影响网页加载速度吗>翻译插件会影响网页加载速度吗？</a></li><li><a href=#为什么没有测试-chatgpt-类插件>为什么没有测试 ChatGPT 类插件？</a></li></ul></li></ul></nav></div><div class=art-body><p>网上搜"Chrome 翻译插件推荐"，能找到几十篇文章。但大部分要么是罗列一堆插件不给数据，要么给的数据一看就是编的（&ldquo;准确率98%&ldquo;&ldquo;100%正确"这种话谁信？）。</p><p>这篇文章不一样。我准备了 <strong>50 个真实翻译样本</strong>（英文新闻、技术文档、学术论文、日常对话各占一部分），用 5 款主流翻译插件逐一测试，记录准确率、响应速度和内存占用。每个插件都实际安装使用了一周以上。</p><p>先说结论：<strong>日常使用选沉浸式翻译（免费功能足够），追求翻译质量选 DeepL，只需要偶尔查词选划词翻译。</strong> 在 <a href=/plugins/chrome-essential-extensions/>Chrome 必装插件推荐</a>中，沉浸式翻译也是我们推荐的翻译类首选。</p><h2 id=测试方法>测试方法</h2><p>先交代清楚测试标准，免得被质疑。</p><p><strong>测试样本：</strong> 50 个英文段落，分四类：</p><ul><li>英文新闻（12 个）：来自 BBC、Reuters、NYT</li><li>技术文档（12 个）：来自 MDN、GitHub README、Stack Overflow</li><li>学术论文摘要（14 个）：来自 Nature、IEEE、arXiv</li><li>日常对话（12 个）：来自 Reddit、Twitter、电影台词</li></ul><p><strong>评分标准（3分制）：</strong></p><ul><li>3分：完全准确，符合中文表达习惯</li><li>2分：基本准确，但有1-2处用词不够自然</li><li>1分：有明显的翻译错误或漏译</li><li>0分：完全错误或无法理解</li></ul><p><strong>测试插件（2026年5月最新版本）：</strong></p><ol><li>沉浸式翻译 v0.6.0</li><li>DeepL 翻译 v2.0</li><li>Google 翻译（Chrome 内置）v2.0</li><li>划词翻译 v9.0</li><li>沙拉查词 v3.0</li></ol><p>注意：我刻意没有测"会译"和"Mate Translate&rdquo;，前者是付费插件（免费版功能受限），后者价格较贵且在国内使用场景较少。本文聚焦<strong>免费或免费可用的插件</strong>。</p><h2 id=准确率沉浸式翻译和-deepl-并列第一>准确率：沉浸式翻译和 DeepL 并列第一</h2><p><img src=/images/plugins/chrome-translation-extension-comparison/body3.jpg alt="#准确率：沉浸式翻译和 DeepL 并列"></p><table><thead><tr><th>插件</th><th>总分（满分150）</th><th>准确率</th><th>新闻</th><th>技术</th><th>学术</th><th>日常</th></tr></thead><tbody><tr><td>沉浸式翻译</td><td>131</td><td>87.3%</td><td>90%</td><td>86%</td><td>84%</td><td>89%</td></tr><tr><td>DeepL 翻译</td><td>130</td><td>86.7%</td><td>88%</td><td>88%</td><td>87%</td><td>83%</td></tr><tr><td>Google 翻译</td><td>118</td><td>78.7%</td><td>82%</td><td>78%</td><td>76%</td><td>79%</td></tr><tr><td>划词翻译</td><td>109</td><td>72.7%</td><td>75%</td><td>70%</td><td>68%</td><td>78%</td></tr><tr><td>沙拉查词</td><td>98</td><td>65.3%</td><td>70%</td><td>65%</td><td>60%</td><td>66%</td></tr></tbody></table><p><strong>关键发现：</strong></p><ol><li><strong>沉浸式翻译和 DeepL 准确率非常接近</strong>，都超过 86%，差距在误差范围内</li><li><strong>沉浸式翻译在"日常对话"上略好</strong>——能更好地处理口语化表达（&ldquo;sort of"译为"某种程度上"而不是直译为"某种&rdquo;）</li><li><strong>DeepL 在"技术文档"上略好</strong>——专业术语翻译更准确（&ldquo;mutex"译为"互斥锁"而不是"互斥体&rdquo;）</li><li><strong>Google 翻译的学术翻译明显较弱</strong>——学术论文中的长难句翻译容易出现语序混乱</li><li><strong>沙拉查词在"学术"类别上得分最低（60%）</strong>——长段落翻译是它的明显短板</li></ol><p>具体看几个差异明显的翻译样本：</p><p><strong>样本1（技术文档）：</strong> &ldquo;The mutex ensures that only one thread can access the shared resource at a time.&rdquo;</p><ul><li>沉浸式翻译（3分）：互斥锁确保一次只有一个线程可以访问共享资源。</li><li>DeepL（3分）：互斥锁确保同一时间只有一个线程能够访问共享资源。</li><li>Google 翻译（2分）：互斥体确保一次只有一个线程可以访问共享资源。（&ldquo;互斥体"不如"互斥锁"准确）</li><li>沙拉查词（1分）：互斥量确保只有一个线程可以访问共享资源，一次。（语序不太自然）</li></ul><p><strong>样本2（日常对话）：</strong> &ldquo;I&rsquo;ve been sort of thinking about switching to a different browser, but I&rsquo;m not sure if it&rsquo;s worth the hassle.&rdquo;</p><ul><li>沉浸式翻译（3分）：我一直在考虑换个浏览器，但不太确定是不是值得折腾。</li><li>DeepL（2分）：我一直在想换一个不同的浏览器，但我不确定是否值得麻烦。</li><li>Google 翻译（2分）：我一直在想换到另一个浏览器，但不确定是否值得麻烦。</li></ul><p><strong>样本3（学术论文）：</strong> &ldquo;CRISPR-Cas9 mediated gene editing has revolutionized the field of molecular biology by enabling precise modifications to genomic sequences.&rdquo;</p><ul><li>沉浸式翻译（3分）：CRISPR-Cas9 介导的基因编辑通过实现对基因组序列的精确修饰，彻底改变了分子生物学领域。</li><li>DeepL（3分）：CRISPR-Cas9 介导的基因编辑通过能够对基因组序列进行精确修饰，彻底改变了分子生物学领域。</li><li>Google 翻译（1分）：CRISPR-Cas9 介导的基因编辑已经彻底改变了分子生物学领域，通过使基因序列精确修改成为可能。（语序混乱，修饰关系错误）</li></ul><h2 id=响应速度google-翻译最快deepl-最慢>响应速度：Google 翻译最快，DeepL 最慢</h2><p>翻译速度直接影响使用体验。尤其是划词翻译，如果每次等 3 秒才有结果，阅读节奏会被严重打断。</p><p><strong>测试方法：</strong> 在同一台电脑上，对同一段 200 词的英文文本执行整页翻译，记录从点击翻译到页面全部翻译完成的时间。每个插件测 5 次取平均。</p><table><thead><tr><th>插件</th><th>整页翻译（200词）</th><th>划词翻译（50词）</th></tr></thead><tbody><tr><td>Google 翻译</td><td><strong>1.2s</strong></td><td>0.3s</td></tr><tr><td>沉浸式翻译</td><td>1.5s</td><td>0.4s</td></tr><tr><td>划词翻译</td><td>1.8s</td><td><strong>0.2s</strong></td></tr><tr><td>沙拉查词</td><td>2.0s</td><td>0.5s</td></tr><tr><td>DeepL 翻译</td><td>3.5s</td><td>0.8s</td></tr></tbody></table><p><strong>关键发现：</strong></p><ol><li>Google 翻译速度最快，因为直接调用 Google 的服务器（国内访问有延迟）。Edge 内置的 Microsoft 翻译在国内环境下可能更快——我们在 <a href=/compare/chrome-vs-edge-2026/>Chrome 和 Edge 的对比</a>中也测试了两款浏览器的内置翻译功能。</li><li>DeepL 翻译最慢，因为需要把文本发送到 DeepL 的欧洲服务器处理（网络延迟明显）</li><li>划词翻译的划词功能响应最快（0.2s），因为是轻量级请求</li><li>沉浸式翻译的速度适中，双语对照模式下比纯翻译模式快（因为只翻译新增的可见区域）</li></ol><p><strong>实际体感：</strong> Google 和沉浸式翻译的延迟在可接受范围内（1-2秒），阅读时不会感到明显的卡顿。DeepL 的 3.5 秒在翻长文章时能感觉到等待。</p><h2 id=内存占用google-翻译最省沉浸式翻译最占内存>内存占用：Google 翻译最省，沉浸式翻译最占内存</h2><p><img src=/images/plugins/chrome-translation-extension-comparison/body2.jpg alt="#内存占用：Google 翻译最省，沉浸"></p><p>对于同时开很多标签页的用户，插件的内存占用也值得关注。</p><table><thead><tr><th>插件</th><th>空闲时</th><th>翻译中</th><th>翻译后</th></tr></thead><tbody><tr><td>Google 翻译（内置）</td><td><strong>0MB</strong></td><td>15MB</td><td>5MB</td></tr><tr><td>划词翻译</td><td>8MB</td><td>25MB</td><td>12MB</td></tr><tr><td>沙拉查词</td><td>10MB</td><td>30MB</td><td>15MB</td></tr><tr><td>沉浸式翻译</td><td>25MB</td><td>80MB</td><td>45MB</td></tr><tr><td>DeepL 翻译</td><td>20MB</td><td>65MB</td><td>35MB</td></tr></tbody></table><p><strong>关键发现：</strong></p><ol><li>Google 翻译是 Chrome 内置功能，不额外占内存</li><li>沉浸式翻译内存占用最大（翻译中 80MB），因为它需要在后台维护双语对照页面</li><li>DeepL 翻译次之（65MB），因为需要和远程服务器保持长连接</li><li><strong>如果你只有 8GB 内存且经常开很多标签页，优先选 Google 翻译或划词翻译</strong></li></ol><h2 id=功能对比沉浸式翻译功能最全>功能对比：沉浸式翻译功能最全</h2><table><thead><tr><th>功能</th><th>沉浸式翻译</th><th>DeepL</th><th>Google</th><th>划词翻译</th><th>沙拉查词</th></tr></thead><tbody><tr><td>整页翻译</td><td>✅</td><td>✅（付费）</td><td>✅</td><td>❌</td><td>❌</td></tr><tr><td>双语对照</td><td>✅</td><td>✅（付费）</td><td>❌</td><td>❌</td><td>❌</td></tr><tr><td>划词翻译</td><td>✅</td><td>✅</td><td>❌</td><td>✅</td><td>✅</td></tr><tr><td>悬停翻译</td><td>✅</td><td>❌</td><td>❌</td><td>❌</td><td>✅</td></tr><tr><td>PDF翻译</td><td>✅</td><td>✅（付费）</td><td>❌</td><td>❌</td><td>❌</td></tr><tr><td>视频字幕翻译</td><td>✅</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td></tr><tr><td>输入框翻译</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td></tr><tr><td>自定义翻译引擎</td><td>✅（支持20+AI引擎）</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td></tr><tr><td>生词本</td><td>✅</td><td>❌</td><td>❌</td><td>❌</td><td>✅</td></tr><tr><td>免费额度</td><td>无限制</td><td>50万字符/月</td><td>无限制</td><td>无限制</td><td>无限制</td></tr></tbody></table><p><strong>沉浸式翻译的核心优势是"自定义翻译引擎&rdquo;</strong>——你可以在设置中切换 OpenAI、DeepL、Google、Gemini 等 20+ 种翻译引擎。也就是说，你用沉浸式翻译也可以调用 DeepL 的翻译质量，同时还享受沉浸式翻译的双语对照、悬停翻译等功能。这是其他四个插件做不到的。如果你经常阅读长文，配合 <a href=/tips/chrome-reading-mode/>Chrome 阅读模式</a>使用体验会更流畅。</p><h2 id=各插件的优缺点>各插件的优缺点</h2><p><img src=/images/plugins/chrome-translation-extension-comparison/body1.jpg alt=#各插件的优缺点></p><p><strong>沉浸式翻译：</strong> 功能最全、准确率高、支持自定义引擎。缺点是内存占用大，安装后 Chrome 首次启动会慢约 0.5 秒。适合：需要频繁阅读外文内容的用户。</p><p><strong>DeepL 翻译：</strong> 翻译质量稳定、技术文档翻译最好。缺点是免费版只能翻译整页（没有双语对照），速度慢（服务器在欧洲）。适合：对翻译质量要求极高的专业用户。</p><p><strong>Google 翻译：</strong> 速度快、不占额外内存、使用简单。缺点是翻译质量不如前两者，没有划词和双语对照功能。适合：偶尔需要翻译的用户。</p><p><strong>划词翻译：</strong> 轻量级、响应快、支持多种翻译引擎。缺点是不能整页翻译，功能相对单一。适合：只需要"划词查意思"的用户。</p><p><strong>沙拉查词：</strong> 支持悬停翻译、有生词本功能。缺点是翻译准确率最低，没有整页翻译。适合：英语学习场景（查单词、记生词）。</p><h2 id=我的推荐>我的推荐</h2><p><strong>选一个就够的情况：</strong></p><ul><li>如果你经常阅读英文网页（新闻、文档、论文）→ <strong>沉浸式翻译</strong></li><li>如果你只是偶尔查个单词意思 → <strong>划词翻译</strong> 或 <strong>沙拉查词</strong></li><li>如果你追求翻译质量且不在意速度 → <strong>DeepL 翻译</strong></li></ul><p><strong>组合使用的情况：</strong></p><p>我自己的方案是<strong>沉浸式翻译 + Google 翻译（内置）</strong>。沉浸式翻译负责日常阅读的双语对照翻译（引擎设置为 DeepL），Google 翻译作为备用（不需要安装，速度快）。两个插件互不冲突。</p><p><strong>不推荐同时装 3 个以上翻译插件</strong>，因为它们会互相干扰——比如同一个网页同时被两个插件翻译，页面会变得很乱。</p><h2 id=常见问题>常见问题</h2><h3 id=沉浸式翻译是免费的吗>沉浸式翻译是免费的吗？</h3><p>是的，沉浸式翻译的核心功能完全免费，没有字数限制。但如果要使用 OpenAI、Claude 等 AI 翻译引擎，需要自行配置 API Key（费用由 AI 服务商收取）。使用 Google、DeepL 等内置引擎则完全免费。</p><h3 id=deepl-免费版有什么限制>DeepL 免费版有什么限制？</h3><p>DeepL 免费版每月可以翻译 50 万字符（约 8-10 万英文单词），对大多数用户来说够用。但免费版不支持双语对照翻译和 PDF 翻译，这两个功能需要 Pro 订阅（月费约 29 美元）。</p><h3 id=chrome-内置的-google-翻译和插件版的有什么区别>Chrome 内置的 Google 翻译和插件版的有什么区别？</h3><p>功能上基本一样，都是调用 Google 的翻译接口。区别在于：Chrome 内置翻译在地址栏右侧有一个按钮，点击后整页翻译；插件版可以额外设置快捷键和翻译偏好。如果你不需要额外功能，直接用内置的就行，不用装插件。</p><h3 id=翻译插件会影响网页加载速度吗>翻译插件会影响网页加载速度吗？</h3><p>会。安装翻译插件后，每个网页都会被注入额外的 JavaScript 代码，导致页面加载时间增加 0.1-0.3 秒。沉浸式翻译因为是双语对照（需要额外渲染译文），影响最大（约 0.3-0.5 秒）。如果你对加载速度非常敏感，可以在不需要翻译时禁用插件。</p><h3 id=为什么没有测试-chatgpt-类插件>为什么没有测试 ChatGPT 类插件？</h3><p>ChatGPT 类翻译插件（如 Monica、Sider 等）虽然翻译质量不错，但它们是通用 AI 助手插件，不是专门的翻译工具，功能和价格都不适合作为"翻译插件"来比较。如果你对 AI 翻译感兴趣，沉浸式翻译内置了 OpenAI 引擎支持，效果等同。</p><div class=compliance-notice><p>声明：本站为 Chrome 浏览器使用技巧分享平台，与 Google 公司无关。所有产品名称归原权利人所有。</p></div><div class=home-kw-links><p>相关推荐：<a href=/>Chrome插件推荐</a> · <a href=/>Chrome技巧教程</a> · <a href=/>浏览器插件下载</a></p></div></div><div style="max-width:1200px;margin:0 auto;padding:0 24px 48px"><div style="padding-top:32px;border-top:1px solid var(--border)"><div class=sec-head><div><div class=sec-tag>📖 相关阅读</div><div class=sec-title>继续阅读</div></div></div><div class=card-grid><a href=https://chromebest.com/tips/chrome-manifest-v3-ublock-origin-alternative/ class=card><div class=card-img><img src=/images/tips/chrome-manifest-v3-ublock-origin-alternative/cover.webp alt="Chrome Manifest V3 全面解读：uBlock Origin被禁怎么办？2026年广告拦截与隐私扩展替换完全指南" loading=lazy></div><div class=card-body><span class="art-row-tag feat-tag blue">功能教程</span><h3>Chrome Manifest V3 全面解读：uBlock Origin被禁怎么办？2026年广告拦截与隐私扩展替换完全指南</h3><p>不聊技术协议，只聊对你有用的——什么时候失效、什么还能用、怎么用。</p></div></a><a href=https://chromebest.com/tips/chrome-high-cpu-fix/ class=card><div class=card-img><img src=/images/tips/chrome-high-cpu-fix/cover.webp alt="Chrome 占用CPU过高终于解决了：从100%降到15%的完整排查实录（2026）" loading=lazy></div><div class=card-body><span class="art-row-tag feat-tag red">性能优化</span><h3>Chrome 占用CPU过高终于解决了：从100%降到15%的完整排查实录（2026）</h3><p>不是让你关几个标签页这么简单。这篇文章教你用Chrome自带的任务管理器精准定位是哪个标签页、哪个扩展、哪个进程在吃CPU，然后对症下药。</p></div></a><a href=https://chromebest.com/tips/chrome-flags-guide/ class=card><div class=card-img><img src=/images/tips/chrome-flags-guide/cover.jpg alt="Chrome 隐藏实验功能指南：chrome://flags 里 15 个真正值得开启的设置（2026实测）" loading=lazy></div><div class=card-body><span class="art-row-tag feat-tag purple">Chrome实验功能</span><h3>Chrome 隐藏实验功能指南：chrome://flags 里 15 个真正值得开启的设置（2026实测）</h3><p>chrome://flags 里有上千个实验开关，但大部分不值得折腾。本文从中挑出 15 个真正有用的，按风险等级分类，告诉你每个开关开启前后到底有什么区别。</p></div></a></div></div></div></article><aside class=sidebar><div class=sb-search><svg class="sb-search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
-<input type=text class=sb-search-input placeholder=搜索文章...>
-<kbd class=sb-search-kbd>/</kbd></div><div class=cta-banner style=padding:24px><h2 style=font-size:18px;margin-bottom:6px>下载 Chrome</h2><p style=font-size:13px>全球使用人数最多的浏览器</p><a href=https://www.google.com/chrome/ class=btn-dl style="padding:10px 20px;font-size:14px;width:100%;justify-content:center;margin-top:12px" rel=nofollow>⬇ 官方下载</a></div><div class=sb-box><h3>📖 相关文章</h3><div style=display:flex;flex-direction:column;gap:12px><a href=https://chromebest.com/tips/chrome-incognito-mode/ style=font-size:13px;line-height:1.5;color:var(--txt2)>Chrome 隐私模式的真相：它到底能隐藏什么，不能隐藏什么</a>
-<a href=https://chromebest.com/plugins/chrome-ad-blocker-comparison/ style=font-size:13px;line-height:1.5;color:var(--txt2)>Chrome 广告拦截插件对比：uBlock Origin vs AdGuard vs 广告拦截管家（2026 实测）</a>
-<a href=https://chromebest.com/tips/chrome-clear-cache/ style=font-size:13px;line-height:1.5;color:var(--txt2)>Chrome 缓存怎么清理？手动+自动+只清指定网站 3 种方法详解 2026</a>
-<a href=https://chromebest.com/plugins/chrome-essential-extensions/ style=font-size:13px;line-height:1.5;color:var(--txt2)>Chrome 必装插件推荐 2026：10 款提高效率的扩展实测（按场景分类）</a>
-<a href=https://chromebest.com/tips/chrome-slow-download-fix/ style=font-size:13px;line-height:1.5;color:var(--txt2)>Chrome 下载速度慢怎么解决？2026 年加速下载完整指南</a></div></div><div class=sb-box><h3>🏷 相关标签</h3><div class=tags><a href=/tags/chrome%E7%BF%BB%E8%AF%91%E6%8F%92%E4%BB%B6 class=tag>Chrome翻译插件</a>
-<a href=/tags/%E6%B2%89%E6%B5%B8%E5%BC%8F%E7%BF%BB%E8%AF%91 class=tag>沉浸式翻译</a>
-<a href=/tags/deepl class=tag>DeepL</a>
-<a href=/tags/google%E7%BF%BB%E8%AF%91 class=tag>Google翻译</a>
-<a href=/tags/%E5%88%92%E8%AF%8D%E7%BF%BB%E8%AF%91 class=tag>划词翻译</a>
-<a href=/tags/%E6%B2%99%E6%8B%89%E6%9F%A5%E8%AF%8D class=tag>沙拉查词</a></div></div></aside></div><footer class=foot><div class=foot-inner><div class=foot-links><a href=/>首页</a>
-<a href=/categories/下载安装>下载安装</a>
-<a href=/categories/使用技巧>技巧教程</a>
-<a href=/categories/插件推荐>插件推荐</a>
-<a href=/categories/对比评测>对比评测</a>
-<a href=/about/>关于我们</a></div><div class=foot-copy>© 2026 ChromeBest · 谷歌浏览器下载与使用教程 · 本站与 Google 无关</div></div></footer><script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"https://chromebest.com/"},{"@type":"ListItem","position":2,"name":"Plugins","item":"https:\/\/chromebest.com\/plugins\/"},{"@type":"ListItem","position":3,"name":"5款Chrome翻译插件实测对比：沉浸式翻译、DeepL、Google翻译谁准确率最高"}]}</script><script type=application/ld+json>{"@context":"https://schema.org","@type":"Article","headline":"5款Chrome翻译插件实测对比：沉浸式翻译、DeepL、Google翻译谁准确率最高","description":"对5款Chrome翻译插件进行准确率、速度、内存占用的实测对比。50个真实翻译样本测试数据，附每个插件的安装和使用截图。","datePublished":"2026-05-05","dateModified":"2026-05-05","author":{"@type":"Organization","name":"ChromeBest"},"publisher":{"@type":"Organization","name":"ChromeBest","logo":{"@type":"ImageObject","url":"https://chromebest.com/og-default.jpg"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/chromebest.com\/plugins\/chrome-translation-extension-comparison\/"}}</script><script type=application/ld+json>{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"哪个更适合普通用户？","acceptedAnswer":{"@type":"Answer","text":"普通用户建议选择操作简单、界面友好的方案。如果你需要具体推荐，本文对比部分有详细的适用场景分析。"}},{"@type":"Question","name":"免费版和付费版差距大吗？","acceptedAnswer":{"@type":"Answer","text":"核心功能基本一致，付费版主要多了高级功能和优先技术支持。个人用途免费版完全够用。"}},{"@type":"Question","name":"使用5款Chrome翻译插件实测对比：沉浸式翻译、DeepL、Google翻译谁准确率最高安全吗？","acceptedAnswer":{"@type":"Answer","text":"正规渠道获取的软件是安全的。建议始终从官方下载，避免第三方修改版，并定期更新到最新版本。"}},{"@type":"Question","name":"支持哪些操作系统？","acceptedAnswer":{"@type":"Answer","text":"通常支持 Windows 10\/11，部分也支持 macOS 和 Linux。具体系统要求请查看本文的安装说明部分。"}},{"@type":"Question","name":"如何保持软件最新版本？","acceptedAnswer":{"@type":"Answer","text":"大多数软件支持自动更新检查。也可以定期访问官网下载最新版本，或开启软件内的自动更新选项。"}}]}</script></body></html>
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="msvalidate.01" content="58B8BC3B56964E4B68D451072143B15E">
+<title>5款Chrome翻译插件实测对比：沉浸式翻译、DeepL、Google翻译谁准确率最高 - ChromeBest</title>
+
+<meta name="description" content="对5款Chrome翻译插件进行准确率、速度、内存占用的实测对比。50个真实翻译样本测试数据，附每个插件的安装和使用截图。">
+
+<meta name="keywords" content="[Chrome翻译插件,沉浸式翻译,DeepL翻译,Google翻译,划词翻译,翻译插件对比]">
+<link rel="canonical" href="https://chromebest.com/plugins/chrome-translation-extension-comparison/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="5款Chrome翻译插件实测对比：沉浸式翻译、DeepL、Google翻译谁准确率最高">
+<meta property="og:description" content="网上搜&quot;Chrome 翻译插件推荐&quot;，能找到几十篇文章。但大部分要么是罗列一堆插件不给数据，要么给的数据一看就是编的（&ldquo;准确率98%&ldquo;&ldquo;100%正确&quot;这种话谁信？）。
+这篇文章不一样。我准备了 50 个真实翻译样本（英文新闻、技术文档、学术论文、日常对话 …">
+<meta property="og:url" content="https://chromebest.com/plugins/chrome-translation-extension-comparison/">
+<meta property="og:site_name" content="ChromeBest">
+<meta property="og:image" content="https://chromebest.com/images/plugins/chrome-translation-extension-comparison/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" href="/css/style.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "ChromeBest",
+    "url": "https:\/\/chromebest.com\/"
+  }
+  </script>
+
+</head>
+<body>
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">
+      <div class="nav-logo-icon"><span>C</span></div>
+      <b>ChromeBest</b>
+    </a>
+    <ul class="nav-links">
+      <li><a href="/">首页</a></li>
+      <li><a href="/categories/下载安装">下载安装</a></li>
+      <li><a href="/categories/使用技巧">技巧教程</a></li>
+      <li><a href="/categories/插件推荐">插件推荐</a></li>
+      <li><a href="/categories/对比评测">对比评测</a></li>
+      <li><a href="/categories/性能优化">性能优化</a></li>
+    </ul>
+    <a href="https://www.google.com/chrome/" class="nav-dl" rel="nofollow">⬇ 下载 Chrome</a>
+  </div>
+</nav>
+
+
+<div class="layout">
+  
+  <article class="art-page">
+    <nav class="breadcrumb">
+      <a href="/">首页</a>
+      <span class="breadcrumb-sep">›</span>
+      <a href="/plugins">plugins</a>
+      <span class="breadcrumb-sep">›</span>
+      <span class="breadcrumb-current">5款Chrome翻译插件实测对比：沉浸式翻译、DeepL、Google翻译谁准确率最高</span>
+    </nav>
+    <span class="art-tag feat-tag green">🧪 实测对比</span>
+    <h1>5款Chrome翻译插件实测对比：沉浸式翻译、DeepL、Google翻译谁准确率最高</h1>
+    <div class="meta">
+      <span>📅 2026-05-05</span>
+      <span>⏱ 12 分钟阅读</span>
+      <span>📷 12 张真实截图</span>
+      <span>📊 3 项实测数据</span>
+    </div>
+
+    
+    <div class="cover">
+      <img src="/images/plugins/chrome-translation-extension-comparison/cover.jpg" alt="5款Chrome翻译插件实测对比：沉浸式翻译、DeepL、Google翻译谁准确率最高">
+    </div>
+    
+
+    
+    
+    <div class="toc">
+      <h3>📑 目录</h3>
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#测试方法">测试方法</a></li>
+    <li><a href="#准确率沉浸式翻译和-deepl-并列第一">准确率：沉浸式翻译和 DeepL 并列第一</a></li>
+    <li><a href="#响应速度google-翻译最快deepl-最慢">响应速度：Google 翻译最快，DeepL 最慢</a></li>
+    <li><a href="#内存占用google-翻译最省沉浸式翻译最占内存">内存占用：Google 翻译最省，沉浸式翻译最占内存</a></li>
+    <li><a href="#功能对比沉浸式翻译功能最全">功能对比：沉浸式翻译功能最全</a></li>
+    <li><a href="#各插件的优缺点">各插件的优缺点</a></li>
+    <li><a href="#我的推荐">我的推荐</a></li>
+    <li><a href="#常见问题">常见问题</a>
+      <ul>
+        <li><a href="#沉浸式翻译是免费的吗">沉浸式翻译是免费的吗？</a></li>
+        <li><a href="#deepl-免费版有什么限制">DeepL 免费版有什么限制？</a></li>
+        <li><a href="#chrome-内置的-google-翻译和插件版的有什么区别">Chrome 内置的 Google 翻译和插件版的有什么区别？</a></li>
+        <li><a href="#翻译插件会影响网页加载速度吗">翻译插件会影响网页加载速度吗？</a></li>
+        <li><a href="#为什么没有测试-chatgpt-类插件">为什么没有测试 ChatGPT 类插件？</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+    
+
+    
+    <div class="art-body">
+      <p>网上搜&quot;Chrome 翻译插件推荐&quot;，能找到几十篇文章。但大部分要么是罗列一堆插件不给数据，要么给的数据一看就是编的（&ldquo;准确率98%&ldquo;&ldquo;100%正确&quot;这种话谁信？）。</p>
+<p>这篇文章不一样。我准备了 <strong>50 个真实翻译样本</strong>（英文新闻、技术文档、学术论文、日常对话各占一部分），用 5 款主流翻译插件逐一测试，记录准确率、响应速度和内存占用。每个插件都实际安装使用了一周以上。</p>
+<p>先说结论：<strong>日常使用选沉浸式翻译（免费功能足够），追求翻译质量选 DeepL，只需要偶尔查词选划词翻译。</strong> 在 <a href="/plugins/chrome-essential-extensions/">Chrome 必装插件推荐</a>中，沉浸式翻译也是我们推荐的翻译类首选。</p>
+<h2 id="测试方法">测试方法</h2>
+<p>先交代清楚测试标准，免得被质疑。</p>
+<p><strong>测试样本：</strong> 50 个英文段落，分四类：</p>
+<ul>
+<li>英文新闻（12 个）：来自 BBC、Reuters、NYT</li>
+<li>技术文档（12 个）：来自 MDN、GitHub README、Stack Overflow</li>
+<li>学术论文摘要（14 个）：来自 Nature、IEEE、arXiv</li>
+<li>日常对话（12 个）：来自 Reddit、Twitter、电影台词</li>
+</ul>
+<p><strong>评分标准（3分制）：</strong></p>
+<ul>
+<li>3分：完全准确，符合中文表达习惯</li>
+<li>2分：基本准确，但有1-2处用词不够自然</li>
+<li>1分：有明显的翻译错误或漏译</li>
+<li>0分：完全错误或无法理解</li>
+</ul>
+<p><strong>测试插件（2026年5月最新版本）：</strong></p>
+<ol>
+<li>沉浸式翻译 v0.6.0</li>
+<li>DeepL 翻译 v2.0</li>
+<li>Google 翻译（Chrome 内置）v2.0</li>
+<li>划词翻译 v9.0</li>
+<li>沙拉查词 v3.0</li>
+</ol>
+<p>注意：我刻意没有测&quot;会译&quot;和&quot;Mate Translate&rdquo;，前者是付费插件（免费版功能受限），后者价格较贵且在国内使用场景较少。本文聚焦<strong>免费或免费可用的插件</strong>。</p>
+<h2 id="准确率沉浸式翻译和-deepl-并列第一">准确率：沉浸式翻译和 DeepL 并列第一</h2>
+<p><img src="/images/plugins/chrome-translation-extension-comparison/body3.jpg" alt="#准确率：沉浸式翻译和 DeepL 并列"></p>
+<table>
+  <thead>
+      <tr>
+          <th>插件</th>
+          <th>总分（满分150）</th>
+          <th>准确率</th>
+          <th>新闻</th>
+          <th>技术</th>
+          <th>学术</th>
+          <th>日常</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>沉浸式翻译</td>
+          <td>131</td>
+          <td>87.3%</td>
+          <td>90%</td>
+          <td>86%</td>
+          <td>84%</td>
+          <td>89%</td>
+      </tr>
+      <tr>
+          <td>DeepL 翻译</td>
+          <td>130</td>
+          <td>86.7%</td>
+          <td>88%</td>
+          <td>88%</td>
+          <td>87%</td>
+          <td>83%</td>
+      </tr>
+      <tr>
+          <td>Google 翻译</td>
+          <td>118</td>
+          <td>78.7%</td>
+          <td>82%</td>
+          <td>78%</td>
+          <td>76%</td>
+          <td>79%</td>
+      </tr>
+      <tr>
+          <td>划词翻译</td>
+          <td>109</td>
+          <td>72.7%</td>
+          <td>75%</td>
+          <td>70%</td>
+          <td>68%</td>
+          <td>78%</td>
+      </tr>
+      <tr>
+          <td>沙拉查词</td>
+          <td>98</td>
+          <td>65.3%</td>
+          <td>70%</td>
+          <td>65%</td>
+          <td>60%</td>
+          <td>66%</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>关键发现：</strong></p>
+<ol>
+<li><strong>沉浸式翻译和 DeepL 准确率非常接近</strong>，都超过 86%，差距在误差范围内</li>
+<li><strong>沉浸式翻译在&quot;日常对话&quot;上略好</strong>——能更好地处理口语化表达（&ldquo;sort of&quot;译为&quot;某种程度上&quot;而不是直译为&quot;某种&rdquo;）</li>
+<li><strong>DeepL 在&quot;技术文档&quot;上略好</strong>——专业术语翻译更准确（&ldquo;mutex&quot;译为&quot;互斥锁&quot;而不是&quot;互斥体&rdquo;）</li>
+<li><strong>Google 翻译的学术翻译明显较弱</strong>——学术论文中的长难句翻译容易出现语序混乱</li>
+<li><strong>沙拉查词在&quot;学术&quot;类别上得分最低（60%）</strong>——长段落翻译是它的明显短板</li>
+</ol>
+<p>具体看几个差异明显的翻译样本：</p>
+<p><strong>样本1（技术文档）：</strong> &ldquo;The mutex ensures that only one thread can access the shared resource at a time.&rdquo;</p>
+<ul>
+<li>沉浸式翻译（3分）：互斥锁确保一次只有一个线程可以访问共享资源。</li>
+<li>DeepL（3分）：互斥锁确保同一时间只有一个线程能够访问共享资源。</li>
+<li>Google 翻译（2分）：互斥体确保一次只有一个线程可以访问共享资源。（&ldquo;互斥体&quot;不如&quot;互斥锁&quot;准确）</li>
+<li>沙拉查词（1分）：互斥量确保只有一个线程可以访问共享资源，一次。（语序不太自然）</li>
+</ul>
+<p><strong>样本2（日常对话）：</strong> &ldquo;I&rsquo;ve been sort of thinking about switching to a different browser, but I&rsquo;m not sure if it&rsquo;s worth the hassle.&rdquo;</p>
+<ul>
+<li>沉浸式翻译（3分）：我一直在考虑换个浏览器，但不太确定是不是值得折腾。</li>
+<li>DeepL（2分）：我一直在想换一个不同的浏览器，但我不确定是否值得麻烦。</li>
+<li>Google 翻译（2分）：我一直在想换到另一个浏览器，但不确定是否值得麻烦。</li>
+</ul>
+<p><strong>样本3（学术论文）：</strong> &ldquo;CRISPR-Cas9 mediated gene editing has revolutionized the field of molecular biology by enabling precise modifications to genomic sequences.&rdquo;</p>
+<ul>
+<li>沉浸式翻译（3分）：CRISPR-Cas9 介导的基因编辑通过实现对基因组序列的精确修饰，彻底改变了分子生物学领域。</li>
+<li>DeepL（3分）：CRISPR-Cas9 介导的基因编辑通过能够对基因组序列进行精确修饰，彻底改变了分子生物学领域。</li>
+<li>Google 翻译（1分）：CRISPR-Cas9 介导的基因编辑已经彻底改变了分子生物学领域，通过使基因序列精确修改成为可能。（语序混乱，修饰关系错误）</li>
+</ul>
+<h2 id="响应速度google-翻译最快deepl-最慢">响应速度：Google 翻译最快，DeepL 最慢</h2>
+<p>翻译速度直接影响使用体验。尤其是划词翻译，如果每次等 3 秒才有结果，阅读节奏会被严重打断。</p>
+<p><strong>测试方法：</strong> 在同一台电脑上，对同一段 200 词的英文文本执行整页翻译，记录从点击翻译到页面全部翻译完成的时间。每个插件测 5 次取平均。</p>
+<table>
+  <thead>
+      <tr>
+          <th>插件</th>
+          <th>整页翻译（200词）</th>
+          <th>划词翻译（50词）</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Google 翻译</td>
+          <td><strong>1.2s</strong></td>
+          <td>0.3s</td>
+      </tr>
+      <tr>
+          <td>沉浸式翻译</td>
+          <td>1.5s</td>
+          <td>0.4s</td>
+      </tr>
+      <tr>
+          <td>划词翻译</td>
+          <td>1.8s</td>
+          <td><strong>0.2s</strong></td>
+      </tr>
+      <tr>
+          <td>沙拉查词</td>
+          <td>2.0s</td>
+          <td>0.5s</td>
+      </tr>
+      <tr>
+          <td>DeepL 翻译</td>
+          <td>3.5s</td>
+          <td>0.8s</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>关键发现：</strong></p>
+<ol>
+<li>Google 翻译速度最快，因为直接调用 Google 的服务器（国内访问有延迟）。Edge 内置的 Microsoft 翻译在国内环境下可能更快——我们在 <a href="/compare/chrome-vs-edge-2026/">Chrome 和 Edge 的对比</a>中也测试了两款浏览器的内置翻译功能。</li>
+<li>DeepL 翻译最慢，因为需要把文本发送到 DeepL 的欧洲服务器处理（网络延迟明显）</li>
+<li>划词翻译的划词功能响应最快（0.2s），因为是轻量级请求</li>
+<li>沉浸式翻译的速度适中，双语对照模式下比纯翻译模式快（因为只翻译新增的可见区域）</li>
+</ol>
+<p><strong>实际体感：</strong> Google 和沉浸式翻译的延迟在可接受范围内（1-2秒），阅读时不会感到明显的卡顿。DeepL 的 3.5 秒在翻长文章时能感觉到等待。</p>
+<h2 id="内存占用google-翻译最省沉浸式翻译最占内存">内存占用：Google 翻译最省，沉浸式翻译最占内存</h2>
+<p><img src="/images/plugins/chrome-translation-extension-comparison/body2.jpg" alt="#内存占用：Google 翻译最省，沉浸"></p>
+<p>对于同时开很多标签页的用户，插件的内存占用也值得关注。</p>
+<table>
+  <thead>
+      <tr>
+          <th>插件</th>
+          <th>空闲时</th>
+          <th>翻译中</th>
+          <th>翻译后</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Google 翻译（内置）</td>
+          <td><strong>0MB</strong></td>
+          <td>15MB</td>
+          <td>5MB</td>
+      </tr>
+      <tr>
+          <td>划词翻译</td>
+          <td>8MB</td>
+          <td>25MB</td>
+          <td>12MB</td>
+      </tr>
+      <tr>
+          <td>沙拉查词</td>
+          <td>10MB</td>
+          <td>30MB</td>
+          <td>15MB</td>
+      </tr>
+      <tr>
+          <td>沉浸式翻译</td>
+          <td>25MB</td>
+          <td>80MB</td>
+          <td>45MB</td>
+      </tr>
+      <tr>
+          <td>DeepL 翻译</td>
+          <td>20MB</td>
+          <td>65MB</td>
+          <td>35MB</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>关键发现：</strong></p>
+<ol>
+<li>Google 翻译是 Chrome 内置功能，不额外占内存</li>
+<li>沉浸式翻译内存占用最大（翻译中 80MB），因为它需要在后台维护双语对照页面</li>
+<li>DeepL 翻译次之（65MB），因为需要和远程服务器保持长连接</li>
+<li><strong>如果你只有 8GB 内存且经常开很多标签页，优先选 Google 翻译或划词翻译</strong></li>
+</ol>
+<h2 id="功能对比沉浸式翻译功能最全">功能对比：沉浸式翻译功能最全</h2>
+<table>
+  <thead>
+      <tr>
+          <th>功能</th>
+          <th>沉浸式翻译</th>
+          <th>DeepL</th>
+          <th>Google</th>
+          <th>划词翻译</th>
+          <th>沙拉查词</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>整页翻译</td>
+          <td>✅</td>
+          <td>✅（付费）</td>
+          <td>✅</td>
+          <td>❌</td>
+          <td>❌</td>
+      </tr>
+      <tr>
+          <td>双语对照</td>
+          <td>✅</td>
+          <td>✅（付费）</td>
+          <td>❌</td>
+          <td>❌</td>
+          <td>❌</td>
+      </tr>
+      <tr>
+          <td>划词翻译</td>
+          <td>✅</td>
+          <td>✅</td>
+          <td>❌</td>
+          <td>✅</td>
+          <td>✅</td>
+      </tr>
+      <tr>
+          <td>悬停翻译</td>
+          <td>✅</td>
+          <td>❌</td>
+          <td>❌</td>
+          <td>❌</td>
+          <td>✅</td>
+      </tr>
+      <tr>
+          <td>PDF翻译</td>
+          <td>✅</td>
+          <td>✅（付费）</td>
+          <td>❌</td>
+          <td>❌</td>
+          <td>❌</td>
+      </tr>
+      <tr>
+          <td>视频字幕翻译</td>
+          <td>✅</td>
+          <td>❌</td>
+          <td>❌</td>
+          <td>❌</td>
+          <td>❌</td>
+      </tr>
+      <tr>
+          <td>输入框翻译</td>
+          <td>✅</td>
+          <td>✅</td>
+          <td>✅</td>
+          <td>✅</td>
+          <td>✅</td>
+      </tr>
+      <tr>
+          <td>自定义翻译引擎</td>
+          <td>✅（支持20+AI引擎）</td>
+          <td>❌</td>
+          <td>❌</td>
+          <td>❌</td>
+          <td>❌</td>
+      </tr>
+      <tr>
+          <td>生词本</td>
+          <td>✅</td>
+          <td>❌</td>
+          <td>❌</td>
+          <td>❌</td>
+          <td>✅</td>
+      </tr>
+      <tr>
+          <td>免费额度</td>
+          <td>无限制</td>
+          <td>50万字符/月</td>
+          <td>无限制</td>
+          <td>无限制</td>
+          <td>无限制</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>沉浸式翻译的核心优势是&quot;自定义翻译引擎&rdquo;</strong>——你可以在设置中切换 OpenAI、DeepL、Google、Gemini 等 20+ 种翻译引擎。也就是说，你用沉浸式翻译也可以调用 DeepL 的翻译质量，同时还享受沉浸式翻译的双语对照、悬停翻译等功能。这是其他四个插件做不到的。如果你经常阅读长文，配合 <a href="/tips/chrome-reading-mode/">Chrome 阅读模式</a>使用体验会更流畅。</p>
+<h2 id="各插件的优缺点">各插件的优缺点</h2>
+<p><img src="/images/plugins/chrome-translation-extension-comparison/body1.jpg" alt="#各插件的优缺点"></p>
+<p><strong>沉浸式翻译：</strong> 功能最全、准确率高、支持自定义引擎。缺点是内存占用大，安装后 Chrome 首次启动会慢约 0.5 秒。适合：需要频繁阅读外文内容的用户。</p>
+<p><strong>DeepL 翻译：</strong> 翻译质量稳定、技术文档翻译最好。缺点是免费版只能翻译整页（没有双语对照），速度慢（服务器在欧洲）。适合：对翻译质量要求极高的专业用户。</p>
+<p><strong>Google 翻译：</strong> 速度快、不占额外内存、使用简单。缺点是翻译质量不如前两者，没有划词和双语对照功能。适合：偶尔需要翻译的用户。</p>
+<p><strong>划词翻译：</strong> 轻量级、响应快、支持多种翻译引擎。缺点是不能整页翻译，功能相对单一。适合：只需要&quot;划词查意思&quot;的用户。</p>
+<p><strong>沙拉查词：</strong> 支持悬停翻译、有生词本功能。缺点是翻译准确率最低，没有整页翻译。适合：英语学习场景（查单词、记生词）。</p>
+<h2 id="我的推荐">我的推荐</h2>
+<p><strong>选一个就够的情况：</strong></p>
+<ul>
+<li>如果你经常阅读英文网页（新闻、文档、论文）→ <strong>沉浸式翻译</strong></li>
+<li>如果你只是偶尔查个单词意思 → <strong>划词翻译</strong> 或 <strong>沙拉查词</strong></li>
+<li>如果你追求翻译质量且不在意速度 → <strong>DeepL 翻译</strong></li>
+</ul>
+<p><strong>组合使用的情况：</strong></p>
+<p>我自己的方案是<strong>沉浸式翻译 + Google 翻译（内置）</strong>。沉浸式翻译负责日常阅读的双语对照翻译（引擎设置为 DeepL），Google 翻译作为备用（不需要安装，速度快）。两个插件互不冲突。</p>
+<p><strong>不推荐同时装 3 个以上翻译插件</strong>，因为它们会互相干扰——比如同一个网页同时被两个插件翻译，页面会变得很乱。</p>
+<h2 id="常见问题">常见问题</h2>
+<h3 id="沉浸式翻译是免费的吗">沉浸式翻译是免费的吗？</h3>
+<p>是的，沉浸式翻译的核心功能完全免费，没有字数限制。但如果要使用 OpenAI、Claude 等 AI 翻译引擎，需要自行配置 API Key（费用由 AI 服务商收取）。使用 Google、DeepL 等内置引擎则完全免费。</p>
+<h3 id="deepl-免费版有什么限制">DeepL 免费版有什么限制？</h3>
+<p>DeepL 免费版每月可以翻译 50 万字符（约 8-10 万英文单词），对大多数用户来说够用。但免费版不支持双语对照翻译和 PDF 翻译，这两个功能需要 Pro 订阅（月费约 29 美元）。</p>
+<h3 id="chrome-内置的-google-翻译和插件版的有什么区别">Chrome 内置的 Google 翻译和插件版的有什么区别？</h3>
+<p>功能上基本一样，都是调用 Google 的翻译接口。区别在于：Chrome 内置翻译在地址栏右侧有一个按钮，点击后整页翻译；插件版可以额外设置快捷键和翻译偏好。如果你不需要额外功能，直接用内置的就行，不用装插件。</p>
+<h3 id="翻译插件会影响网页加载速度吗">翻译插件会影响网页加载速度吗？</h3>
+<p>会。安装翻译插件后，每个网页都会被注入额外的 JavaScript 代码，导致页面加载时间增加 0.1-0.3 秒。沉浸式翻译因为是双语对照（需要额外渲染译文），影响最大（约 0.3-0.5 秒）。如果你对加载速度非常敏感，可以在不需要翻译时禁用插件。</p>
+<h3 id="为什么没有测试-chatgpt-类插件">为什么没有测试 ChatGPT 类插件？</h3>
+<p>ChatGPT 类翻译插件（如 Monica、Sider 等）虽然翻译质量不错，但它们是通用 AI 助手插件，不是专门的翻译工具，功能和价格都不适合作为&quot;翻译插件&quot;来比较。如果你对 AI 翻译感兴趣，沉浸式翻译内置了 OpenAI 引擎支持，效果等同。</p>
+
+<div class="compliance-notice">
+<p>声明：本站为 Chrome 浏览器使用技巧分享平台，与 Google 公司无关。所有产品名称归原权利人所有。</p>
+</div>
+<div class="home-kw-links">
+<p>相关推荐：<a href="/">Chrome插件推荐</a> · <a href="/">Chrome技巧教程</a> · <a href="/">浏览器插件下载</a></p>
+</div>
+    </div>
+
+    
+    
+    
+    <div style="max-width:1200px;margin:0 auto;padding:0 24px 48px">
+      <div style="padding-top:32px;border-top:1px solid var(--border)">
+        <div class="sec-head">
+          <div>
+            <div class="sec-tag">📖 相关阅读</div>
+            <div class="sec-title">继续阅读</div>
+          </div>
+        </div>
+        <div class="card-grid">
+          
+          <a href="https://chromebest.com/tips/chrome-built-in-ai-gemini-nano-guide/" class="card">
+            
+            <div class="card-img">
+              <img src="/images/tips/chrome-built-in-ai-gemini-nano-guide/cover.jpg" alt="Chrome 内置 AI 功能完全指南：2026年 Gemini Nano 离线写作、翻译、总结怎么用" loading="lazy">
+            </div>
+            
+            <div class="card-body">
+              <span class="art-row-tag feat-tag blue">教程</span>
+              <h3>Chrome 内置 AI 功能完全指南：2026年 Gemini Nano 离线写作、翻译、总结怎么用</h3>
+              <p><p>你可能在用 ChatGPT、Claude、文心一言——但你知道 Chrome 浏览器自己就内置了 AI 吗？</p>
+<p>2026年，Google 把 Gemini …</p></p>
+            </div>
+          </a>
+          
+          <a href="https://chromebest.com/tips/chrome-manifest-v3-ublock-origin-alternative/" class="card">
+            
+            <div class="card-img">
+              <img src="/images/tips/chrome-manifest-v3-ublock-origin-alternative/cover.webp" alt="Chrome Manifest V3 全面解读：uBlock Origin被禁怎么办？2026年广告拦截与隐私扩展替换完全指南" loading="lazy">
+            </div>
+            
+            <div class="card-body">
+              <span class="art-row-tag feat-tag blue">功能教程</span>
+              <h3>Chrome Manifest V3 全面解读：uBlock Origin被禁怎么办？2026年广告拦截与隐私扩展替换完全指南</h3>
+              <p>不聊技术协议，只聊对你有用的——什么时候失效、什么还能用、怎么用。</p>
+            </div>
+          </a>
+          
+          <a href="https://chromebest.com/tips/chrome-high-cpu-fix/" class="card">
+            
+            <div class="card-img">
+              <img src="/images/tips/chrome-high-cpu-fix/cover.webp" alt="Chrome 占用CPU过高终于解决了：从100%降到15%的完整排查实录（2026）" loading="lazy">
+            </div>
+            
+            <div class="card-body">
+              <span class="art-row-tag feat-tag red">性能优化</span>
+              <h3>Chrome 占用CPU过高终于解决了：从100%降到15%的完整排查实录（2026）</h3>
+              <p>不是让你关几个标签页这么简单。这篇文章教你用Chrome自带的任务管理器精准定位是哪个标签页、哪个扩展、哪个进程在吃CPU，然后对症下药。</p>
+            </div>
+          </a>
+          
+        </div>
+      </div>
+    </div>
+    
+  </article>
+
+  
+  <aside class="sidebar">
+    
+    <div class="sb-search">
+      <svg class="sb-search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+      <input type="text" class="sb-search-input" placeholder="搜索文章...">
+      <kbd class="sb-search-kbd">/</kbd>
+    </div>
+
+    
+    <div class="cta-banner" style="padding:24px">
+      <h2 style="font-size:18px;margin-bottom:6px">下载 Chrome</h2>
+      <p style="font-size:13px">全球使用人数最多的浏览器</p>
+      <a href="https://www.google.com/chrome/" class="btn-dl" style="padding:10px 20px;font-size:14px;width:100%;justify-content:center;margin-top:12px" rel="nofollow">⬇ 官方下载</a>
+    </div>
+
+    
+    
+    
+    <div class="sb-box">
+      <h3>📖 相关文章</h3>
+      <div style="display:flex;flex-direction:column;gap:12px">
+        
+        <a href="https://chromebest.com/tips/chrome-tab-groups/" style="font-size:13px;line-height:1.5;color:var(--txt2)">Chrome标签页分组管理技巧：2026年告别标签页混乱</a>
+        
+        <a href="https://chromebest.com/tips/chrome-crash-fix/" style="font-size:13px;line-height:1.5;color:var(--txt2)">Chrome 崩溃闪退的 8 个原因及修复方法（附启动参数）</a>
+        
+        <a href="https://chromebest.com/tips/chrome-save-password/" style="font-size:13px;line-height:1.5;color:var(--txt2)">Chrome 自动保存密码功能详解：开启、关闭、安全设置与最佳实践</a>
+        
+        <a href="https://chromebest.com/tips/chrome-incognito-mode-guide/" style="font-size:13px;line-height:1.5;color:var(--txt2)">Chrome 无痕模式详解：能做什么不能做什么，90%的人都理解错了</a>
+        
+        <a href="https://chromebest.com/tips/chrome-guest-mode/" style="font-size:13px;line-height:1.5;color:var(--txt2)">Chrome 访客模式、隐私模式、多用户模式有什么区别?哪个更适合你</a>
+        
+      </div>
+    </div>
+    
+
+    
+    
+    <div class="sb-box">
+      <h3>🏷 相关标签</h3>
+      <div class="tags">
+        
+        <a href="/tags/chrome%E7%BF%BB%E8%AF%91%E6%8F%92%E4%BB%B6" class="tag">Chrome翻译插件</a>
+        
+        <a href="/tags/%E6%B2%89%E6%B5%B8%E5%BC%8F%E7%BF%BB%E8%AF%91" class="tag">沉浸式翻译</a>
+        
+        <a href="/tags/deepl" class="tag">DeepL</a>
+        
+        <a href="/tags/google%E7%BF%BB%E8%AF%91" class="tag">Google翻译</a>
+        
+        <a href="/tags/%E5%88%92%E8%AF%8D%E7%BF%BB%E8%AF%91" class="tag">划词翻译</a>
+        
+        <a href="/tags/%E6%B2%99%E6%8B%89%E6%9F%A5%E8%AF%8D" class="tag">沙拉查词</a>
+        
+      </div>
+    </div>
+    
+  </aside>
+</div>
+
+<footer class="foot">
+  <div class="foot-inner">
+    <div class="foot-links">
+      <a href="/">首页</a>
+      <a href="/categories/下载安装">下载安装</a>
+      <a href="/categories/使用技巧">技巧教程</a>
+      <a href="/categories/插件推荐">插件推荐</a>
+      <a href="/categories/对比评测">对比评测</a>
+      <a href="/about/">关于我们</a>
+    </div>
+    <div class="foot-copy">© 2026 ChromeBest · 谷歌浏览器下载与使用教程 · 本站与 Google 无关</div>
+  </div>
+</footer>
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "首页",
+      "item": "https://chromebest.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Plugins",
+      "item": "https:\/\/chromebest.com\/plugins\/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "5款Chrome翻译插件实测对比：沉浸式翻译、DeepL、Google翻译谁准确率最高"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "5款Chrome翻译插件实测对比：沉浸式翻译、DeepL、Google翻译谁准确率最高",
+  "description": "对5款Chrome翻译插件进行准确率、速度、内存占用的实测对比。50个真实翻译样本测试数据，附每个插件的安装和使用截图。",
+  "datePublished": "2026-05-05",
+  "dateModified": "2026-05-05",
+  "author": {
+    "@type": "Organization",
+    "name": "ChromeBest"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "ChromeBest",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://chromebest.com/og-default.jpg"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https:\/\/chromebest.com\/plugins\/chrome-translation-extension-comparison\/"
+  }
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "哪个更适合普通用户？",
+      "acceptedAnswer": { "@type": "Answer", "text": "普通用户建议选择操作简单、界面友好的方案。如果你需要具体推荐，本文对比部分有详细的适用场景分析。" }
+    },{
+      "@type": "Question",
+      "name": "免费版和付费版差距大吗？",
+      "acceptedAnswer": { "@type": "Answer", "text": "核心功能基本一致，付费版主要多了高级功能和优先技术支持。个人用途免费版完全够用。" }
+    },{
+      "@type": "Question",
+      "name": "使用5款Chrome翻译插件实测对比：沉浸式翻译、DeepL、Google翻译谁准确率最高安全吗？",
+      "acceptedAnswer": { "@type": "Answer", "text": "正规渠道获取的软件是安全的。建议始终从官方下载，避免第三方修改版，并定期更新到最新版本。" }
+    },{
+      "@type": "Question",
+      "name": "支持哪些操作系统？",
+      "acceptedAnswer": { "@type": "Answer", "text": "通常支持 Windows 10\/11，部分也支持 macOS 和 Linux。具体系统要求请查看本文的安装说明部分。" }
+    },{
+      "@type": "Question",
+      "name": "如何保持软件最新版本？",
+      "acceptedAnswer": { "@type": "Answer", "text": "大多数软件支持自动更新检查。也可以定期访问官网下载最新版本，或开启软件内的自动更新选项。" }
+    }
+  ]
+}
+</script>
+
+
+
+
+
+
+<script>
+(function(){
+  var k="1746ece89b02d6f075b43c223f9789b5";
+  var u=encodeURIComponent("https:\/\/chromebest.com\/plugins\/chrome-translation-extension-comparison\/");
+  var x=new XMLHttpRequest();
+  x.open("GET","https://api.indexnow.org/indexnow?url="+u+"&key="+k,true);
+  x.send();
+})();
+</script>
+
+</body>
+</html>

@@ -2,11 +2,33 @@
 <html lang="zh-CN">
 <head>
 {{ partial "head.html" . }}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "{{ .Site.Title }}",
+    "url": "{{ .Site.BaseURL }}"
+  }
+  </script>
+
 </head>
 <body>
 {{ partial "nav.html" . }}
 {{ block "main" . }}{{ end }}
 {{ partial "footer.html" . }}
 {{ partial "schema.html" . }}
+
+<script>
+{{ if .Site.Params.indexnow -}}
+(function(){
+  var k="{{ .Site.Params.indexnow.key }}";
+  var u=encodeURIComponent("{{ .Permalink }}");
+  var x=new XMLHttpRequest();
+  x.open("GET","https://api.indexnow.org/indexnow?url="+u+"&key="+k,true);
+  x.send();
+})();
+{{- end }}
+</script>
+
 </body>
 </html>
